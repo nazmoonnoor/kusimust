@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>12. KODUMASINAD - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #6b7280">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 12 • A2</div>
+      <h1 class="topic-heading">12. KODUMASINAD - MUL ON VAJA UUT RÖSTRIT</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kas teil on nõudepesumasin? Kas te oskate seda kasutada?",
+        audio: "../audio/12-kodumasinad-a2/001.wav",
+        answer: "Jah, mul on nõudepesumasin. Jah, ma oskan seda kasutada.",
+        answerAudio: "../audio/12-kodumasinad-a2/001a.wav"
+      },
+      {
+        text: "Mis kodumasina te kingiksite oma emale? Aga isale?",
+        audio: "../audio/12-kodumasinad-a2/002.wav",
+        answer: "Ma kingiksin emale kohvimasina. Isale kingiksin uue veekeetja.",
+        answerAudio: "../audio/12-kodumasinad-a2/002a.wav"
+      },
+      {
+        text: "Mis kodumasinat te viimati kasutasite?",
+        audio: "../audio/12-kodumasinad-a2/003.wav",
+        answer: "Viimati kasutasin veekeetjat.",
+        answerAudio: "../audio/12-kodumasinad-a2/003a.wav"
+      },
+      {
+        text: "Mis kodumasinat te kasutate rohkem suvel kui talvel?",
+        audio: "../audio/12-kodumasinad-a2/004.wav",
+        answer: "Suvel kasutan rohkem ventilaatorit.",
+        answerAudio: "../audio/12-kodumasinad-a2/004a.wav"
+      },
+      {
+        text: "Mis kodumasinat teil ei ole, aga oleks vaja? Kui palju see maksab?",
+        audio: "../audio/12-kodumasinad-a2/005.wav",
+        answer: "Mul ei ole robottolmuimejat, aga ma tahaksin seda. See maksab umbes 300 eurot.",
+        answerAudio: "../audio/12-kodumasinad-a2/005a.wav"
+      },
+      {
+        text: "Kas te ostaksite kodumasina veebipoest?",
+        audio: "../audio/12-kodumasinad-a2/006.wav",
+        answer: "Jah, ma ostaksin kodumasina veebipoest.",
+        answerAudio: "../audio/12-kodumasinad-a2/006a.wav"
+      },
+      {
+        text: "Kas teil on elektri- või gaasipliit? Mitu nuppu teie pliidil on?",
+        audio: "../audio/12-kodumasinad-a2/007.wav",
+        answer: "Mul on elektripliit. Minu pliidil on neli nuppu.",
+        answerAudio: "../audio/12-kodumasinad-a2/007a.wav"
+      },
+      {
+        text: "Kas teil on külmkapp? Kas teie külmkapil on sügavkülmik üleval või all?",
+        audio: "../audio/12-kodumasinad-a2/008.wav",
+        answer: "Jah, mul on külmkapp. Sügavkülmik on all.",
+        answerAudio: "../audio/12-kodumasinad-a2/008a.wav"
+      },
+      {
+        text: "Mis on teie kõige uuem kodumasin? Aga kõige vanem? Kui vanad need on?",
+        audio: "../audio/12-kodumasinad-a2/009.wav",
+        answer: "Minu kõige uuem kodumasin on kohvimasin. See on üks aasta vana. Kõige vanem on veekeetja.",
+        answerAudio: "../audio/12-kodumasinad-a2/009a.wav"
+      },
+      {
+        text: "Mis on teie kõige kallim kodumasin? Kes selle kodumasina ostis?",
+        audio: "../audio/12-kodumasinad-a2/010.wav",
+        answer: "Minu kõige kallim kodumasin on külmkapp. Mina ostsin selle.",
+        answerAudio: "../audio/12-kodumasinad-a2/010a.wav"
+      },
+      {
+        text: "Mis on teie külmkapi peal? Aga mis on teie külmkapi all?",
+        audio: "../audio/12-kodumasinad-a2/011.wav",
+        answer: "Külmkapi peal on mõned karbid. Külmkapi all on põrand.",
+        answerAudio: "../audio/12-kodumasinad-a2/011a.wav"
+      },
+      {
+        text: "Kas te teate, kui palju maksab moodne kohvimasin?",
+        audio: "../audio/12-kodumasinad-a2/012.wav",
+        answer: "Jah, moodne kohvimasin maksab umbes 200–500 eurot.",
+        answerAudio: "../audio/12-kodumasinad-a2/012a.wav"
+      },
+      {
+        text: "Kas te kuulate muusikat? Millega te muusikat kuulate?",
+        audio: "../audio/12-kodumasinad-a2/013.wav",
+        answer: "Jah, ma kuulan muusikat. Tavaliselt kuulan telefoniga või arvutiga.",
+        answerAudio: "../audio/12-kodumasinad-a2/013a.wav"
+      },
+      {
+        text: "Mida te teete, kui teie pesumasin läheb katki? Aga kui teie veekeetja läheb katki?",
+        audio: "../audio/12-kodumasinad-a2/014.wav",
+        answer: "Siia lisage oma vastus.",
+        answerAudio: "../audio/12-kodumasinad-a2/014a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

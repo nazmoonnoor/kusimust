@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>11. REISIMINE - A1 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #3f7a5d">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 11 • A1</div>
+      <h1 class="topic-heading">11. REISIMINE - HEAD REISI!</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kas teile meeldib reisida?",
+        audio: "../audio/11-reisimine-a1/001.wav",
+        answer: "Jah, mulle meeldib reisida. See on huvitav ja lõbus.",
+        answerAudio: "../audio/11-reisimine-a1/001a.wav"
+      },
+      {
+        text: "Kas teile meeldib puhata suvel või talvel?",
+        audio: "../audio/11-reisimine-a1/002.wav",
+        answer: "Mulle meeldib puhata suvel, sest ilm on soe.",
+        answerAudio: "../audio/11-reisimine-a1/002a.wav"
+      },
+      {
+        text: "Kas te olete käinud Austraalias? Aga Kanadas? Aga Egiptuses?",
+        audio: "../audio/11-reisimine-a1/003.wav",
+        answer: "Ei, ma ei ole käinud Austraalias, Kanadas ega Egiptuses.",
+        answerAudio: "../audio/11-reisimine-a1/003a.wav"
+      },
+      {
+        text: "Kus te käinud olete?",
+        audio: "../audio/11-reisimine-a1/004.wav",
+        answer: "Ma olen käinud Eestis, Soomes ja Rootsis.",
+        answerAudio: "../audio/11-reisimine-a1/004a.wav"
+      },
+      {
+        text: "Kuhu te tahate reisida?",
+        audio: "../audio/11-reisimine-a1/005.wav",
+        answer: "Ma tahan reisida Itaaliasse ja Hispaaniasse.",
+        answerAudio: "../audio/11-reisimine-a1/005a.wav"
+      },
+      {
+        text: "Kuhu te kindlasti ei taha reisida?",
+        audio: "../audio/11-reisimine-a1/006.wav",
+        answer: "Ma ei taha reisida väga ohtlikesse kohtadesse.",
+        answerAudio: "../audio/11-reisimine-a1/006a.wav"
+      },
+      {
+        text: "Kas teile meeldib reisida lennukiga?",
+        audio: "../audio/11-reisimine-a1/007.wav",
+        answer: "Jah, mulle meeldib reisida lennukiga. See on kiire.",
+        answerAudio: "../audio/11-reisimine-a1/007a.wav"
+      },
+      {
+        text: "Kas teile meeldivad lennujaamad?",
+        audio: "../audio/11-reisimine-a1/008.wav",
+        answer: "Jah, lennujaamad on huvitavad kohad.",
+        answerAudio: "../audio/11-reisimine-a1/008a.wav"
+      },
+      {
+        text: "Kuhu te reisite lennukiga?",
+        audio: "../audio/11-reisimine-a1/009.wav",
+        answer: "Tavaliselt ma reisin lennukiga teistesse riikidesse.",
+        answerAudio: "../audio/11-reisimine-a1/009a.wav"
+      },
+      {
+        text: "Kas teile meeldib reisida rongiga? Kuhu te reisite rongiga?",
+        audio: "../audio/11-reisimine-a1/010.wav",
+        answer: "Jah, mulle meeldib rongiga reisida. Ma sõidan rongiga Tartusse.",
+        answerAudio: "../audio/11-reisimine-a1/010a.wav"
+      },
+      {
+        text: "Kas reisimine on kallis või odav?",
+        audio: "../audio/11-reisimine-a1/011.wav",
+        answer: "Reisimine on mõnikord kallis.",
+        answerAudio: "../audio/11-reisimine-a1/011a.wav"
+      },
+      {
+        text: "Kas teile meeldib reisida bussiga? Kuhu te reisite bussiga?",
+        audio: "../audio/11-reisimine-a1/012.wav",
+        answer: "Jah, bussiga reisida on mugav. Ma sõidan bussiga Pärnusse.",
+        answerAudio: "../audio/11-reisimine-a1/012a.wav"
+      },
+      {
+        text: "Kas teile meeldib reisida laevaga? Kuhu te reisite laevaga?",
+        audio: "../audio/11-reisimine-a1/013.wav",
+        answer: "Jah, mulle meeldib reisida laevaga. Ma sõidan laevaga Helsingisse.",
+        answerAudio: "../audio/11-reisimine-a1/013a.wav"
+      },
+      {
+        text: "Mitu kohvrit teil on? Mis värvi on teie kõige suurem kohver?",
+        audio: "../audio/11-reisimine-a1/014.wav",
+        answer: "Mul on kaks kohvrit. Minu suurim kohver on must.",
+        answerAudio: "../audio/11-reisimine-a1/014a.wav"
+      },
+      {
+        text: "Kas te ööbite reisil hotellis või kämpingus?",
+        audio: "../audio/11-reisimine-a1/015.wav",
+        answer: "Tavaliselt ma ööbin hotellis.",
+        answerAudio: "../audio/11-reisimine-a1/015a.wav"
+      },
+      {
+        text: "Kas te olete käinud Pärnus? Aga Tartus? Aga Narvas?",
+        audio: "../audio/11-reisimine-a1/016.wav",
+        answer: "Jah, ma olen käinud Pärnus ja Tartus. Narvas ma ei ole käinud.",
+        answerAudio: "../audio/11-reisimine-a1/016a.wav"
+      },
+      {
+        text: "Kas te teate, mida tähendab merehaigus? Aga reisikindlustus? Aga reisipalavik? Aga ümbermaailmareis?",
+        audio: "../audio/11-reisimine-a1/017.wav",
+        answer: "Jah, ma tean neid sõnu. Need on seotud reisimisega.",
+        answerAudio: "../audio/11-reisimine-a1/017a.wav"
+      },
+      {
+        text: "Kas te teate, kus teie pass on?",
+        audio: "../audio/11-reisimine-a1/018.wav",
+        answer: "Jah, minu pass on kodus kapis.",
+        answerAudio: "../audio/11-reisimine-a1/018a.wav"
+      },
+      {
+        text: "Kui pikk on liiga pikk reis?",
+        audio: "../audio/11-reisimine-a1/019.wav",
+        answer: "Minu arvates on üle kümne tunni väga pikk reis.",
+        answerAudio: "../audio/11-reisimine-a1/019a.wav"
+      },
+      {
+        text: "Mis Euroopa linn teile meeldib? Kas te tahate nädalavahetusel sinna minna?",
+        audio: "../audio/11-reisimine-a1/020.wav",
+        answer: "Mulle meeldib Rooma. Jah, ma tahaksin sinna nädalavahetusel minna.",
+        answerAudio: "../audio/11-reisimine-a1/020a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

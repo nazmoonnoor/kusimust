@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>11. REISIMINE - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #3f7a5d">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 11 • A2</div>
+      <h1 class="topic-heading">11. REISIMINE</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kas te lähete reisile kohvriga või seljakotiga?",
+        audio: "../audio/11-reisimine-a2/001.wav",
+        answer: "Tavaliselt lähen reisile kohvriga. Kui reis on lühike, võtan seljakoti.",
+        answerAudio: "../audio/11-reisimine-a2/001a.wav"
+      },
+      {
+        text: "Kas te oskate hästi kohvrit pakkida?",
+        audio: "../audio/11-reisimine-a2/002.wav",
+        answer: "Jah, ma oskan üsna hästi kohvrit pakkida. Tavaliselt panen ainult vajalikud asjad.",
+        answerAudio: "../audio/11-reisimine-a2/002a.wav"
+      },
+      {
+        text: "Kas teie kohver on mõnikord liiga raske?",
+        audio: "../audio/11-reisimine-a2/003.wav",
+        answer: "Jah, mõnikord on minu kohver liiga raske. Siis pean mõned asjad välja võtma.",
+        answerAudio: "../audio/11-reisimine-a2/003a.wav"
+      },
+      {
+        text: "Mis asjad te alati reisile kaasa võtate?",
+        audio: "../audio/11-reisimine-a2/004.wav",
+        answer: "Ma võtan alati kaasa passi, telefoni, riided ja laadija.",
+        answerAudio: "../audio/11-reisimine-a2/004a.wav"
+      },
+      {
+        text: "Kas teile meeldib üksi reisida? Kellega teile meeldib reisida?",
+        audio: "../audio/11-reisimine-a2/005.wav",
+        answer: "Mulle ei meeldi väga üksi reisida. Mulle meeldib reisida pere või sõpradega.",
+        answerAudio: "../audio/11-reisimine-a2/005a.wav"
+      },
+      {
+        text: "Kuhu te reisiksite oma sõbraga? Aga emaga?",
+        audio: "../audio/11-reisimine-a2/006.wav",
+        answer: "Sõbraga reisiksin mõnda suurlinna, näiteks Berliini. Emaga reisiksin rahulikku kohta.",
+        answerAudio: "../audio/11-reisimine-a2/006a.wav"
+      },
+      {
+        text: "Millal te viimati lennukiga lendasite? Aga millal te viimati rongiga sõitsite?",
+        audio: "../audio/11-reisimine-a2/007.wav",
+        answer: "Ma lendasin lennukiga eelmisel aastal. Rongiga sõitsin paar kuud tagasi.",
+        answerAudio: "../audio/11-reisimine-a2/007a.wav"
+      },
+      {
+        text: "Kas te rendite mõnikord reisil auto?",
+        audio: "../audio/11-reisimine-a2/008.wav",
+        answer: "Jah, mõnikord rendin reisil auto. See on mugav.",
+        answerAudio: "../audio/11-reisimine-a2/008a.wav"
+      },
+      {
+        text: "Kas te olete käinud rattamatkal? Aga kanuumatkal?",
+        audio: "../audio/11-reisimine-a2/009.wav",
+        answer: "Ma olen käinud rattamatkal paar aastat tagasi. Kanuumatkal ma ei ole käinud.",
+        answerAudio: "../audio/11-reisimine-a2/009a.wav"
+      },
+      {
+        text: "Kas te olete öösel maganud lennujaamas? Aga raudteejaamas?",
+        audio: "../audio/11-reisimine-a2/010.wav",
+        answer: "Ei, ma ei ole lennujaamas ega jaamas maganud.",
+        answerAudio: "../audio/11-reisimine-a2/010a.wav"
+      },
+      {
+        text: "Mis keeli te oskate? Mis keeli te reisil räägite?",
+        audio: "../audio/11-reisimine-a2/011.wav",
+        answer: "Ma oskan bengali ja inglise keelt. Reisil räägin tavaliselt inglise keeles.",
+        answerAudio: "../audio/11-reisimine-a2/011a.wav"
+      },
+      {
+        text: "Kas mõtlete mõnikord reisil: “Oh, siia tulen kindlasti tagasi!”? Kas lähete tagasi?",
+        audio: "../audio/11-reisimine-a2/012.wav",
+        answer: "Jah, mõnikord mõtlen nii. Mõnda kohta tahaksin tagasi minna.",
+        answerAudio: "../audio/11-reisimine-a2/012a.wav"
+      },
+      {
+        text: "Kui teil oleks 2000 eurot, kuhu te sõidaksite?",
+        audio: "../audio/11-reisimine-a2/013.wav",
+        answer: "Kui mul oleks 2000 eurot, sõidaksin Itaaliasse.",
+        answerAudio: "../audio/11-reisimine-a2/013a.wav"
+      },
+      {
+        text: "Kas teile meeldiks suusareis? Kuhu te sõidaksite? Kui kaua te seal oleksite?",
+        audio: "../audio/11-reisimine-a2/014.wav",
+        answer: "Jah, mulle meeldiks suusareis. Ma sõidaksin Alpidesse umbes üheks nädalaks.",
+        answerAudio: "../audio/11-reisimine-a2/014a.wav"
+      },
+      {
+        text: "Kas teile meeldiks puhkus soojal maal? Kuhu te sõidaksite? Kui kaua te seal oleksite? Mida te seal teeksite?",
+        audio: "../audio/11-reisimine-a2/015.wav",
+        answer: "Jah, mulle meeldiks puhkus soojal maal. Ma sõidaksin Hispaaniasse kaheks nädalaks ja puhkaksin rannas.",
+        answerAudio: "../audio/11-reisimine-a2/015a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

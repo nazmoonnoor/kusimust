@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>19. KOTT - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #7c4f2a">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 19 • A2</div>
+      <h1 class="topic-heading">19. KOTT - PANE ASJAD KOTTI!</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Mis kott on teil keelekursusel kaasas? Aga reisil? Aga tööl?",
+        audio: "../audio/19-kott-a2/001.wav",
+        answer: "Keelekursusel on mul seljakott. Reisil on mul kohver. Tööl on mul arvutikott.",
+        answerAudio: "../audio/19-kott-a2/001a.wav"
+      },
+      {
+        text: "Kas teie kotil on lukk? Kas koti lukk on praegu kinni või lahti?",
+        audio: "../audio/19-kott-a2/002.wav",
+        answer: "Jah, minu kotil on lukk. Praegu on lukk kinni.",
+        answerAudio: "../audio/19-kott-a2/002a.wav"
+      },
+      {
+        text: "Kas teie kotil on tasku? Mitu taskut teie kotil on? Mis on teie koti taskus?",
+        audio: "../audio/19-kott-a2/003.wav",
+        answer: "Jah, minu kotil on taskud. Seal on kolm taskut. Taskus on võtmed ja telefon.",
+        answerAudio: "../audio/19-kott-a2/003a.wav"
+      },
+      {
+        text: "Kas teie kotis on raamat? Mis on raamatu pealkiri?",
+        audio: "../audio/19-kott-a2/004.wav",
+        answer: "Jah, minu kotis on raamat. See on eesti keele õpik.",
+        answerAudio: "../audio/19-kott-a2/004a.wav"
+      },
+      {
+        text: "Kas teie kotis on huulepulk? Mis värvi see on?",
+        audio: "../audio/19-kott-a2/005.wav",
+        answer: "Ei, minu kotis ei ole huulepulka.",
+        answerAudio: "../audio/19-kott-a2/005a.wav"
+      },
+      {
+        text: "Kas teie kotil on helkur?",
+        audio: "../audio/19-kott-a2/006.wav",
+        answer: "Jah, minu kotil on väike helkur.",
+        answerAudio: "../audio/19-kott-a2/006a.wav"
+      },
+      {
+        text: "Mis asjad on praegu teie kotis? Mis on vajalikud? Aga ebavajalikud?",
+        audio: "../audio/19-kott-a2/007.wav",
+        answer: "Minu kotis on telefon, rahakott ja võtmed. Need on vajalikud. Mõnikord on seal ka ebavajalikke asju.",
+        answerAudio: "../audio/19-kott-a2/007a.wav"
+      },
+      {
+        text: "Mis asjad peavad kindlasti naise kotis olema? Aga mehe kotis?",
+        audio: "../audio/19-kott-a2/008.wav",
+        answer: "Naise kotis on tavaliselt rahakott ja telefon. Mehe kotis on ka rahakott ja võtmed.",
+        answerAudio: "../audio/19-kott-a2/008a.wav"
+      },
+      {
+        text: "Kas teil on kaasas poekott, kui te lähete poodi? Kas te ostate kilekoti või paberkoti?",
+        audio: "../audio/19-kott-a2/009.wav",
+        answer: "Jah, mul on mõnikord poekott. Tavaliselt kasutan paberkotti.",
+        answerAudio: "../audio/19-kott-a2/009a.wav"
+      },
+      {
+        text: "Mis materjalist on teie käekott? Kas see on nahast või plastikust või riidest?",
+        audio: "../audio/19-kott-a2/010.wav",
+        answer: "Minu kott on riidest.",
+        answerAudio: "../audio/19-kott-a2/010a.wav"
+      },
+      {
+        text: "Kas käekott, mis maksab 100 eurot, on kallis või odav?",
+        audio: "../audio/19-kott-a2/011.wav",
+        answer: "Minu arvates on see üsna kallis.",
+        answerAudio: "../audio/19-kott-a2/011a.wav"
+      },
+      {
+        text: "Mis poes müüakse käekotte? Aga seljakotte?",
+        audio: "../audio/19-kott-a2/012.wav",
+        answer: "Käekotte ja seljakotte müüakse riidepoodides.",
+        answerAudio: "../audio/19-kott-a2/012a.wav"
+      },
+      {
+        text: "Kas te ostate igal aastal uue koti?",
+        audio: "../audio/19-kott-a2/013.wav",
+        answer: "Ei, ma ei osta igal aastal uut kotti.",
+        answerAudio: "../audio/19-kott-a2/013a.wav"
+      },
+      {
+        text: "Mis värvi oli teie esimene koolikott?",
+        audio: "../audio/19-kott-a2/014.wav",
+        answer: "Minu esimene koolikott oli sinine.",
+        answerAudio: "../audio/19-kott-a2/014a.wav"
+      },
+      {
+        text: "Kus ja millal teil on vaja kilekotti?",
+        audio: "../audio/19-kott-a2/015.wav",
+        answer: "Mul on kilekotti vaja poes, kui ma ostan palju asju.",
+        answerAudio: "../audio/19-kott-a2/015a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

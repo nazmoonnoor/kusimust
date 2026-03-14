@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>24. LEMMIKLOOM - A1 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #d97706">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 24 • A1</div>
+      <h1 class="topic-heading">24. LEMMIKLOOM - OI KUI NUNNU KASSI!</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kas teil on lemmikloom? Mis loom see on?",
+        audio: "../audio/24-lemmikloom-a1/001.wav",
+        answer: "Praegu mul ei ole lemmiklooma.",
+        answerAudio: "../audio/24-lemmikloom-a1/001a.wav"
+      },
+      {
+        text: "Mis tema nimi on? Kui vana ta on?",
+        audio: "../audio/24-lemmikloom-a1/002.wav",
+        answer: "Mul ei ole lemmiklooma, aga mulle meeldivad kassid.",
+        answerAudio: "../audio/24-lemmikloom-a1/002a.wav"
+      },
+      {
+        text: "Kas ta on suur või väike?",
+        audio: "../audio/24-lemmikloom-a1/003.wav",
+        answer: "Kass on tavaliselt väike loom.",
+        answerAudio: "../audio/24-lemmikloom-a1/003a.wav"
+      },
+      {
+        text: "Kas tal on saba? Aga hambad? Aga tiivad?",
+        audio: "../audio/24-lemmikloom-a1/004.wav",
+        answer: "Jah, kassil on saba ja hambad. Tal ei ole tiibu.",
+        answerAudio: "../audio/24-lemmikloom-a1/004a.wav"
+      },
+      {
+        text: "Kas ta on emane või isane?",
+        audio: "../audio/24-lemmikloom-a1/005.wav",
+        answer: "Tavaliselt on kass kas emane või isane.",
+        answerAudio: "../audio/24-lemmikloom-a1/005a.wav"
+      },
+      {
+        text: "Mis värvi ta on? Kas ta on hele või tume?",
+        audio: "../audio/24-lemmikloom-a1/006.wav",
+        answer: "Kass võib olla must, valge või triibuline.",
+        answerAudio: "../audio/24-lemmikloom-a1/006a.wav"
+      },
+      {
+        text: "Kus ta praegu on? Mida ta praegu teeb?",
+        audio: "../audio/24-lemmikloom-a1/007.wav",
+        answer: "Kui mul oleks kass, ta oleks kodus ja magaks.",
+        answerAudio: "../audio/24-lemmikloom-a1/007a.wav"
+      },
+      {
+        text: "Mitu tundi päevas ta magab?",
+        audio: "../audio/24-lemmikloom-a1/008.wav",
+        answer: "Kass magab umbes 12–16 tundi päevas.",
+        answerAudio: "../audio/24-lemmikloom-a1/008a.wav"
+      },
+      {
+        text: "Mida ta öösel teeb?",
+        audio: "../audio/24-lemmikloom-a1/009.wav",
+        answer: "Öösel kass mõnikord mängib või liigub ringi.",
+        answerAudio: "../audio/24-lemmikloom-a1/009a.wav"
+      },
+      {
+        text: "Mida ta tavaliselt sööb? Mis talle maitseb? Mis talle ei maitse?",
+        audio: "../audio/24-lemmikloom-a1/010.wav",
+        answer: "Kass sööb tavaliselt kassitoitu ja kala.",
+        answerAudio: "../audio/24-lemmikloom-a1/010a.wav"
+      },
+      {
+        text: "Kas talle meeldib jalutada? Aga mängida? Aga vannis käia?",
+        audio: "../audio/24-lemmikloom-a1/011.wav",
+        answer: "Kassile meeldib mängida, aga tavaliselt ei meeldi vannis käia.",
+        answerAudio: "../audio/24-lemmikloom-a1/011a.wav"
+      },
+      {
+        text: "Kas te räägite oma lemmikloomaga? Mis keeles te räägite? Mida te talle ütlete?",
+        audio: "../audio/24-lemmikloom-a1/012.wav",
+        answer: "Jah, inimesed räägivad lemmikloomaga. Tavaliselt oma keeles.",
+        answerAudio: "../audio/24-lemmikloom-a1/012a.wav"
+      },
+      {
+        text: "Kas must kass on ilus? Aga valge? Aga triibuline?",
+        audio: "../audio/24-lemmikloom-a1/013.wav",
+        answer: "Jah, kõik kassid võivad olla ilusad.",
+        answerAudio: "../audio/24-lemmikloom-a1/013a.wav"
+      },
+      {
+        text: "Mida kassid söövad? Mida kassid ei söö?",
+        audio: "../audio/24-lemmikloom-a1/014.wav",
+        answer: "Kassid söövad liha ja kassitoitu.",
+        answerAudio: "../audio/24-lemmikloom-a1/014a.wav"
+      },
+      {
+        text: "Kas bernhardiin on ilus? Aga dogi? Aga taks? Aga buldog?",
+        audio: "../audio/24-lemmikloom-a1/015.wav",
+        answer: "Jah, need on suured ja huvitavad koerad.",
+        answerAudio: "../audio/24-lemmikloom-a1/015a.wav"
+      },
+      {
+        text: "Mida koerad söövad? Mida koerad ei söö?",
+        audio: "../audio/24-lemmikloom-a1/016.wav",
+        answer: "Koerad söövad koeratoitu ja liha.",
+        answerAudio: "../audio/24-lemmikloom-a1/016a.wav"
+      },
+      {
+        text: "Kumb on parem lemmikloom, kas kass või koer? Missugune loom on kass? Missugune loom on koer?",
+        audio: "../audio/24-lemmikloom-a1/017.wav",
+        answer: "Mõlemad on head lemmikloomad. Kass on rahulik, koer on aktiivne.",
+        answerAudio: "../audio/24-lemmikloom-a1/017a.wav"
+      },
+      {
+        text: "Kas teie kodulinnas on lemmikloomapood? Kas te käite tihti lemmikloomapoes? Mida te ostate?",
+        audio: "../audio/24-lemmikloom-a1/018.wav",
+        answer: "Jah, minu linnas on lemmikloomapood.",
+        answerAudio: "../audio/24-lemmikloom-a1/018a.wav"
+      },
+      {
+        text: "Kas te teate, mida tähendab koerakaka? Aga kassipiss? Aga puur? Aga suukorv?",
+        audio: "../audio/24-lemmikloom-a1/019.wav",
+        answer: "Jah, ma tean neid sõnu.",
+        answerAudio: "../audio/24-lemmikloom-a1/019a.wav"
+      },
+      {
+        text: "Mis te arvate, kas kassile meeldib ujuda? Aga televiisorit vaadata?",
+        audio: "../audio/24-lemmikloom-a1/020.wav",
+        answer: "Tavaliselt kassile ei meeldi ujuda.",
+        answerAudio: "../audio/24-lemmikloom-a1/020a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

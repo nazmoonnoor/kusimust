@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>22. LOODUS JA LOOMAD - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #3f8f5f">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 22 • A2</div>
+      <h1 class="topic-heading">22. LOODUS JA LOOMAD - VAATA, SIGA LENDAB!</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kas inimene on loom? Aga kas nahkhiir on loom või lind?",
+        audio: "../audio/22-loodus-ja-loomad-a2/001.wav",
+        answer: "Jah, inimene on loom. Nahkhiir on loom.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a2/001a.wav"
+      },
+      {
+        text: "Mis loomad algavad k-tähega? Aga l-tähega?",
+        audio: "../audio/22-loodus-ja-loomad-a2/002.wav",
+        answer: "K-tähega algab kass ja koer. L-tähega algab lõvi ja lammas.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a2/002a.wav"
+      },
+      {
+        text: "Kui te oleksite loom, mis loom te oleksite?",
+        audio: "../audio/22-loodus-ja-loomad-a2/003.wav",
+        answer: "Kui ma oleks loom, ma oleks delfiin.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a2/003a.wav"
+      },
+      {
+        text: "Mis metsloomad elavad linnas?",
+        audio: "../audio/22-loodus-ja-loomad-a2/004.wav",
+        answer: "Linnas elavad näiteks rebased ja siilid.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a2/004a.wav"
+      },
+      {
+        text: "Kas kärbes on ohtlik? Aga sääsk? Aga ämblik?",
+        audio: "../audio/22-loodus-ja-loomad-a2/005.wav",
+        answer: "Kärbes ei ole ohtlik. Sääsk võib hammustada. Mõned ämblikud võivad olla ohtlikud.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a2/005a.wav"
+      },
+      {
+        text: "Kas kana oskab lennata? Aga lehm? Aga siga?",
+        audio: "../audio/22-loodus-ja-loomad-a2/006.wav",
+        answer: "Kana võib natuke lennata. Lehm ja siga ei oska lennata.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a2/006a.wav"
+      },
+      {
+        text: "Mis loom hüppab? Aga mis loom lendab? Aga mis loom ujub?",
+        audio: "../audio/22-loodus-ja-loomad-a2/007.wav",
+        answer: "Känguru hüppab. Lind lendab. Kala ujub.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a2/007a.wav"
+      },
+      {
+        text: "Kas tigu on kiire või aeglane loom? Aga siil? Aga sisalik?",
+        audio: "../audio/22-loodus-ja-loomad-a2/008.wav",
+        answer: "Tigu on aeglane. Siil ja sisalik on kiiremad.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a2/008a.wav"
+      },
+      {
+        text: "Kas te olete näinud rebast? Aga põtra? Aga rotti?",
+        audio: "../audio/22-loodus-ja-loomad-a2/009.wav",
+        answer: "Jah, ma olen näinud rebast ja rotti.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a2/009a.wav"
+      },
+      {
+        text: "Mis loom on öösel üleval ja päeval magab?",
+        audio: "../audio/22-loodus-ja-loomad-a2/010.wav",
+        answer: "Näiteks öökull.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a2/010a.wav"
+      },
+      {
+        text: "Mis loomi te kardate?",
+        audio: "../audio/22-loodus-ja-loomad-a2/011.wav",
+        answer: "Ma kardan natuke suuri ämblikke.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a2/011a.wav"
+      },
+      {
+        text: "Mis loomad elavad grupis? Aga mis loomad elavad üksi?",
+        audio: "../audio/22-loodus-ja-loomad-a2/012.wav",
+        answer: "Hundid elavad grupis. Tiiger elab tavaliselt üksi.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a2/012a.wav"
+      },
+      {
+        text: "Mis loom sööb taimi? Mis loom sööb liha?",
+        audio: "../audio/22-loodus-ja-loomad-a2/013.wav",
+        answer: "Lehm sööb taimi. Lõvi sööb liha.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a2/013a.wav"
+      },
+      {
+        text: "Kumb on ohtlikum, kas lõvi või haikala?",
+        audio: "../audio/22-loodus-ja-loomad-a2/014.wav",
+        answer: "Mõlemad on ohtlikud loomad.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a2/014a.wav"
+      },
+      {
+        text: "Mida te teete, kui teie toas on hiir? Aga skorpion? Aga sääsk?",
+        audio: "../audio/22-loodus-ja-loomad-a2/015.wav",
+        answer: "Kui toas on hiir või sääsk, ma püüan selle kinni või ajan välja.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a2/015a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

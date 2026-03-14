@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7. KÖÖK - A1 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #b07d4f">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 07 • A1</div>
+      <h1 class="topic-heading">7. KÖÖK</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+<script>
+  const items = [
+    {
+      text: "Kas teie köök on suur või väike?",
+      audio: "../audio/07-kook-a1/001.wav",
+      answer: "Minu köök on keskmine.",
+      answerAudio: "../audio/07-kook-a1/001a.wav"
+    },
+    {
+      text: "Mis värvi on teie köögikardin?",
+      audio: "../audio/07-kook-a1/002.wav",
+      answer: "Minu köögikardin on valge.",
+      answerAudio: "../audio/07-kook-a1/002a.wav"
+    },
+    {
+      text: "Kas teie köögis on kohvimasin?",
+      audio: "../audio/07-kook-a1/003.wav",
+      answer: "Jah, minu köögis on kohvimasin.",
+      answerAudio: "../audio/07-kook-a1/003a.wav"
+    },
+    {
+      text: "Mis värvi on teie külmkapp?",
+      audio: "../audio/07-kook-a1/004.wav",
+      answer: "Minu külmkapp on valge.",
+      answerAudio: "../audio/07-kook-a1/004a.wav"
+    },
+    {
+      text: "Mis puuviljad on teie külmkapis?",
+      audio: "../audio/07-kook-a1/005.wav",
+      answer: "Minu külmkapis on õunad ja banaanid.",
+      answerAudio: "../audio/07-kook-a1/005a.wav"
+    },
+    {
+      text: "Mis joogid on teie külmkapis?",
+      audio: "../audio/07-kook-a1/006.wav",
+      answer: "Minu külmkapis on piim ja mahl.",
+      answerAudio: "../audio/07-kook-a1/006a.wav"
+    },
+    {
+      text: "Kas teie külmkapis on ketšup? Aga majonees? Aga sinep?",
+      audio: "../audio/07-kook-a1/007.wav",
+      answer: "Jah, minu külmkapis on ketšup ja majonees. Sinepit mõnikord on.",
+      answerAudio: "../audio/07-kook-a1/007a.wav"
+    },
+    {
+      text: "Kas te teate, mida tähendab salvrätik? Aga pajalapp? Aga sõel? Aga tainarull?",
+      audio: "../audio/07-kook-a1/008.wav",
+      answer: "Jah, ma tean neid sõnu. Need on köögiasjad.",
+      answerAudio: "../audio/07-kook-a1/008a.wav"
+    },
+    {
+      text: "Mitu põlle teil on? Mis värvi teie põll on?",
+      audio: "../audio/07-kook-a1/009.wav",
+      answer: "Mul on üks põll. See on sinine.",
+      answerAudio: "../audio/07-kook-a1/009a.wav"
+    },
+    {
+      text: "Kas teie köögilaual on praegu mustad nõud?",
+      audio: "../audio/07-kook-a1/010.wav",
+      answer: "Ei, minu köögilaual ei ole musti nõusid.",
+      answerAudio: "../audio/07-kook-a1/010a.wav"
+    },
+    {
+      text: "Kas teie köögilaual on lilled?",
+      audio: "../audio/07-kook-a1/011.wav",
+      answer: "Ei, tavaliselt ei ole.",
+      answerAudio: "../audio/07-kook-a1/011a.wav"
+    },
+    {
+      text: "Kas teil on ilusad šampuseklaasid?",
+      audio: "../audio/07-kook-a1/012.wav",
+      answer: "Jah, mul on paar ilusat šampuseklaasi.",
+      answerAudio: "../audio/07-kook-a1/012a.wav"
+    },
+    {
+      text: "Mida te teete hommikul köögis? Mida te hommikul köögis ei tee?",
+      audio: "../audio/07-kook-a1/013.wav",
+      answer: "Hommikul ma teen kohvi ja söön hommikusööki. Ma ei küpseta kooki hommikul.",
+      answerAudio: "../audio/07-kook-a1/013a.wav"
+    },
+    {
+      text: "Kas punast või sinist värvi köök on ilus?",
+      audio: "../audio/07-kook-a1/014.wav",
+      answer: "Minu arvates on sinine köök ilus.",
+      answerAudio: "../audio/07-kook-a1/014a.wav"
+    },
+    {
+      text: "Kas teie köögis on vaip? Mis värvi vaip on?",
+      audio: "../audio/07-kook-a1/015.wav",
+      answer: "Jah, minu köögis on vaip. See on pruun.",
+      answerAudio: "../audio/07-kook-a1/015a.wav"
+    },
+    {
+      text: "Kas teie köögikapis on kaneel? Aga ingver? Aga must pipar? Aga pruun suhkur?",
+      audio: "../audio/07-kook-a1/016.wav",
+      answer: "Jah, minu köögikapis on kaneel ja must pipar.",
+      answerAudio: "../audio/07-kook-a1/016a.wav"
+    },
+    {
+      text: "Mitu tooli on teie köögis?",
+      audio: "../audio/07-kook-a1/017.wav",
+      answer: "Minu köögis on neli tooli.",
+      answerAudio: "../audio/07-kook-a1/017a.wav"
+    },
+    {
+      text: "Kas te küpsetate mõnikord kooki?",
+      audio: "../audio/07-kook-a1/018.wav",
+      answer: "Jah, mõnikord ma küpsetan kooki.",
+      answerAudio: "../audio/07-kook-a1/018a.wav"
+    },
+    {
+      text: "Kas teie köögis on kell? Kus see on?",
+      audio: "../audio/07-kook-a1/019.wav",
+      answer: "Jah, köögis on kell. See on seinal.",
+      answerAudio: "../audio/07-kook-a1/019a.wav"
+    },
+    {
+      text: "Mitu kokaraamatut teil on?",
+      audio: "../audio/07-kook-a1/020.wav",
+      answer: "Mul on kaks kokaraamatut.",
+      answerAudio: "../audio/07-kook-a1/020a.wav"
+    }
+  ];
+
+  initAudioList(items);
+</script>
+</body>
+</html>

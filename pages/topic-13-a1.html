@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>13. RIIDED - A1 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #8b5cf6">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 13 • A1</div>
+      <h1 class="topic-heading">13. RIIDED - SUL ON VÄGA ILUS PLUUS!</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Mis teil praegu seljas on?",
+        audio: "../audio/13-riided-a1/001.wav",
+        answer: "Mul on praegu seljas T-särk ja teksad.",
+        answerAudio: "../audio/13-riided-a1/001a.wav"
+      },
+      {
+        text: "Mis teil eile seljas oli?",
+        audio: "../audio/13-riided-a1/002.wav",
+        answer: "Eile oli mul seljas sinine särk ja mustad püksid.",
+        answerAudio: "../audio/13-riided-a1/002a.wav"
+      },
+      {
+        text: "Mis teil õhtul kodus seljas on?",
+        audio: "../audio/13-riided-a1/003.wav",
+        answer: "Õhtul kodus on mul seljas mugavad riided.",
+        answerAudio: "../audio/13-riided-a1/003a.wav"
+      },
+      {
+        text: "Mis teil tööl seljas on?",
+        audio: "../audio/13-riided-a1/004.wav",
+        answer: "Tööl on mul tavaliselt särk ja püksid.",
+        answerAudio: "../audio/13-riided-a1/004a.wav"
+      },
+      {
+        text: "Kas teil on kollane pluus? Aga punane kampsun? Aga lillad püksid?",
+        audio: "../audio/13-riided-a1/005.wav",
+        answer: "Mul ei ole kollast pluusi. Mul on punane kampsun.",
+        answerAudio: "../audio/13-riided-a1/005a.wav"
+      },
+      {
+        text: "Kas teil on väike must kleit? Kas teil on must ülikond?",
+        audio: "../audio/13-riided-a1/006.wav",
+        answer: "Mul ei ole kleiti. Mul on must ülikond.",
+        answerAudio: "../audio/13-riided-a1/006a.wav"
+      },
+      {
+        text: "Mis talveriided teil on?",
+        audio: "../audio/13-riided-a1/007.wav",
+        answer: "Mul on talvejope, sall, müts ja kindad.",
+        answerAudio: "../audio/13-riided-a1/007a.wav"
+      },
+      {
+        text: "Mitu valget T-särki teil on?",
+        audio: "../audio/13-riided-a1/008.wav",
+        answer: "Mul on kolm valget T-särki.",
+        answerAudio: "../audio/13-riided-a1/008a.wav"
+      },
+      {
+        text: "Mis värvi jope teil on?",
+        audio: "../audio/13-riided-a1/009.wav",
+        answer: "Minu jope on must.",
+        answerAudio: "../audio/13-riided-a1/009a.wav"
+      },
+      {
+        text: "Mis on teie lemmikriided?",
+        audio: "../audio/13-riided-a1/010.wav",
+        answer: "Minu lemmikriided on mugavad T-särgid ja teksad.",
+        answerAudio: "../audio/13-riided-a1/010a.wav"
+      },
+      {
+        text: "Mis värvi ujumisriided teil on? Aga mis värvi ujumisprillid teil on?",
+        audio: "../audio/13-riided-a1/011.wav",
+        answer: "Minu ujumisriided on mustad. Ujumisprillid on sinised.",
+        answerAudio: "../audio/13-riided-a1/011a.wav"
+      },
+      {
+        text: "Mis on väiksem, kas XS või XL?",
+        audio: "../audio/13-riided-a1/012.wav",
+        answer: "XS on väiksem kui XL.",
+        answerAudio: "../audio/13-riided-a1/012a.wav"
+      },
+      {
+        text: "Kas teil on mustad kingad? Aga pruunid saapad?",
+        audio: "../audio/13-riided-a1/013.wav",
+        answer: "Jah, mul on mustad kingad. Pruune saapaid mul ei ole.",
+        answerAudio: "../audio/13-riided-a1/013a.wav"
+      },
+      {
+        text: "Kas teie kingad on mugavad?",
+        audio: "../audio/13-riided-a1/014.wav",
+        answer: "Jah, minu kingad on mugavad.",
+        answerAudio: "../audio/13-riided-a1/014a.wav"
+      },
+      {
+        text: "Kas teile meeldivad valged riided? Aga mustad riided?",
+        audio: "../audio/13-riided-a1/015.wav",
+        answer: "Mulle meeldivad mustad riided rohkem kui valged.",
+        answerAudio: "../audio/13-riided-a1/015a.wav"
+      },
+      {
+        text: "Mis värvi riided teile meeldivad?",
+        audio: "../audio/13-riided-a1/016.wav",
+        answer: "Mulle meeldivad sinised ja mustad riided.",
+        answerAudio: "../audio/13-riided-a1/016a.wav"
+      },
+      {
+        text: "Kas te teate, mida tähendab öösärk? Aga rinnahoidja? Aga sukkpüksid? Aga traksid?",
+        audio: "../audio/13-riided-a1/017.wav",
+        answer: "Jah, ma tean neid sõnu. Need on riiete nimetused.",
+        answerAudio: "../audio/13-riided-a1/017a.wav"
+      },
+      {
+        text: "Mitu mütsi teil on? Mis värvi need on?",
+        audio: "../audio/13-riided-a1/018.wav",
+        answer: "Mul on kaks mütsi. Need on must ja hall.",
+        answerAudio: "../audio/13-riided-a1/018a.wav"
+      },
+      {
+        text: "Mitu kampsunit teil on? Mis värvi need on?",
+        audio: "../audio/13-riided-a1/019.wav",
+        answer: "Mul on kolm kampsunit. Need on sinine, must ja hall.",
+        answerAudio: "../audio/13-riided-a1/019a.wav"
+      },
+      {
+        text: "Kas teie riided on alati kapis? Kas teie riided on mõnikord põrandal?",
+        audio: "../audio/13-riided-a1/020.wav",
+        answer: "Tavaliselt on mu riided kapis. Mõnikord on need ka põrandal.",
+        answerAudio: "../audio/13-riided-a1/020a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

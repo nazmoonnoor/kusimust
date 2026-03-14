@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3. SÖÖGID JA JOOGID - A1 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #f2a51a">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 03 • A1</div>
+      <h1 class="topic-heading">3. SÖÖGID JA JOOGID</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+<script>
+  const items = [
+    {
+      text: "Mida te sööte hommikul? Aga mida te sööte öösel?",
+      audio: "../audio/03-soogid-ja-joogid-a1/001.wav",
+      answer: "Hommikul ma söön leiba ja muna. Öösel ma tavaliselt ei söö.",
+      answerAudio: "../audio/03-soogid-ja-joogid-a1/001a.wav"
+    },
+    {
+      text: "Mitu minutit te hommikul sööte?",
+      audio: "../audio/03-soogid-ja-joogid-a1/002.wav",
+      answer: "Ma söön hommikul umbes kümme minutit.",
+      answerAudio: "../audio/03-soogid-ja-joogid-a1/002a.wav"
+    },
+    {
+      text: "Kas te joote kohvi? Mitu kohvi te päevas joote?",
+      audio: "../audio/03-soogid-ja-joogid-a1/003.wav",
+      answer: "Jah, ma joon kohvi. Ma joon kaks kohvi päevas.",
+      answerAudio: "../audio/03-soogid-ja-joogid-a1/003a.wav"
+    },
+    {
+      text: "Mitu kohvitassi teil kodus on?",
+      audio: "../audio/03-soogid-ja-joogid-a1/004.wav",
+      answer: "Minu kodus on umbes kuus kohvitassi.",
+      answerAudio: "../audio/03-soogid-ja-joogid-a1/004a.wav"
+    },
+    {
+      text: "Mis värvi on teie lemmiktass?",
+      audio: "../audio/03-soogid-ja-joogid-a1/005.wav",
+      answer: "Minu lemmiktass on sinine.",
+      answerAudio: "../audio/03-soogid-ja-joogid-a1/005a.wav"
+    },
+    {
+      text: "Kus te lõunat sööte?",
+      audio: "../audio/03-soogid-ja-joogid-a1/006.wav",
+      answer: "Tavaliselt ma söön lõunat tööl või kodus.",
+      answerAudio: "../audio/03-soogid-ja-joogid-a1/006a.wav"
+    },
+    {
+      text: "Kas te olete hea kokk? Mis toitu te teete väga hästi?",
+      audio: "../audio/03-soogid-ja-joogid-a1/007.wav",
+      answer: "Ma ei ole väga hea kokk, aga ma teen hästi riisi ja kana.",
+      answerAudio: "../audio/03-soogid-ja-joogid-a1/007a.wav"
+    },
+    {
+      text: "Kas teile maitseb must leib? Aga valge vein? Aga punane kala?",
+      audio: "../audio/03-soogid-ja-joogid-a1/008.wav",
+      answer: "Mulle maitseb must leib ja punane kala. Ma ei joo valget viina.",
+      answerAudio: "../audio/03-soogid-ja-joogid-a1/008a.wav"
+    },
+    {
+      text: "Kas teile maitsevad seened? Aga rosinad? Aga kummikommid?",
+      audio: "../audio/03-soogid-ja-joogid-a1/009.wav",
+      answer: "Mulle maitsevad seened. Rosinad mulle väga ei meeldi. Kummikommid mulle meeldivad natuke.",
+      answerAudio: "../audio/03-soogid-ja-joogid-a1/009a.wav"
+    },
+    {
+      text: "Mis on teie lemmikrestoran? Kas see restoran on kallis?",
+      audio: "../audio/03-soogid-ja-joogid-a1/010.wav",
+      answer: "Minu lemmikrestoran on üks väike restoran Tallinnas. See ei ole väga kallis.",
+      answerAudio: "../audio/03-soogid-ja-joogid-a1/010a.wav"
+    },
+    {
+      text: "Kas te sööte leiba, kui te sööte suppi?",
+      audio: "../audio/03-soogid-ja-joogid-a1/011.wav",
+      answer: "Jah, ma söön suppi leivaga.",
+      answerAudio: "../audio/03-soogid-ja-joogid-a1/011a.wav"
+    },
+    {
+      text: "Kas teie külmkapis on piim? Aga õlu? Aga mesi?",
+      audio: "../audio/03-soogid-ja-joogid-a1/012.wav",
+      answer: "Minu külmkapis on piim ja mesi. Õlut tavaliselt ei ole.",
+      answerAudio: "../audio/03-soogid-ja-joogid-a1/012a.wav"
+    },
+    {
+      text: "Mis teie külmkapis alati on?",
+      audio: "../audio/03-soogid-ja-joogid-a1/013.wav",
+      answer: "Minu külmkapis on alati piim, muna ja puuviljad.",
+      answerAudio: "../audio/03-soogid-ja-joogid-a1/013a.wav"
+    },
+    {
+      text: "Kas te sööte friikartuleid ketšupiga? Aga makarone? Aga pitsat?",
+      audio: "../audio/03-soogid-ja-joogid-a1/014.wav",
+      answer: "Jah, ma söön friikartuleid ketšupiga. Mulle meeldivad ka makaronid ja pitsa.",
+      answerAudio: "../audio/03-soogid-ja-joogid-a1/014a.wav"
+    },
+    {
+      text: "Mida te sööte ja joote, kui teil on sünnipäev?",
+      audio: "../audio/03-soogid-ja-joogid-a1/015.wav",
+      answer: "Sünnipäeval ma söön torti ja head toitu. Ma joon mahla või teed.",
+      answerAudio: "../audio/03-soogid-ja-joogid-a1/015a.wav"
+    },
+    {
+      text: "Kui palju maksab pudel head veini? Aga kilo suhkrut? Aga väike šokolaad?",
+      audio: "../audio/03-soogid-ja-joogid-a1/016.wav",
+      answer: "Pudel head veini maksab umbes kümme eurot. Kilo suhkrut maksab umbes kaks eurot. Väike šokolaad maksab umbes üks euro.",
+      answerAudio: "../audio/03-soogid-ja-joogid-a1/016a.wav"
+    },
+    {
+      text: "Mitu grammi on pool kilo jahu?",
+      audio: "../audio/03-soogid-ja-joogid-a1/017.wav",
+      answer: "Pool kilo jahu on viissada grammi.",
+      answerAudio: "../audio/03-soogid-ja-joogid-a1/017a.wav"
+    },
+    {
+      text: "Mitu korda te päevas sööte?",
+      audio: "../audio/03-soogid-ja-joogid-a1/018.wav",
+      answer: "Ma söön tavaliselt kolm korda päevas.",
+      answerAudio: "../audio/03-soogid-ja-joogid-a1/018a.wav"
+    },
+    {
+      text: "Kas te teate, mida tähendab hapukapsas? Aga morss? Aga kohuke? Aga piparkook?",
+      audio: "../audio/03-soogid-ja-joogid-a1/019.wav",
+      answer: "Jah, ma tean. Need on Eesti toidud ja joogid.",
+      answerAudio: "../audio/03-soogid-ja-joogid-a1/019a.wav"
+    },
+    {
+      text: "Mis söök on Eestis väga hea? Mis söök ei ole Eestis väga hea?",
+      audio: "../audio/03-soogid-ja-joogid-a1/020.wav",
+      answer: "Eestis on väga hea must leib ja kala. Mõni söök mulle väga ei meeldi.",
+      answerAudio: "../audio/03-soogid-ja-joogid-a1/020a.wav"
+    }
+  ];
+
+  initAudioList(items);
+</script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>30. INTERNET - A1 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #0ea5e9">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 30 • A1</div>
+      <h1 class="topic-heading">30. INTERNET - KAS SIIN ON INTERNET?</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kas teil on kodus internet? Aga kas teil on telefonis internet?",
+        audio: "../audio/30-internet-a1/001.wav",
+        answer: "Jah, mul on kodus internet ja telefonis ka.",
+        answerAudio: "../audio/30-internet-a1/001a.wav"
+      },
+      {
+        text: "Kas teie internet on kiire või aeglane?",
+        audio: "../audio/30-internet-a1/002.wav",
+        answer: "Minu internet on üsna kiire.",
+        answerAudio: "../audio/30-internet-a1/002a.wav"
+      },
+      {
+        text: "Kas teie internetil on salasõna?",
+        audio: "../audio/30-internet-a1/003.wav",
+        answer: "Jah, minu internetil on salasõna.",
+        answerAudio: "../audio/30-internet-a1/003a.wav"
+      },
+      {
+        text: "Kas teil on kodus vaja internetti? Aga tööl?",
+        audio: "../audio/30-internet-a1/004.wav",
+        answer: "Jah, mul on kodus ja tööl internetti vaja.",
+        answerAudio: "../audio/30-internet-a1/004a.wav"
+      },
+      {
+        text: "Mis internetibrauserit te kasutate?",
+        audio: "../audio/30-internet-a1/005.wav",
+        answer: "Ma kasutan tavaliselt Chrome’i.",
+        answerAudio: "../audio/30-internet-a1/005a.wav"
+      },
+      {
+        text: "Mitu tundi päevas te internetti kasutate?",
+        audio: "../audio/30-internet-a1/006.wav",
+        answer: "Ma kasutan internetti umbes kolm tundi päevas.",
+        answerAudio: "../audio/30-internet-a1/006a.wav"
+      },
+      {
+        text: "Mida te internetis teete?",
+        audio: "../audio/30-internet-a1/007.wav",
+        answer: "Ma loen uudiseid, vaatan videoid ja kirjutan e-kirju.",
+        answerAudio: "../audio/30-internet-a1/007a.wav"
+      },
+      {
+        text: "Kas teil on sotsiaalmeedias konto? Mitu kontot teil on?",
+        audio: "../audio/30-internet-a1/008.wav",
+        answer: "Jah, mul on sotsiaalmeedias konto. Mul on kaks kontot.",
+        answerAudio: "../audio/30-internet-a1/008a.wav"
+      },
+      {
+        text: "Kas teil on koduleht?",
+        audio: "../audio/30-internet-a1/009.wav",
+        answer: "Ei, mul ei ole kodulehte.",
+        answerAudio: "../audio/30-internet-a1/009a.wav"
+      },
+      {
+        text: "Kas te kirjutate internetis kommentaare? Aga kas te loete internetis kommentaare?",
+        audio: "../audio/30-internet-a1/010.wav",
+        answer: "Mõnikord loen kommentaare, aga ma tavaliselt ei kirjuta neid.",
+        answerAudio: "../audio/30-internet-a1/010a.wav"
+      },
+      {
+        text: "Kas te ostate internetist kinopileti? Aga bussipileti? Aga lennupileti?",
+        audio: "../audio/30-internet-a1/011.wav",
+        answer: "Jah, ma ostan mõnikord internetist bussipileti ja lennupileti.",
+        answerAudio: "../audio/30-internet-a1/011a.wav"
+      },
+      {
+        text: "Kas te õpite internetis eesti keelt?",
+        audio: "../audio/30-internet-a1/012.wav",
+        answer: "Jah, ma õpin internetis eesti keelt.",
+        answerAudio: "../audio/30-internet-a1/012a.wav"
+      },
+      {
+        text: "Mis on teie lemmikveebileht internetis?",
+        audio: "../audio/30-internet-a1/013.wav",
+        answer: "Minu lemmikveebileht on YouTube.",
+        answerAudio: "../audio/30-internet-a1/013a.wav"
+      },
+      {
+        text: "Kas te käite internetipangas?",
+        audio: "../audio/30-internet-a1/014.wav",
+        answer: "Jah, ma kasutan internetipanka.",
+        answerAudio: "../audio/30-internet-a1/014a.wav"
+      },
+      {
+        text: "Mitu e-kirja te päevas saadate? Aga mitu e-kirja te päevas saate?",
+        audio: "../audio/30-internet-a1/015.wav",
+        answer: "Ma saadan umbes viis e-kirja päevas.",
+        answerAudio: "../audio/30-internet-a1/015a.wav"
+      },
+      {
+        text: "Kas teie foto on internetis? Aga teie CV?",
+        audio: "../audio/30-internet-a1/016.wav",
+        answer: "Jah, minu foto ja CV on internetis.",
+        answerAudio: "../audio/30-internet-a1/016a.wav"
+      },
+      {
+        text: "Kas te teate, mida tähendab netisõber? Aga netisõltlane? Aga digiallkiri? Aga rämpskiri?",
+        audio: "../audio/30-internet-a1/017.wav",
+        answer: "Jah, ma tean neid sõnu.",
+        answerAudio: "../audio/30-internet-a1/017a.wav"
+      },
+      {
+        text: "Kas te loete internetis uudiseid?",
+        audio: "../audio/30-internet-a1/018.wav",
+        answer: "Jah, ma loen iga päev internetis uudiseid.",
+        answerAudio: "../audio/30-internet-a1/018a.wav"
+      },
+      {
+        text: "Kas te usute kõike, mis on internetis?",
+        audio: "../audio/30-internet-a1/019.wav",
+        answer: "Ei, ma ei usu kõike internetis.",
+        answerAudio: "../audio/30-internet-a1/019a.wav"
+      },
+      {
+        text: "Mis on teie tavaline kasutajanimi?",
+        audio: "../audio/30-internet-a1/020.wav",
+        answer: "Minu kasutajanimi on tavaliselt minu nimi.",
+        answerAudio: "../audio/30-internet-a1/020a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

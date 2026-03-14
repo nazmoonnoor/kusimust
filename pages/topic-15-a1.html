@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>15. LINN - A1 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #0f766e">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 15 • A1</div>
+      <h1 class="topic-heading">15. LINN - LÄHME TAKSOGA LINNA!</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Mis linna te hästi tunnete? Kas see on suur või väike linn?",
+        audio: "../audio/15-linn-a1/001.wav",
+        answer: "Ma tunnen hästi Tallinna. See on keskmise suurusega linn.",
+        answerAudio: "../audio/15-linn-a1/001a.wav"
+      },
+      {
+        text: "Mis on kesklinnas?",
+        audio: "../audio/15-linn-a1/002.wav",
+        answer: "Kesklinnas on poed, restoranid ja kontorid.",
+        answerAudio: "../audio/15-linn-a1/002a.wav"
+      },
+      {
+        text: "Mis on kõige pikem tänav selles linnas?",
+        audio: "../audio/15-linn-a1/003.wav",
+        answer: "Ma arvan, et üks pikk tänav on Pärnu maantee.",
+        answerAudio: "../audio/15-linn-a1/003a.wav"
+      },
+      {
+        text: "Kas selles linnas on raudteejaam? Aga bussijaam? Aga sadam?",
+        audio: "../audio/15-linn-a1/004.wav",
+        answer: "Jah, Tallinnas on raudteejaam, bussijaam ja sadam.",
+        answerAudio: "../audio/15-linn-a1/004a.wav"
+      },
+      {
+        text: "Kas selles linnas on suur kirik? Kus see on? Mis selle nimi on?",
+        audio: "../audio/15-linn-a1/005.wav",
+        answer: "Jah, seal on suur kirik. See on Toomkirik ja see on vanalinnas.",
+        answerAudio: "../audio/15-linn-a1/005a.wav"
+      },
+      {
+        text: "Kas selles linnas on veekeskus? Aga teater? Aga ülikool?",
+        audio: "../audio/15-linn-a1/006.wav",
+        answer: "Jah, seal on veekeskus, teater ja ülikool.",
+        answerAudio: "../audio/15-linn-a1/006a.wav"
+      },
+      {
+        text: "Kas selles linnas on rand? Aga loomaaed? Aga botaanikaaed?",
+        audio: "../audio/15-linn-a1/007.wav",
+        answer: "Jah, Tallinnas on rand, loomaaed ja botaanikaaed.",
+        answerAudio: "../audio/15-linn-a1/007a.wav"
+      },
+      {
+        text: "Kus on hea toidupood? Aga hea raamatukogu? Aga hea haigla? Aga hea kool?",
+        audio: "../audio/15-linn-a1/008.wav",
+        answer: "Hea toidupood on minu kodu lähedal. Raamatukogu ja haigla on kesklinnas.",
+        answerAudio: "../audio/15-linn-a1/008a.wav"
+      },
+      {
+        text: "Missugune park on kõige ilusam? Missugune kaubanduskeskus on kõige suurem?",
+        audio: "../audio/15-linn-a1/009.wav",
+        answer: "Minu arvates on Kadrioru park väga ilus. Üks suur kaubanduskeskus on Ülemiste keskus.",
+        answerAudio: "../audio/15-linn-a1/009a.wav"
+      },
+      {
+        text: "Mitu parki on selles linnas? Aga mitu kaubanduskeskust?",
+        audio: "../audio/15-linn-a1/010.wav",
+        answer: "Tallinnas on palju parke ja mitu kaubanduskeskust.",
+        answerAudio: "../audio/15-linn-a1/010a.wav"
+      },
+      {
+        text: "Kas selles linnas on metroo?",
+        audio: "../audio/15-linn-a1/011.wav",
+        answer: "Ei, Tallinnas ei ole metrood.",
+        answerAudio: "../audio/15-linn-a1/011a.wav"
+      },
+      {
+        text: "Kas selles linnas sõidavad bussid? Aga trammid? Aga trollid? Aga taksod?",
+        audio: "../audio/15-linn-a1/012.wav",
+        answer: "Jah, siin sõidavad bussid, trammid, trollid ja taksod.",
+        answerAudio: "../audio/15-linn-a1/012a.wav"
+      },
+      {
+        text: "Kas selles linnas on head jalgrattateed?",
+        audio: "../audio/15-linn-a1/013.wav",
+        answer: "Jah, siin on head jalgrattateed.",
+        answerAudio: "../audio/15-linn-a1/013a.wav"
+      },
+      {
+        text: "Kas teil on selles linnas lemmikkohvik? Aga restoran? Kus see on? Mis selle nimi on?",
+        audio: "../audio/15-linn-a1/014.wav",
+        answer: "Jah, mul on lemmikkohvik kesklinnas.",
+        answerAudio: "../audio/15-linn-a1/014a.wav"
+      },
+      {
+        text: "Kas see linn on ilusam suvel või talvel?",
+        audio: "../audio/15-linn-a1/015.wav",
+        answer: "Minu arvates on linn ilusam suvel.",
+        answerAudio: "../audio/15-linn-a1/015a.wav"
+      },
+      {
+        text: "Kas selles linnas on talvel jõulukuusk? Kus see on?",
+        audio: "../audio/15-linn-a1/016.wav",
+        answer: "Jah, jõulukuusk on tavaliselt Raekoja platsil.",
+        answerAudio: "../audio/15-linn-a1/016a.wav"
+      },
+      {
+        text: "Kas selles linnas on suvel festival? Kus see on? Millal see toimub?",
+        audio: "../audio/15-linn-a1/017.wav",
+        answer: "Jah, suvel on festivalid kesklinnas ja parkides.",
+        answerAudio: "../audio/15-linn-a1/017a.wav"
+      },
+      {
+        text: "Kas te teate, mida tähendab pilvelõhkuja? Aga lõbustuspark? Aga purskkaev? Aga peatänav?",
+        audio: "../audio/15-linn-a1/018.wav",
+        answer: "Jah, ma tean neid sõnu.",
+        answerAudio: "../audio/15-linn-a1/018a.wav"
+      },
+      {
+        text: "Kus selles linnas on hea jalutada? Aga kus on hea tõukerattaga sõita?",
+        audio: "../audio/15-linn-a1/019.wav",
+        answer: "Hea jalutada on vanalinnas ja parkides.",
+        answerAudio: "../audio/15-linn-a1/019a.wav"
+      },
+      {
+        text: "Kas teile meeldib suvel linnas olla? Aga talvel?",
+        audio: "../audio/15-linn-a1/020.wav",
+        answer: "Jah, mulle meeldib linnas olla suvel ja ka talvel.",
+        answerAudio: "../audio/15-linn-a1/020a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

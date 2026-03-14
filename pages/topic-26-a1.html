@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>26. SPORT - A1 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #0f766e">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 26 • A1</div>
+      <h1 class="topic-heading">26. SPORT - LÄHME TRENNI!</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kas te teete sporti? Aga kas te vaatate sporti?",
+        audio: "../audio/26-sport-a1/001.wav",
+        answer: "Jah, ma teen mõnikord sporti. Ma vaatan ka sporti.",
+        answerAudio: "../audio/26-sport-a1/001a.wav"
+      },
+      {
+        text: "Kas te käite trennis? Millal te trennis käite? Kui tihti te trennis käite?",
+        audio: "../audio/26-sport-a1/002.wav",
+        answer: "Jah, ma käin trennis. Tavaliselt õhtul kaks korda nädalas.",
+        answerAudio: "../audio/26-sport-a1/002a.wav"
+      },
+      {
+        text: "Kas teile meeldib üksi sporti teha? Mis sporti te üksi teete?",
+        audio: "../audio/26-sport-a1/003.wav",
+        answer: "Jah, mulle meeldib üksi sporti teha. Ma jalutan või jooksen.",
+        answerAudio: "../audio/26-sport-a1/003a.wav"
+      },
+      {
+        text: "Mis sporti te koos sõbraga teete?",
+        audio: "../audio/26-sport-a1/004.wav",
+        answer: "Ma mängin koos sõbraga sulgpalli.",
+        answerAudio: "../audio/26-sport-a1/004a.wav"
+      },
+      {
+        text: "Kas teile meeldib talvel sporti teha?",
+        audio: "../audio/26-sport-a1/005.wav",
+        answer: "Jah, mulle meeldib talvel jalutada.",
+        answerAudio: "../audio/26-sport-a1/005a.wav"
+      },
+      {
+        text: "Millal te teete rohkem sporti, kas suvel või talvel?",
+        audio: "../audio/26-sport-a1/006.wav",
+        answer: "Ma teen rohkem sporti suvel.",
+        answerAudio: "../audio/26-sport-a1/006a.wav"
+      },
+      {
+        text: "Kas te teete sporti rohkem väljas või sees?",
+        audio: "../audio/26-sport-a1/007.wav",
+        answer: "Tavaliselt teen sporti väljas.",
+        answerAudio: "../audio/26-sport-a1/007a.wav"
+      },
+      {
+        text: "Kas te kuulate muusikat, kui te teete sporti? Mis muusikat te kuulate?",
+        audio: "../audio/26-sport-a1/008.wav",
+        answer: "Jah, ma kuulan muusikat. Tavaliselt popmuusikat.",
+        answerAudio: "../audio/26-sport-a1/008a.wav"
+      },
+      {
+        text: "Kas teil on jalgratas? Mis värvi teie jalgratas on? Kus teie jalgratas praegu on?",
+        audio: "../audio/26-sport-a1/009.wav",
+        answer: "Jah, mul on jalgratas. See on must ja see on garaažis.",
+        answerAudio: "../audio/26-sport-a1/009a.wav"
+      },
+      {
+        text: "Kas te oskate jalgrattaga sõita? Kus te sõidate rattaga?",
+        audio: "../audio/26-sport-a1/010.wav",
+        answer: "Jah, ma oskan rattaga sõita. Ma sõidan pargis.",
+        answerAudio: "../audio/26-sport-a1/010a.wav"
+      },
+      {
+        text: "Kas te oskate suusatada? Kas teil on suusad?",
+        audio: "../audio/26-sport-a1/011.wav",
+        answer: "Jah, ma oskan natuke suusatada.",
+        answerAudio: "../audio/26-sport-a1/011a.wav"
+      },
+      {
+        text: "Kas teile meeldib jalgpalli mängida? Kas teile meeldib jalgpalli vaadata?",
+        audio: "../audio/26-sport-a1/012.wav",
+        answer: "Jah, mulle meeldib jalgpalli mängida ja vaadata.",
+        answerAudio: "../audio/26-sport-a1/012a.wav"
+      },
+      {
+        text: "Kas te mängite hästi jalgpalli? Aga korvpalli? Aga tennist?",
+        audio: "../audio/26-sport-a1/013.wav",
+        answer: "Ma mängin jalgpalli üsna hästi.",
+        answerAudio: "../audio/26-sport-a1/013a.wav"
+      },
+      {
+        text: "Kas teie pere on sportlik? Kes on teie peres kõige sportlikum?",
+        audio: "../audio/26-sport-a1/014.wav",
+        answer: "Minu pere on üsna sportlik.",
+        answerAudio: "../audio/26-sport-a1/014a.wav"
+      },
+      {
+        text: "Kas teile meeldib ujuda?",
+        audio: "../audio/26-sport-a1/015.wav",
+        answer: "Jah, mulle meeldib ujuda.",
+        answerAudio: "../audio/26-sport-a1/015a.wav"
+      },
+      {
+        text: "Kas meres on hea ujuda? Aga basseinis?",
+        audio: "../audio/26-sport-a1/016.wav",
+        answer: "Jah, meres ja basseinis on hea ujuda.",
+        answerAudio: "../audio/26-sport-a1/016a.wav"
+      },
+      {
+        text: "Kas teie kodu lähedal on spordiklubi? Aga staadion? Aga ujula?",
+        audio: "../audio/26-sport-a1/017.wav",
+        answer: "Jah, minu kodu lähedal on spordiklubi ja ujula.",
+        answerAudio: "../audio/26-sport-a1/017a.wav"
+      },
+      {
+        text: "Kas te teate, mida tähendab tugitoooli-sportlane? Aga tervisesportlane? Aga jõusaal? Aga kehaline kasvatus?",
+        audio: "../audio/26-sport-a1/018.wav",
+        answer: "Jah, ma tean neid sõnu.",
+        answerAudio: "../audio/26-sport-a1/018a.wav"
+      },
+      {
+        text: "Kas te teate, kui pikk on maraton? Aga kui pikk on Tartu suusamaraton?",
+        audio: "../audio/26-sport-a1/019.wav",
+        answer: "Maraton on umbes 42 kilomeetrit.",
+        answerAudio: "../audio/26-sport-a1/019a.wav"
+      },
+      {
+        text: "Kas teil on treener? Kes ta on?",
+        audio: "../audio/26-sport-a1/020.wav",
+        answer: "Ei, mul ei ole treenerit.",
+        answerAudio: "../audio/26-sport-a1/020a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>28. AED - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #4d7c0f">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 28 • A2</div>
+      <h1 class="topic-heading">28. AED - VAATA, KUI SUUR PÄEVALILL!</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kas teie aias elab siil? Aga orav? Aga konn?",
+        audio: "../audio/28-aed-a2/001.wav",
+        answer: "Mõnikord tuleb siil aeda.",
+        answerAudio: "../audio/28-aed-a2/001a.wav"
+      },
+      {
+        text: "Kas teil on kasvuhoone? Mis on teie kasvuhoones?",
+        audio: "../audio/28-aed-a2/002.wav",
+        answer: "Jah, mul on kasvuhoone. Seal kasvavad tomatid ja kurgid.",
+        answerAudio: "../audio/28-aed-a2/002a.wav"
+      },
+      {
+        text: "Kas te näete naabrit, kui olete aias? Mida naaber tavaliselt teeb?",
+        audio: "../audio/28-aed-a2/003.wav",
+        answer: "Jah, ma näen naabrit. Ta töötab aias või kastab taimi.",
+        answerAudio: "../audio/28-aed-a2/003a.wav"
+      },
+      {
+        text: "Mis aastaajal on teie aed kõige ilusam?",
+        audio: "../audio/28-aed-a2/004.wav",
+        answer: "Minu aed on kõige ilusam suvel.",
+        answerAudio: "../audio/28-aed-a2/004a.wav"
+      },
+      {
+        text: "Kas te tellite seemneid internetist või ostate poest?",
+        audio: "../audio/28-aed-a2/005.wav",
+        answer: "Tavaliselt ostan seemneid poest.",
+        answerAudio: "../audio/28-aed-a2/005a.wav"
+      },
+      {
+        text: "Mida te teete aias kevadel? Aga sügisel?",
+        audio: "../audio/28-aed-a2/006.wav",
+        answer: "Kevadel istutan taimi. Sügisel koristan aeda.",
+        answerAudio: "../audio/28-aed-a2/006a.wav"
+      },
+      {
+        text: "Mida te peate igal aastal aias tegema?",
+        audio: "../audio/28-aed-a2/007.wav",
+        answer: "Igal aastal pean muru niitma ja taimi kastma.",
+        answerAudio: "../audio/28-aed-a2/007a.wav"
+      },
+      {
+        text: "Mis värvi on sinilill? Aga lumikelluke? Aga võilill?",
+        audio: "../audio/28-aed-a2/008.wav",
+        answer: "Sinilill on sinine, lumikelluke on valge ja võilill on kollane.",
+        answerAudio: "../audio/28-aed-a2/008a.wav"
+      },
+      {
+        text: "Kes töötab teie aias kõige rohkem?",
+        audio: "../audio/28-aed-a2/009.wav",
+        answer: "Minu isa töötab aias kõige rohkem.",
+        answerAudio: "../audio/28-aed-a2/009a.wav"
+      },
+      {
+        text: "Mis kellast mis kellani te tavaliselt olete aias?",
+        audio: "../audio/28-aed-a2/010.wav",
+        answer: "Tavaliselt olen aias kella kuuest kuni kaheksani õhtul.",
+        answerAudio: "../audio/28-aed-a2/010a.wav"
+      },
+      {
+        text: "Kas teile meeldib muru niita? Aga lilli kasta?",
+        audio: "../audio/28-aed-a2/011.wav",
+        answer: "Mulle meeldib lilli kasta, aga muru niita väga ei meeldi.",
+        answerAudio: "../audio/28-aed-a2/011a.wav"
+      },
+      {
+        text: "Kui vana on teie aia kõige vanem taim? Mis taim see on? Kust te selle saite?",
+        audio: "../audio/28-aed-a2/012.wav",
+        answer: "Kõige vanem taim on õunapuu. See on umbes 20 aastat vana.",
+        answerAudio: "../audio/28-aed-a2/012a.wav"
+      },
+      {
+        text: "Mida te tegite aias eile? Mida te teete homme?",
+        audio: "../audio/28-aed-a2/013.wav",
+        answer: "Eile kastsin taimi. Homme niidan muru.",
+        answerAudio: "../audio/28-aed-a2/013a.wav"
+      },
+      {
+        text: "Kas teile meeldib, kui teie aias on lapsed? Aga koerad?",
+        audio: "../audio/28-aed-a2/014.wav",
+        answer: "Jah, mulle meeldib, kui aias on lapsed ja koerad.",
+        answerAudio: "../audio/28-aed-a2/014a.wav"
+      },
+      {
+        text: "Mida teie aias tohib teha? Aga mida teie aias ei tohi teha?",
+        audio: "../audio/28-aed-a2/015.wav",
+        answer: "Minu aias tohib mängida ja puhata, aga ei tohi prügi visata.",
+        answerAudio: "../audio/28-aed-a2/015a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

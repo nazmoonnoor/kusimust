@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4. KODU - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #55a868">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 04 • A2</div>
+      <h1 class="topic-heading">4. KODU</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+<script>
+  const items = [
+    {
+      text: "Mitu korrust on teie majas? Mitmendal korrusel te elate?",
+      audio: "../audio/04-kodu-a2/001.wav",
+      answer: "Minu majas on viis korrust. Ma elan kolmandal korrusel.",
+      answerAudio: "../audio/04-kodu-a2/001a.wav"
+    },
+    {
+      text: "Kas teie kodus on köök ja elutuba koos või eraldi? Aga vannituba ja WC?",
+      audio: "../audio/04-kodu-a2/002.wav",
+      answer: "Minu kodus on köök ja elutuba eraldi. Vannituba ja WC on koos.",
+      answerAudio: "../audio/04-kodu-a2/002a.wav"
+    },
+    {
+      text: "Kas teie köögis on laud? Mis on laua peal?",
+      audio: "../audio/04-kodu-a2/003.wav",
+      answer: "Jah, minu köögis on laud. Laua peal on puuviljad ja tass.",
+      answerAudio: "../audio/04-kodu-a2/003a.wav"
+    },
+    {
+      text: "Mis on teie köögis? Kus on külmkapp? Aga laud? Aga kraanikauss?",
+      audio: "../audio/04-kodu-a2/004.wav",
+      answer: "Minu köögis on laud, toolid ja külmkapp. Külmkapp on seina kõrval ja kraanikauss on akna all.",
+      answerAudio: "../audio/04-kodu-a2/004a.wav"
+    },
+    {
+      text: "Kes on teie kodus praegu?",
+      audio: "../audio/04-kodu-a2/005.wav",
+      answer: "Praegu on minu kodus minu pere.",
+      answerAudio: "../audio/04-kodu-a2/005a.wav"
+    },
+    {
+      text: "Kes elab teie peal? Aga all? Aga kõrval?",
+      audio: "../audio/04-kodu-a2/006.wav",
+      answer: "Minu peal elab naaber. All elab üks pere ja kõrval elab vana naine.",
+      answerAudio: "../audio/04-kodu-a2/006a.wav"
+    },
+    {
+      text: "Kuidas te koju lähete? Kas jalgsi, autoga või bussiga? Mis number bussiga?",
+      audio: "../audio/04-kodu-a2/007.wav",
+      answer: "Tavaliselt ma lähen koju autoga. Mõnikord lähen bussiga.",
+      answerAudio: "../audio/04-kodu-a2/007a.wav"
+    },
+    {
+      text: "Missugused poed on teie kodu lähedal?",
+      audio: "../audio/04-kodu-a2/008.wav",
+      answer: "Minu kodu lähedal on toidupood, apteek ja kohvik.",
+      answerAudio: "../audio/04-kodu-a2/008a.wav"
+    },
+    {
+      text: "Mis on teie elutoas? Mis on seinal? Aga laes?",
+      audio: "../audio/04-kodu-a2/009.wav",
+      answer: "Minu elutoas on diivan ja laud. Seinal on pilt ja laes on lamp.",
+      answerAudio: "../audio/04-kodu-a2/009a.wav"
+    },
+    {
+      text: "Mis värvi mööbel teile meeldib? Kas valge vaip on ilus? Aga kollane vaip?",
+      audio: "../audio/04-kodu-a2/010.wav",
+      answer: "Mulle meeldib hele mööbel. Valge vaip on ilus, aga kollane vaip mulle väga ei meeldi.",
+      answerAudio: "../audio/04-kodu-a2/010a.wav"
+    },
+    {
+      text: "Mida te õhtuti kodus teete? Aga hommikuti?",
+      audio: "../audio/04-kodu-a2/011.wav",
+      answer: "Õhtuti ma puhkan ja vaatan televiisorit. Hommikuti ma joon kohvi ja lähen tööle.",
+      answerAudio: "../audio/04-kodu-a2/011a.wav"
+    },
+    {
+      text: "Kas teie kodu on praegu korras või segamini? Kas teile meeldib koristada?",
+      audio: "../audio/04-kodu-a2/012.wav",
+      answer: "Minu kodu on praegu korras. Mulle natuke meeldib koristada.",
+      answerAudio: "../audio/04-kodu-a2/012a.wav"
+    },
+    {
+      text: "Mis kell te tavaliselt koju jõuate? Mis kell te tahaksite koju jõuda?",
+      audio: "../audio/04-kodu-a2/013.wav",
+      answer: "Tavaliselt ma jõuan koju kell kuus. Ma tahaksin koju jõuda varem.",
+      answerAudio: "../audio/04-kodu-a2/013a.wav"
+    },
+    {
+      text: "Kas teie kodus elab ämblik? Kus tema elab?",
+      audio: "../audio/04-kodu-a2/014.wav",
+      answer: "Mõnikord on minu kodus ämblik. Tavaliselt elab ta nurgas.",
+      answerAudio: "../audio/04-kodu-a2/014a.wav"
+    },
+    {
+      text: "Kes teil külas käib? Millal tema teil külas käib? Mida te koos teete?",
+      audio: "../audio/04-kodu-a2/015.wav",
+      answer: "Minu sõbrad käivad mõnikord külas. Tavaliselt nädalavahetusel. Me räägime ja joome teed.",
+      answerAudio: "../audio/04-kodu-a2/015a.wav"
+    }
+  ];
+
+  initAudioList(items);
+</script>
+</body>
+</html>

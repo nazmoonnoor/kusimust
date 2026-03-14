@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>14. TERVIS - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #b45309">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 14 • A2</div>
+      <h1 class="topic-heading">14. TERVIS</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kui tihti te haige olete?",
+        audio: "../audio/14-tervis-a2/001.wav",
+        answer: "Ma olen harva haige. Tavaliselt üks või kaks korda aastas.",
+        answerAudio: "../audio/14-tervis-a2/001a.wav"
+      },
+      {
+        text: "Kes teie peres on tihti haige?",
+        audio: "../audio/14-tervis-a2/002.wav",
+        answer: "Minu peres ei ole keegi väga tihti haige.",
+        answerAudio: "../audio/14-tervis-a2/002a.wav"
+      },
+      {
+        text: "Mida te teete, et terve olla?",
+        audio: "../audio/14-tervis-a2/003.wav",
+        answer: "Ma püüan süüa tervislikult ja jalutan iga päev.",
+        answerAudio: "../audio/14-tervis-a2/003a.wav"
+      },
+      {
+        text: "Kas te võtate vitamiine? Mis vitamiine te võtate?",
+        audio: "../audio/14-tervis-a2/004.wav",
+        answer: "Jah, ma võtan mõnikord vitamiine. Näiteks D-vitamiini.",
+        answerAudio: "../audio/14-tervis-a2/004a.wav"
+      },
+      {
+        text: "Kas hambavalu on hullem kui peavalu?",
+        audio: "../audio/14-tervis-a2/005.wav",
+        answer: "Minu arvates on hambavalu hullem kui peavalu.",
+        answerAudio: "../audio/14-tervis-a2/005a.wav"
+      },
+      {
+        text: "Kellele te helistate, kui olete haige?",
+        audio: "../audio/14-tervis-a2/006.wav",
+        answer: "Kui ma olen haige, helistan perearstile.",
+        answerAudio: "../audio/14-tervis-a2/006a.wav"
+      },
+      {
+        text: "Mida te teete, kui teil on nohu? Aga köha?",
+        audio: "../audio/14-tervis-a2/007.wav",
+        answer: "Kui mul on nohu, ma puhkan ja joon teed. Kui on köha, ma võtan ravimit.",
+        answerAudio: "../audio/14-tervis-a2/007a.wav"
+      },
+      {
+        text: "Kas teil on prillid? Kas te näete lähedale või kaugele hästi?",
+        audio: "../audio/14-tervis-a2/008.wav",
+        answer: "Jah, mul on prillid. Ma näen paremini prillidega.",
+        answerAudio: "../audio/14-tervis-a2/008a.wav"
+      },
+      {
+        text: "Kas te olite tihti haige, kui te olite laps?",
+        audio: "../audio/14-tervis-a2/009.wav",
+        answer: "Ei, lapsena ma ei olnud väga tihti haige.",
+        answerAudio: "../audio/14-tervis-a2/009a.wav"
+      },
+      {
+        text: "Millal te viimati haige olite? Kas te käisite arsti juures?",
+        audio: "../audio/14-tervis-a2/010.wav",
+        answer: "Ma olin haige eelmisel talvel. Jah, ma käisin arsti juures.",
+        answerAudio: "../audio/14-tervis-a2/010a.wav"
+      },
+      {
+        text: "Kas te olete vaktsineeritud?",
+        audio: "../audio/14-tervis-a2/011.wav",
+        answer: "Jah, ma olen vaktsineeritud.",
+        answerAudio: "../audio/14-tervis-a2/011a.wav"
+      },
+      {
+        text: "Kas teil on olnud gripp? Aga koroonaviirus? Kui kaua te haige olite?",
+        audio: "../audio/14-tervis-a2/012.wav",
+        answer: "Jah, mul on olnud gripp. Ma olin haige umbes ühe nädala.",
+        answerAudio: "../audio/14-tervis-a2/012a.wav"
+      },
+      {
+        text: "Kui tihti te käite apteegis? Mida te ostate?",
+        audio: "../audio/14-tervis-a2/013.wav",
+        answer: "Ma käin apteegis mõnikord. Tavaliselt ostan vitamiine või ravimit.",
+        answerAudio: "../audio/14-tervis-a2/013a.wav"
+      },
+      {
+        text: "Kas te istute palju arvutis? Kas teie selg hakkab valutama? Mida te siis teete?",
+        audio: "../audio/14-tervis-a2/014.wav",
+        answer: "Jah, ma istun palju arvutis. Mõnikord selg valutab ja ma teen pausi.",
+        answerAudio: "../audio/14-tervis-a2/014a.wav"
+      },
+      {
+        text: "Kas te sööte tervislikult? Mis on tervislik toit?",
+        audio: "../audio/14-tervis-a2/015.wav",
+        answer: "Jah, ma püüan süüa tervislikult. Tervislik toit on puuviljad, köögiviljad ja kala.",
+        answerAudio: "../audio/14-tervis-a2/015a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

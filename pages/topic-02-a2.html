@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2. PÄEV - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #2f74c8">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 02 • A2</div>
+      <h1 class="topic-heading">2. PÄEV</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+<script>
+const items = [
+{
+text: "Kuidas teie hommik algab? Mida te hommikul teete?",
+audio: "../audio/02-paev-a2/001.wav",
+answer: "Minu hommik algab kell seitse. Ma pesen nägu, joon kohvi ja söön hommikusööki.",
+answerAudio: "../audio/02-paev-a2/001a.wav"
+},
+{
+text: "Kuidas teie päev lõpeb? Mida te õhtul teete?",
+audio: "../audio/02-paev-a2/002.wav",
+answer: "Õhtul ma puhkan kodus. Ma vaatan televiisorit ja õpin natuke eesti keelt.",
+answerAudio: "../audio/02-paev-a2/002a.wav"
+},
+{
+text: "Kas te magate nädalavahetusel kauem kui tööpäevadel?",
+audio: "../audio/02-paev-a2/003.wav",
+answer: "Jah, nädalavahetusel ma magan kauem.",
+answerAudio: "../audio/02-paev-a2/003a.wav"
+},
+{
+text: "Kuidas te täna magasite? Mitu tundi te magasite?",
+audio: "../audio/02-paev-a2/004.wav",
+answer: "Ma magasin hästi. Ma magasin umbes kuus tundi.",
+answerAudio: "../audio/02-paev-a2/004a.wav"
+},
+{
+text: "Kas te jääte mõnikord tööle hiljaks? Millal te viimati tööle hiljaks jäite?",
+audio: "../audio/02-paev-a2/005.wav",
+answer: "Mõnikord ma jään natuke hiljaks. Viimati jäin hiljaks eelmisel kuul.",
+answerAudio: "../audio/02-paev-a2/005a.wav"
+},
+{
+text: "Mitu korda nädalas te koristate? Mis päeval te koristate? Kas teie kodu on praegu korras?",
+audio: "../audio/02-paev-a2/006.wav",
+answer: "Ma koristan kaks korda nädalas. Tavaliselt laupäeval. Jah, minu kodu on praegu korras.",
+answerAudio: "../audio/02-paev-a2/006a.wav"
+},
+{
+text: "Mis kellast mis kellani on teie päeva kõige parem osa?",
+audio: "../audio/02-paev-a2/007.wav",
+answer: "Minu päeva kõige parem osa on õhtul kell kuus kuni kaheksa.",
+answerAudio: "../audio/02-paev-a2/007a.wav"
+},
+{
+text: "Mitu korda päevas te külmkapi lahti teete? Aga öösel?",
+audio: "../audio/02-paev-a2/008.wav",
+answer: "Ma teen külmkapi lahti umbes viis korda päevas. Öösel ma ei tee seda.",
+answerAudio: "../audio/02-paev-a2/008a.wav"
+},
+{
+text: "Kas teete iga päev süüa? Mida te täna sõite?",
+audio: "../audio/02-paev-a2/009.wav",
+answer: "Jah, mõnikord ma teen süüa. Täna ma sõin riisi ja kana.",
+answerAudio: "../audio/02-paev-a2/009a.wav"
+},
+{
+text: "Mis kell te olete tavaliselt kõige produktiivsem?",
+audio: "../audio/02-paev-a2/010.wav",
+answer: "Ma olen kõige produktiivsem hommikul.",
+answerAudio: "../audio/02-paev-a2/010a.wav"
+},
+{
+text: "Mis kell teil on aega helistada? Aga mis kellani tohib teile helistada?",
+audio: "../audio/02-paev-a2/011.wav",
+answer: "Tavaliselt võib mulle helistada õhtul. Näiteks kell kuus kuni üheksani.",
+answerAudio: "../audio/02-paev-a2/011a.wav"
+},
+{
+text: "Kellele te helistate iga nädal? Kellele te helistate ainult nädalavahetusel?",
+audio: "../audio/02-paev-a2/012.wav",
+answer: "Ma helistan iga nädal oma vanematele. Nädalavahetusel helistan mõnikord sõpradele.",
+answerAudio: "../audio/02-paev-a2/012a.wav"
+},
+{
+text: "Kellele te ütlesite täna hommikul „Tere hommikust!”? Kellele te ütlete täna õhtul „Head ööd!”?",
+audio: "../audio/02-paev-a2/013.wav",
+answer: "Täna hommikul ütlesin oma perele 'Tere hommikust'. Õhtul ütlen 'Head ööd' oma lastele.",
+answerAudio: "../audio/02-paev-a2/013a.wav"
+},
+{
+text: "Mitu tundi päevas te tavaliselt värskes õhus olete?",
+audio: "../audio/02-paev-a2/014.wav",
+answer: "Tavaliselt olen värskes õhus umbes üks tund päevas.",
+answerAudio: "../audio/02-paev-a2/014a.wav"
+}
+];
+
+initAudioList(items);
+</script>
+</body>
+</html>

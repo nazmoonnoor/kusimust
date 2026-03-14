@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2. PÄEV - A1 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #2f74c8">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 02 • A1</div>
+      <h1 class="topic-heading">2. PÄEV</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+<script>
+  const items = [
+    {
+      text: "Mis kell te tavaliselt ärkate?",
+      audio: "../audio/02-paev-a1/001.wav",
+      answer: "Ma ärkan tavaliselt kell seitse hommikul.",
+      answerAudio: "../audio/02-paev-a1/001a.wav"
+    },
+    {
+      text: "Mis kell te tavaliselt magama lähete? Mitu tundi te magate?",
+      audio: "../audio/02-paev-a1/002.wav",
+      answer: "Ma lähen tavaliselt magama kell üksteist. Ma magan umbes seitse tundi.",
+      answerAudio: "../audio/02-paev-a1/002a.wav"
+    },
+    {
+      text: "Kas te joote hommikul kohvi?",
+      audio: "../audio/02-paev-a1/003.wav",
+      answer: "Jah, ma joon hommikul kohvi.",
+      answerAudio: "../audio/02-paev-a1/003a.wav"
+    },
+    {
+      text: "Mida te hommikul sööte? Mida te hommikul joote?",
+      audio: "../audio/02-paev-a1/004.wav",
+      answer: "Ma söön hommikul võileiba või muna. Ma joon hommikul teed või kohvi.",
+      answerAudio: "../audio/02-paev-a1/004a.wav"
+    },
+    {
+      text: "Kus te lõunat sööte?",
+      audio: "../audio/02-paev-a1/005.wav",
+      answer: "Ma söön lõunat tööl või kodus.",
+      answerAudio: "../audio/02-paev-a1/005a.wav"
+    },
+    {
+      text: "Kas te käite iga päev poes? Mis poes te käite?",
+      audio: "../audio/02-paev-a1/006.wav",
+      answer: "Ei, ma ei käi iga päev poes. Ma käin tavaliselt toidupoes.",
+      answerAudio: "../audio/02-paev-a1/006a.wav"
+    },
+    {
+      text: "Kas te kuulate uudiseid või loete uudiseid? Mis keeles te kuulate uudiseid? Mis keeles te loete uudiseid?",
+      audio: "../audio/02-paev-a1/007.wav",
+      answer: "Ma kuulan ja loen uudiseid. Ma kuulan uudiseid inglise keeles ja loen uudiseid inglise keeles.",
+      answerAudio: "../audio/02-paev-a1/007a.wav"
+    },
+    {
+      text: "Mitu korda päevas te hambaid pesete?",
+      audio: "../audio/02-paev-a1/008.wav",
+      answer: "Ma pesen hambaid kaks korda päevas.",
+      answerAudio: "../audio/02-paev-a1/008a.wav"
+    },
+    {
+      text: "Mis värvi on teie hambahari? Mis maitsega on teie hambapasta?",
+      audio: "../audio/02-paev-a1/009.wav",
+      answer: "Minu hambahari on sinine. Minu hambapasta on piparmündimaitseline.",
+      answerAudio: "../audio/02-paev-a1/009a.wav"
+    },
+    {
+      text: "Kas te töötate iga päev? Mitu tundi te töötate?",
+      audio: "../audio/02-paev-a1/010.wav",
+      answer: "Ma töötan tööpäevadel. Ma töötan umbes kaheksa tundi päevas.",
+      answerAudio: "../audio/02-paev-a1/010a.wav"
+    },
+    {
+      text: "Kas teil on kodus sussid jalas? Mis värvi sussid teil on?",
+      audio: "../audio/02-paev-a1/011.wav",
+      answer: "Jah, mul on kodus sussid jalas. Minu sussid on musta värvi.",
+      answerAudio: "../audio/02-paev-a1/011a.wav"
+    },
+    {
+      text: "Kellega te hommikul räägite? Kellega te iga päev räägite?",
+      audio: "../audio/02-paev-a1/012.wav",
+      answer: "Ma räägin hommikul oma perega. Ma räägin iga päev oma pere ja kolleegidega.",
+      answerAudio: "../audio/02-paev-a1/012a.wav"
+    },
+    {
+      text: "Kas te teate, mida tähendab varahommik? Aga keskpäev? Aga hilisõhtu? Aga südaöö?",
+      audio: "../audio/02-paev-a1/013.wav",
+      answer: "Jah, ma tean. Varahommik on väga varane hommik. Keskpäev on kell kaksteist. Hilisõhtu on hiline õhtu. Südaöö on kell kaksteist öösel.",
+      answerAudio: "../audio/02-paev-a1/013a.wav"
+    },
+    {
+      text: "Kas te käite hommikul või õhtul duši all?",
+      audio: "../audio/02-paev-a1/014.wav",
+      answer: "Ma käin tavaliselt hommikul duši all.",
+      answerAudio: "../audio/02-paev-a1/014a.wav"
+    },
+    {
+      text: "Kas täna on hea päev?",
+      audio: "../audio/02-paev-a1/015.wav",
+      answer: "Jah, täna on hea päev.",
+      answerAudio: "../audio/02-paev-a1/015a.wav"
+    },
+    {
+      text: "Kas te sõidate iga päev autoga? Aga bussiga? Aga liftiga?",
+      audio: "../audio/02-paev-a1/016.wav",
+      answer: "Ma ei sõida iga päev autoga. Mõnikord ma sõidan bussiga. Jah, ma sõidan liftiga.",
+      answerAudio: "../audio/02-paev-a1/016a.wav"
+    },
+    {
+      text: "Mis päeval te trenni teete?",
+      audio: "../audio/02-paev-a1/017.wav",
+      answer: "Ma teen trenni tavaliselt esmaspäeval ja neljapäeval.",
+      answerAudio: "../audio/02-paev-a1/017a.wav"
+    },
+    {
+      text: "Mida te nädalavahetusel teete?",
+      audio: "../audio/02-paev-a1/018.wav",
+      answer: "Nädalavahetusel ma puhkan, õpin eesti keelt ja veedan aega perega.",
+      answerAudio: "../audio/02-paev-a1/018a.wav"
+    },
+    {
+      text: "Mis on teie lemmikpäev?",
+      audio: "../audio/02-paev-a1/019.wav",
+      answer: "Minu lemmikpäev on laupäev.",
+      answerAudio: "../audio/02-paev-a1/019a.wav"
+    },
+    {
+      text: "Millal te sõpradega suhtlete? Millal te sõpradega kokku saate?",
+      audio: "../audio/02-paev-a1/020.wav",
+      answer: "Ma suhtlen sõpradega õhtul või nädalavahetusel. Ma saan sõpradega kokku tavaliselt nädalavahetusel.",
+      answerAudio: "../audio/02-paev-a1/020a.wav"
+    }
+  ];
+
+  initAudioList(items);
+</script>
+</body>
+</html>

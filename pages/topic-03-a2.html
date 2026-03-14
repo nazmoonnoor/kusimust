@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3. SÖÖGID JA JOOGID - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #f2a51a">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 03 • A2</div>
+      <h1 class="topic-heading">3. SÖÖGID JA JOOGID</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      { text: "Mitu kokaraamatut teil on? Mis keeles teie kokaraamatud on?", audio: "../audio/03-soogid-ja-joogid-a2/001.wav" },
+      { text: "Mitu minutit te keedate muna?", audio: "../audio/03-soogid-ja-joogid-a2/002.wav" },
+      { text: "Kui tihti te restoranis käite? Kas te maksate sulas või kaardiga? Kas te jätate restoranis tippi?", audio: "../audio/03-soogid-ja-joogid-a2/003.wav" },
+      { text: "Kes on teie peres kõige parem kokk? Mis toitu tema väga hästi teeb?", audio: "../audio/03-soogid-ja-joogid-a2/004.wav" },
+      { text: "Mitu kilo suhkrut teil praegu kodus on? Aga jahu? Aga riisi?", audio: "../audio/03-soogid-ja-joogid-a2/005.wav" },
+      { text: "Mis on traditsiooniline hommikusöök teie kodumaal?", audio: "../audio/03-soogid-ja-joogid-a2/006.wav" },
+      { text: "Mis toit on välismaal parem kui Eestis?", audio: "../audio/03-soogid-ja-joogid-a2/007.wav" },
+      { text: "Mida on vaja, kui teete pannkooke? Millega te sööte pannkooke?", audio: "../audio/03-soogid-ja-joogid-a2/008.wav" },
+      { text: "Mitu potti teil on? Aga panni?", audio: "../audio/03-soogid-ja-joogid-a2/009.wav" },
+      { text: "Mis on suurem, kas teelusikas või supilusikas?", audio: "../audio/03-soogid-ja-joogid-a2/010.wav" },
+      { text: "Mis toidupoes te tavaliselt käite? Mis toidupoes te mitte kunagi ei käi?", audio: "../audio/03-soogid-ja-joogid-a2/011.wav" },
+      { text: "Mida te ostate toidupoest iga nädal? Aga mida te ostate toidupoest üks kord aastas?", audio: "../audio/03-soogid-ja-joogid-a2/012.wav" },
+      { text: "Kui suur oli teie viimane arve toidupoes? Mida te ostsite?", audio: "../audio/03-soogid-ja-joogid-a2/013.wav" },
+      { text: "Mida te tellite, kui lähete reede õhtul sõbraga baari?", audio: "../audio/03-soogid-ja-joogid-a2/014.wav" },
+      { text: "Millal te viimati kapsast sõite? Aga kala? Aga jäätist?", audio: "../audio/03-soogid-ja-joogid-a2/015.wav" }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

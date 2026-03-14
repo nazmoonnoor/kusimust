@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. MINA - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #c61c2f">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 01 • A2</div>
+      <h1 class="topic-heading">1. MINA</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+<script>
+  const items = [
+    {
+      text: "Kuidas teil läheb?",
+      audio: "../audio/01-mina-a2/001.wav",
+      answer: "Mul läheb hästi, aitäh.",
+      answerAudio: "../audio/01-mina-a2/001a.wav"
+    },
+    {
+      text: "Mis kell te täna ärkasite?",
+      audio: "../audio/01-mina-a2/002.wav",
+      answer: "Ma ärkasin täna kell seitse.",
+      answerAudio: "../audio/01-mina-a2/002a.wav"
+    },
+    {
+      text: "Mida te täna hommikul sõite? Ja mida te jõite? Kas teil on praegu kõht tühi? Kas teil on praegu janu?",
+      audio: "../audio/01-mina-a2/003.wav",
+      answer: "Ma sõin täna hommikul võileiba ja muna. Ma jõin teed. Ei, mul ei ole praegu kõht tühi. Ei, mul ei ole praegu janu.",
+      answerAudio: "../audio/01-mina-a2/003a.wav"
+    },
+    {
+      text: "Kuhu te täna õhtul lähete?",
+      audio: "../audio/01-mina-a2/004.wav",
+      answer: "Täna õhtul ma lähen koju.",
+      answerAudio: "../audio/01-mina-a2/004a.wav"
+    },
+    {
+      text: "Kellega te täna kohtute?",
+      audio: "../audio/01-mina-a2/005.wav",
+      answer: "Ma kohtun täna oma sõbraga.",
+      answerAudio: "../audio/01-mina-a2/005a.wav"
+    },
+    {
+      text: "Missugune ilm täna on?",
+      audio: "../audio/01-mina-a2/006.wav",
+      answer: "Täna on jahe ja pilvine ilm.",
+      answerAudio: "../audio/01-mina-a2/006a.wav"
+    },
+    {
+      text: "Mis teil praegu seljas on? Aga jalas?",
+      audio: "../audio/01-mina-a2/007.wav",
+      answer: "Mul on praegu seljas sinine särk ja mustad püksid. Mul on jalas mustad kingad.",
+      answerAudio: "../audio/01-mina-a2/007a.wav"
+    },
+    {
+      text: "Mis mööbel teie toas on?",
+      audio: "../audio/01-mina-a2/008.wav",
+      answer: "Minu toas on voodi, laud, tool ja kapp.",
+      answerAudio: "../audio/01-mina-a2/008a.wav"
+    },
+    {
+      text: "Kas te olete praegu terve? Millal te viimati haige olite?",
+      audio: "../audio/01-mina-a2/009.wav",
+      answer: "Jah, ma olen praegu terve. Ma olin viimati haige eelmisel kuul.",
+      answerAudio: "../audio/01-mina-a2/009a.wav"
+    },
+    {
+      text: "Mitu raamatut teie kodus on? Aga mitu vaasi? Aga mitu televiisorit?",
+      audio: "../audio/01-mina-a2/010.wav",
+      answer: "Minu kodus on umbes kakskümmend raamatut, kaks vaasi ja üks televiisor.",
+      answerAudio: "../audio/01-mina-a2/010a.wav"
+    },
+    {
+      text: "Kas te lähete sel nädalal tööle? Aga poodi? Aga diskole? Aga trenni?",
+      audio: "../audio/01-mina-a2/011.wav",
+      answer: "Jah, ma lähen sel nädalal tööle ja poodi. Ei, ma ei lähe diskole. Võib-olla ma lähen trenni.",
+      answerAudio: "../audio/01-mina-a2/011a.wav"
+    },
+    {
+      text: "Mida te teete nädalavahetusel?",
+      audio: "../audio/01-mina-a2/012.wav",
+      answer: "Nädalavahetusel ma puhkan, õpin eesti keelt ja veedan aega perega.",
+      answerAudio: "../audio/01-mina-a2/012a.wav"
+    },
+    {
+      text: "Kas te olete parema- või vasakukäeline?",
+      audio: "../audio/01-mina-a2/013.wav",
+      answer: "Ma olen paremakäeline.",
+      answerAudio: "../audio/01-mina-a2/013a.wav"
+    },
+    {
+      text: "Kas te olete rohkem hommiku- või õhtuinimene? Aga kas te olete hea inimene?",
+      audio: "../audio/01-mina-a2/014.wav",
+      answer: "Ma olen rohkem hommikuinimene. Jah, ma arvan, et ma olen hea inimene.",
+      answerAudio: "../audio/01-mina-a2/014a.wav"
+    },
+    {
+      text: "Kas teile meeldivad rohkem kassid või koerad? Kas teile meeldivad rohkem filmid või raamatud?",
+      audio: "../audio/01-mina-a2/015.wav",
+      answer: "Mulle meeldivad rohkem kassid. Mulle meeldivad rohkem raamatud kui filmid.",
+      answerAudio: "../audio/01-mina-a2/015a.wav"
+    }
+  ];
+
+  initAudioList(items);
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6. PERE - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #d96c4a">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 06 • A2</div>
+      <h1 class="topic-heading">6. PERE</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+ <script>
+  const items = [
+    {
+      text: "Kas teil on palju sugulasi? Kus nemad elavad?",
+      audio: "../audio/06-pere-a2/001.wav",
+      answer: "Jah, mul on palju sugulasi. Enamik neist elab Bangladeshis.",
+      answerAudio: "../audio/06-pere-a2/001a.wav"
+    },
+    {
+      text: "Mis pereliikmed teie peres on?",
+      audio: "../audio/06-pere-a2/002.wav",
+      answer: "Minu peres on minu naine ja kaks poega.",
+      answerAudio: "../audio/06-pere-a2/002a.wav"
+    },
+    {
+      text: "Kes on teie peres kõige noorem? Mis tema nimi on? Kui vana tema on? Kus tema elab?",
+      audio: "../audio/06-pere-a2/003.wav",
+      answer: "Kõige noorem on minu poeg. Tema nimi on Zayan. Ta on noor ja elab minuga Tallinnas.",
+      answerAudio: "../audio/06-pere-a2/003a.wav"
+    },
+    {
+      text: "Kes on teie peres kõige vanem? Mis tema nimi on? Kui vana tema on? Kus tema elab?",
+      audio: "../audio/06-pere-a2/004.wav",
+      answer: "Kõige vanem on minu ema. Ta on umbes 70-aastane ja elab Bangladeshis.",
+      answerAudio: "../audio/06-pere-a2/004a.wav"
+    },
+    {
+      text: "Kes on teie peres kõige targem? Aga kõige naljakam?",
+      audio: "../audio/06-pere-a2/005.wav",
+      answer: "Ma arvan, et minu naine on kõige targem. Minu noorem poeg on kõige naljakam.",
+      answerAudio: "../audio/06-pere-a2/005a.wav"
+    },
+    {
+      text: "Kes on teie peres kõige pikem? Aga kõige lühem?",
+      audio: "../audio/06-pere-a2/006.wav",
+      answer: "Mina olen kõige pikem. Minu noorem poeg on kõige lühem.",
+      answerAudio: "../audio/06-pere-a2/006a.wav"
+    },
+    {
+      text: "Mida te koos oma perega teete?",
+      audio: "../audio/06-pere-a2/007.wav",
+      answer: "Me vaatame koos filme, sööme koos ja käime jalutamas.",
+      answerAudio: "../audio/06-pere-a2/007a.wav"
+    },
+    {
+      text: "Kus teie pere elas, kui te sündisite?",
+      audio: "../audio/06-pere-a2/008.wav",
+      answer: "Minu pere elas Bangladeshis, kui ma sündisin.",
+      answerAudio: "../audio/06-pere-a2/008a.wav"
+    },
+    {
+      text: "Kas teie isa on vanem kui ema?",
+      audio: "../audio/06-pere-a2/009.wav",
+      answer: "Jah, minu isa on natuke vanem kui ema.",
+      answerAudio: "../audio/06-pere-a2/009a.wav"
+    },
+    {
+      text: "Mis on teie vanavanemate nimed? Aga vanavanavanemate?",
+      audio: "../audio/06-pere-a2/010.wav",
+      answer: "Ma tean oma vanavanemate nimesid, aga ma ei mäleta vanavanavanemate nimesid.",
+      answerAudio: "../audio/06-pere-a2/010a.wav"
+    },
+    {
+      text: "Kas teie peres on kaksikuid?",
+      audio: "../audio/06-pere-a2/011.wav",
+      answer: "Ei, minu peres ei ole kaksikuid.",
+      answerAudio: "../audio/06-pere-a2/011a.wav"
+    },
+    {
+      text: "Kumb on parem, kas õde või vend?",
+      audio: "../audio/06-pere-a2/012.wav",
+      answer: "Minu arvates on mõlemad head.",
+      answerAudio: "../audio/06-pere-a2/012a.wav"
+    },
+    {
+      text: "Kas te olete oma peres kõige vanem, noorem või keskmine laps?",
+      audio: "../audio/06-pere-a2/013.wav",
+      answer: "Ma olen oma peres keskmine laps.",
+      answerAudio: "../audio/06-pere-a2/013a.wav"
+    },
+    {
+      text: "Kellena teie pereliikmed töötavad?",
+      audio: "../audio/06-pere-a2/014.wav",
+      answer: "Mõned minu pereliikmed töötavad õpetajana ja mõned ettevõttes.",
+      answerAudio: "../audio/06-pere-a2/014a.wav"
+    },
+    {
+      text: "Keda te kallistate oma peres kõige rohkem?",
+      audio: "../audio/06-pere-a2/015.wav",
+      answer: "Ma kallistan kõige rohkem oma lapsi.",
+      answerAudio: "../audio/06-pere-a2/015a.wav"
+    }
+  ];
+
+  initAudioList(items);
+</script>
+</body>
+</html>

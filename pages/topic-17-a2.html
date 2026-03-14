@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>17. RAAMATUD - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #7c3aed">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 17 • A2</div>
+      <h1 class="topic-heading">17. RAAMATUD - PALUN LOE MULLE?</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Millal te viimati raamatut lugesite? Mis raamat see oli?",
+        audio: "../audio/17-raamatud-a2/001.wav",
+        answer: "Ma lugesin raamatut eile õhtul. See oli eesti keele õpik.",
+        answerAudio: "../audio/17-raamatud-a2/001a.wav"
+      },
+      {
+        text: "Kas te olete lugenud raamatut eesti keeles? Mis raamat see oli?",
+        audio: "../audio/17-raamatud-a2/002.wav",
+        answer: "Jah, ma olen lugenud lihtsat raamatut eesti keeles.",
+        answerAudio: "../audio/17-raamatud-a2/002a.wav"
+      },
+      {
+        text: "Kas mõni teie sõber on kirjutanud raamatu? Mis selle pealkiri on?",
+        audio: "../audio/17-raamatud-a2/003.wav",
+        answer: "Ei, minu sõbrad ei ole raamatut kirjutanud.",
+        answerAudio: "../audio/17-raamatud-a2/003a.wav"
+      },
+      {
+        text: "Mis on teie kõige kallim raamat? Kust see pärit on?",
+        audio: "../audio/17-raamatud-a2/004.wav",
+        answer: "Minu kõige kallim raamat on inglise keeles. Ma ostsin selle raamatupoest.",
+        answerAudio: "../audio/17-raamatud-a2/004a.wav"
+      },
+      {
+        text: "Kes on hea kirjanik?",
+        audio: "../audio/17-raamatud-a2/005.wav",
+        answer: "Minu arvates on hea kirjanik J. K. Rowling.",
+        answerAudio: "../audio/17-raamatud-a2/005a.wav"
+      },
+      {
+        text: "Mis oli viimane raamat, mille te ostsite? Kas raamatud on liiga kallid?",
+        audio: "../audio/17-raamatud-a2/006.wav",
+        answer: "Viimane raamat oli keeleõpik. Mõned raamatud on kallid.",
+        answerAudio: "../audio/17-raamatud-a2/006a.wav"
+      },
+      {
+        text: "Kui vana te olite, kui te lugema õppisite?",
+        audio: "../audio/17-raamatud-a2/007.wav",
+        answer: "Ma õppisin lugema umbes kuueaastaselt.",
+        answerAudio: "../audio/17-raamatud-a2/007a.wav"
+      },
+      {
+        text: "Kas teie ema või isa luges teile, kui te olite laps?",
+        audio: "../audio/17-raamatud-a2/008.wav",
+        answer: "Jah, mu ema luges mulle raamatuid.",
+        answerAudio: "../audio/17-raamatud-a2/008a.wav"
+      },
+      {
+        text: "Kas te lugesite öösel voodis teki all, kui te olite laps? Mida te lugesite?",
+        audio: "../audio/17-raamatud-a2/009.wav",
+        answer: "Jah, mõnikord lugesin. Ma lugesin lasteraamatuid.",
+        answerAudio: "../audio/17-raamatud-a2/009a.wav"
+      },
+      {
+        text: "Kas teile meeldib lugeda kõva häälega?",
+        audio: "../audio/17-raamatud-a2/010.wav",
+        answer: "Mõnikord meeldib, eriti kui ma õpin keelt.",
+        answerAudio: "../audio/17-raamatud-a2/010a.wav"
+      },
+      {
+        text: "Kas teil on kodus mõni luuleraamat? Kes on selle autor?",
+        audio: "../audio/17-raamatud-a2/011.wav",
+        answer: "Jah, mul on üks luuleraamat. Autor on eesti luuletaja.",
+        answerAudio: "../audio/17-raamatud-a2/011a.wav"
+      },
+      {
+        text: "Kas teil käib praegu mõni ajakiri? Mis ajakiri see on? Kas teil käis mõni ajakiri, kui te olite laps?",
+        audio: "../audio/17-raamatud-a2/012.wav",
+        answer: "Praegu ei käi ajakirja. Lapsena lugesin mõnikord ajakirju.",
+        answerAudio: "../audio/17-raamatud-a2/012a.wav"
+      },
+      {
+        text: "Kas te loete elulooraamatuid? Aga kriminaalromaane? Aga reisiraamatuid?",
+        audio: "../audio/17-raamatud-a2/013.wav",
+        answer: "Mõnikord loen reisiraamatuid ja elulooraamatuid.",
+        answerAudio: "../audio/17-raamatud-a2/013a.wav"
+      },
+      {
+        text: "Kas te loete digiraamatuid? Aga kas te kuulate audioraamatuid?",
+        audio: "../audio/17-raamatud-a2/014.wav",
+        answer: "Jah, mõnikord loen digiraamatuid ja kuulan audioraamatuid.",
+        answerAudio: "../audio/17-raamatud-a2/014a.wav"
+      },
+      {
+        text: "Mis raamatu te viimati raamatukogust võtsite?",
+        audio: "../audio/17-raamatud-a2/015.wav",
+        answer: "Viimati võtsin raamatukogust eesti keele raamatu.",
+        answerAudio: "../audio/17-raamatud-a2/015a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

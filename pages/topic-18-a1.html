@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>18. TELEFON - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #2563eb">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 18 • A2</div>
+      <h1 class="topic-heading">18. TELEFON - HALLOO, MA KUULEN!</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kas te helistate telefoniga iga päev? Mitu korda päevas te telefoniga helistate?",
+        audio: "../audio/18-telefon-a2/001.wav",
+        answer: "Jah, ma helistan telefoniga iga päev. Tavaliselt üks või kaks korda.",
+        answerAudio: "../audio/18-telefon-a2/001a.wav"
+      },
+      {
+        text: "Millal te viimati telefoniga rääkisite? Kellega te rääkisite? Mida te talle ütlesite?",
+        audio: "../audio/18-telefon-a2/002.wav",
+        answer: "Ma rääkisin telefoniga täna hommikul. Ma rääkisin sõbraga. Ma ütlesin tere ja küsisin, kuidas tal läheb.",
+        answerAudio: "../audio/18-telefon-a2/002a.wav"
+      },
+      {
+        text: "Kes teile viimati helistas? Mida ta teile ütles?",
+        audio: "../audio/18-telefon-a2/003.wav",
+        answer: "Minu sõber helistas mulle. Ta küsis, kas mul on aega kohtuda.",
+        answerAudio: "../audio/18-telefon-a2/003a.wav"
+      },
+      {
+        text: "Kellele te helistate tihti?",
+        audio: "../audio/18-telefon-a2/004.wav",
+        answer: "Ma helistan tihti oma perele ja sõpradele.",
+        answerAudio: "../audio/18-telefon-a2/004a.wav"
+      },
+      {
+        text: "Kellele te saadate telefoniga sõnumeid?",
+        audio: "../audio/18-telefon-a2/005.wav",
+        answer: "Ma saadan sõnumeid sõpradele ja töökaaslastele.",
+        answerAudio: "../audio/18-telefon-a2/005a.wav"
+      },
+      {
+        text: "Kas te vastate alati telefonile? Kas te vastate telefonile, kui te ei tea, kes helistab?",
+        audio: "../audio/18-telefon-a2/006.wav",
+        answer: "Tavaliselt ma vastan telefonile. Kui ma ei tea numbrit, mõnikord ei vasta.",
+        answerAudio: "../audio/18-telefon-a2/006a.wav"
+      },
+      {
+        text: "Kas te mängite telefoniga? Mitu mängu on teie telefonis?",
+        audio: "../audio/18-telefon-a2/007.wav",
+        answer: "Mõnikord mängin. Minu telefonis on üks või kaks mängu.",
+        answerAudio: "../audio/18-telefon-a2/007a.wav"
+      },
+      {
+        text: "Kas bussis tohib telefoniga rääkida? Aga teatris? Aga kinos?",
+        audio: "../audio/18-telefon-a2/008.wav",
+        answer: "Bussis võib rääkida. Teatris ja kinos tavaliselt ei räägita telefoniga.",
+        answerAudio: "../audio/18-telefon-a2/008a.wav"
+      },
+      {
+        text: "Kas te kasutate telefonis kalendrit? Aga kalkulaatorit? Aga kaamerat?",
+        audio: "../audio/18-telefon-a2/009.wav",
+        answer: "Jah, ma kasutan kalendrit, kalkulaatorit ja kaamerat.",
+        answerAudio: "../audio/18-telefon-a2/009a.wav"
+      },
+      {
+        text: "Kas teie telefonil on hea kaamera? Mida te pildistate telefoniga?",
+        audio: "../audio/18-telefon-a2/010.wav",
+        answer: "Jah, kaamera on hea. Ma pildistan loodust ja perekonda.",
+        answerAudio: "../audio/18-telefon-a2/010a.wav"
+      },
+      {
+        text: "Kas iPhone on parem kui androidtelefon?",
+        audio: "../audio/18-telefon-a2/011.wav",
+        answer: "Mõlemad on head. See sõltub inimesest.",
+        answerAudio: "../audio/18-telefon-a2/011a.wav"
+      },
+      {
+        text: "Kas te teate peast oma telefoninumbrit? Aga oma ema numbrit? Aga ülemuse numbrit?",
+        audio: "../audio/18-telefon-a2/012.wav",
+        answer: "Jah, ma tean oma telefoninumbrit.",
+        answerAudio: "../audio/18-telefon-a2/012a.wav"
+      },
+      {
+        text: "Kui suur on teie telefoni arve? Kas see on suur või väike?",
+        audio: "../audio/18-telefon-a2/013.wav",
+        answer: "Minu telefoni arve on umbes 20 eurot kuus. See ei ole väga suur.",
+        answerAudio: "../audio/18-telefon-a2/013a.wav"
+      },
+      {
+        text: "Mitu tundi päevas te telefoni kasutate? Mida te telefoniga teete?",
+        audio: "../audio/18-telefon-a2/014.wav",
+        answer: "Ma kasutan telefoni umbes kaks või kolm tundi päevas. Ma loen uudiseid ja räägin sõpradega.",
+        answerAudio: "../audio/18-telefon-a2/014a.wav"
+      },
+      {
+        text: "Kas te saaksite elada ilma telefonita?",
+        audio: "../audio/18-telefon-a2/015.wav",
+        answer: "See oleks raske, aga võib-olla saaksin.",
+        answerAudio: "../audio/18-telefon-a2/015a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

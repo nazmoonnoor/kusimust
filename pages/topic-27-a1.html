@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>27. TÄHTPÄEVAD - A1 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #dc2626">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 27 • A1</div>
+      <h1 class="topic-heading">27. TÄHTPÄEVAD - PALJU ÕNNE SÜNNIPÄEVAKS!</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kas teie sünnipäev on kevadel? Kas teie sünnipäev on suvel? Millal on teie sünnipäev?",
+        audio: "../audio/27-tahtpaevad-a1/001.wav",
+        answer: "Minu sünnipäev on talvel, detsembris.",
+        answerAudio: "../audio/27-tahtpaevad-a1/001a.wav"
+      },
+      {
+        text: "Millal on teie ema sünnipäev? Aga isa sünnipäev? Aga kõige parema sõbra sünnipäev?",
+        audio: "../audio/27-tahtpaevad-a1/002.wav",
+        answer: "Minu ema sünnipäev on mais. Minu isa sünnipäev on augustis.",
+        answerAudio: "../audio/27-tahtpaevad-a1/002a.wav"
+      },
+      {
+        text: "Mis kell te tavaliselt ärkate oma sünnipäeval?",
+        audio: "../audio/27-tahtpaevad-a1/003.wav",
+        answer: "Tavaliselt ärkan kell kaheksa.",
+        answerAudio: "../audio/27-tahtpaevad-a1/003a.wav"
+      },
+      {
+        text: "Kas teil on sünnipäevapidu? Mis kell algab teie sünnipäevapidu?",
+        audio: "../audio/27-tahtpaevad-a1/004.wav",
+        answer: "Jah, mõnikord on mul sünnipäevapidu. See algab tavaliselt õhtul kell kuus.",
+        answerAudio: "../audio/27-tahtpaevad-a1/004a.wav"
+      },
+      {
+        text: "Kas šokolaad on hea sünnipäevakingitus? Aga vein? Aga raha?",
+        audio: "../audio/27-tahtpaevad-a1/005.wav",
+        answer: "Jah, šokolaad on hea kingitus. Ka raha on hea kingitus.",
+        answerAudio: "../audio/27-tahtpaevad-a1/005a.wav"
+      },
+      {
+        text: "Kus te tavaliselt olete oma sünnipäeval?",
+        audio: "../audio/27-tahtpaevad-a1/006.wav",
+        answer: "Tavaliselt olen kodus perega.",
+        answerAudio: "../audio/27-tahtpaevad-a1/006a.wav"
+      },
+      {
+        text: "Kellega koos te olete oma sünnipäeval? Mida te koos teete?",
+        audio: "../audio/27-tahtpaevad-a1/007.wav",
+        answer: "Ma olen koos pere ja sõpradega. Me sööme ja räägime.",
+        answerAudio: "../audio/27-tahtpaevad-a1/007a.wav"
+      },
+      {
+        text: "Mida te sööte ja joote oma sünnipäeval?",
+        audio: "../audio/27-tahtpaevad-a1/008.wav",
+        answer: "Tavaliselt söön kooki ja joon mahla või kohvi.",
+        answerAudio: "../audio/27-tahtpaevad-a1/008a.wav"
+      },
+      {
+        text: "Millal on Halloween? Kas teile meeldib Halloween?",
+        audio: "../audio/27-tahtpaevad-a1/009.wav",
+        answer: "Halloween on 31. oktoobril. Jah, mulle meeldib Halloween.",
+        answerAudio: "../audio/27-tahtpaevad-a1/009a.wav"
+      },
+      {
+        text: "Millal on jõulud? Kus te olete jõulude ajal?",
+        audio: "../audio/27-tahtpaevad-a1/010.wav",
+        answer: "Jõulud on 24.–26. detsembril. Tavaliselt olen kodus perega.",
+        answerAudio: "../audio/27-tahtpaevad-a1/010a.wav"
+      },
+      {
+        text: "Millal on Eesti Vabariigi iseseisvuspäev? Aga teie kodumaa iseseisvuspäev?",
+        audio: "../audio/27-tahtpaevad-a1/011.wav",
+        answer: "Eesti iseseisvuspäev on 24. veebruaril.",
+        answerAudio: "../audio/27-tahtpaevad-a1/011a.wav"
+      },
+      {
+        text: "Millal on emadepäev? Aga isadepäev?",
+        audio: "../audio/27-tahtpaevad-a1/012.wav",
+        answer: "Emadepäev on mais ja isadepäev on novembris.",
+        answerAudio: "../audio/27-tahtpaevad-a1/012a.wav"
+      },
+      {
+        text: "Millal on tarkusepäev? Aga lihavõtted?",
+        audio: "../audio/27-tahtpaevad-a1/013.wav",
+        answer: "Tarkusepäev on 1. septembril. Lihavõtted on kevadel.",
+        answerAudio: "../audio/27-tahtpaevad-a1/013a.wav"
+      },
+      {
+        text: "Mida te sööte ja joote jõulude ajal?",
+        audio: "../audio/27-tahtpaevad-a1/014.wav",
+        answer: "Jõulude ajal söön head toitu ja joon teed või mahla.",
+        answerAudio: "../audio/27-tahtpaevad-a1/014a.wav"
+      },
+      {
+        text: "Kas sokid on hea jõulukingitus? Aga raamat? Aga lilled?",
+        audio: "../audio/27-tahtpaevad-a1/015.wav",
+        answer: "Jah, sokid ja raamat on head kingitused.",
+        answerAudio: "../audio/27-tahtpaevad-a1/015a.wav"
+      },
+      {
+        text: "Kas teile meeldib pühade ajal alkoholi juua?",
+        audio: "../audio/27-tahtpaevad-a1/016.wav",
+        answer: "Mõnikord joon natuke veini.",
+        answerAudio: "../audio/27-tahtpaevad-a1/016a.wav"
+      },
+      {
+        text: "Kas teile meeldib pühade ajal televiisorit vaadata?",
+        audio: "../audio/27-tahtpaevad-a1/017.wav",
+        answer: "Jah, mulle meeldib pühade ajal filme vaadata.",
+        answerAudio: "../audio/27-tahtpaevad-a1/017a.wav"
+      },
+      {
+        text: "Millal te ütlete “Palju õnne!”? Aga “Head uut aastat!”?",
+        audio: "../audio/27-tahtpaevad-a1/018.wav",
+        answer: "Ma ütlen “Palju õnne!” sünnipäeval. “Head uut aastat!” ütlen uue aasta alguses.",
+        answerAudio: "../audio/27-tahtpaevad-a1/018a.wav"
+      },
+      {
+        text: "Kas te teate, mida tähendab ilutulestik? Aga jaanituli? Aga kutse? Aga juubel?",
+        audio: "../audio/27-tahtpaevad-a1/019.wav",
+        answer: "Jah, ma tean neid sõnu.",
+        answerAudio: "../audio/27-tahtpaevad-a1/019a.wav"
+      },
+      {
+        text: "Mis püha te praegu ootate?",
+        audio: "../audio/27-tahtpaevad-a1/020.wav",
+        answer: "Praegu ootan suvepühi ja puhkust.",
+        answerAudio: "../audio/27-tahtpaevad-a1/020a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

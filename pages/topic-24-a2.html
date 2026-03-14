@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>24. LEMMIKLOOM - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #d97706">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 24 • A2</div>
+      <h1 class="topic-heading">24. LEMMIKLOOM - OI KUI NUNNU KASSI!</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kas teil oli lemmikloom, kui te olite laps? Mitu lemmiklooma teil on olnud?",
+        audio: "../audio/24-lemmikloom-a2/001.wav",
+        answer: "Jah, lapsena oli mul lemmikloom. Mul on olnud üks või kaks lemmiklooma.",
+        answerAudio: "../audio/24-lemmikloom-a2/001a.wav"
+      },
+      {
+        text: "Millal te saite oma esimese lemmiklooma? Kui vana te olite?",
+        audio: "../audio/24-lemmikloom-a2/002.wav",
+        answer: "Ma sain oma esimese lemmiklooma, kui olin umbes kümneaastane.",
+        answerAudio: "../audio/24-lemmikloom-a2/002a.wav"
+      },
+      {
+        text: "Kas te tahaksite praegu lemmiklooma? Mis looma te tahaksite?",
+        audio: "../audio/24-lemmikloom-a2/003.wav",
+        answer: "Jah, võib-olla tahaksin kassi.",
+        answerAudio: "../audio/24-lemmikloom-a2/003a.wav"
+      },
+      {
+        text: "Kas madu on hea lemmikloom? Aga papagoi? Aga jänes?",
+        audio: "../audio/24-lemmikloom-a2/004.wav",
+        answer: "Papagoi ja jänes võivad olla head lemmikloomad.",
+        answerAudio: "../audio/24-lemmikloom-a2/004a.wav"
+      },
+      {
+        text: "Kas teile meeldivad akvaariumid? Kas teil on akvaarium? Kus teie linnas on akvaarium?",
+        audio: "../audio/24-lemmikloom-a2/005.wav",
+        answer: "Jah, mulle meeldivad akvaariumid. Mul ei ole akvaariumi.",
+        answerAudio: "../audio/24-lemmikloom-a2/005a.wav"
+      },
+      {
+        text: "Eesti keeles on tavaline kassi nimi Miisu või Nurri. Mis on tavaline kassi nimi teie emakeeles?",
+        audio: "../audio/24-lemmikloom-a2/006.wav",
+        answer: "Minu emakeeles on tavaline kassi nimi näiteks Mimi.",
+        answerAudio: "../audio/24-lemmikloom-a2/006a.wav"
+      },
+      {
+        text: "Eesti keeles on tavaline koera nimi Pontu või Muri. Mis on tavaline koera nimi teie emakeeles?",
+        audio: "../audio/24-lemmikloom-a2/007.wav",
+        answer: "Minu emakeeles on tavaline koera nimi näiteks Tommy.",
+        answerAudio: "../audio/24-lemmikloom-a2/007a.wav"
+      },
+      {
+        text: "Kas teile meeldib, kui restoranis on inimene koos koeraga? Aga bussis?",
+        audio: "../audio/24-lemmikloom-a2/008.wav",
+        answer: "Restoranis see ei ole alati hea. Bussis võib olla okei.",
+        answerAudio: "../audio/24-lemmikloom-a2/008a.wav"
+      },
+      {
+        text: "Mis häält teeb kass? Aga koer?",
+        audio: "../audio/24-lemmikloom-a2/009.wav",
+        answer: "Kass ütleb “mjäu”. Koer haugub.",
+        answerAudio: "../audio/24-lemmikloom-a2/009a.wav"
+      },
+      {
+        text: "Mis loom on ideaalne lemmikloom?",
+        audio: "../audio/24-lemmikloom-a2/010.wav",
+        answer: "Minu arvates on kass väga hea lemmikloom.",
+        answerAudio: "../audio/24-lemmikloom-a2/010a.wav"
+      },
+      {
+        text: "Kui vanaks koerad elavad? Aga kassid? Aga kilpkonnad?",
+        audio: "../audio/24-lemmikloom-a2/011.wav",
+        answer: "Koerad elavad umbes 10–15 aastat. Kassid umbes 15 aastat. Kilpkonnad võivad elada väga kaua.",
+        answerAudio: "../audio/24-lemmikloom-a2/011a.wav"
+      },
+      {
+        text: "Kui teil oleks koer või kass, kas ta võiks teie voodis magada?",
+        audio: "../audio/24-lemmikloom-a2/012.wav",
+        answer: "Võib-olla jah, aga mitte iga päev.",
+        answerAudio: "../audio/24-lemmikloom-a2/012a.wav"
+      },
+      {
+        text: "Mida teie lemmikloom tohib teha? Mida ta ei tohi teha?",
+        audio: "../audio/24-lemmikloom-a2/013.wav",
+        answer: "Ta tohib mängida ja jalutada. Ta ei tohi mööblit rikkuda.",
+        answerAudio: "../audio/24-lemmikloom-a2/013a.wav"
+      },
+      {
+        text: "Kas rebane võiks olla lemmikloom? Aga siga? Aga rott?",
+        audio: "../audio/24-lemmikloom-a2/014.wav",
+        answer: "Rott võib olla lemmikloom, aga rebane tavaliselt ei ole.",
+        answerAudio: "../audio/24-lemmikloom-a2/014a.wav"
+      },
+      {
+        text: "Kuidas te hoolitsete lemmiklooma eest? Mida te peate iga päev tegema?",
+        audio: "../audio/24-lemmikloom-a2/015.wav",
+        answer: "Iga päev peab looma toitma, temaga mängima ja tema eest hoolitsema.",
+        answerAudio: "../audio/24-lemmikloom-a2/015a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

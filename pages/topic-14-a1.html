@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>14. TERVIS - A1 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #b45309">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 14 • A1</div>
+      <h1 class="topic-heading">14. TERVIS - KUIDAS TERVIS?</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kas te olete praegu haige või terve?",
+        audio: "../audio/14-tervis-a1/001.wav",
+        answer: "Praegu ma olen terve.",
+        answerAudio: "../audio/14-tervis-a1/001a.wav"
+      },
+      {
+        text: "Kas te olete mõnikord haige? Kas te olete haige tavaliselt talvel, kevadel, suvel või sügisel?",
+        audio: "../audio/14-tervis-a1/002.wav",
+        answer: "Jah, mõnikord olen haige. Tavaliselt talvel.",
+        answerAudio: "../audio/14-tervis-a1/002a.wav"
+      },
+      {
+        text: "Kus te olete, kui te olete haige? Kas teile meeldib kodus haige olla?",
+        audio: "../audio/14-tervis-a1/003.wav",
+        answer: "Kui ma olen haige, olen kodus. Mulle ei meeldi haige olla.",
+        answerAudio: "../audio/14-tervis-a1/003a.wav"
+      },
+      {
+        text: "Mida te teete, kui te olete haige?",
+        audio: "../audio/14-tervis-a1/004.wav",
+        answer: "Kui ma olen haige, ma puhkan ja joon teed.",
+        answerAudio: "../audio/14-tervis-a1/004a.wav"
+      },
+      {
+        text: "Mida te sööte, kui te olete haige? Aga mida te joote?",
+        audio: "../audio/14-tervis-a1/005.wav",
+        answer: "Ma söön suppi ja joon teed või vett.",
+        answerAudio: "../audio/14-tervis-a1/005a.wav"
+      },
+      {
+        text: "Kas te olete praegu väsinud?",
+        audio: "../audio/14-tervis-a1/006.wav",
+        answer: "Natuke olen väsinud.",
+        answerAudio: "../audio/14-tervis-a1/006a.wav"
+      },
+      {
+        text: "Kas teie pea valutab praegu? Aga selg? Aga hammas?",
+        audio: "../audio/14-tervis-a1/007.wav",
+        answer: "Ei, praegu ei valuta pea, selg ega hammas.",
+        answerAudio: "../audio/14-tervis-a1/007a.wav"
+      },
+      {
+        text: "Mida te teete, kui teie hammas valutab? Aga mida te teete, kui teie pea valutab?",
+        audio: "../audio/14-tervis-a1/008.wav",
+        answer: "Kui hammas valutab, ma lähen hambaarsti juurde. Kui pea valutab, ma puhkan.",
+        answerAudio: "../audio/14-tervis-a1/008a.wav"
+      },
+      {
+        text: "Kas teil on perearst? Mis tema nimi on?",
+        audio: "../audio/14-tervis-a1/009.wav",
+        answer: "Jah, mul on perearst. Tema nimi on dr. Kask.",
+        answerAudio: "../audio/14-tervis-a1/009a.wav"
+      },
+      {
+        text: "Kas teie perearst töötab iga päev? Mis päeval tema töötab? Mis kell tema töötab?",
+        audio: "../audio/14-tervis-a1/010.wav",
+        answer: "Perearst töötab tööpäevadel. Tavaliselt hommikul ja päeval.",
+        answerAudio: "../audio/14-tervis-a1/010a.wav"
+      },
+      {
+        text: "Mitu haiglat on teie kodulinnas? Kas teie kodu lähedal on haigla või polikliinik?",
+        audio: "../audio/14-tervis-a1/011.wav",
+        answer: "Tallinnas on mitu haiglat. Minu kodu lähedal on polikliinik.",
+        answerAudio: "../audio/14-tervis-a1/011a.wav"
+      },
+      {
+        text: "Kas te käite tihti apteegis?",
+        audio: "../audio/14-tervis-a1/012.wav",
+        answer: "Ei, ma ei käi tihti apteegis.",
+        answerAudio: "../audio/14-tervis-a1/012a.wav"
+      },
+      {
+        text: "Kas te suitsetate? Aga kas te joote alkoholi?",
+        audio: "../audio/14-tervis-a1/013.wav",
+        answer: "Ma ei suitseta. Mõnikord joon natuke alkoholi.",
+        answerAudio: "../audio/14-tervis-a1/013a.wav"
+      },
+      {
+        text: "Kas teie elus on palju või vähe stressi?",
+        audio: "../audio/14-tervis-a1/014.wav",
+        answer: "Mõnikord on stressi, aga tavaliselt mitte palju.",
+        answerAudio: "../audio/14-tervis-a1/014a.wav"
+      },
+      {
+        text: "Mitu tundi te tavaliselt magate? Kas te magate hästi või halvasti?",
+        audio: "../audio/14-tervis-a1/015.wav",
+        answer: "Ma magan umbes kuus tundi. Tavaliselt magan hästi.",
+        answerAudio: "../audio/14-tervis-a1/015a.wav"
+      },
+      {
+        text: "Mitu korda aastas te käite hambaarsti juures?",
+        audio: "../audio/14-tervis-a1/016.wav",
+        answer: "Ma käin hambaarsti juures üks või kaks korda aastas.",
+        answerAudio: "../audio/14-tervis-a1/016a.wav"
+      },
+      {
+        text: "Kas te kardate hambaarsti?",
+        audio: "../audio/14-tervis-a1/017.wav",
+        answer: "Natuke kardan, aga see on normaalne.",
+        answerAudio: "../audio/14-tervis-a1/017a.wav"
+      },
+      {
+        text: "Kas te teate, mida tähendab kraadiklaas? Aga valuvaigisti? Aga vereproov? Aga röntgenipilt?",
+        audio: "../audio/14-tervis-a1/018.wav",
+        answer: "Jah, ma tean neid sõnu. Need on seotud tervisega.",
+        answerAudio: "../audio/14-tervis-a1/018a.wav"
+      },
+      {
+        text: "Mitu kraadi on palavik?",
+        audio: "../audio/14-tervis-a1/019.wav",
+        answer: "Tavaliselt on palavik üle 38 kraadi.",
+        answerAudio: "../audio/14-tervis-a1/019a.wav"
+      },
+      {
+        text: "Kas teile meeldib massaaž? Aga meditatsioon? Aga saun?",
+        audio: "../audio/14-tervis-a1/020.wav",
+        answer: "Jah, mulle meeldib massaaž ja saun. Meditatsiooni ma teen mõnikord.",
+        answerAudio: "../audio/14-tervis-a1/020a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

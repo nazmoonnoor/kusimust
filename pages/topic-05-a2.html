@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5. TÖÖ - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #7a4fb7">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 05 • A2</div>
+      <h1 class="topic-heading">5. TÖÖ</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+<script>
+  const items = [
+    {
+      text: "Kas teie töö on igav? Kelle töö on igav? Aga ohtlik? Aga keeruline?",
+      audio: "../audio/05-too-a2/001.wav",
+      answer: "Minu töö ei ole igav. Mõnikord on see keeruline. Politseiniku töö on ohtlik.",
+      answerAudio: "../audio/05-too-a2/001a.wav"
+    },
+    {
+      text: "Kellena te olete töötanud?",
+      audio: "../audio/05-too-a2/002.wav",
+      answer: "Ma olen töötanud tarkvaraarendajana.",
+      answerAudio: "../audio/05-too-a2/002a.wav"
+    },
+    {
+      text: "Kui vana te olite, kui te tööle läksite? Kellena te töötasite?",
+      audio: "../audio/05-too-a2/003.wav",
+      answer: "Ma olin umbes 23-aastane. Ma töötasin IT-valdkonnas.",
+      answerAudio: "../audio/05-too-a2/003a.wav"
+    },
+    {
+      text: "Kas te mäletate, kui suur oli teie esimene palk?",
+      audio: "../audio/05-too-a2/004.wav",
+      answer: "Jah, ma mäletan. Minu esimene palk oli väike.",
+      answerAudio: "../audio/05-too-a2/004a.wav"
+    },
+    {
+      text: "Kas te tahaksite töötada arstina? Aga politseinikuna? Aga õpetajana?",
+      audio: "../audio/05-too-a2/005.wav",
+      answer: "Ei, ma ei tahaks töötada arstina ega politseinikuna. Võib-olla õpetajana.",
+      answerAudio: "../audio/05-too-a2/005a.wav"
+    },
+    {
+      text: "Kas te tahaksite töötada näitlejana või lauljana? Aga modellina?",
+      audio: "../audio/05-too-a2/006.wav",
+      answer: "Ei, ma ei tahaks töötada näitlejana ega lauljana. Samuti mitte modellina.",
+      answerAudio: "../audio/05-too-a2/006a.wav"
+    },
+    {
+      text: "Kas teile meeldib üksi töötada?",
+      audio: "../audio/05-too-a2/007.wav",
+      answer: "Jah, mõnikord mulle meeldib üksi töötada.",
+      answerAudio: "../audio/05-too-a2/007a.wav"
+    },
+    {
+      text: "Missugused on teie kolleegid? Kas nad on noored või vanad? Kas nad on laisad või töökad?",
+      audio: "../audio/05-too-a2/008.wav",
+      answer: "Minu kolleegid on toredad ja töökad. Mõned on noored ja mõned vanemad.",
+      answerAudio: "../audio/05-too-a2/008a.wav"
+    },
+    {
+      text: "Mitu puhkepausi teil tööl on?",
+      audio: "../audio/05-too-a2/009.wav",
+      answer: "Tavaliselt on mul kaks pausi päevas.",
+      answerAudio: "../audio/05-too-a2/009a.wav"
+    },
+    {
+      text: "Missugune on teie ülemus? Mis tal tööl seljas on?",
+      audio: "../audio/05-too-a2/010.wav",
+      answer: "Minu ülemus on sõbralik. Tavaliselt on tal seljas särk ja püksid.",
+      answerAudio: "../audio/05-too-a2/010a.wav"
+    },
+    {
+      text: "Kus on parem olla, kas tööl või kodus?",
+      audio: "../audio/05-too-a2/011.wav",
+      answer: "Mõnikord on parem olla kodus. Aga töö on ka oluline.",
+      answerAudio: "../audio/05-too-a2/011a.wav"
+    },
+    {
+      text: "Mida te tööl teete?",
+      audio: "../audio/05-too-a2/012.wav",
+      answer: "Tööl ma kirjutan koodi ja töötan arvutiga.",
+      answerAudio: "../audio/05-too-a2/012a.wav"
+    },
+    {
+      text: "Kas te töötate toas või õues? Kas te töötate öösel või päeval?",
+      audio: "../audio/05-too-a2/013.wav",
+      answer: "Ma töötan toas ja päeval.",
+      answerAudio: "../audio/05-too-a2/013a.wav"
+    },
+    {
+      text: "Kellega te tööl räägite? Mis keeles te räägite?",
+      audio: "../audio/05-too-a2/014.wav",
+      answer: "Ma räägin kolleegidega. Me räägime inglise keeles.",
+      answerAudio: "../audio/05-too-a2/014a.wav"
+    },
+    {
+      text: "Millal te pensionile lähete? Kas te tahate pensionile minna?",
+      audio: "../audio/05-too-a2/015.wav",
+      answer: "Ma lähen pensionile umbes 65-aastaselt. Praegu ma ei taha pensionile minna.",
+      answerAudio: "../audio/05-too-a2/015a.wav"
+    }
+  ];
+
+  initAudioList(items);
+</script>
+</body>
+</html>

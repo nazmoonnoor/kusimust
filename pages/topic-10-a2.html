@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>10. EESTI - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #2f6f9f">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 10 • A2</div>
+      <h1 class="topic-heading">10. EESTI</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kui palju inimesi elab Eestis? Aga Tallinnas?",
+        audio: "../audio/10-eesti-a2/001.wav",
+        answer: "Eestis elab umbes 1,3 miljonit inimest. Tallinnas elab umbes 450 000 inimest.",
+        answerAudio: "../audio/10-eesti-a2/001a.wav"
+      },
+      {
+        text: "Mitu maakonda on Eestis? Kas 15 või rohkem?",
+        audio: "../audio/10-eesti-a2/002.wav",
+        answer: "Eestis on 15 maakonda.",
+        answerAudio: "../audio/10-eesti-a2/002a.wav"
+      },
+      {
+        text: "Mis on Eesti kõige suuremad linnad?",
+        audio: "../audio/10-eesti-a2/003.wav",
+        answer: "Eesti kõige suuremad linnad on Tallinn, Tartu ja Narva.",
+        answerAudio: "../audio/10-eesti-a2/003a.wav"
+      },
+      {
+        text: "Kas te olete käinud Tartus? Aga Haapsalus? Aga Viljandis? Kus te Eestis käinud olete?",
+        audio: "../audio/10-eesti-a2/004.wav",
+        answer: "Jah, ma olen käinud Tartus. Ma olen käinud ka Pärnus ja Narvas.",
+        answerAudio: "../audio/10-eesti-a2/004a.wav"
+      },
+      {
+        text: "Kus teile Eestis meeldib olla?",
+        audio: "../audio/10-eesti-a2/005.wav",
+        answer: "Mulle meeldib olla Tallinnas ja mere ääres.",
+        answerAudio: "../audio/10-eesti-a2/005a.wav"
+      },
+      {
+        text: "Kas te teate, kes on Arvo Pärt? Aga Ott Tänak? Aga Kristjan Järvi? Aga Anne Veski?",
+        audio: "../audio/10-eesti-a2/006.wav",
+        answer: "Jah, ma tean neid. Nad on kuulsad Eesti inimesed.",
+        answerAudio: "../audio/10-eesti-a2/006a.wav"
+      },
+      {
+        text: "Kas te olete käinud Tallinna jõuluturul?",
+        audio: "../audio/10-eesti-a2/007.wav",
+        answer: "Jah, ma olen käinud Tallinna jõuluturul.",
+        answerAudio: "../audio/10-eesti-a2/007a.wav"
+      },
+      {
+        text: "Kas te olete käinud Estonia teatris?",
+        audio: "../audio/10-eesti-a2/008.wav",
+        answer: "Ei, ma ei ole veel käinud Estonia teatris.",
+        answerAudio: "../audio/10-eesti-a2/008a.wav"
+      },
+      {
+        text: "Kas te olete söönud kohukest? Aga kamašokolaadi?",
+        audio: "../audio/10-eesti-a2/009.wav",
+        answer: "Jah, ma olen söönud kohukest. Kamašokolaadi ma olen ka proovinud.",
+        answerAudio: "../audio/10-eesti-a2/009a.wav"
+      },
+      {
+        text: "Missugune on Eesti ilm? Aga loodus? Aga toit? Aga inimesed?",
+        audio: "../audio/10-eesti-a2/010.wav",
+        answer: "Eesti ilm on külm talvel ja soe suvel. Loodus on väga ilus ja inimesed on rahulikud.",
+        answerAudio: "../audio/10-eesti-a2/010a.wav"
+      },
+      {
+        text: "Kas te teate, mis on Jazzkaar? Aga mis on Pimedate Ööde Filmifestival? Aga mis on laulupidu?",
+        audio: "../audio/10-eesti-a2/011.wav",
+        answer: "Jah, need on Eesti festivalid ja kultuuriüritused.",
+        answerAudio: "../audio/10-eesti-a2/011a.wav"
+      },
+      {
+        text: "Mis teile Eestis meeldib? Mis teile ei meeldi?",
+        audio: "../audio/10-eesti-a2/012.wav",
+        answer: "Mulle meeldib Eesti loodus ja rahulik elu. Mulle ei meeldi väga külm talv.",
+        answerAudio: "../audio/10-eesti-a2/012a.wav"
+      },
+      {
+        text: "Kas teil on Eestis mõni sõber? Kes ta on?",
+        audio: "../audio/10-eesti-a2/013.wav",
+        answer: "Jah, mul on Eestis sõpru. Nad on minu töökaaslased.",
+        answerAudio: "../audio/10-eesti-a2/013a.wav"
+      },
+      {
+        text: "Kas te teate mõnda Eesti firmat?",
+        audio: "../audio/10-eesti-a2/014.wav",
+        answer: "Jah, ma tean firmat Bolt ja Skype.",
+        answerAudio: "../audio/10-eesti-a2/014a.wav"
+      },
+      {
+        text: "Kas teil on Eestis hea olla?",
+        audio: "../audio/10-eesti-a2/015.wav",
+        answer: "Jah, mul on Eestis väga hea olla.",
+        answerAudio: "../audio/10-eesti-a2/015a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

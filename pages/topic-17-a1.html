@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>17. RAAMATUD - A1 | MUSTMILJON KÜSIMUST</title>
+<link rel="stylesheet" href="../assets/style.css" />
+</head>
+
+<body>
+
+<div class="page-shell" style="--topic-color:#7c3aed">
+
+<div class="back-row">
+<a class="back-link" href="../index.html">← Back to topics</a>
+<button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+</div>
+
+<section class="topic-banner">
+<div class="topic-badge">TOPIC 17 • A1</div>
+<h1 class="topic-heading">17. RAAMATUD - PALUN LOE MULLE?</h1>
+<p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+</section>
+
+<div class="instructions">
+Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+</div>
+
+<div id="questionList" class="list"></div>
+
+<p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
+</div>
+
+<script src="../assets/theme.js"></script>
+<script src="../assets/player.js"></script>
+
+<script>
+
+const items = [
+
+{
+text:"Kas teile meeldivad raamatud? Aga ajakirjad?",
+audio:"../audio/17-raamatud-a1/001.wav",
+answer:"Jah, mulle meeldivad raamatud. Mõnikord loen ka ajakirju.",
+answerAudio:"../audio/17-raamatud-a1/001a.wav"
+},
+
+{
+text:"Kas te loete iga päev? Kui tihti te loete? Millal te loete?",
+audio:"../audio/17-raamatud-a1/002.wav",
+answer:"Ma loen peaaegu iga päev. Tavaliselt õhtul.",
+answerAudio:"../audio/17-raamatud-a1/002a.wav"
+},
+
+{
+text:"Kas teil on raamaturiiul? Kus see on? Mis värvi see on?",
+audio:"../audio/17-raamatud-a1/003.wav",
+answer:"Jah, mul on raamaturiiul. See on elutoas ja see on valge.",
+answerAudio:"../audio/17-raamatud-a1/003a.wav"
+},
+
+{
+text:"Kas te loete raamatut köögis? Aga vannitoas? Aga WC-s?",
+audio:"../audio/17-raamatud-a1/004.wav",
+answer:"Tavaliselt loen elutoas või magamistoas.",
+answerAudio:"../audio/17-raamatud-a1/004a.wav"
+},
+
+{
+text:"Kas te loete raamatut voodis? Mitu raamatut on praegu teie magamistoas?",
+audio:"../audio/17-raamatud-a1/005.wav",
+answer:"Jah, mõnikord loen voodis. Magamistoas on umbes kolm raamatut.",
+answerAudio:"../audio/17-raamatud-a1/005a.wav"
+},
+
+{
+text:"Kas teil on eesti keele õpik? Kus see praegu on?",
+audio:"../audio/17-raamatud-a1/006.wav",
+answer:"Jah, mul on eesti keele õpik. See on minu laual.",
+answerAudio:"../audio/17-raamatud-a1/006a.wav"
+},
+
+{
+text:"Mitu sõnaraamatut teil on? Missugune sõnaraamat on kõige paksem?",
+audio:"../audio/17-raamatud-a1/007.wav",
+answer:"Mul on kaks sõnaraamatut. Eesti-inglise sõnaraamat on kõige paksem.",
+answerAudio:"../audio/17-raamatud-a1/007a.wav"
+},
+
+{
+text:"Kas teil on raamat, mis on eesti keeles? Mis raamat see on?",
+audio:"../audio/17-raamatud-a1/008.wav",
+answer:"Jah, mul on eesti keeles õpik ja mõned lihtsad raamatud.",
+answerAudio:"../audio/17-raamatud-a1/008a.wav"
+},
+
+{
+text:"Kui vana on teie kõige vanem raamat?",
+audio:"../audio/17-raamatud-a1/009.wav",
+answer:"Minu kõige vanem raamat on umbes kümme aastat vana.",
+answerAudio:"../audio/17-raamatud-a1/009a.wav"
+},
+
+{
+text:"Kas te käite raamatukogus?",
+audio:"../audio/17-raamatud-a1/010.wav",
+answer:"Jah, mõnikord käin raamatukogus.",
+answerAudio:"../audio/17-raamatud-a1/010a.wav"
+},
+
+{
+text:"Kas teie kodu lähedal on raamatukogu? Kus see on? Kas see on praegu avatud?",
+audio:"../audio/17-raamatud-a1/011.wav",
+answer:"Jah, raamatukogu on minu kodu lähedal. See on kesklinnas.",
+answerAudio:"../audio/17-raamatud-a1/011a.wav"
+},
+
+{
+text:"Kas teile meeldivad raamatupoed? Mis on teie lemmikraamatupood?",
+audio:"../audio/17-raamatud-a1/012.wav",
+answer:"Jah, mulle meeldivad raamatupoed. Minu lemmik on Rahva Raamat.",
+answerAudio:"../audio/17-raamatud-a1/012a.wav"
+},
+
+{
+text:"Kas te ostate mõnikord raamatu lennujaamast?",
+audio:"../audio/17-raamatud-a1/013.wav",
+answer:"Mõnikord ostan raamatu lennujaamast.",
+answerAudio:"../audio/17-raamatud-a1/013a.wav"
+},
+
+{
+text:"Kas te loete raamatut bussis? Aga rongis? Aga lennukis? Aga autos?",
+audio:"../audio/17-raamatud-a1/014.wav",
+answer:"Jah, ma loen bussis või lennukis.",
+answerAudio:"../audio/17-raamatud-a1/014a.wav"
+},
+
+{
+text:"Kas teile meeldivad lasteraamatud? Aga koomiksid?",
+audio:"../audio/17-raamatud-a1/015.wav",
+answer:"Jah, mulle meeldivad lasteraamatud. Koomiksid on ka huvitavad.",
+answerAudio:"../audio/17-raamatud-a1/015a.wav"
+},
+
+{
+text:"Kas te teate, mida tähendab järjehoidja? Aga lehekülg? Aga peatükk? Aga sisukord?",
+audio:"../audio/17-raamatud-a1/016.wav",
+answer:"Jah, ma tean neid sõnu.",
+answerAudio:"../audio/17-raamatud-a1/016a.wav"
+},
+
+{
+text:"Kas teil on lugemisprillid? Kus need praegu on?",
+audio:"../audio/17-raamatud-a1/017.wav",
+answer:"Jah, mul on lugemisprillid. Need on minu laual.",
+answerAudio:"../audio/17-raamatud-a1/017a.wav"
+},
+
+{
+text:"Mis keeles te loete?",
+audio:"../audio/17-raamatud-a1/018.wav",
+answer:"Ma loen inglise ja natuke eesti keeles.",
+answerAudio:"../audio/17-raamatud-a1/018a.wav"
+},
+
+{
+text:"Mida te praegu loete?",
+audio:"../audio/17-raamatud-a1/019.wav",
+answer:"Praegu ma loen eesti keele raamatut.",
+answerAudio:"../audio/17-raamatud-a1/019a.wav"
+},
+
+{
+text:"Mis raamatut te loete mitu korda?",
+audio:"../audio/17-raamatud-a1/020.wav",
+answer:"Mõnikord loen keeleõpiku mitu korda.",
+answerAudio:"../audio/17-raamatud-a1/020a.wav"
+}
+
+];
+
+initAudioList(items);
+
+</script>
+
+</body>
+</html>

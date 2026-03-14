@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8. VABA AEG - A1 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #4aa6a5">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 08 • A1</div>
+      <h1 class="topic-heading">8. VABA AEG</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+<script>
+  const items = [
+    {
+      text: "Millal te töötate? Millal te puhkate?",
+      audio: "../audio/08-vaba-aeg-a1/001.wav",
+      answer: "Ma töötan esmaspäevast reedeni. Nädalavahetusel ma puhkan.",
+      answerAudio: "../audio/08-vaba-aeg-a1/001a.wav"
+    },
+    {
+      text: "Kas teil on palju või vähe vaba aega?",
+      audio: "../audio/08-vaba-aeg-a1/002.wav",
+      answer: "Mul on natuke vaba aega.",
+      answerAudio: "../audio/08-vaba-aeg-a1/002a.wav"
+    },
+    {
+      text: "Millal teil on palju vaba aega?",
+      audio: "../audio/08-vaba-aeg-a1/003.wav",
+      answer: "Mul on rohkem vaba aega nädalavahetusel.",
+      answerAudio: "../audio/08-vaba-aeg-a1/003a.wav"
+    },
+    {
+      text: "Mitu tundi vaba aega teil päevas on?",
+      audio: "../audio/08-vaba-aeg-a1/004.wav",
+      answer: "Tavaliselt on mul umbes kaks tundi vaba aega.",
+      answerAudio: "../audio/08-vaba-aeg-a1/004a.wav"
+    },
+    {
+      text: "Kas teile meeldib jalgrattaga sõita? Aga autoga? Aga rulluiskudega? Aga rulaga?",
+      audio: "../audio/08-vaba-aeg-a1/005.wav",
+      answer: "Mulle meeldib autoga sõita. Jalgrattaga sõidan mõnikord.",
+      answerAudio: "../audio/08-vaba-aeg-a1/005a.wav"
+    },
+    {
+      text: "Kas te oskate ujuda? Kas teile meeldib ujuda?",
+      audio: "../audio/08-vaba-aeg-a1/006.wav",
+      answer: "Jah, ma oskan ujuda. Mulle meeldib ujuda suvel.",
+      answerAudio: "../audio/08-vaba-aeg-a1/006a.wav"
+    },
+    {
+      text: "Kas teile meeldib arvutiga mängida? Aga telefoniga?",
+      audio: "../audio/08-vaba-aeg-a1/007.wav",
+      answer: "Mõnikord ma mängin telefoniga. Arvutiga ma väga ei mängi.",
+      answerAudio: "../audio/08-vaba-aeg-a1/007a.wav"
+    },
+    {
+      text: "Kas te oskate süüa teha? Kas teile meeldib süüa teha?",
+      audio: "../audio/08-vaba-aeg-a1/008.wav",
+      answer: "Jah, ma oskan natuke süüa teha. Mõnikord mulle meeldib süüa teha.",
+      answerAudio: "../audio/08-vaba-aeg-a1/008a.wav"
+    },
+    {
+      text: "Kas te oskate käsitööd teha? Kas teile meeldib käsitööd teha? Mis käsitööd te teete?",
+      audio: "../audio/08-vaba-aeg-a1/009.wav",
+      answer: "Ei, ma ei tee käsitööd.",
+      answerAudio: "../audio/08-vaba-aeg-a1/009a.wav"
+    },
+    {
+      text: "Kas te oskate malet mängida? Aga pokkerit?",
+      audio: "../audio/08-vaba-aeg-a1/010.wav",
+      answer: "Jah, ma oskan malet mängida. Pokkerit ma ei mängi.",
+      answerAudio: "../audio/08-vaba-aeg-a1/010a.wav"
+    },
+    {
+      text: "Mida teile meeldib teha laupäeval? Aga pühapäeval?",
+      audio: "../audio/08-vaba-aeg-a1/011.wav",
+      answer: "Laupäeval mulle meeldib puhata ja perega olla. Pühapäeval ma jalutan ja loen.",
+      answerAudio: "../audio/08-vaba-aeg-a1/011a.wav"
+    },
+    {
+      text: "Kas teile meeldib muuseumis käia? Aga kinos? Aga teatris?",
+      audio: "../audio/08-vaba-aeg-a1/012.wav",
+      answer: "Mulle meeldib kinos käia. Muuseumis käin mõnikord.",
+      answerAudio: "../audio/08-vaba-aeg-a1/012a.wav"
+    },
+    {
+      text: "Kas teile meeldib šopata? Kas te šoppate tavaliselt poes või internetis?",
+      audio: "../audio/08-vaba-aeg-a1/013.wav",
+      answer: "Jah, mõnikord mulle meeldib šopata. Tavaliselt ostan internetis.",
+      answerAudio: "../audio/08-vaba-aeg-a1/013a.wav"
+    },
+    {
+      text: "Kas te jalutate tihti? Kus te jalutate?",
+      audio: "../audio/08-vaba-aeg-a1/014.wav",
+      answer: "Jah, ma jalutan mõnikord. Tavaliselt pargis või tänaval.",
+      answerAudio: "../audio/08-vaba-aeg-a1/014a.wav"
+    },
+    {
+      text: "Kas teile meeldib rahvatants? Aga koorilaul?",
+      audio: "../audio/08-vaba-aeg-a1/015.wav",
+      answer: "Rahvatants mulle väga ei meeldi. Koorilaul on huvitav.",
+      answerAudio: "../audio/08-vaba-aeg-a1/015a.wav"
+    },
+    {
+      text: "Kas te oskate joonistada? Aga karaoket laulda? Aga tangot tantsida?",
+      audio: "../audio/08-vaba-aeg-a1/016.wav",
+      answer: "Ma oskan natuke joonistada. Karaoket ja tangot ma ei oska.",
+      answerAudio: "../audio/08-vaba-aeg-a1/016a.wav"
+    },
+    {
+      text: "Kas te teate, mida tähendab ristsõna? Aga pusle? Aga sulgpall? Aga lauatennis?",
+      audio: "../audio/08-vaba-aeg-a1/017.wav",
+      answer: "Jah, ma tean neid sõnu. Need on mängud ja sport.",
+      answerAudio: "../audio/08-vaba-aeg-a1/017a.wav"
+    },
+    {
+      text: "Kas te mängite mõnikord lauamänge? Mitu lauamängu teil on?",
+      audio: "../audio/08-vaba-aeg-a1/018.wav",
+      answer: "Jah, mõnikord ma mängin lauamänge. Mul on kolm lauamängu.",
+      answerAudio: "../audio/08-vaba-aeg-a1/018a.wav"
+    },
+    {
+      text: "Kas te teete mõnikord sporti? Mis sporti te teete?",
+      audio: "../audio/08-vaba-aeg-a1/019.wav",
+      answer: "Jah, mõnikord ma teen sporti. Ma jalutan ja mängin sulgpalli.",
+      answerAudio: "../audio/08-vaba-aeg-a1/019a.wav"
+    }
+  ];
+
+  initAudioList(items);
+</script>
+</body>
+</html>

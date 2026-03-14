@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>29. AUTO - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #1f6feb">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 29 • A2</div>
+      <h1 class="topic-heading">29. AUTO - MIS AUTO SUL ON?</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kas te teate, kui kiiresti Eestis linnas sõita tohib? Aga maanteel?",
+        audio: "../audio/29-auto-a2/001.wav",
+        answer: "Jah. Linnas tohib sõita tavaliselt 50 km/h ja maanteel umbes 90 km/h.",
+        answerAudio: "../audio/29-auto-a2/001a.wav"
+      },
+      {
+        text: "Kus te tavaliselt tangite?",
+        audio: "../audio/29-auto-a2/002.wav",
+        answer: "Tavaliselt tangin bensiinijaamas maja lähedal.",
+        answerAudio: "../audio/29-auto-a2/002a.wav"
+      },
+      {
+        text: "Kas teile meeldib taksoga sõita? Millal te viimati taksoga sõitsite?",
+        audio: "../audio/29-auto-a2/003.wav",
+        answer: "Jah, mõnikord meeldib. Viimati sõitsin taksoga eelmisel nädalal.",
+        answerAudio: "../audio/29-auto-a2/003a.wav"
+      },
+      {
+        text: "Kas Eestis on kallis või odav taksoga sõita?",
+        audio: "../audio/29-auto-a2/004.wav",
+        answer: "Ma arvan, et see on natuke kallis.",
+        answerAudio: "../audio/29-auto-a2/004a.wav"
+      },
+      {
+        text: "Kas te olete välismaal autot juhtinud?",
+        audio: "../audio/29-auto-a2/005.wav",
+        answer: "Jah, ma olen välismaal autot juhtinud.",
+        answerAudio: "../audio/29-auto-a2/005a.wav"
+      },
+      {
+        text: "Kas te olete kunagi limusiiniga sõitnud?",
+        audio: "../audio/29-auto-a2/006.wav",
+        answer: "Ei, ma ei ole kunagi limusiiniga sõitnud.",
+        answerAudio: "../audio/29-auto-a2/006a.wav"
+      },
+      {
+        text: "Mis maal on hirmus autoga sõita? Aga mis maal on hea autoga sõita?",
+        audio: "../audio/29-auto-a2/007.wav",
+        answer: "Mõnes suures linnas on hirmus sõita. Eestis on hea autoga sõita.",
+        answerAudio: "../audio/29-auto-a2/007a.wav"
+      },
+      {
+        text: "Mis on kõige kallim auto, millega te sõitnud olete? Aga mis on kõige vanem auto, millega te sõitnud olete?",
+        audio: "../audio/29-auto-a2/008.wav",
+        answer: "Kõige kallim auto oli uus Toyota. Kõige vanem auto oli umbes 20 aastat vana.",
+        answerAudio: "../audio/29-auto-a2/008a.wav"
+      },
+      {
+        text: "Kas Eestis on viisakad autojuhid? Aga Indias? Aga Jaapanis?",
+        audio: "../audio/29-auto-a2/009.wav",
+        answer: "Eestis on autojuhid üsna viisakad.",
+        answerAudio: "../audio/29-auto-a2/009a.wav"
+      },
+      {
+        text: "Kas teie autos tohib suitsetada? Aga küpsist süüa? Aga laulda?",
+        audio: "../audio/29-auto-a2/010.wav",
+        answer: "Minu autos ei tohi suitsetada, aga võib süüa ja laulda.",
+        answerAudio: "../audio/29-auto-a2/010a.wav"
+      },
+      {
+        text: "Mida teie autos teha ei tohi?",
+        audio: "../audio/29-auto-a2/011.wav",
+        answer: "Minu autos ei tohi suitsetada ega prügi visata.",
+        answerAudio: "../audio/29-auto-a2/011a.wav"
+      },
+      {
+        text: "Mis värvi autosid Eestis kõige rohkem on?",
+        audio: "../audio/29-auto-a2/012.wav",
+        answer: "Eestis on palju valgeid ja halli autosid.",
+        answerAudio: "../audio/29-auto-a2/012a.wav"
+      },
+      {
+        text: "Mis marki autosid Eestis kõige rohkem on?",
+        audio: "../audio/29-auto-a2/013.wav",
+        answer: "Eestis on palju Toyota ja Volkswageni autosid.",
+        answerAudio: "../audio/29-auto-a2/013a.wav"
+      },
+      {
+        text: "Kas te vaatate rallit? Aga vormel 1 võistlusi?",
+        audio: "../audio/29-auto-a2/014.wav",
+        answer: "Jah, mõnikord vaatan rallit.",
+        answerAudio: "../audio/29-auto-a2/014a.wav"
+      },
+      {
+        text: "Mis auto teie perel oli, kui te olite laps?",
+        audio: "../audio/29-auto-a2/015.wav",
+        answer: "Kui olin laps, oli meie perel väike auto.",
+        answerAudio: "../audio/29-auto-a2/015a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

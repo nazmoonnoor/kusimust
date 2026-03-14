@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>10. EESTI - A1 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #2f6f9f">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 10 • A1</div>
+      <h1 class="topic-heading">10. EESTI</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Mis on Eesti pealinn? Aga Eesti suvepealinn? Aga Eesti talvepealinn?",
+        audio: "../audio/10-eesti-a1/001.wav",
+        answer: "Eesti pealinn on Tallinn. Suvepealinn on Pärnu ja talvepealinn on Otepää.",
+        answerAudio: "../audio/10-eesti-a1/001a.wav"
+      },
+      {
+        text: "Mis keelt eestlased räägivad? Kas teie oskate eesti keelt?",
+        audio: "../audio/10-eesti-a1/002.wav",
+        answer: "Eestlased räägivad eesti keelt. Ma õpin eesti keelt.",
+        answerAudio: "../audio/10-eesti-a1/002a.wav"
+      },
+      {
+        text: "Missugune on eesti keel? Kas teile meeldib eesti keel?",
+        audio: "../audio/10-eesti-a1/003.wav",
+        answer: "Eesti keel on huvitav ja natuke raske. Mulle meeldib eesti keel.",
+        answerAudio: "../audio/10-eesti-a1/003a.wav"
+      },
+      {
+        text: "Mida te loete eesti keeles?",
+        audio: "../audio/10-eesti-a1/004.wav",
+        answer: "Ma loen lihtsaid tekste ja uudiseid eesti keeles.",
+        answerAudio: "../audio/10-eesti-a1/004a.wav"
+      },
+      {
+        text: "Kui vana on Eesti Vabariik?",
+        audio: "../audio/10-eesti-a1/005.wav",
+        answer: "Eesti Vabariik on üle saja aasta vana.",
+        answerAudio: "../audio/10-eesti-a1/005a.wav"
+      },
+      {
+        text: "Kas Leedu on Eesti naaberriik? Aga Läti? Aga Venemaa?",
+        audio: "../audio/10-eesti-a1/006.wav",
+        answer: "Läti ja Venemaa on Eesti naaberriigid. Leedu ei ole otsene naaberriik.",
+        answerAudio: "../audio/10-eesti-a1/006a.wav"
+      },
+      {
+        text: "Kes on praegu Eesti president? Aga peaminister?",
+        audio: "../audio/10-eesti-a1/007.wav",
+        answer: "Eesti president on Alar Karis. Peaminister on Kristen Michal.",
+        answerAudio: "../audio/10-eesti-a1/007a.wav"
+      },
+      {
+        text: "Mis värvi on Eesti lipp? Kas see on ilus või inetu lipp?",
+        audio: "../audio/10-eesti-a1/008.wav",
+        answer: "Eesti lipp on sinine, must ja valge. Minu arvates on see väga ilus lipp.",
+        answerAudio: "../audio/10-eesti-a1/008a.wav"
+      },
+      {
+        text: "Mis on Eesti kõige suurem järv?",
+        audio: "../audio/10-eesti-a1/009.wav",
+        answer: "Eesti kõige suurem järv on Peipsi järv.",
+        answerAudio: "../audio/10-eesti-a1/009a.wav"
+      },
+      {
+        text: "Mis on Eesti kõige suurem saar?",
+        audio: "../audio/10-eesti-a1/010.wav",
+        answer: "Eesti kõige suurem saar on Saaremaa.",
+        answerAudio: "../audio/10-eesti-a1/010a.wav"
+      },
+      {
+        text: "Mis on Eesti kõige kõrgem mägi? Kui kõrge see on?",
+        audio: "../audio/10-eesti-a1/011.wav",
+        answer: "Eesti kõige kõrgem mägi on Suur Munamägi. See on umbes 318 meetrit kõrge.",
+        answerAudio: "../audio/10-eesti-a1/011a.wav"
+      },
+      {
+        text: "Kas Eesti on suur või väike riik?",
+        audio: "../audio/10-eesti-a1/012.wav",
+        answer: "Eesti on väike riik.",
+        answerAudio: "../audio/10-eesti-a1/012a.wav"
+      },
+      {
+        text: "Kus elavad eestlased?",
+        audio: "../audio/10-eesti-a1/013.wav",
+        answer: "Eestlased elavad peamiselt Eestis.",
+        answerAudio: "../audio/10-eesti-a1/013a.wav"
+      },
+      {
+        text: "Mis raha on Eestis?",
+        audio: "../audio/10-eesti-a1/014.wav",
+        answer: "Eestis on euro.",
+        answerAudio: "../audio/10-eesti-a1/014a.wav"
+      },
+      {
+        text: "Kas teile maitseb Eesti toit? Mis teile maitseb?",
+        audio: "../audio/10-eesti-a1/015.wav",
+        answer: "Jah, mulle maitseb Eesti toit. Mulle meeldib must leib ja kala.",
+        answerAudio: "../audio/10-eesti-a1/015a.wav"
+      },
+      {
+        text: "Kas teile meeldib november Eestis? Aga märts? Aga august?",
+        audio: "../audio/10-eesti-a1/016.wav",
+        answer: "August mulle meeldib väga, sest ilm on soe. November on natuke külm ja pime.",
+        answerAudio: "../audio/10-eesti-a1/016a.wav"
+      },
+      {
+        text: "Kas teile meeldivad Eesti filmid? Aga Eesti laulud?",
+        audio: "../audio/10-eesti-a1/017.wav",
+        answer: "Mõned Eesti filmid ja laulud mulle meeldivad.",
+        answerAudio: "../audio/10-eesti-a1/017a.wav"
+      },
+      {
+        text: "Missugused on eestlased? Kas teile meeldivad eestlased?",
+        audio: "../audio/10-eesti-a1/018.wav",
+        answer: "Eestlased on rahulikud ja sõbralikud. Jah, mulle meeldivad eestlased.",
+        answerAudio: "../audio/10-eesti-a1/018a.wav"
+      },
+      {
+        text: "Kas te teate, mida tähendab rukkilill? Aga suitsupääsuke? Aga vapp? Aga hümn?",
+        audio: "../audio/10-eesti-a1/019.wav",
+        answer: "Jah, ma tean neid sõnu. Need on seotud Eesti sümbolitega.",
+        answerAudio: "../audio/10-eesti-a1/019a.wav"
+      },
+      {
+        text: "Mis on Eestis väga ilus? Aga väga maitsev? Aga väga huvitav?",
+        audio: "../audio/10-eesti-a1/020.wav",
+        answer: "Eestis on väga ilus loodus. Must leib on väga maitsev ja Eesti ajalugu on huvitav.",
+        answerAudio: "../audio/10-eesti-a1/020a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

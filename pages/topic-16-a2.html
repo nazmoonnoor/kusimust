@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>16. RAHA - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #15803d">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 16 • A2</div>
+      <h1 class="topic-heading">16. RAHA</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kus teie rahakott praegu on? Kas taskus või kotis?",
+        audio: "../audio/16-raha-a2/001.wav",
+        answer: "Minu rahakott on praegu kotis.",
+        answerAudio: "../audio/16-raha-a2/001a.wav"
+      },
+      {
+        text: "Kas teil on praegu palju või vähe raha?",
+        audio: "../audio/16-raha-a2/002.wav",
+        answer: "Praegu on mul natuke raha.",
+        answerAudio: "../audio/16-raha-a2/002a.wav"
+      },
+      {
+        text: "Kus teie linnas on pangaautomaadid?",
+        audio: "../audio/16-raha-a2/003.wav",
+        answer: "Pangaautomaadid on kaubanduskeskustes ja pankade juures.",
+        answerAudio: "../audio/16-raha-a2/003a.wav"
+      },
+      {
+        text: "Mis te arvate, kui palju maksab Tallinn–Tartu bussipilet? Kas see on odav või kallis?",
+        audio: "../audio/16-raha-a2/004.wav",
+        answer: "Ma arvan, et bussipilet maksab umbes 10–15 eurot. See ei ole väga kallis.",
+        answerAudio: "../audio/16-raha-a2/004a.wav"
+      },
+      {
+        text: "Mis te arvate, kui palju maksab Tallinn–Helsingi laevapilet? Kas see on odav või kallis?",
+        audio: "../audio/16-raha-a2/005.wav",
+        answer: "Laevapilet maksab umbes 20–40 eurot. Mõnikord on see odav.",
+        answerAudio: "../audio/16-raha-a2/005a.wav"
+      },
+      {
+        text: "Kas te käite iga päev toidupoes? Kui suur on tavaliselt arve, kui te käite toidupoes?",
+        audio: "../audio/16-raha-a2/006.wav",
+        answer: "Ei, ma ei käi iga päev poes. Tavaliselt on arve umbes 20–40 eurot.",
+        answerAudio: "../audio/16-raha-a2/006a.wav"
+      },
+      {
+        text: "Kas te ostate toitu poest või turult? Kus on toit odavam?",
+        audio: "../audio/16-raha-a2/007.wav",
+        answer: "Ma ostan tavaliselt poest. Mõnikord on turul odavam.",
+        answerAudio: "../audio/16-raha-a2/007a.wav"
+      },
+      {
+        text: "Kas te olete võitnud lotoga? Kui palju te võitsite?",
+        audio: "../audio/16-raha-a2/008.wav",
+        answer: "Ei, ma ei ole lotoga võitnud.",
+        answerAudio: "../audio/16-raha-a2/008a.wav"
+      },
+      {
+        text: "Mida te eile ostsite? Kui palju see maksis?",
+        audio: "../audio/16-raha-a2/009.wav",
+        answer: "Eile ma ostsin toitu. See maksis umbes 15 eurot.",
+        answerAudio: "../audio/16-raha-a2/009a.wav"
+      },
+      {
+        text: "Kas te palun laenaksite mulle 10 eurot? Aga kaks eurot?",
+        audio: "../audio/16-raha-a2/010.wav",
+        answer: "Jah, ma saan laenata 10 eurot või 2 eurot.",
+        answerAudio: "../audio/16-raha-a2/010a.wav"
+      },
+      {
+        text: "Mis on viimane kingitus, mille te ostsite? Kui palju see maksis?",
+        audio: "../audio/16-raha-a2/011.wav",
+        answer: "Viimane kingitus oli raamat. See maksis umbes 20 eurot.",
+        answerAudio: "../audio/16-raha-a2/011a.wav"
+      },
+      {
+        text: "Kas te kogute raha?",
+        audio: "../audio/16-raha-a2/012.wav",
+        answer: "Jah, ma kogun raha.",
+        answerAudio: "../audio/16-raha-a2/012a.wav"
+      },
+      {
+        text: "Kas te olete kunagi tänavalt raha leidnud? Kui palju raha te leidsite?",
+        audio: "../audio/16-raha-a2/013.wav",
+        answer: "Jah, üks kord ma leidsin 5 eurot.",
+        answerAudio: "../audio/16-raha-a2/013a.wav"
+      },
+      {
+        text: "Kas te olete kunagi raha kaotanud? Kui palju raha te kaotasite?",
+        audio: "../audio/16-raha-a2/014.wav",
+        answer: "Jah, üks kord ma kaotasin umbes 10 eurot.",
+        answerAudio: "../audio/16-raha-a2/014a.wav"
+      },
+      {
+        text: "Kui te võtate pangaautomaadist sularaha, siis kui palju te tavaliselt võtate?",
+        audio: "../audio/16-raha-a2/015.wav",
+        answer: "Tavaliselt ma võtan umbes 50 või 100 eurot.",
+        answerAudio: "../audio/16-raha-a2/015a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

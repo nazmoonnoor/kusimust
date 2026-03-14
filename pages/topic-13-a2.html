@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>13. RIIDED - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #8b5cf6">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 13 • A2</div>
+      <h1 class="topic-heading">13. RIIDED</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kas teil on liiga palju riideid?",
+        audio: "../audio/13-riided-a2/001.wav",
+        answer: "Ei, mul ei ole liiga palju riideid.",
+        answerAudio: "../audio/13-riided-a2/001a.wav"
+      },
+      {
+        text: "Mitu sokki teil on? Aga lipsu?",
+        audio: "../audio/13-riided-a2/002.wav",
+        answer: "Mul on umbes kümme paari sokke. Mul on kaks lipsu.",
+        answerAudio: "../audio/13-riided-a2/002a.wav"
+      },
+      {
+        text: "Kas teil on triibulised sokid? Kas teil on täpilised sokid?",
+        audio: "../audio/13-riided-a2/003.wav",
+        answer: "Jah, mul on triibulised sokid. Täpilisi sokke mul ei ole.",
+        answerAudio: "../audio/13-riided-a2/003a.wav"
+      },
+      {
+        text: "Mis värvi sokid teil praegu jalas on?",
+        audio: "../audio/13-riided-a2/004.wav",
+        answer: "Mul on praegu jalas mustad sokid.",
+        answerAudio: "../audio/13-riided-a2/004a.wav"
+      },
+      {
+        text: "Kas teil on villased sokid? Mis värvi need on?",
+        audio: "../audio/13-riided-a2/005.wav",
+        answer: "Jah, mul on villased sokid. Need on hallid.",
+        answerAudio: "../audio/13-riided-a2/005a.wav"
+      },
+      {
+        text: "Mis on teie kõige vanem asi teie riidekapis? Mis on teie kõige uuem asi teie riidekapis?",
+        audio: "../audio/13-riided-a2/006.wav",
+        answer: "Minu kõige vanem asi on vana kampsun. Kõige uuem asi on uus T-särk.",
+        answerAudio: "../audio/13-riided-a2/006a.wav"
+      },
+      {
+        text: "Mis on kõige kallim asi teie riidekapis? Kust te selle saite?",
+        audio: "../audio/13-riided-a2/007.wav",
+        answer: "Kõige kallim asi on minu jope. Ma ostsin selle poest.",
+        answerAudio: "../audio/13-riided-a2/007a.wav"
+      },
+      {
+        text: "Millal te viimati kingad ostsite? Missugused need kingad on?",
+        audio: "../audio/13-riided-a2/008.wav",
+        answer: "Ma ostsin kingad paar kuud tagasi. Need on mustad ja mugavad.",
+        answerAudio: "../audio/13-riided-a2/008a.wav"
+      },
+      {
+        text: "Kas teil on hommikumantel? Mis värvi see on?",
+        audio: "../audio/13-riided-a2/009.wav",
+        answer: "Jah, mul on hommikumantel. See on sinine.",
+        answerAudio: "../audio/13-riided-a2/009a.wav"
+      },
+      {
+        text: "Kas te käite dressidega tööl? Aga teatris? Aga külas?",
+        audio: "../audio/13-riided-a2/010.wav",
+        answer: "Ei, ma ei käi dressidega tööl ega teatris. Kodus mõnikord kannan.",
+        answerAudio: "../audio/13-riided-a2/010a.wav"
+      },
+      {
+        text: "Kas te ostate kasutatud riideid?",
+        audio: "../audio/13-riided-a2/011.wav",
+        answer: "Mõnikord ma ostan kasutatud riideid.",
+        answerAudio: "../audio/13-riided-a2/011a.wav"
+      },
+      {
+        text: "Kust te riideid ostate? Kas te ostate riideid internetist?",
+        audio: "../audio/13-riided-a2/012.wav",
+        answer: "Ma ostan riideid poest ja mõnikord internetist.",
+        answerAudio: "../audio/13-riided-a2/012a.wav"
+      },
+      {
+        text: "Kas teil on spordiriided? Mis firma spordiriided teil on?",
+        audio: "../audio/13-riided-a2/013.wav",
+        answer: "Jah, mul on spordiriided. Mul on Nike ja Adidas riided.",
+        answerAudio: "../audio/13-riided-a2/013a.wav"
+      },
+      {
+        text: "Kas teil on leopardimustriga riideid? Aga sebramustriga? Mis need on?",
+        audio: "../audio/13-riided-a2/014.wav",
+        answer: "Ei, mul ei ole leopardimustriga ega sebramustriga riideid.",
+        answerAudio: "../audio/13-riided-a2/014a.wav"
+      },
+      {
+        text: "Mis riided teil on, aga teie vanaemal ei ole?",
+        audio: "../audio/13-riided-a2/015.wav",
+        answer: "Mul on spordiriided ja teksad. Minu vanaemal neid ei ole.",
+        answerAudio: "../audio/13-riided-a2/015a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

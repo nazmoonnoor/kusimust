@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7. KÖÖK - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #b07d4f">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 07 • A2</div>
+      <h1 class="topic-heading">7. KÖÖK</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+<script>
+  const items = [
+    {
+      text: "Mis kodumasinad on teie köögis?",
+      audio: "../audio/07-kook-a2/001.wav",
+      answer: "Minu köögis on külmkapp, pliit, mikrolaineahi ja kohvimasin.",
+      answerAudio: "../audio/07-kook-a2/001a.wav"
+    },
+    {
+      text: "Mis mööbel on teie köögis?",
+      audio: "../audio/07-kook-a2/002.wav",
+      answer: "Minu köögis on laud, toolid ja kapid.",
+      answerAudio: "../audio/07-kook-a2/002a.wav"
+    },
+    {
+      text: "Mis nõud on teie köögikapis?",
+      audio: "../audio/07-kook-a2/003.wav",
+      answer: "Minu köögikapis on taldrikud, tassid ja klaasid.",
+      answerAudio: "../audio/07-kook-a2/003a.wav"
+    },
+    {
+      text: "Missugune on teie köögilaud?",
+      audio: "../audio/07-kook-a2/004.wav",
+      answer: "Minu köögilaud on puidust ja keskmise suurusega.",
+      answerAudio: "../audio/07-kook-a2/004a.wav"
+    },
+    {
+      text: "Mis on praegu teie köögilaual?",
+      audio: "../audio/07-kook-a2/005.wav",
+      answer: "Praegu on minu köögilaual puuviljad ja tass.",
+      answerAudio: "../audio/07-kook-a2/005a.wav"
+    },
+    {
+      text: "Mis on teie köögis aknalaual?",
+      audio: "../audio/07-kook-a2/006.wav",
+      answer: "Minu köögis on aknalaual väike taim.",
+      answerAudio: "../audio/07-kook-a2/006a.wav"
+    },
+    {
+      text: "Kas te pesete nõusid käsitsi või nõudepesumasinaga?",
+      audio: "../audio/07-kook-a2/007.wav",
+      answer: "Tavaliselt ma pesen nõusid nõudepesumasinaga.",
+      answerAudio: "../audio/07-kook-a2/007a.wav"
+    },
+    {
+      text: "Kes teie peres kõige rohkem nõusid peseb?",
+      audio: "../audio/07-kook-a2/008.wav",
+      answer: "Minu peres pesen nõusid tavaliselt mina.",
+      answerAudio: "../audio/07-kook-a2/008a.wav"
+    },
+    {
+      text: "Mis on teie köögilaual pühapäeva hommikul?",
+      audio: "../audio/07-kook-a2/009.wav",
+      answer: "Pühapäeva hommikul on köögilaual kohv ja hommikusöök.",
+      answerAudio: "../audio/07-kook-a2/009a.wav"
+    },
+    {
+      text: "Kui tihti te kööki koristate? Mis kell te kööki koristate?",
+      audio: "../audio/07-kook-a2/010.wav",
+      answer: "Ma koristan kööki iga päev. Tavaliselt õhtul.",
+      answerAudio: "../audio/07-kook-a2/010a.wav"
+    },
+    {
+      text: "Mida te teete köögis iga päev?",
+      audio: "../audio/07-kook-a2/011.wav",
+      answer: "Ma teen köögis süüa ja joon kohvi.",
+      answerAudio: "../audio/07-kook-a2/011a.wav"
+    },
+    {
+      text: "Mis värvi nõud teile meeldivad? Mis värvi nõud teile ei meeldi?",
+      audio: "../audio/07-kook-a2/012.wav",
+      answer: "Mulle meeldivad valged nõud. Mulle ei meeldi väga tumedad nõud.",
+      answerAudio: "../audio/07-kook-a2/012a.wav"
+    },
+    {
+      text: "Kas teie köögis tohib suitsetada? Aga kaarte mängida? Aga tantsida?",
+      audio: "../audio/07-kook-a2/013.wav",
+      answer: "Minu köögis ei tohi suitsetada. Aga kaarte mängida võib.",
+      answerAudio: "../audio/07-kook-a2/013a.wav"
+    },
+    {
+      text: "Kus on teie köögis prügikast? Aga mikrolaineahi?",
+      audio: "../audio/07-kook-a2/014.wav",
+      answer: "Prügikast on kraanikausi all. Mikrolaineahi on laua peal.",
+      answerAudio: "../audio/07-kook-a2/014a.wav"
+    },
+    {
+      text: "Mitu inimest saab teie köögis istuda?",
+      audio: "../audio/07-kook-a2/015.wav",
+      answer: "Minu köögis saab istuda neli inimest.",
+      answerAudio: "../audio/07-kook-a2/015a.wav"
+    }
+  ];
+
+  initAudioList(items);
+</script>
+</body>
+</html>

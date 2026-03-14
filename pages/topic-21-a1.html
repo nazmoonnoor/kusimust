@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>21. LAPS - A1 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #ea580c">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 21 • A1</div>
+      <h1 class="topic-heading">21. LAPS - SUL ON NII VAHVA LAPS!</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kas teile meeldivad lapsed?",
+        audio: "../audio/21-laps-a1/001.wav",
+        answer: "Jah, mulle meeldivad lapsed.",
+        answerAudio: "../audio/21-laps-a1/001a.wav"
+      },
+      {
+        text: "Kas teil on laps? Mitu last teil on?",
+        audio: "../audio/21-laps-a1/002.wav",
+        answer: "Jah, mul on kaks last.",
+        answerAudio: "../audio/21-laps-a1/002a.wav"
+      },
+      {
+        text: "Kas teil on poeg või tütar? Mitu poega ja tütart teil on?",
+        audio: "../audio/21-laps-a1/003.wav",
+        answer: "Mul on kaks poega.",
+        answerAudio: "../audio/21-laps-a1/003a.wav"
+      },
+      {
+        text: "Kui vana teie laps on? Kui vanad teie lapsed on?",
+        audio: "../audio/21-laps-a1/004.wav",
+        answer: "Minu pojad on umbes kaheksa ja üksteist aastat vanad.",
+        answerAudio: "../audio/21-laps-a1/004a.wav"
+      },
+      {
+        text: "Mis teie lapse nimi on? Mis teie laste nimed on?",
+        audio: "../audio/21-laps-a1/005.wav",
+        answer: "Minu laste nimed on Zayan ja Wasif.",
+        answerAudio: "../audio/21-laps-a1/005a.wav"
+      },
+      {
+        text: "Kus on teie laps või lapsed hommikul? Aga päeval? Aga õhtul?",
+        audio: "../audio/21-laps-a1/006.wav",
+        answer: "Hommikul on nad koolis. Päeval on nad koolis või kodus. Õhtul on nad kodus.",
+        answerAudio: "../audio/21-laps-a1/006a.wav"
+      },
+      {
+        text: "Kus on teie laps või lapsed praegu?",
+        audio: "../audio/21-laps-a1/007.wav",
+        answer: "Praegu on nad kodus või koolis.",
+        answerAudio: "../audio/21-laps-a1/007a.wav"
+      },
+      {
+        text: "Millal on teie lapse sünnipäev? Millal on teie laste sünnipäevad?",
+        audio: "../audio/21-laps-a1/008.wav",
+        answer: "Minu laste sünnipäevad on talvel.",
+        answerAudio: "../audio/21-laps-a1/008a.wav"
+      },
+      {
+        text: "Kas teie laps oskab laulda? Aga joonistada?",
+        audio: "../audio/21-laps-a1/009.wav",
+        answer: "Jah, nad oskavad laulda ja joonistada.",
+        answerAudio: "../audio/21-laps-a1/009a.wav"
+      },
+      {
+        text: "Kas teie laps oskab ujuda? Aga jalgrattaga sõita?",
+        audio: "../audio/21-laps-a1/010.wav",
+        answer: "Jah, nad oskavad ujuda ja jalgrattaga sõita.",
+        answerAudio: "../audio/21-laps-a1/010a.wav"
+      },
+      {
+        text: "Kas teie laps oskab lugeda? Aga kirjutada? Aga kas teie laps oskab eesti keelt rääkida?",
+        audio: "../audio/21-laps-a1/011.wav",
+        answer: "Jah, nad oskavad lugeda ja kirjutada. Eesti keelt nad õpivad.",
+        answerAudio: "../audio/21-laps-a1/011a.wav"
+      },
+      {
+        text: "Kas teie lapsel on palju või vähe mänguasju?",
+        audio: "../audio/21-laps-a1/012.wav",
+        answer: "Neil on üsna palju mänguasju.",
+        answerAudio: "../audio/21-laps-a1/012a.wav"
+      },
+      {
+        text: "Mis on teie lapse lemmikmänguasi?",
+        audio: "../audio/21-laps-a1/013.wav",
+        answer: "Nende lemmikmänguasi on lego.",
+        answerAudio: "../audio/21-laps-a1/013a.wav"
+      },
+      {
+        text: "Kas teie lapsele meeldib sporti teha? Mis sporti ta teeb?",
+        audio: "../audio/21-laps-a1/014.wav",
+        answer: "Jah, neile meeldib sport. Nad mängivad jalgpalli ja sulgpalli.",
+        answerAudio: "../audio/21-laps-a1/014a.wav"
+      },
+      {
+        text: "Mis kell teie laps magama läheb?",
+        audio: "../audio/21-laps-a1/015.wav",
+        answer: "Tavaliselt lähevad nad magama umbes kell üheksa.",
+        answerAudio: "../audio/21-laps-a1/015a.wav"
+      },
+      {
+        text: "Mis teie lapsele maitseb? Mis teie lapsele ei maitse?",
+        audio: "../audio/21-laps-a1/016.wav",
+        answer: "Neile maitseb pizza ja pasta. Neile ei meeldi mõned köögiviljad.",
+        answerAudio: "../audio/21-laps-a1/016a.wav"
+      },
+      {
+        text: "Mis on teie lapse lemmiksöök?",
+        audio: "../audio/21-laps-a1/017.wav",
+        answer: "Nende lemmiksöök on pizza.",
+        answerAudio: "../audio/21-laps-a1/017a.wav"
+      },
+      {
+        text: "Kas te teate, mida tähendab tita? Aga pepu? Aga mähkmed? Aga lutt?",
+        audio: "../audio/21-laps-a1/018.wav",
+        answer: "Jah, ma tean neid sõnu.",
+        answerAudio: "../audio/21-laps-a1/018a.wav"
+      },
+      {
+        text: "Kas teie lapsele meeldivad roosad riided? Aga sinised?",
+        audio: "../audio/21-laps-a1/019.wav",
+        answer: "Neile meeldivad rohkem sinised riided.",
+        answerAudio: "../audio/21-laps-a1/019a.wav"
+      },
+      {
+        text: "Kas teie lapsele meeldib muuseumis käia? Aga teatris? Aga kinos?",
+        audio: "../audio/21-laps-a1/020.wav",
+        answer: "Neile meeldib kinos käia.",
+        answerAudio: "../audio/21-laps-a1/020a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

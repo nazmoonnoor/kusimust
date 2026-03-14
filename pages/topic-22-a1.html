@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>22. LOODUS JA LOOMAD - A1 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #3f8f5f">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 22 • A1</div>
+      <h1 class="topic-heading">22. LOODUS JA LOOMAD - VAATA, SIGA LENDAB!</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kas teile meeldib linn või loodus?",
+        audio: "../audio/22-loodus-ja-loomad-a1/001.wav",
+        answer: "Mulle meeldivad nii linn kui loodus.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a1/001a.wav"
+      },
+      {
+        text: "Kas te jalutate mõnikord metsas? Millal te jalutate metsas?",
+        audio: "../audio/22-loodus-ja-loomad-a1/002.wav",
+        answer: "Jah, mõnikord jalutan metsas. Tavaliselt nädalavahetusel.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a1/002a.wav"
+      },
+      {
+        text: "Kas teie kodu lähedal on meri? Aga mets?",
+        audio: "../audio/22-loodus-ja-loomad-a1/003.wav",
+        answer: "Jah, minu kodu lähedal on meri ja mets.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a1/003a.wav"
+      },
+      {
+        text: "Mis värvi on meri? Aga mis värvi on mets?",
+        audio: "../audio/22-loodus-ja-loomad-a1/004.wav",
+        answer: "Meri on tavaliselt sinine või hall. Mets on roheline.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a1/004a.wav"
+      },
+      {
+        text: "Kas Eesti metsad on suured või väikesed?",
+        audio: "../audio/22-loodus-ja-loomad-a1/005.wav",
+        answer: "Eesti metsad on üsna suured.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a1/005a.wav"
+      },
+      {
+        text: "Kes elab metsas? Aga kes elab meres?",
+        audio: "../audio/22-loodus-ja-loomad-a1/006.wav",
+        answer: "Metsas elavad loomad ja linnud. Meres elavad kalad.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a1/006a.wav"
+      },
+      {
+        text: "Mida te näete, kui te vaatate aknast välja?",
+        audio: "../audio/22-loodus-ja-loomad-a1/007.wav",
+        answer: "Ma näen tänavat ja maju.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a1/007a.wav"
+      },
+      {
+        text: "Kas teile meeldivad liblikad? Aga mesilased?",
+        audio: "../audio/22-loodus-ja-loomad-a1/008.wav",
+        answer: "Jah, mulle meeldivad liblikad. Mesilased on ka kasulikud.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a1/008a.wav"
+      },
+      {
+        text: "Kas te teate, mis kell homme päike tõuseb?",
+        audio: "../audio/22-loodus-ja-loomad-a1/009.wav",
+        answer: "Ma ei tea täpselt, aga umbes hommikul vara.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a1/009a.wav"
+      },
+      {
+        text: "Kas teie kodu lähedal on jõgi? Aga järv?",
+        audio: "../audio/22-loodus-ja-loomad-a1/010.wav",
+        answer: "Jah, minu kodu lähedal on meri ja ka järv.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a1/010a.wav"
+      },
+      {
+        text: "Kas teie kodu lähedal on mägi? Kui kõrge see mägi on?",
+        audio: "../audio/22-loodus-ja-loomad-a1/011.wav",
+        answer: "Ei, siin ei ole suuri mägesid.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a1/011a.wav"
+      },
+      {
+        text: "Mis on maailma kõige suurem saar?",
+        audio: "../audio/22-loodus-ja-loomad-a1/012.wav",
+        answer: "Ma arvan, et Gröönimaa on kõige suurem saar.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a1/012a.wav"
+      },
+      {
+        text: "Mis värvi on flamingo? Aga sebra?",
+        audio: "../audio/22-loodus-ja-loomad-a1/013.wav",
+        answer: "Flamingo on roosa. Sebra on must ja valge.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a1/013a.wav"
+      },
+      {
+        text: "Mis loom on ilus? Aga naljakas? Aga tark?",
+        audio: "../audio/22-loodus-ja-loomad-a1/014.wav",
+        answer: "Liblikas on ilus. Ahv on naljakas. Delfiin on tark.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a1/014a.wav"
+      },
+      {
+        text: "Kas teile meeldib Eesti loodus? Aga kas teile meeldib teie kodumaa loodus?",
+        audio: "../audio/22-loodus-ja-loomad-a1/015.wav",
+        answer: "Jah, mulle meeldib Eesti loodus ja ka minu kodumaa loodus.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a1/015a.wav"
+      },
+      {
+        text: "Mis riigis on kõrged mäed?",
+        audio: "../audio/22-loodus-ja-loomad-a1/016.wav",
+        answer: "Näiteks Šveitsis ja Nepalis on kõrged mäed.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a1/016a.wav"
+      },
+      {
+        text: "Mis riigis on suured järved? Aga suured metsad?",
+        audio: "../audio/22-loodus-ja-loomad-a1/017.wav",
+        answer: "Kanadas on suured järved ja metsad.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a1/017a.wav"
+      },
+      {
+        text: "Mis riigis on ilusad rannad?",
+        audio: "../audio/22-loodus-ja-loomad-a1/018.wav",
+        answer: "Näiteks Hispaanias ja Tais on ilusad rannad.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a1/018a.wav"
+      },
+      {
+        text: "Kas te teate, mida tähendab vaal? Aga koolibri? Aga puuk? Aga prussakas?",
+        audio: "../audio/22-loodus-ja-loomad-a1/019.wav",
+        answer: "Jah, ma tean neid sõnu.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a1/019a.wav"
+      },
+      {
+        text: "Millal on loodus kõige ilusam? Kas kevadel, suvel, sügisel või talvel?",
+        audio: "../audio/22-loodus-ja-loomad-a1/020.wav",
+        answer: "Minu arvates on loodus kõige ilusam suvel ja kevadel.",
+        answerAudio: "../audio/22-loodus-ja-loomad-a1/020a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

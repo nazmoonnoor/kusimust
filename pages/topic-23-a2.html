@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>23. MUUSIKA - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #6d28d9">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 23 • A2</div>
+      <h1 class="topic-heading">23. MUUSIKA - KELLE LAUL SEE ON?</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Millal te viimati kontserdil käisite? Kus see kontsert oli?",
+        audio: "../audio/23-muusika-a2/001.wav",
+        answer: "Ma käisin kontserdil eelmisel aastal. See oli Tallinnas.",
+        answerAudio: "../audio/23-muusika-a2/001a.wav"
+      },
+      {
+        text: "Missuguse kuulsa bändi kontserdil te käinud olete? Kus see kontsert oli?",
+        audio: "../audio/23-muusika-a2/002.wav",
+        answer: "Ma ei ole väga paljude bändide kontserdil käinud.",
+        answerAudio: "../audio/23-muusika-a2/002a.wav"
+      },
+      {
+        text: "Kas te laulate kooris? Kas teile meeldib koorilaul?",
+        audio: "../audio/23-muusika-a2/003.wav",
+        answer: "Ei, ma ei laula kooris. Aga mulle meeldib koorilaulu kuulata.",
+        answerAudio: "../audio/23-muusika-a2/003a.wav"
+      },
+      {
+        text: "Mis pilli te mängiksite, kui oleksite bändis? Kas te laulaksite bändis?",
+        audio: "../audio/23-muusika-a2/004.wav",
+        answer: "Kui ma oleks bändis, ma mängiks kitarri.",
+        answerAudio: "../audio/23-muusika-a2/004a.wav"
+      },
+      {
+        text: "Kas te oskate laulda oma kodumaa hümni? Aga Eesti hümni?",
+        audio: "../audio/23-muusika-a2/005.wav",
+        answer: "Jah, ma oskan oma kodumaa hümni. Eesti hümni ma veel õpin.",
+        answerAudio: "../audio/23-muusika-a2/005a.wav"
+      },
+      {
+        text: "Kas teil on kodus mõni pill? Kus see praegu on?",
+        audio: "../audio/23-muusika-a2/006.wav",
+        answer: "Ei, mul ei ole pilli kodus.",
+        answerAudio: "../audio/23-muusika-a2/006a.wav"
+      },
+      {
+        text: "Millal teile meeldib muusikat kuulata? Millal te kindlasti muusikat ei kuula?",
+        audio: "../audio/23-muusika-a2/007.wav",
+        answer: "Mulle meeldib muusikat kuulata õhtul. Ma ei kuula muusikat, kui ma töötan.",
+        answerAudio: "../audio/23-muusika-a2/007a.wav"
+      },
+      {
+        text: "Kas bussis või rongis võiks olla muusika? Aga haigla koridoris?",
+        audio: "../audio/23-muusika-a2/008.wav",
+        answer: "Bussis võib olla muusika. Haiglas peaks olema vaikne.",
+        answerAudio: "../audio/23-muusika-a2/008a.wav"
+      },
+      {
+        text: "Kas ema laulis teile, kui te olite laps? Mida ta laulis?",
+        audio: "../audio/23-muusika-a2/009.wav",
+        answer: "Jah, mu ema laulis mulle unelaule.",
+        answerAudio: "../audio/23-muusika-a2/009a.wav"
+      },
+      {
+        text: "Kes on maailma kõige parem laulja? Aga maailma kõige kuulsam laulja?",
+        audio: "../audio/23-muusika-a2/010.wav",
+        answer: "Minu arvates on palju häid lauljaid maailmas.",
+        answerAudio: "../audio/23-muusika-a2/010a.wav"
+      },
+      {
+        text: "Kas teil on head kõlarid? Kus toas need on?",
+        audio: "../audio/23-muusika-a2/011.wav",
+        answer: "Jah, mul on kõlarid. Need on elutoas.",
+        answerAudio: "../audio/23-muusika-a2/011a.wav"
+      },
+      {
+        text: "Mis laulu te viimati kuulasite? Kelle laul see on?",
+        audio: "../audio/23-muusika-a2/012.wav",
+        answer: "Ma kuulasin viimati poplaulu.",
+        answerAudio: "../audio/23-muusika-a2/012a.wav"
+      },
+      {
+        text: "Kas teile meeldivad muusikalid? Aga ooperid? Aga rokkooperid?",
+        audio: "../audio/23-muusika-a2/013.wav",
+        answer: "Mulle meeldivad muusikalid.",
+        answerAudio: "../audio/23-muusika-a2/013a.wav"
+      },
+      {
+        text: "Kas teil on oma playlist? Mitu laulu selles playlistis on?",
+        audio: "../audio/23-muusika-a2/014.wav",
+        answer: "Jah, mul on playlist. Seal on umbes 30 laulu.",
+        answerAudio: "../audio/23-muusika-a2/014a.wav"
+      },
+      {
+        text: "Kas te olete laulnud laval? Millal see oli?",
+        audio: "../audio/23-muusika-a2/015.wav",
+        answer: "Ei, ma ei ole laulnud laval.",
+        answerAudio: "../audio/23-muusika-a2/015a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

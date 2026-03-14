@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>25. TV JA FILMID - A1 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #4b5563">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 25 • A1</div>
+      <h1 class="topic-heading">25. TV JA FILMID - PANE PALUN VAIKSEMAKS</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kas teie magamistoas on telekas? Aga köögis?",
+        audio: "../audio/25-tv-ja-filmid-a1/001.wav",
+        answer: "Ei, minu magamistoas ei ole telekat. Köögis ka ei ole.",
+        answerAudio: "../audio/25-tv-ja-filmid-a1/001a.wav"
+      },
+      {
+        text: "Kus teie kodus on telekas? Kus teie kodus on arvuti?",
+        audio: "../audio/25-tv-ja-filmid-a1/002.wav",
+        answer: "Telekas on elutoas. Arvuti on töötoas.",
+        answerAudio: "../audio/25-tv-ja-filmid-a1/002a.wav"
+      },
+      {
+        text: "Kas te vaatate filme arvutist või telekast?",
+        audio: "../audio/25-tv-ja-filmid-a1/003.wav",
+        answer: "Tavaliselt vaatan filme arvutist.",
+        answerAudio: "../audio/25-tv-ja-filmid-a1/003a.wav"
+      },
+      {
+        text: "Kas teie telekas või arvuti on suur või väike?",
+        audio: "../audio/25-tv-ja-filmid-a1/004.wav",
+        answer: "Minu telekas on suur. Arvuti on keskmine.",
+        answerAudio: "../audio/25-tv-ja-filmid-a1/004a.wav"
+      },
+      {
+        text: "Kas teie telekas või arvuti on uus või vana? Kui vana see on?",
+        audio: "../audio/25-tv-ja-filmid-a1/005.wav",
+        answer: "Minu arvuti on üsna uus. See on umbes kaks aastat vana.",
+        answerAudio: "../audio/25-tv-ja-filmid-a1/005a.wav"
+      },
+      {
+        text: "Mis marki on teie telekas või arvuti?",
+        audio: "../audio/25-tv-ja-filmid-a1/006.wav",
+        answer: "Minu arvuti on Apple.",
+        answerAudio: "../audio/25-tv-ja-filmid-a1/006a.wav"
+      },
+      {
+        text: "Mis värvi on teie telekas või arvuti?",
+        audio: "../audio/25-tv-ja-filmid-a1/007.wav",
+        answer: "Minu arvuti on hall.",
+        answerAudio: "../audio/25-tv-ja-filmid-a1/007a.wav"
+      },
+      {
+        text: "Kui palju maksab hea telekas või arvuti?",
+        audio: "../audio/25-tv-ja-filmid-a1/008.wav",
+        answer: "Hea arvuti võib maksta umbes 1000 eurot.",
+        answerAudio: "../audio/25-tv-ja-filmid-a1/008a.wav"
+      },
+      {
+        text: "Mis kanaleid te vaatate?",
+        audio: "../audio/25-tv-ja-filmid-a1/009.wav",
+        answer: "Ma vaatan uudiste- ja spordikanaleid.",
+        answerAudio: "../audio/25-tv-ja-filmid-a1/009a.wav"
+      },
+      {
+        text: "Kas te vaatate spordikanalit? Aga muusikakanalit?",
+        audio: "../audio/25-tv-ja-filmid-a1/010.wav",
+        answer: "Jah, mõnikord vaatan spordikanalit.",
+        answerAudio: "../audio/25-tv-ja-filmid-a1/010a.wav"
+      },
+      {
+        text: "Mis kell te tavaliselt telekat või filme vaatate?",
+        audio: "../audio/25-tv-ja-filmid-a1/011.wav",
+        answer: "Tavaliselt vaatan õhtul umbes kell kaheksa.",
+        answerAudio: "../audio/25-tv-ja-filmid-a1/011a.wav"
+      },
+      {
+        text: "Mis kell te telekat või filme kindlasti ei vaata?",
+        audio: "../audio/25-tv-ja-filmid-a1/012.wav",
+        answer: "Ma ei vaata tavaliselt hommikul.",
+        answerAudio: "../audio/25-tv-ja-filmid-a1/012a.wav"
+      },
+      {
+        text: "Kas te vaatate telekast uudiseid? Mis kell te uudiseid vaatate?",
+        audio: "../audio/25-tv-ja-filmid-a1/013.wav",
+        answer: "Jah, mõnikord vaatan uudiseid õhtul.",
+        answerAudio: "../audio/25-tv-ja-filmid-a1/013a.wav"
+      },
+      {
+        text: "Kas te vaatate täna telekat? Mida te vaatate? Mis kell?",
+        audio: "../audio/25-tv-ja-filmid-a1/014.wav",
+        answer: "Võib-olla vaatan täna filmi õhtul.",
+        answerAudio: "../audio/25-tv-ja-filmid-a1/014a.wav"
+      },
+      {
+        text: "Kas te teate, mida tähendab ulmefilm? Aga seebiooper? Aga reklaamipaus? Aga multifilm?",
+        audio: "../audio/25-tv-ja-filmid-a1/015.wav",
+        answer: "Jah, ma tean neid sõnu.",
+        answerAudio: "../audio/25-tv-ja-filmid-a1/015a.wav"
+      },
+      {
+        text: "Kas teile meeldivad dokumentaalfilmid? Aga armastusfilmid? Aga õudusfilmid?",
+        audio: "../audio/25-tv-ja-filmid-a1/016.wav",
+        answer: "Mulle meeldivad dokumentaalfilmid.",
+        answerAudio: "../audio/25-tv-ja-filmid-a1/016a.wav"
+      },
+      {
+        text: "Kas te sööte, kui te vaatate telekat? Mida te sööte?",
+        audio: "../audio/25-tv-ja-filmid-a1/017.wav",
+        answer: "Mõnikord söön. Tavaliselt söön popkorni või puuvilju.",
+        answerAudio: "../audio/25-tv-ja-filmid-a1/017a.wav"
+      },
+      {
+        text: "Kas teile meeldivad reklaamid?",
+        audio: "../audio/25-tv-ja-filmid-a1/018.wav",
+        answer: "Ei, reklaamid mulle eriti ei meeldi.",
+        answerAudio: "../audio/25-tv-ja-filmid-a1/018a.wav"
+      },
+      {
+        text: "Mida te teete, kui telekas on reklaam?",
+        audio: "../audio/25-tv-ja-filmid-a1/019.wav",
+        answer: "Kui on reklaam, ma vaatan telefoni.",
+        answerAudio: "../audio/25-tv-ja-filmid-a1/019a.wav"
+      },
+      {
+        text: "Kes vaatab teie peres kõige rohkem telekat? Kes vaatab teie peres kõige vähem telekat?",
+        audio: "../audio/25-tv-ja-filmid-a1/020.wav",
+        answer: "Minu lapsed vaatavad kõige rohkem. Mina vaatan vähem.",
+        answerAudio: "../audio/25-tv-ja-filmid-a1/020a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

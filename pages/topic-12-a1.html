@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>12. KODUMASINAD - A1 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #6b7280">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 12 • A1</div>
+      <h1 class="topic-heading">12. KODUMASINAD</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kas teil on pesumasin? Kus teie pesumasin on?",
+        audio: "../audio/12-kodumasinad-a1/001.wav",
+        answer: "Jah, mul on pesumasin. See on vannitoas.",
+        answerAudio: "../audio/12-kodumasinad-a1/001a.wav"
+      },
+      {
+        text: "Kas teil on tolmuimeja? Aga robottolmuimeja? Mis värvi teie tolmuimeja on?",
+        audio: "../audio/12-kodumasinad-a1/002.wav",
+        answer: "Jah, mul on tolmuimeja. Mul ei ole robottolmuimejat. Minu tolmuimeja on must.",
+        answerAudio: "../audio/12-kodumasinad-a1/002a.wav"
+      },
+      {
+        text: "Mis kodumasinad teil on? Kus need teie kodus on?",
+        audio: "../audio/12-kodumasinad-a1/003.wav",
+        answer: "Mul on külmkapp, pesumasin ja mikrolaineahi. Need on köögis ja vannitoas.",
+        answerAudio: "../audio/12-kodumasinad-a1/003a.wav"
+      },
+      {
+        text: "Mis kodumasinat te iga päev kasutate? Aga iga nädal?",
+        audio: "../audio/12-kodumasinad-a1/004.wav",
+        answer: "Iga päev kasutan veekeetjat. Iga nädal kasutan pesumasinat.",
+        answerAudio: "../audio/12-kodumasinad-a1/004a.wav"
+      },
+      {
+        text: "Mis kodumasinat te kasutate öösel? Mis kodumasinat te kasutate päeval?",
+        audio: "../audio/12-kodumasinad-a1/005.wav",
+        answer: "Öösel ma tavaliselt kodumasinaid ei kasuta. Päeval kasutan veekeetjat ja arvutit.",
+        answerAudio: "../audio/12-kodumasinad-a1/005a.wav"
+      },
+      {
+        text: "Mitu korda päevas te veekeetjat kasutate?",
+        audio: "../audio/12-kodumasinad-a1/006.wav",
+        answer: "Tavaliselt kasutan veekeetjat kaks korda päevas.",
+        answerAudio: "../audio/12-kodumasinad-a1/006a.wav"
+      },
+      {
+        text: "Kas teil on tavaline või elektriline hambahari? Mis värvi see on?",
+        audio: "../audio/12-kodumasinad-a1/007.wav",
+        answer: "Mul on elektriline hambahari. See on valge.",
+        answerAudio: "../audio/12-kodumasinad-a1/007a.wav"
+      },
+      {
+        text: "Mis on teie lemmikkodumasin? Kus see on?",
+        audio: "../audio/12-kodumasinad-a1/008.wav",
+        answer: "Minu lemmikkodumasin on kohvimasin. See on köögis.",
+        answerAudio: "../audio/12-kodumasinad-a1/008a.wav"
+      },
+      {
+        text: "Mis firma kodumasinad on head?",
+        audio: "../audio/12-kodumasinad-a1/009.wav",
+        answer: "Minu arvates on Bosch ja Samsung head firmad.",
+        answerAudio: "../audio/12-kodumasinad-a1/009a.wav"
+      },
+      {
+        text: "Kas teil on föön? Kus teie föön on?",
+        audio: "../audio/12-kodumasinad-a1/010.wav",
+        answer: "Jah, mul on föön. See on vannitoas.",
+        answerAudio: "../audio/12-kodumasinad-a1/010a.wav"
+      },
+      {
+        text: "Kas te teate, mida tähendab pistikupesa? Mitu pistikupesa teie köögis on?",
+        audio: "../audio/12-kodumasinad-a1/011.wav",
+        answer: "Jah, ma tean seda sõna. Minu köögis on umbes neli pistikupesa.",
+        answerAudio: "../audio/12-kodumasinad-a1/011a.wav"
+      },
+      {
+        text: "Kas teil on röster? Mitu sekundit te saia röstite?",
+        audio: "../audio/12-kodumasinad-a1/012.wav",
+        answer: "Jah, mul on röster. Tavaliselt röstin saia umbes 60 sekundit.",
+        answerAudio: "../audio/12-kodumasinad-a1/012a.wav"
+      },
+      {
+        text: "Kas teil on arvuti? Kus teie arvuti praegu on?",
+        audio: "../audio/12-kodumasinad-a1/013.wav",
+        answer: "Jah, mul on arvuti. See on minu laua peal.",
+        answerAudio: "../audio/12-kodumasinad-a1/013a.wav"
+      },
+      {
+        text: "Mis kodumasinad on teie vannitoas? Aga magamistoas?",
+        audio: "../audio/12-kodumasinad-a1/014.wav",
+        answer: "Vannitoas on pesumasin ja föön. Magamistoas on arvuti ja lamp.",
+        answerAudio: "../audio/12-kodumasinad-a1/014a.wav"
+      },
+      {
+        text: "Kas teil on raadio? Kus see on?",
+        audio: "../audio/12-kodumasinad-a1/015.wav",
+        answer: "Jah, mul on raadio. See on elutoas.",
+        answerAudio: "../audio/12-kodumasinad-a1/015a.wav"
+      },
+      {
+        text: "Kas kõik teie kodumasinad töötavad elektriga?",
+        audio: "../audio/12-kodumasinad-a1/016.wav",
+        answer: "Jah, enamik minu kodumasinaid töötab elektriga.",
+        answerAudio: "../audio/12-kodumasinad-a1/016a.wav"
+      },
+      {
+        text: "Kas kodumasin on hea kingitus?",
+        audio: "../audio/12-kodumasinad-a1/017.wav",
+        answer: "Jah, kodumasin võib olla hea kingitus.",
+        answerAudio: "../audio/12-kodumasinad-a1/017a.wav"
+      },
+      {
+        text: "Kas teie emal on nõudepesumasin? Aga pesumasin?",
+        audio: "../audio/12-kodumasinad-a1/018.wav",
+        answer: "Jah, mu emal on pesumasin. Nõudepesumasinat tal ei ole.",
+        answerAudio: "../audio/12-kodumasinad-a1/018a.wav"
+      },
+      {
+        text: "Kas te teate, mida tähendab õmblusmasin? Aga akutrell? Aga vahvlimasin? Aga köögikombain?",
+        audio: "../audio/12-kodumasinad-a1/019.wav",
+        answer: "Jah, ma tean neid sõnu. Need on erinevad masinad kodus.",
+        answerAudio: "../audio/12-kodumasinad-a1/019a.wav"
+      },
+      {
+        text: "Mis on teie kõige ilusam kodumasin? Kus see teie kodus on? Mis on teie kõige suurem kodumasin? Kus see teie kodus on?",
+        audio: "../audio/12-kodumasinad-a1/020.wav",
+        answer: "Minu kõige ilusam kodumasin on kohvimasin. See on köögis. Kõige suurem kodumasin on külmkapp ja see on ka köögis.",
+        answerAudio: "../audio/12-kodumasinad-a1/020a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

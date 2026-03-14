@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>9. ILM - A1 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #4f86c6">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 09 • A1</div>
+      <h1 class="topic-heading">9. ILM</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play after that automatically. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kas praegu paistab päike?",
+        audio: "../audio/09-ilm-a1/001.wav",
+        answer: "Jah, praegu paistab päike.",
+        answerAudio: "../audio/09-ilm-a1/001a.wav"
+      },
+      {
+        text: "Kas praegu on väljas soe või külm? Aga teie toas?",
+        audio: "../audio/09-ilm-a1/002.wav",
+        answer: "Väljas on natuke külm. Minu toas on soe.",
+        answerAudio: "../audio/09-ilm-a1/002a.wav"
+      },
+      {
+        text: "Mis temperatuur on praegu väljas?",
+        audio: "../audio/09-ilm-a1/003.wav",
+        answer: "Praegu on väljas umbes viis kraadi.",
+        answerAudio: "../audio/09-ilm-a1/003a.wav"
+      },
+      {
+        text: "Kas praegu sajab vihma? Aga lund?",
+        audio: "../audio/09-ilm-a1/004.wav",
+        answer: "Ei, praegu ei saja vihma ega lund.",
+        answerAudio: "../audio/09-ilm-a1/004a.wav"
+      },
+      {
+        text: "Kas praegu on taevas pilves?",
+        audio: "../audio/09-ilm-a1/005.wav",
+        answer: "Jah, taevas on natuke pilves.",
+        answerAudio: "../audio/09-ilm-a1/005a.wav"
+      },
+      {
+        text: "Missugune ilm homme on?",
+        audio: "../audio/09-ilm-a1/006.wav",
+        answer: "Homme on päikeseline ja soe ilm.",
+        answerAudio: "../audio/09-ilm-a1/006a.wav"
+      },
+      {
+        text: "Missugune on ilm suvel? Aga talvel?",
+        audio: "../audio/09-ilm-a1/007.wav",
+        answer: "Suvel on soe ja päikeseline. Talvel on külm ja mõnikord sajab lund.",
+        answerAudio: "../audio/09-ilm-a1/007a.wav"
+      },
+      {
+        text: "Missugune ilm teile meeldib?",
+        audio: "../audio/09-ilm-a1/008.wav",
+        answer: "Mulle meeldib soe ja päikeseline ilm.",
+        answerAudio: "../audio/09-ilm-a1/008a.wav"
+      },
+      {
+        text: "Väljas on miinus viis kraadi. Kas see on külm või soe ilm?",
+        audio: "../audio/09-ilm-a1/009.wav",
+        answer: "See on külm ilm.",
+        answerAudio: "../audio/09-ilm-a1/009a.wav"
+      },
+      {
+        text: "Väljas on pluss viis kraadi. Kas see on külm või soe ilm?",
+        audio: "../audio/09-ilm-a1/010.wav",
+        answer: "See on natuke külm ilm.",
+        answerAudio: "../audio/09-ilm-a1/010a.wav"
+      },
+      {
+        text: "Mis värvi on teie vihmavari?",
+        audio: "../audio/09-ilm-a1/011.wav",
+        answer: "Minu vihmavari on must.",
+        answerAudio: "../audio/09-ilm-a1/011a.wav"
+      },
+      {
+        text: "Mis värvi on teie kummikud?",
+        audio: "../audio/09-ilm-a1/012.wav",
+        answer: "Minu kummikud on mustad.",
+        answerAudio: "../audio/09-ilm-a1/012a.wav"
+      },
+      {
+        text: "Millal algab kevad? Aga suvi?",
+        audio: "../audio/09-ilm-a1/013.wav",
+        answer: "Kevad algab märtsis ja suvi algab juunis.",
+        answerAudio: "../audio/09-ilm-a1/013a.wav"
+      },
+      {
+        text: "Mis kuud on talv? Mis kuud on kevad? Mis kuud on sügis? Mis kuud on suvi?",
+        audio: "../audio/09-ilm-a1/014.wav",
+        answer: "Talv on detsember, jaanuar ja veebruar. Kevad on märts, aprill ja mai. Suvi on juuni, juuli ja august. Sügis on september, oktoober ja november.",
+        answerAudio: "../audio/09-ilm-a1/014a.wav"
+      },
+      {
+        text: "Mis kuu on kõige külmem?",
+        audio: "../audio/09-ilm-a1/015.wav",
+        answer: "Tavaliselt on kõige külmem jaanuar.",
+        answerAudio: "../audio/09-ilm-a1/015a.wav"
+      },
+      {
+        text: "Mis kuu on kõige soojem?",
+        audio: "../audio/09-ilm-a1/016.wav",
+        answer: "Tavaliselt on kõige soojem juuli.",
+        answerAudio: "../audio/09-ilm-a1/016a.wav"
+      },
+      {
+        text: "Kas te teate, mida tähendab virmalised? Aga jääpurikas? Aga rahe? Aga tuisk?",
+        audio: "../audio/09-ilm-a1/017.wav",
+        answer: "Jah, ma tean neid sõnu. Need on seotud ilmaga.",
+        answerAudio: "../audio/09-ilm-a1/017a.wav"
+      },
+      {
+        text: "Kas teil on päikeseprillid? Mis värvi on teie päikeseprillid?",
+        audio: "../audio/09-ilm-a1/018.wav",
+        answer: "Jah, mul on päikeseprillid. Need on musta värvi.",
+        answerAudio: "../audio/09-ilm-a1/018a.wav"
+      },
+      {
+        text: "Mis teil on seljas, kui on väga külm?",
+        audio: "../audio/09-ilm-a1/019.wav",
+        answer: "Kui on väga külm, mul on seljas paks jope, sall ja müts.",
+        answerAudio: "../audio/09-ilm-a1/019a.wav"
+      },
+      {
+        text: "Mis teil on seljas, kui on väga soe?",
+        audio: "../audio/09-ilm-a1/020.wav",
+        answer: "Kui on väga soe, mul on seljas T-särk ja lühikesed püksid.",
+        answerAudio: "../audio/09-ilm-a1/020a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

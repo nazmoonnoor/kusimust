@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>16. RAHA - A1 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #15803d">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 16 • A1</div>
+      <h1 class="topic-heading">16. RAHA</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Mitu senti on üks euro?",
+        audio: "../audio/16-raha-a1/001.wav",
+        answer: "Üks euro on 100 senti.",
+        answerAudio: "../audio/16-raha-a1/001a.wav"
+      },
+      {
+        text: "Mitu senti on 10 eurot?",
+        audio: "../audio/16-raha-a1/002.wav",
+        answer: "10 eurot on 1000 senti.",
+        answerAudio: "../audio/16-raha-a1/002a.wav"
+      },
+      {
+        text: "Mis värvi on 10 eurot? Aga 20 eurot? Aga 50 eurot?",
+        audio: "../audio/16-raha-a1/003.wav",
+        answer: "10 eurot on punane. 20 eurot on sinine. 50 eurot on oranž.",
+        answerAudio: "../audio/16-raha-a1/003a.wav"
+      },
+      {
+        text: "Kas 10 eurot on suur või väike raha? Aga 100 eurot?",
+        audio: "../audio/16-raha-a1/004.wav",
+        answer: "10 eurot on väike raha. 100 eurot on juba suurem raha.",
+        answerAudio: "../audio/16-raha-a1/004a.wav"
+      },
+      {
+        text: "Kas 1000 eurot on suur palk? Aga 2000 eurot?",
+        audio: "../audio/16-raha-a1/005.wav",
+        answer: "1000 eurot on väike palk. 2000 eurot on parem palk.",
+        answerAudio: "../audio/16-raha-a1/005a.wav"
+      },
+      {
+        text: "Kui palju maksab tass kohvi? Kas see on odav või kallis?",
+        audio: "../audio/16-raha-a1/006.wav",
+        answer: "Tass kohvi maksab umbes 2–3 eurot. See on normaalne hind.",
+        answerAudio: "../audio/16-raha-a1/006a.wav"
+      },
+      {
+        text: "Kui palju maksab pudel veini? Aga tahvel šokolaadi?",
+        audio: "../audio/16-raha-a1/007.wav",
+        answer: "Pudel veini maksab umbes 8–12 eurot. Šokolaad maksab umbes 2 eurot.",
+        answerAudio: "../audio/16-raha-a1/007a.wav"
+      },
+      {
+        text: "Kui palju maksab praegu liiter bensiini?",
+        audio: "../audio/16-raha-a1/008.wav",
+        answer: "Liiter bensiini maksab umbes 1,7–2 eurot.",
+        answerAudio: "../audio/16-raha-a1/008a.wav"
+      },
+      {
+        text: "Kui palju maksab kinopilet? Aga hea raamat?",
+        audio: "../audio/16-raha-a1/009.wav",
+        answer: "Kinopilet maksab umbes 8–12 eurot. Hea raamat maksab umbes 15–25 eurot.",
+        answerAudio: "../audio/16-raha-a1/009a.wav"
+      },
+      {
+        text: "Kas leib on kallis või odav? Aga liha?",
+        audio: "../audio/16-raha-a1/010.wav",
+        answer: "Leib on tavaliselt odav. Liha on kallim.",
+        answerAudio: "../audio/16-raha-a1/010a.wav"
+      },
+      {
+        text: "Kas te maksate toidupoes sularahas või pangakaardiga? Aga kohvikus?",
+        audio: "../audio/16-raha-a1/011.wav",
+        answer: "Ma maksan tavaliselt pangakaardiga.",
+        answerAudio: "../audio/16-raha-a1/011a.wav"
+      },
+      {
+        text: "Mitu pangakaarti teil on?",
+        audio: "../audio/16-raha-a1/012.wav",
+        answer: "Mul on kaks pangakaarti.",
+        answerAudio: "../audio/16-raha-a1/012a.wav"
+      },
+      {
+        text: "Mitu pangakontot teil on?",
+        audio: "../audio/16-raha-a1/013.wav",
+        answer: "Mul on üks või kaks pangakontot.",
+        answerAudio: "../audio/16-raha-a1/013a.wav"
+      },
+      {
+        text: "Kas teil on krediitkaart? Kus te maksate krediitkaardiga?",
+        audio: "../audio/16-raha-a1/014.wav",
+        answer: "Jah, mul on krediitkaart. Ma maksan sellega poes ja internetis.",
+        answerAudio: "../audio/16-raha-a1/014a.wav"
+      },
+      {
+        text: "Kas teie pangakaardi PIN-kood on teie sünnipäev?",
+        audio: "../audio/16-raha-a1/015.wav",
+        answer: "Ei, minu PIN-kood ei ole minu sünnipäev.",
+        answerAudio: "../audio/16-raha-a1/015a.wav"
+      },
+      {
+        text: "Mis riigi raha on jeen? Aga mis riigi raha on nael? Aga mis riigi raha on grivna?",
+        audio: "../audio/16-raha-a1/016.wav",
+        answer: "Jeen on Jaapani raha. Nael on Suurbritannia raha. Grivna on Ukraina raha.",
+        answerAudio: "../audio/16-raha-a1/016a.wav"
+      },
+      {
+        text: "Mis on teie lemmikpood?",
+        audio: "../audio/16-raha-a1/017.wav",
+        answer: "Minu lemmikpood on Prisma või Rimi.",
+        answerAudio: "../audio/16-raha-a1/017a.wav"
+      },
+      {
+        text: "Kas te teate, mida tähendab jootraha? Aga taskuraha? Aga valeraha? Aga pangarööv?",
+        audio: "../audio/16-raha-a1/018.wav",
+        answer: "Jah, ma tean neid sõnu.",
+        answerAudio: "../audio/16-raha-a1/018a.wav"
+      },
+      {
+        text: "Mis te ostate, kui ma annan teile 20 eurot?",
+        audio: "../audio/16-raha-a1/019.wav",
+        answer: "Ma ostan toitu või raamatu.",
+        answerAudio: "../audio/16-raha-a1/019a.wav"
+      },
+      {
+        text: "Mis te ostate, kui ma annan teile 1000 eurot?",
+        audio: "../audio/16-raha-a1/020.wav",
+        answer: "Ma ostan uue telefoni või lähen reisile.",
+        answerAudio: "../audio/16-raha-a1/020a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

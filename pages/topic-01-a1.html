@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. MINA - A1 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #c61c2f">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 01 • A1</div>
+      <h1 class="topic-heading">1. MINA</h1>
+      <p>Hover over a question to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio paths are relative to this page. Answers are shown as text now and can later have audio too, for example <code>001a.wav</code>.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+const items = [
+  {
+    text: "Mis on teie eesnimi? Aga perekonnanimi?",
+    audio: "../audio/01-mina-a1/001.wav",
+    answer: "Minu eesnimi on Nazmoon ja minu perekonnanimi on Noor.",
+    answerAudio: "../audio/01-mina-a1/001a.wav"
+  },
+  {
+    text: "Mida teie perekonnanimi tähendab?",
+    audio: "../audio/01-mina-a1/002.wav",
+    answer: "Minu perekonnanimi tähendab „valgus”.",
+    answerAudio: "../audio/01-mina-a1/002a.wav"
+  },
+  {
+    text: "Kas teile meeldib teie nimi?",
+    audio: "../audio/01-mina-a1/003.wav",
+    answer: "Jah, mulle meeldib minu nimi.",
+    answerAudio: "../audio/01-mina-a1/003a.wav"
+  },
+  {
+    text: "Kust te pärit olete? Mis linnast te pärit olete? Kas te olete eestlane?",
+    audio: "../audio/01-mina-a1/004.wav",
+    answer: "Ma olen pärit Bangladeshist. Ma ei ole eestlane.",
+    answerAudio: "../audio/01-mina-a1/004a.wav"
+  },
+  {
+    text: "Kus te praegu elate? Mis on teie aadress?",
+    audio: "../audio/01-mina-a1/005.wav",
+    answer: "Ma elan praegu Tallinnas. Minu aadress on Tallinnas.",
+    answerAudio: "../audio/01-mina-a1/005a.wav"
+  },
+  {
+    text: "Mis on teie maja number? Aga korteri number?",
+    audio: "../audio/01-mina-a1/006.wav",
+    answer: "Minu maja number on 10 ja korteri number on 5.",
+    answerAudio: "../audio/01-mina-a1/006a.wav"
+  },
+  {
+    text: "Kas te oskate inglise keelt? Aga hispaania keelt? Aga hiina keelt? Aga eesti keelt?",
+    audio: "../audio/01-mina-a1/007.wav",
+    answer: "Ma oskan inglise keelt ja natuke eesti keelt. Ma ei oska hispaania ega hiina keelt.",
+    answerAudio: "../audio/01-mina-a1/007a.wav"
+  },
+  {
+    text: "Mis keelt te räägite?",
+    audio: "../audio/01-mina-a1/008.wav",
+    answer: "Ma räägin bengali keelt ja inglise keelt. Ma õpin eesti keelt.",
+    answerAudio: "../audio/01-mina-a1/008a.wav"
+  },
+  {
+    text: "Kas te olete praegu kodus? Kus te praegu olete?",
+    audio: "../audio/01-mina-a1/009.wav",
+    answer: "Jah, ma olen praegu kodus.",
+    answerAudio: "../audio/01-mina-a1/009a.wav"
+  },
+  {
+    text: "Millal on teie sünnipäev?",
+    audio: "../audio/01-mina-a1/010.wav",
+    answer: "Minu sünnipäev on detsembris.",
+    answerAudio: "../audio/01-mina-a1/010a.wav"
+  },
+  {
+    text: "Kui vana te olete? Kas te olete noor või vana?",
+    audio: "../audio/01-mina-a1/011.wav",
+    answer: "Ma olen 43-aastane. Ma ei ole väga noor, aga ma ei ole ka vana.",
+    answerAudio: "../audio/01-mina-a1/011a.wav"
+  },
+  {
+    text: "Mis on teie telefoninumber?",
+    audio: "../audio/01-mina-a1/012.wav",
+    answer: "Minu telefoninumber on 55 123 456.",
+    answerAudio: "../audio/01-mina-a1/012a.wav"
+  },
+  {
+    text: "Kas te töötate praegu? Kus te töötate?",
+    audio: "../audio/01-mina-a1/013.wav",
+    answer: "Jah, ma töötan praegu. Ma töötan IT-ettevõttes.",
+    answerAudio: "../audio/01-mina-a1/013a.wav"
+  },
+  {
+    text: "Kas te olete abielus? Kas te olete õnnelikus abielus?",
+    audio: "../audio/01-mina-a1/014.wav",
+    answer: "Jah, ma olen abielus ja ma olen õnnelik.",
+    answerAudio: "../audio/01-mina-a1/014a.wav"
+  },
+  {
+    text: "Kas teil on laps? Aga koer? Aga kass? Mis tema nimi on?",
+    audio: "../audio/01-mina-a1/015.wav",
+    answer: "Jah, mul on kaks last. Mul ei ole koera ega kassi.",
+    answerAudio: "../audio/01-mina-a1/015a.wav"
+  },
+  {
+    text: "Mis on teie e-posti aadress? Mitu e-posti aadressi teil on?",
+    audio: "../audio/01-mina-a1/016.wav",
+    answer: "Minu e-posti aadress on nazmoon@email.com. Mul on kaks e-posti aadressi.",
+    answerAudio: "../audio/01-mina-a1/016a.wav"
+  },
+  {
+    text: "Mis on teie lemmikvärv?",
+    audio: "../audio/01-mina-a1/017.wav",
+    answer: "Minu lemmikvärv on sinine.",
+    answerAudio: "../audio/01-mina-a1/017a.wav"
+  },
+  {
+    text: "Kas teil on hüüdnimi? Mis see on?",
+    audio: "../audio/01-mina-a1/018.wav",
+    answer: "Jah, minu hüüdnimi on Naz.",
+    answerAudio: "../audio/01-mina-a1/018a.wav"
+  },
+  {
+    text: "Mis on teie lemmiksöök? Aga lemmikjook?",
+    audio: "../audio/01-mina-a1/019.wav",
+    answer: "Minu lemmiksöök on riis ja kana. Minu lemmikjook on tee.",
+    answerAudio: "../audio/01-mina-a1/019a.wav"
+  },
+  {
+    text: "Mida te täna õhtul teete?",
+    audio: "../audio/01-mina-a1/020.wav",
+    answer: "Täna õhtul ma õpin eesti keelt ja vaatan natuke televiisorit.",
+    answerAudio: "../audio/01-mina-a1/020a.wav"
+  }
+];
+
+initAudioList(items);
+</script>
+</body>
+</html>

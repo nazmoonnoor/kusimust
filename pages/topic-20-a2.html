@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>20. VALMIS - A2 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #be185d">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 20 • A2</div>
+      <h1 class="topic-heading">20. VALMIS - SUL ON KENA NAERATUS</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+  <script>
+    const items = [
+      {
+        text: "Kas te olete rohkem oma ema või isa sarnane?",
+        audio: "../audio/20-valmis-a2/001.wav",
+        answer: "Ma olen natuke rohkem oma isa sarnane.",
+        answerAudio: "../audio/20-valmis-a2/001a.wav"
+      },
+      {
+        text: "Mis värvi olid teie juuksed siis, kui te olite laps?",
+        audio: "../audio/20-valmis-a2/002.wav",
+        answer: "Kui ma olin laps, olid minu juuksed mustad.",
+        answerAudio: "../audio/20-valmis-a2/002a.wav"
+      },
+      {
+        text: "Millal teil olid kõige pikemad juuksed?",
+        audio: "../audio/20-valmis-a2/003.wav",
+        answer: "Mul olid pikemad juuksed, kui ma olin noorem.",
+        answerAudio: "../audio/20-valmis-a2/003a.wav"
+      },
+      {
+        text: "Kas te olete kunagi olnud kiilakas?",
+        audio: "../audio/20-valmis-a2/004.wav",
+        answer: "Ei, ma ei ole kunagi olnud kiilakas.",
+        answerAudio: "../audio/20-valmis-a2/004a.wav"
+      },
+      {
+        text: "Kas te värvite juukseid? Mitu korda te olete juukseid värvinud?",
+        audio: "../audio/20-valmis-a2/005.wav",
+        answer: "Ei, ma ei värvi juukseid.",
+        answerAudio: "../audio/20-valmis-a2/005a.wav"
+      },
+      {
+        text: "Kas teil on kunagi olnud punased juuksed? Aga lillad? Aga rohelised?",
+        audio: "../audio/20-valmis-a2/006.wav",
+        answer: "Ei, mul ei ole olnud punaseid ega rohelisi juukseid.",
+        answerAudio: "../audio/20-valmis-a2/006a.wav"
+      },
+      {
+        text: "Mis värvi silmad on tavaliselt inimestel teie kodumaal?",
+        audio: "../audio/20-valmis-a2/007.wav",
+        answer: "Minu kodumaal on inimestel tavaliselt pruunid silmad.",
+        answerAudio: "../audio/20-valmis-a2/007a.wav"
+      },
+      {
+        text: "Kas te naeratate tihti? Kas teil on ilus naeratus?",
+        audio: "../audio/20-valmis-a2/008.wav",
+        answer: "Jah, ma naeratan tihti.",
+        answerAudio: "../audio/20-valmis-a2/008a.wav"
+      },
+      {
+        text: "Kas teie ülemusel on habe? Aga vuntsid?",
+        audio: "../audio/20-valmis-a2/009.wav",
+        answer: "Minu ülemusel ei ole habet ega vuntse.",
+        answerAudio: "../audio/20-valmis-a2/009a.wav"
+      },
+      {
+        text: "Kes on kuulus ja kellel on habe? Aga kes on kuulus ja kellel on vuntsid? Aga kes on kuulus ja kellel on tätoveering?",
+        audio: "../audio/20-valmis-a2/010.wav",
+        answer: "Mõnel kuulsal näitlejal on habe või tätoveering.",
+        answerAudio: "../audio/20-valmis-a2/010a.wav"
+      },
+      {
+        text: "Missugune oli teie esimene õpetaja? Aga teie viimane õpetaja?",
+        audio: "../audio/20-valmis-a2/011.wav",
+        answer: "Minu esimene õpetaja oli väga sõbralik. Minu viimane õpetaja on samuti väga hea.",
+        answerAudio: "../audio/20-valmis-a2/011a.wav"
+      },
+      {
+        text: "Missugune on tüüpiline eestlane?",
+        audio: "../audio/20-valmis-a2/012.wav",
+        answer: "Minu arvates on eestlane rahulik ja sõbralik.",
+        answerAudio: "../audio/20-valmis-a2/012a.wav"
+      },
+      {
+        text: "Kas teile meeldivad kõrvarõngad? Kas kuldkõrvarõngad on ilusad? Aga plastmassist kõrvarõngad?",
+        audio: "../audio/20-valmis-a2/013.wav",
+        answer: "Jah, kuldkõrvarõngad on ilusad.",
+        answerAudio: "../audio/20-valmis-a2/013a.wav"
+      },
+      {
+        text: "Kes on maailma kõige ilusam mees? Missugune ta on?",
+        audio: "../audio/20-valmis-a2/014.wav",
+        answer: "Minu arvates ei ole ühte kõige ilusamat meest.",
+        answerAudio: "../audio/20-valmis-a2/014a.wav"
+      },
+      {
+        text: "Kes on maailma kõige ilusam naine? Missugune ta on?",
+        audio: "../audio/20-valmis-a2/015.wav",
+        answer: "Minu arvates võivad paljud naised olla ilusad.",
+        answerAudio: "../audio/20-valmis-a2/015a.wav"
+      }
+    ];
+
+    initAudioList(items);
+  </script>
+</body>
+</html>

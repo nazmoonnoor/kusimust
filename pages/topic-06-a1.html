@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6. PERE - A1 | MUSTMILJON KÜSIMUST</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <div class="page-shell" style="--topic-color: #d96c4a">
+    <div class="back-row">
+      <a class="back-link" href="../index.html">← Back to topics</a>
+      <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
+    </div>
+
+    <section class="topic-banner">
+      <div class="topic-badge">TOPIC 06 • A1</div>
+      <h1 class="topic-heading">6. PERE</h1>
+      <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
+    </section>
+
+    <div class="instructions">
+      Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
+    </div>
+
+    <div id="questionList" class="list"></div>
+
+    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+  </div>
+
+  <script src="../assets/theme.js"></script>
+  <script src="../assets/player.js"></script>
+<script>
+  const items = [
+    {
+      text: "Mis on teie ema nimi?",
+      audio: "../audio/06-pere-a1/001.wav",
+      answer: "Minu ema nimi on Rahima.",
+      answerAudio: "../audio/06-pere-a1/001a.wav"
+    },
+    {
+      text: "Kui vana on teie ema?",
+      audio: "../audio/06-pere-a1/002.wav",
+      answer: "Minu ema on umbes 70-aastane.",
+      answerAudio: "../audio/06-pere-a1/002a.wav"
+    },
+    {
+      text: "Millal on teie ema sünnipäev?",
+      audio: "../audio/06-pere-a1/003.wav",
+      answer: "Minu ema sünnipäev on mais.",
+      answerAudio: "../audio/06-pere-a1/003a.wav"
+    },
+    {
+      text: "Mis värvi on teie ema silmad?",
+      audio: "../audio/06-pere-a1/004.wav",
+      answer: "Minu ema silmad on pruunid.",
+      answerAudio: "../audio/06-pere-a1/004a.wav"
+    },
+    {
+      text: "Missugused on teie ema juuksed?",
+      audio: "../audio/06-pere-a1/005.wav",
+      answer: "Minu ema juuksed on mustad ja natuke hallid.",
+      answerAudio: "../audio/06-pere-a1/005a.wav"
+    },
+    {
+      text: "Kus teie ema elab?",
+      audio: "../audio/06-pere-a1/006.wav",
+      answer: "Minu ema elab Bangladeshis.",
+      answerAudio: "../audio/06-pere-a1/006a.wav"
+    },
+    {
+      text: "Kus teie ema töötab?",
+      audio: "../audio/06-pere-a1/007.wav",
+      answer: "Minu ema ei tööta praegu. Ta on pensionil.",
+      answerAudio: "../audio/06-pere-a1/007a.wav"
+    },
+    {
+      text: "Mis keeli teie ema räägib?",
+      audio: "../audio/06-pere-a1/008.wav",
+      answer: "Minu ema räägib bengali keelt.",
+      answerAudio: "../audio/06-pere-a1/008a.wav"
+    },
+    {
+      text: "Mis teie emale meeldib? Mis teie ema hobi on?",
+      audio: "../audio/06-pere-a1/009.wav",
+      answer: "Minu emale meeldib süüa teha ja televiisorit vaadata.",
+      answerAudio: "../audio/06-pere-a1/009a.wav"
+    },
+    {
+      text: "Kas teie ema on hea kokk?",
+      audio: "../audio/06-pere-a1/010.wav",
+      answer: "Jah, minu ema on väga hea kokk.",
+      answerAudio: "../audio/06-pere-a1/010a.wav"
+    },
+    {
+      text: "Kas teie ema on hea autojuht?",
+      audio: "../audio/06-pere-a1/011.wav",
+      answer: "Ei, minu ema ei juhi autot.",
+      answerAudio: "../audio/06-pere-a1/011a.wav"
+    },
+    {
+      text: "Missugune teie ema on? Kas tema on sõbralik või kuri?",
+      audio: "../audio/06-pere-a1/012.wav",
+      answer: "Minu ema on väga sõbralik ja lahke.",
+      answerAudio: "../audio/06-pere-a1/012a.wav"
+    },
+    {
+      text: "Mis on teie ema lemmikvärv? Aga lemmiklill?",
+      audio: "../audio/06-pere-a1/013.wav",
+      answer: "Minu ema lemmikvärv on sinine. Tema lemmiklill on roos.",
+      answerAudio: "../audio/06-pere-a1/013a.wav"
+    },
+    {
+      text: "Kes on teie ema lemmiklaps?",
+      audio: "../audio/06-pere-a1/014.wav",
+      answer: "Ma arvan, et kõik lapsed on tema lemmikud.",
+      answerAudio: "../audio/06-pere-a1/014a.wav"
+    },
+    {
+      text: "Mis on teie ema kinganumber?",
+      audio: "../audio/06-pere-a1/015.wav",
+      answer: "Ma arvan, et tema kinganumber on 38.",
+      answerAudio: "../audio/06-pere-a1/015a.wav"
+    },
+    {
+      text: "Kus teie ema praegu on? Mida teie ema praegu teeb?",
+      audio: "../audio/06-pere-a1/016.wav",
+      answer: "Minu ema on praegu kodus. Ta puhkab või vaatab televiisorit.",
+      answerAudio: "../audio/06-pere-a1/016a.wav"
+    },
+    {
+      text: "Kas te räägite emaga iga päev?",
+      audio: "../audio/06-pere-a1/017.wav",
+      answer: "Jah, ma räägin emaga peaaegu iga päev.",
+      answerAudio: "../audio/06-pere-a1/017a.wav"
+    },
+    {
+      text: "Kas te teate, mida tähendab pesamuna? Aga noorpaar? Aga pruut? Aga peigmees?",
+      audio: "../audio/06-pere-a1/018.wav",
+      answer: "Jah, ma tean neid sõnu. Need on seotud pere ja abieluga.",
+      answerAudio: "../audio/06-pere-a1/018a.wav"
+    },
+    {
+      text: "Kas teie pere on suur, väike või keskmine?",
+      audio: "../audio/06-pere-a1/019.wav",
+      answer: "Minu pere on keskmine.",
+      answerAudio: "../audio/06-pere-a1/019a.wav"
+    },
+    {
+      text: "Kas teil on õde või vend? Kas teil on vanaema või vanaisa? Aga tädi või onu?",
+      audio: "../audio/06-pere-a1/020.wav",
+      answer: "Jah, mul on vend ja õde. Mul on ka tädid ja onud.",
+      answerAudio: "../audio/06-pere-a1/020a.wav"
+    }
+  ];
+
+  initAudioList(items);
+</script>
+</body>
+</html>
