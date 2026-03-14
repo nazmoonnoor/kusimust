@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body>
-  <div class="page-shell" style="--topic-color: #f2a51a">
+  <div class="page-shell" style="--topic-color: #b45309">
     <div class="back-row">
       <a class="back-link" href="../index.html">← Back to topics</a>
       <button id="themeToggle" class="theme-toggle" type="button">🌙 Dark mode</button>
@@ -15,12 +15,12 @@
 
     <section class="topic-banner">
       <div class="topic-badge">TOPIC 03 • A2</div>
-      <h1 class="topic-heading">3. SÖÖGID JA JOOGID</h1>
+      <h1 class="topic-heading">3. SÖÖGID JA JOOGID - HEAD ISU!</h1>
       <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
     </section>
 
     <div class="instructions">
-      Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
     <div id="questionList" class="list"></div>
@@ -32,21 +32,96 @@
   <script src="../assets/player.js"></script>
   <script>
     const items = [
-      { text: "Mitu kokaraamatut teil on? Mis keeles teie kokaraamatud on?", audio: "../audio/03-soogid-ja-joogid-a2/001.wav" },
-      { text: "Mitu minutit te keedate muna?", audio: "../audio/03-soogid-ja-joogid-a2/002.wav" },
-      { text: "Kui tihti te restoranis käite? Kas te maksate sulas või kaardiga? Kas te jätate restoranis tippi?", audio: "../audio/03-soogid-ja-joogid-a2/003.wav" },
-      { text: "Kes on teie peres kõige parem kokk? Mis toitu tema väga hästi teeb?", audio: "../audio/03-soogid-ja-joogid-a2/004.wav" },
-      { text: "Mitu kilo suhkrut teil praegu kodus on? Aga jahu? Aga riisi?", audio: "../audio/03-soogid-ja-joogid-a2/005.wav" },
-      { text: "Mis on traditsiooniline hommikusöök teie kodumaal?", audio: "../audio/03-soogid-ja-joogid-a2/006.wav" },
-      { text: "Mis toit on välismaal parem kui Eestis?", audio: "../audio/03-soogid-ja-joogid-a2/007.wav" },
-      { text: "Mida on vaja, kui teete pannkooke? Millega te sööte pannkooke?", audio: "../audio/03-soogid-ja-joogid-a2/008.wav" },
-      { text: "Mitu potti teil on? Aga panni?", audio: "../audio/03-soogid-ja-joogid-a2/009.wav" },
-      { text: "Mis on suurem, kas teelusikas või supilusikas?", audio: "../audio/03-soogid-ja-joogid-a2/010.wav" },
-      { text: "Mis toidupoes te tavaliselt käite? Mis toidupoes te mitte kunagi ei käi?", audio: "../audio/03-soogid-ja-joogid-a2/011.wav" },
-      { text: "Mida te ostate toidupoest iga nädal? Aga mida te ostate toidupoest üks kord aastas?", audio: "../audio/03-soogid-ja-joogid-a2/012.wav" },
-      { text: "Kui suur oli teie viimane arve toidupoes? Mida te ostsite?", audio: "../audio/03-soogid-ja-joogid-a2/013.wav" },
-      { text: "Mida te tellite, kui lähete reede õhtul sõbraga baari?", audio: "../audio/03-soogid-ja-joogid-a2/014.wav" },
-      { text: "Millal te viimati kapsast sõite? Aga kala? Aga jäätist?", audio: "../audio/03-soogid-ja-joogid-a2/015.wav" }
+      {
+        text: "Mitu kokaraamatut teil on? Mis keeles teie kokaraamatud on?",
+        audio: "../audio/03-soogid-ja-joogid-a2/001.wav",
+        answer: "Mul on kaks kokaraamatut. Need on inglise keeles.",
+        answerAudio: "../audio/03-soogid-ja-joogid-a2/001a.wav"
+      },
+      {
+        text: "Mitu minutit te keedate muna?",
+        audio: "../audio/03-soogid-ja-joogid-a2/002.wav",
+        answer: "Ma keedan muna umbes seitse minutit.",
+        answerAudio: "../audio/03-soogid-ja-joogid-a2/002a.wav"
+      },
+      {
+        text: "Kui tihti te restoranis käite? Kas te maksate sulas või kaardiga? Kas te jätate restoranis tippi?",
+        audio: "../audio/03-soogid-ja-joogid-a2/003.wav",
+        answer: "Ma käin restoranis mõnikord. Ma maksan tavaliselt kaardiga. Jah, mõnikord ma jätan tippi.",
+        answerAudio: "../audio/03-soogid-ja-joogid-a2/003a.wav"
+      },
+      {
+        text: "Kes on teie peres kõige parem kokk? Mis toitu ta väga hästi teeb?",
+        audio: "../audio/03-soogid-ja-joogid-a2/004.wav",
+        answer: "Minu peres on kõige parem kokk minu naine. Ta teeb väga head riisi ja kana.",
+        answerAudio: "../audio/03-soogid-ja-joogid-a2/004a.wav"
+      },
+      {
+        text: "Mitu kilo suhkrut teil praegu kodus on? Aga jahu? Aga riisi?",
+        audio: "../audio/03-soogid-ja-joogid-a2/005.wav",
+        answer: "Mul on umbes üks kilo suhkrut. Mul on ka üks kilo jahu ja kaks kilo riisi.",
+        answerAudio: "../audio/03-soogid-ja-joogid-a2/005a.wav"
+      },
+      {
+        text: "Mis on traditsiooniline hommikusöök teie kodumaal?",
+        audio: "../audio/03-soogid-ja-joogid-a2/006.wav",
+        answer: "Minu kodumaal on traditsiooniline hommikusöök riis ja köögiviljad või leib ja tee.",
+        answerAudio: "../audio/03-soogid-ja-joogid-a2/006a.wav"
+      },
+      {
+        text: "Mis toit on välismaal parem kui Eestis?",
+        audio: "../audio/03-soogid-ja-joogid-a2/007.wav",
+        answer: "Minu arvates on India toit väga hea.",
+        answerAudio: "../audio/03-soogid-ja-joogid-a2/007a.wav"
+      },
+      {
+        text: "Mida on vaja, kui teete pannkooke? Millega te sööte pannkooke?",
+        audio: "../audio/03-soogid-ja-joogid-a2/008.wav",
+        answer: "Pannkookide jaoks on vaja jahu, muna ja piima. Ma söön pannkooke moosi või meega.",
+        answerAudio: "../audio/03-soogid-ja-joogid-a2/008a.wav"
+      },
+      {
+        text: "Mitu potti teil on? Aga panni?",
+        audio: "../audio/03-soogid-ja-joogid-a2/009.wav",
+        answer: "Mul on kolm potti ja kaks panni.",
+        answerAudio: "../audio/03-soogid-ja-joogid-a2/009a.wav"
+      },
+      {
+        text: "Mis on suurem, kas teelusikas või supilusikas?",
+        audio: "../audio/03-soogid-ja-joogid-a2/010.wav",
+        answer: "Supilusikas on suurem.",
+        answerAudio: "../audio/03-soogid-ja-joogid-a2/010a.wav"
+      },
+      {
+        text: "Mis toidupoes te tavaliselt käite? Mis toidupoes te mitte kunagi ei käi?",
+        audio: "../audio/03-soogid-ja-joogid-a2/011.wav",
+        answer: "Ma käin tavaliselt Prismas või Selveris. Ma ei käi väga tihti väikestes poodides.",
+        answerAudio: "../audio/03-soogid-ja-joogid-a2/011a.wav"
+      },
+      {
+        text: "Mida te ostate toidupoest iga nädal? Aga mida te ostate toidupoest üks kord aastas?",
+        audio: "../audio/03-soogid-ja-joogid-a2/012.wav",
+        answer: "Iga nädal ma ostan piima, leiba ja puuvilju. Üks kord aastas ma ostan suuri asju, näiteks grilli.",
+        answerAudio: "../audio/03-soogid-ja-joogid-a2/012a.wav"
+      },
+      {
+        text: "Kui suur oli teie viimane arve toidupoes? Mida te ostsite?",
+        audio: "../audio/03-soogid-ja-joogid-a2/013.wav",
+        answer: "Minu viimane arve oli umbes 40 eurot. Ma ostsin leiba, piima, kana ja puuvilju.",
+        answerAudio: "../audio/03-soogid-ja-joogid-a2/013a.wav"
+      },
+      {
+        text: "Mida te tellite, kui lähete reede õhtul sõbraga baari?",
+        audio: "../audio/03-soogid-ja-joogid-a2/014.wav",
+        answer: "Ma tellin tavaliselt mahla või õlut.",
+        answerAudio: "../audio/03-soogid-ja-joogid-a2/014a.wav"
+      },
+      {
+        text: "Millal te viimati kapsast sõite? Aga kala? Aga jäätist?",
+        audio: "../audio/03-soogid-ja-joogid-a2/015.wav",
+        answer: "Ma sõin kapsast eelmisel nädalal. Kala sõin paar päeva tagasi. Jäätist sõin eile.",
+        answerAudio: "../audio/03-soogid-ja-joogid-a2/015a.wav"
+      }
     ];
 
     initAudioList(items);
