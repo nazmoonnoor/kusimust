@@ -501,9 +501,9 @@ a { color: inherit; text-decoration: none; }
 }
 
 .item-translation {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-style: italic;
-    opacity: 0.2;
+    opacity: 0.4;
     line-height: 1.1;
     margin-top: 2px;
 }
