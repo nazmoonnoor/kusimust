@@ -23,9 +23,15 @@
       Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,92 +40,122 @@
   const items = [
     {
       text: "Kas teie töö on igav? Kelle töö on igav? Aga ohtlik? Aga keeruline?",
+      textTranslation: "Is your work boring? Whose work is boring? How about dangerous? How about complicated?",
       audio: "../audio/05-too-a2/001.wav",
       answer: "Minu töö ei ole igav. Mõnikord on see keeruline. Politseiniku töö on ohtlik.",
+      answerTranslation: "My work is not boring. Sometimes it is complicated. A policeman's work is dangerous.",
       answerAudio: "../audio/05-too-a2/001a.wav"
     },
     {
       text: "Kellena te olete töötanud?",
+      textTranslation: "What have you worked as?",
       audio: "../audio/05-too-a2/002.wav",
       answer: "Ma olen töötanud tarkvaraarendajana.",
+      answerTranslation: "I have worked as a software developer.",
       answerAudio: "../audio/05-too-a2/002a.wav"
     },
     {
       text: "Kui vana te olite, kui te tööle läksite? Kellena te töötasite?",
+      textTranslation: "How old were you when you started working? What did you work as?",
       audio: "../audio/05-too-a2/003.wav",
       answer: "Ma olin umbes 23-aastane. Ma töötasin IT-valdkonnas.",
+      answerTranslation: "I was about 23 years old. I worked in the IT field.",
       answerAudio: "../audio/05-too-a2/003a.wav"
     },
     {
       text: "Kas te mäletate, kui suur oli teie esimene palk?",
+      textTranslation: "Do you remember how much your first salary was?",
       audio: "../audio/05-too-a2/004.wav",
       answer: "Jah, ma mäletan. Minu esimene palk oli väike.",
+      answerTranslation: "Yes, I remember. My first salary was small.",
       answerAudio: "../audio/05-too-a2/004a.wav"
     },
     {
       text: "Kas te tahaksite töötada arstina? Aga politseinikuna? Aga õpetajana?",
+      textTranslation: "Would you like to work as a doctor? How about as a policeman? How about as a teacher?",
       audio: "../audio/05-too-a2/005.wav",
       answer: "Ei, ma ei tahaks töötada arstina ega politseinikuna. Võib-olla õpetajana.",
+      answerTranslation: "No, I would not like to work as a doctor or a policeman. Maybe as a teacher.",
       answerAudio: "../audio/05-too-a2/005a.wav"
     },
     {
       text: "Kas te tahaksite töötada näitlejana või lauljana? Aga modellina?",
+      textTranslation: "Would you like to work as an actor or a singer? How about as a model?",
       audio: "../audio/05-too-a2/006.wav",
       answer: "Ei, ma ei tahaks töötada näitlejana ega lauljana. Samuti mitte modellina.",
+      answerTranslation: "No, I would not like to work as an actor or a singer. Also not as a model.",
       answerAudio: "../audio/05-too-a2/006a.wav"
     },
     {
       text: "Kas teile meeldib üksi töötada?",
+      textTranslation: "Do you like to work alone?",
       audio: "../audio/05-too-a2/007.wav",
       answer: "Jah, mõnikord mulle meeldib üksi töötada.",
+      answerTranslation: "Yes, sometimes I like to work alone.",
       answerAudio: "../audio/05-too-a2/007a.wav"
     },
     {
       text: "Missugused on teie kolleegid? Kas nad on noored või vanad? Kas nad on laisad või töökad?",
+      textTranslation: "What are your colleagues like? Are they young or old? Are they lazy or hardworking?",
       audio: "../audio/05-too-a2/008.wav",
       answer: "Minu kolleegid on toredad ja töökad. Mõned on noored ja mõned vanemad.",
+      answerTranslation: "My colleagues are nice and hardworking. Some are young and some are older.",
       answerAudio: "../audio/05-too-a2/008a.wav"
     },
     {
       text: "Mitu puhkepausi teil tööl on?",
+      textTranslation: "How many breaks do you have at work?",
       audio: "../audio/05-too-a2/009.wav",
       answer: "Tavaliselt on mul kaks pausi päevas.",
+      answerTranslation: "Usually I have two breaks a day.",
       answerAudio: "../audio/05-too-a2/009a.wav"
     },
     {
       text: "Missugune on teie ülemus? Mis tal tööl seljas on?",
+      textTranslation: "What is your boss like? What does he/she wear at work?",
       audio: "../audio/05-too-a2/010.wav",
       answer: "Minu ülemus on sõbralik. Tavaliselt on tal seljas särk ja püksid.",
+      answerTranslation: "My boss is friendly. Usually he/she wears a shirt and trousers at work.",
       answerAudio: "../audio/05-too-a2/010a.wav"
     },
     {
       text: "Kus on parem olla, kas tööl või kodus?",
+      textTranslation: "Where is it better to be, at work or at home?",
       audio: "../audio/05-too-a2/011.wav",
       answer: "Mõnikord on parem olla kodus. Aga töö on ka oluline.",
+      answerTranslation: "Sometimes it is better to be at home. But work is also important.",
       answerAudio: "../audio/05-too-a2/011a.wav"
     },
     {
       text: "Mida te tööl teete?",
+      textTranslation: "What do you do at work?",
       audio: "../audio/05-too-a2/012.wav",
       answer: "Tööl ma kirjutan koodi ja töötan arvutiga.",
+      answerTranslation: "At work I write code and work with a computer.",
       answerAudio: "../audio/05-too-a2/012a.wav"
     },
     {
       text: "Kas te töötate toas või õues? Kas te töötate öösel või päeval?",
+      textTranslation: "Do you work indoors or outdoors? Do you work at night or during the day?",
       audio: "../audio/05-too-a2/013.wav",
       answer: "Ma töötan toas ja päeval.",
+      answerTranslation: "I work indoors and during the day.",
       answerAudio: "../audio/05-too-a2/013a.wav"
     },
     {
       text: "Kellega te tööl räägite? Mis keeles te räägite?",
+      textTranslation: "Who do you talk to at work? What language do you speak?",
       audio: "../audio/05-too-a2/014.wav",
       answer: "Ma räägin kolleegidega. Me räägime inglise keeles.",
+      answerTranslation: "I talk to colleagues. We speak in English.",
       answerAudio: "../audio/05-too-a2/014a.wav"
     },
     {
       text: "Millal te pensionile lähete? Kas te tahate pensionile minna?",
+      textTranslation: "When will you retire? Do you want to retire?",
       audio: "../audio/05-too-a2/015.wav",
       answer: "Ma lähen pensionile umbes 65-aastaselt. Praegu ma ei taha pensionile minna.",
+      answerTranslation: "I will retire at about 65 years old. Right now I do not want to retire.",
       answerAudio: "../audio/05-too-a2/015a.wav"
     }
   ];

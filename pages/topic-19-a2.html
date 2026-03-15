@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,92 +40,122 @@
     const items = [
       {
         text: "Mis kott on teil keelekursusel kaasas? Aga reisil? Aga tööl?",
+        textTranslation: "What bag do you have with you at the language course? How about when traveling? How about at work?",
         audio: "../audio/19-kott-a2/001.wav",
         answer: "Keelekursusel on mul seljakott. Reisil on mul kohver. Tööl on mul arvutikott.",
+        answerTranslation: "At the language course I have a backpack. When traveling I have a suitcase. At work I have a laptop bag.",
         answerAudio: "../audio/19-kott-a2/001a.wav"
       },
       {
         text: "Kas teie kotil on lukk? Kas koti lukk on praegu kinni või lahti?",
+        textTranslation: "Does your bag have a lock? Is the bag's lock currently closed or open?",
         audio: "../audio/19-kott-a2/002.wav",
         answer: "Jah, minu kotil on lukk. Praegu on lukk kinni.",
+        answerTranslation: "Yes, my bag has a lock. Right now the lock is closed.",
         answerAudio: "../audio/19-kott-a2/002a.wav"
       },
       {
         text: "Kas teie kotil on tasku? Mitu taskut teie kotil on? Mis on teie koti taskus?",
+        textTranslation: "Does your bag have a pocket? How many pockets does your bag have? What is in your bag's pocket?",
         audio: "../audio/19-kott-a2/003.wav",
         answer: "Jah, minu kotil on taskud. Seal on kolm taskut. Taskus on võtmed ja telefon.",
+        answerTranslation: "Yes, my bag has pockets. There are three pockets. There are keys and a phone in the pocket.",
         answerAudio: "../audio/19-kott-a2/003a.wav"
       },
       {
         text: "Kas teie kotis on raamat? Mis on raamatu pealkiri?",
+        textTranslation: "Is there a book in your bag? What is the title of the book?",
         audio: "../audio/19-kott-a2/004.wav",
         answer: "Jah, minu kotis on raamat. See on eesti keele õpik.",
+        answerTranslation: "Yes, there is a book in my bag. It is an Estonian language textbook.",
         answerAudio: "../audio/19-kott-a2/004a.wav"
       },
       {
         text: "Kas teie kotis on huulepulk? Mis värvi see on?",
+        textTranslation: "Is there lipstick in your bag? What color is it?",
         audio: "../audio/19-kott-a2/005.wav",
         answer: "Ei, minu kotis ei ole huulepulka.",
+        answerTranslation: "No, there is no lipstick in my bag.",
         answerAudio: "../audio/19-kott-a2/005a.wav"
       },
       {
         text: "Kas teie kotil on helkur?",
+        textTranslation: "Does your bag have a reflector?",
         audio: "../audio/19-kott-a2/006.wav",
         answer: "Jah, minu kotil on väike helkur.",
+        answerTranslation: "Yes, my bag has a small reflector.",
         answerAudio: "../audio/19-kott-a2/006a.wav"
       },
       {
         text: "Mis asjad on praegu teie kotis? Mis on vajalikud? Aga ebavajalikud?",
+        textTranslation: "What things are in your bag right now? Which are necessary? How about unnecessary ones?",
         audio: "../audio/19-kott-a2/007.wav",
         answer: "Minu kotis on telefon, rahakott ja võtmed. Need on vajalikud. Mõnikord on seal ka ebavajalikke asju.",
+        answerTranslation: "In my bag there is a phone, wallet, and keys. These are necessary. Sometimes there are also unnecessary things.",
         answerAudio: "../audio/19-kott-a2/007a.wav"
       },
       {
         text: "Mis asjad peavad kindlasti naise kotis olema? Aga mehe kotis?",
+        textTranslation: "What things must definitely be in a woman's bag? How about in a man's bag?",
         audio: "../audio/19-kott-a2/008.wav",
         answer: "Naise kotis on tavaliselt rahakott ja telefon. Mehe kotis on ka rahakott ja võtmed.",
+        answerTranslation: "In a woman's bag there is usually a wallet and a phone. In a man's bag there is also a wallet and keys.",
         answerAudio: "../audio/19-kott-a2/008a.wav"
       },
       {
         text: "Kas teil on kaasas poekott, kui te lähete poodi? Kas te ostate kilekoti või paberkoti?",
+        textTranslation: "Do you have a shopping bag with you when you go to the store? Do you buy a plastic bag or a paper bag?",
         audio: "../audio/19-kott-a2/009.wav",
         answer: "Jah, mul on mõnikord poekott. Tavaliselt kasutan paberkotti.",
+        answerTranslation: "Yes, sometimes I have a shopping bag. Usually I use a paper bag.",
         answerAudio: "../audio/19-kott-a2/009a.wav"
       },
       {
         text: "Mis materjalist on teie käekott? Kas see on nahast või plastikust või riidest?",
+        textTranslation: "What material is your handbag made of? Is it leather, plastic, or fabric?",
         audio: "../audio/19-kott-a2/010.wav",
         answer: "Minu kott on riidest.",
+        answerTranslation: "My bag is made of fabric.",
         answerAudio: "../audio/19-kott-a2/010a.wav"
       },
       {
         text: "Kas käekott, mis maksab 100 eurot, on kallis või odav?",
+        textTranslation: "Is a handbag that costs 100 euros expensive or cheap?",
         audio: "../audio/19-kott-a2/011.wav",
         answer: "Minu arvates on see üsna kallis.",
+        answerTranslation: "In my opinion, it is quite expensive.",
         answerAudio: "../audio/19-kott-a2/011a.wav"
       },
       {
         text: "Mis poes müüakse käekotte? Aga seljakotte?",
+        textTranslation: "In what store are handbags sold? How about backpacks?",
         audio: "../audio/19-kott-a2/012.wav",
         answer: "Käekotte ja seljakotte müüakse riidepoodides.",
+        answerTranslation: "Handbags and backpacks are sold in clothing stores.",
         answerAudio: "../audio/19-kott-a2/012a.wav"
       },
       {
         text: "Kas te ostate igal aastal uue koti?",
+        textTranslation: "Do you buy a new bag every year?",
         audio: "../audio/19-kott-a2/013.wav",
         answer: "Ei, ma ei osta igal aastal uut kotti.",
+        answerTranslation: "No, I don't buy a new bag every year.",
         answerAudio: "../audio/19-kott-a2/013a.wav"
       },
       {
         text: "Mis värvi oli teie esimene koolikott?",
+        textTranslation: "What color was your first school bag?",
         audio: "../audio/19-kott-a2/014.wav",
         answer: "Minu esimene koolikott oli sinine.",
+        answerTranslation: "My first school bag was blue.",
         answerAudio: "../audio/19-kott-a2/014a.wav"
       },
       {
         text: "Kus ja millal teil on vaja kilekotti?",
+        textTranslation: "Where and when do you need a plastic bag?",
         audio: "../audio/19-kott-a2/015.wav",
         answer: "Mul on kilekotti vaja poes, kui ma ostan palju asju.",
+        answerTranslation: "I need a plastic bag at the store when I buy a lot of things.",
         answerAudio: "../audio/19-kott-a2/015a.wav"
       }
     ];

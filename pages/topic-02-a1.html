@@ -23,9 +23,15 @@
       Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,122 +40,162 @@
   const items = [
     {
       text: "Mis kell te tavaliselt ärkate?",
+      textTranslation: "What time do you usually wake up?",
       audio: "../audio/02-paev-a1/001.wav",
       answer: "Ma ärkan tavaliselt kell seitse hommikul.",
+      answerTranslation: "I usually wake up at seven in the morning.",
       answerAudio: "../audio/02-paev-a1/001a.wav"
     },
     {
       text: "Mis kell te tavaliselt magama lähete? Mitu tundi te magate?",
+      textTranslation: "What time do you usually go to bed? How many hours do you sleep?",
       audio: "../audio/02-paev-a1/002.wav",
       answer: "Ma lähen tavaliselt magama kell üksteist. Ma magan umbes seitse tundi.",
+      answerTranslation: "I usually go to bed at eleven. I sleep about seven hours.",
       answerAudio: "../audio/02-paev-a1/002a.wav"
     },
     {
       text: "Kas te joote hommikul kohvi?",
+      textTranslation: "Do you drink coffee in the morning?",
       audio: "../audio/02-paev-a1/003.wav",
       answer: "Jah, ma joon hommikul kohvi.",
+      answerTranslation: "Yes, I drink coffee in the morning.",
       answerAudio: "../audio/02-paev-a1/003a.wav"
     },
     {
       text: "Mida te hommikul sööte? Mida te hommikul joote?",
+      textTranslation: "What do you eat in the morning? What do you drink in the morning?",
       audio: "../audio/02-paev-a1/004.wav",
       answer: "Ma söön hommikul võileiba või muna. Ma joon hommikul teed või kohvi.",
+      answerTranslation: "I eat a sandwich or an egg in the morning. I drink tea or coffee in the morning.",
       answerAudio: "../audio/02-paev-a1/004a.wav"
     },
     {
       text: "Kus te lõunat sööte?",
+      textTranslation: "Where do you eat lunch?",
       audio: "../audio/02-paev-a1/005.wav",
       answer: "Ma söön lõunat tööl või kodus.",
+      answerTranslation: "I eat lunch at work or at home.",
       answerAudio: "../audio/02-paev-a1/005a.wav"
     },
     {
       text: "Kas te käite iga päev poes? Mis poes te käite?",
+      textTranslation: "Do you go to the store every day? Which store do you go to?",
       audio: "../audio/02-paev-a1/006.wav",
       answer: "Ei, ma ei käi iga päev poes. Ma käin tavaliselt toidupoes.",
+      answerTranslation: "No, I don't go to the store every day. I usually go to the grocery store.",
       answerAudio: "../audio/02-paev-a1/006a.wav"
     },
     {
       text: "Kas te kuulate uudiseid või loete uudiseid? Mis keeles te kuulate uudiseid? Mis keeles te loete uudiseid?",
+      textTranslation: "Do you listen to or read the news? In what language do you listen to the news? In what language do you read the news?",
       audio: "../audio/02-paev-a1/007.wav",
       answer: "Ma kuulan ja loen uudiseid. Ma kuulan uudiseid inglise keeles ja loen uudiseid inglise keeles.",
+      answerTranslation: "I listen to and read the news. I listen to the news in English and read the news in English.",
       answerAudio: "../audio/02-paev-a1/007a.wav"
     },
     {
       text: "Mitu korda päevas te hambaid pesete?",
+      textTranslation: "How many times a day do you brush your teeth?",
       audio: "../audio/02-paev-a1/008.wav",
       answer: "Ma pesen hambaid kaks korda päevas.",
+      answerTranslation: "I brush my teeth twice a day.",
       answerAudio: "../audio/02-paev-a1/008a.wav"
     },
     {
       text: "Mis värvi on teie hambahari? Mis maitsega on teie hambapasta?",
+      textTranslation: "What color is your toothbrush? What flavor is your toothpaste?",
       audio: "../audio/02-paev-a1/009.wav",
       answer: "Minu hambahari on sinine. Minu hambapasta on piparmündimaitseline.",
+      answerTranslation: "My toothbrush is blue. My toothpaste is mint flavored.",
       answerAudio: "../audio/02-paev-a1/009a.wav"
     },
     {
       text: "Kas te töötate iga päev? Mitu tundi te töötate?",
+      textTranslation: "Do you work every day? How many hours do you work?",
       audio: "../audio/02-paev-a1/010.wav",
       answer: "Ma töötan tööpäevadel. Ma töötan umbes kaheksa tundi päevas.",
+      answerTranslation: "I work on weekdays. I work about eight hours a day.",
       answerAudio: "../audio/02-paev-a1/010a.wav"
     },
     {
       text: "Kas teil on kodus sussid jalas? Mis värvi sussid teil on?",
+      textTranslation: "Do you wear slippers at home? What color are your slippers?",
       audio: "../audio/02-paev-a1/011.wav",
       answer: "Jah, mul on kodus sussid jalas. Minu sussid on musta värvi.",
+      answerTranslation: "Yes, I wear slippers at home. My slippers are black.",
       answerAudio: "../audio/02-paev-a1/011a.wav"
     },
     {
       text: "Kellega te hommikul räägite? Kellega te iga päev räägite?",
+      textTranslation: "Who do you talk to in the morning? Who do you talk to every day?",
       audio: "../audio/02-paev-a1/012.wav",
       answer: "Ma räägin hommikul oma perega. Ma räägin iga päev oma pere ja kolleegidega.",
+      answerTranslation: "I talk to my family in the morning. I talk to my family and colleagues every day.",
       answerAudio: "../audio/02-paev-a1/012a.wav"
     },
     {
       text: "Kas te teate, mida tähendab varahommik? Aga keskpäev? Aga hilisõhtu? Aga südaöö?",
+      textTranslation: "Do you know what early morning means? How about noon? Late evening? Midnight?",
       audio: "../audio/02-paev-a1/013.wav",
       answer: "Jah, ma tean. Varahommik on väga varane hommik. Keskpäev on kell kaksteist. Hilisõhtu on hiline õhtu. Südaöö on kell kaksteist öösel.",
+      answerTranslation: "Yes, I know. Early morning is very early in the morning. Noon is twelve o'clock. Late evening is late at night. Midnight is twelve o'clock at night.",
       answerAudio: "../audio/02-paev-a1/013a.wav"
     },
     {
       text: "Kas te käite hommikul või õhtul duši all?",
+      textTranslation: "Do you take a shower in the morning or in the evening?",
       audio: "../audio/02-paev-a1/014.wav",
       answer: "Ma käin tavaliselt hommikul duši all.",
+      answerTranslation: "I usually take a shower in the morning.",
       answerAudio: "../audio/02-paev-a1/014a.wav"
     },
     {
       text: "Kas täna on hea päev?",
+      textTranslation: "Is today a good day?",
       audio: "../audio/02-paev-a1/015.wav",
       answer: "Jah, täna on hea päev.",
+      answerTranslation: "Yes, today is a good day.",
       answerAudio: "../audio/02-paev-a1/015a.wav"
     },
     {
       text: "Kas te sõidate iga päev autoga? Aga bussiga? Aga liftiga?",
+      textTranslation: "Do you drive a car every day? How about a bus? An elevator?",
       audio: "../audio/02-paev-a1/016.wav",
       answer: "Ma ei sõida iga päev autoga. Mõnikord ma sõidan bussiga. Jah, ma sõidan liftiga.",
+      answerTranslation: "I don't drive a car every day. Sometimes I take the bus. Yes, I take the elevator.",
       answerAudio: "../audio/02-paev-a1/016a.wav"
     },
     {
       text: "Mis päeval te trenni teete?",
+      textTranslation: "On which day do you exercise?",
       audio: "../audio/02-paev-a1/017.wav",
       answer: "Ma teen trenni tavaliselt esmaspäeval ja neljapäeval.",
+      answerTranslation: "I usually exercise on Monday and Thursday.",
       answerAudio: "../audio/02-paev-a1/017a.wav"
     },
     {
       text: "Mida te nädalavahetusel teete?",
+      textTranslation: "What do you do on the weekend?",
       audio: "../audio/02-paev-a1/018.wav",
       answer: "Nädalavahetusel ma puhkan, õpin eesti keelt ja veedan aega perega.",
+      answerTranslation: "On the weekend I rest, study Estonian, and spend time with my family.",
       answerAudio: "../audio/02-paev-a1/018a.wav"
     },
     {
       text: "Mis on teie lemmikpäev?",
+      textTranslation: "What is your favorite day?",
       audio: "../audio/02-paev-a1/019.wav",
       answer: "Minu lemmikpäev on laupäev.",
+      answerTranslation: "My favorite day is Saturday.",
       answerAudio: "../audio/02-paev-a1/019a.wav"
     },
     {
       text: "Millal te sõpradega suhtlete? Millal te sõpradega kokku saate?",
+      textTranslation: "When do you communicate with friends? When do you meet with friends?",
       audio: "../audio/02-paev-a1/020.wav",
       answer: "Ma suhtlen sõpradega õhtul või nädalavahetusel. Ma saan sõpradega kokku tavaliselt nädalavahetusel.",
+      answerTranslation: "I communicate with friends in the evening or on weekends. I usually meet with friends on weekends.",
       answerAudio: "../audio/02-paev-a1/020a.wav"
     }
   ];

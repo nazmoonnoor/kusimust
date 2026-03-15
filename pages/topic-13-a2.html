@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,92 +40,122 @@
     const items = [
       {
         text: "Kas teil on liiga palju riideid?",
+        textTranslation: "Do you have too many clothes?",
         audio: "../audio/13-riided-a2/001.wav",
         answer: "Ei, mul ei ole liiga palju riideid.",
+        answerTranslation: "No, I do not have too many clothes.",
         answerAudio: "../audio/13-riided-a2/001a.wav"
       },
       {
         text: "Mitu sokki teil on? Aga lipsu?",
+        textTranslation: "How many socks do you have? How about ties?",
         audio: "../audio/13-riided-a2/002.wav",
         answer: "Mul on umbes kümme paari sokke. Mul on kaks lipsu.",
+        answerTranslation: "I have about ten pairs of socks. I have two ties.",
         answerAudio: "../audio/13-riided-a2/002a.wav"
       },
       {
         text: "Kas teil on triibulised sokid? Kas teil on täpilised sokid?",
+        textTranslation: "Do you have striped socks? Do you have polka dot socks?",
         audio: "../audio/13-riided-a2/003.wav",
         answer: "Jah, mul on triibulised sokid. Täpilisi sokke mul ei ole.",
+        answerTranslation: "Yes, I have striped socks. I do not have polka dot socks.",
         answerAudio: "../audio/13-riided-a2/003a.wav"
       },
       {
         text: "Mis värvi sokid teil praegu jalas on?",
+        textTranslation: "What color socks are you wearing right now?",
         audio: "../audio/13-riided-a2/004.wav",
         answer: "Mul on praegu jalas mustad sokid.",
+        answerTranslation: "I am wearing black socks right now.",
         answerAudio: "../audio/13-riided-a2/004a.wav"
       },
       {
         text: "Kas teil on villased sokid? Mis värvi need on?",
+        textTranslation: "Do you have wool socks? What color are they?",
         audio: "../audio/13-riided-a2/005.wav",
         answer: "Jah, mul on villased sokid. Need on hallid.",
+        answerTranslation: "Yes, I have wool socks. They are grey.",
         answerAudio: "../audio/13-riided-a2/005a.wav"
       },
       {
         text: "Mis on teie kõige vanem asi teie riidekapis? Mis on teie kõige uuem asi teie riidekapis?",
+        textTranslation: "What is the oldest thing in your wardrobe? What is the newest thing in your wardrobe?",
         audio: "../audio/13-riided-a2/006.wav",
         answer: "Minu kõige vanem asi on vana kampsun. Kõige uuem asi on uus T-särk.",
+        answerTranslation: "The oldest thing in my wardrobe is an old sweater. The newest thing is a new T-shirt.",
         answerAudio: "../audio/13-riided-a2/006a.wav"
       },
       {
         text: "Mis on kõige kallim asi teie riidekapis? Kust te selle saite?",
+        textTranslation: "What is the most expensive thing in your wardrobe? Where did you get it?",
         audio: "../audio/13-riided-a2/007.wav",
         answer: "Kõige kallim asi on minu jope. Ma ostsin selle poest.",
+        answerTranslation: "The most expensive thing is my jacket. I bought it from a store.",
         answerAudio: "../audio/13-riided-a2/007a.wav"
       },
       {
         text: "Millal te viimati kingad ostsite? Missugused need kingad on?",
+        textTranslation: "When did you last buy shoes? What are those shoes like?",
         audio: "../audio/13-riided-a2/008.wav",
         answer: "Ma ostsin kingad paar kuud tagasi. Need on mustad ja mugavad.",
+        answerTranslation: "I bought shoes a couple of months ago. They are black and comfortable.",
         answerAudio: "../audio/13-riided-a2/008a.wav"
       },
       {
         text: "Kas teil on hommikumantel? Mis värvi see on?",
+        textTranslation: "Do you have a bathrobe? What color is it?",
         audio: "../audio/13-riided-a2/009.wav",
         answer: "Jah, mul on hommikumantel. See on sinine.",
+        answerTranslation: "Yes, I have a bathrobe. It is blue.",
         answerAudio: "../audio/13-riided-a2/009a.wav"
       },
       {
         text: "Kas te käite dressidega tööl? Aga teatris? Aga külas?",
+        textTranslation: "Do you wear tracksuits to work? How about to the theatre? How about when visiting someone?",
         audio: "../audio/13-riided-a2/010.wav",
         answer: "Ei, ma ei käi dressidega tööl ega teatris. Kodus mõnikord kannan.",
+        answerTranslation: "No, I do not wear tracksuits to work or to the theatre. At home I sometimes do.",
         answerAudio: "../audio/13-riided-a2/010a.wav"
       },
       {
         text: "Kas te ostate kasutatud riideid?",
+        textTranslation: "Do you buy used clothes?",
         audio: "../audio/13-riided-a2/011.wav",
         answer: "Mõnikord ma ostan kasutatud riideid.",
+        answerTranslation: "Sometimes I buy used clothes.",
         answerAudio: "../audio/13-riided-a2/011a.wav"
       },
       {
         text: "Kust te riideid ostate? Kas te ostate riideid internetist?",
+        textTranslation: "Where do you buy clothes? Do you buy clothes from the internet?",
         audio: "../audio/13-riided-a2/012.wav",
         answer: "Ma ostan riideid poest ja mõnikord internetist.",
+        answerTranslation: "I buy clothes from a store and sometimes from the internet.",
         answerAudio: "../audio/13-riided-a2/012a.wav"
       },
       {
         text: "Kas teil on spordiriided? Mis firma spordiriided teil on?",
+        textTranslation: "Do you have sportswear? What brand of sportswear do you have?",
         audio: "../audio/13-riided-a2/013.wav",
         answer: "Jah, mul on spordiriided. Mul on Nike ja Adidas riided.",
+        answerTranslation: "Yes, I have sportswear. I have Nike and Adidas clothes.",
         answerAudio: "../audio/13-riided-a2/013a.wav"
       },
       {
         text: "Kas teil on leopardimustriga riideid? Aga sebramustriga? Mis need on?",
+        textTranslation: "Do you have clothes with a leopard print? How about a zebra print? What are they?",
         audio: "../audio/13-riided-a2/014.wav",
         answer: "Ei, mul ei ole leopardimustriga ega sebramustriga riideid.",
+        answerTranslation: "No, I do not have clothes with a leopard or zebra print.",
         answerAudio: "../audio/13-riided-a2/014a.wav"
       },
       {
         text: "Mis riided teil on, aga teie vanaemal ei ole?",
+        textTranslation: "What clothes do you have that your grandmother does not have?",
         audio: "../audio/13-riided-a2/015.wav",
         answer: "Mul on spordiriided ja teksad. Minu vanaemal neid ei ole.",
+        answerTranslation: "I have sportswear and jeans. My grandmother does not have them.",
         answerAudio: "../audio/13-riided-a2/015a.wav"
       }
     ];

@@ -23,9 +23,15 @@
       Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,122 +40,162 @@
   const items = [
     {
       text: "Kus te praegu elate?",
+      textTranslation: "Where do you live now?",
       audio: "../audio/04-kodu-a1/001.wav",
       answer: "Ma elan praegu Tallinnas.",
+      answerTranslation: "I live in Tallinn now.",
       answerAudio: "../audio/04-kodu-a1/001a.wav"
     },
     {
       text: "Kas te elate korteris või oma majas?",
+      textTranslation: "Do you live in an apartment or your own house?",
       audio: "../audio/04-kodu-a1/002.wav",
       answer: "Ma elan korteris.",
+      answerTranslation: "I live in an apartment.",
       answerAudio: "../audio/04-kodu-a1/002a.wav"
     },
     {
       text: "Missugune on teie kodu? Kas teie kodu on suur, keskmine või väike?",
+      textTranslation: "What is your home like? Is your home big, medium, or small?",
       audio: "../audio/04-kodu-a1/003.wav",
       answer: "Minu kodu on keskmine. See ei ole väga suur ega väga väike.",
+      answerTranslation: "My home is medium-sized. It is not very big or very small.",
       answerAudio: "../audio/04-kodu-a1/003a.wav"
     },
     {
       text: "Mis värvi on teie maja?",
+      textTranslation: "What color is your house?",
       audio: "../audio/04-kodu-a1/004.wav",
       answer: "Minu maja on valge ja hall.",
+      answerTranslation: "My house is white and gray.",
       answerAudio: "../audio/04-kodu-a1/004a.wav"
     },
     {
       text: "Mis on teie kodu ees? Aga mis on teie kodu taga? Aga kõrval?",
+      textTranslation: "What is in front of your home? What is behind your home? And next to it?",
       audio: "../audio/04-kodu-a1/005.wav",
       answer: "Minu kodu ees on parkla. Taga on väike park ja kõrval on teine maja.",
+      answerTranslation: "There is a parking lot in front of my home. There is a small park behind and another house next to it.",
       answerAudio: "../audio/04-kodu-a1/005a.wav"
     },
     {
       text: "Mitu tuba teil on? Mis on teie lemmiktuba?",
+      textTranslation: "How many rooms do you have? What is your favorite room?",
       audio: "../audio/04-kodu-a1/006.wav",
       answer: "Minu kodus on kolm tuba. Minu lemmiktuba on elutuba.",
+      answerTranslation: "There are three rooms in my home. My favorite room is the living room.",
       answerAudio: "../audio/04-kodu-a1/006a.wav"
     },
     {
       text: "Mis toas te olete hommikul kell seitse? Aga õhtul kell seitse?",
+      textTranslation: "In which room are you at seven in the morning? And at seven in the evening?",
       audio: "../audio/04-kodu-a1/007.wav",
       answer: "Hommikul olen ma köögis. Õhtul olen ma tavaliselt elutoas.",
+      answerTranslation: "In the morning I am in the kitchen. In the evening I am usually in the living room.",
       answerAudio: "../audio/04-kodu-a1/007a.wav"
     },
     {
       text: "Kas teile meeldib teie kodu?",
+      textTranslation: "Do you like your home?",
       audio: "../audio/04-kodu-a1/008.wav",
       answer: "Jah, mulle meeldib minu kodu.",
+      answerTranslation: "Yes, I like my home.",
       answerAudio: "../audio/04-kodu-a1/008a.wav"
     },
     {
       text: "Mis värvi on teie köögi põrand? Aga lagi?",
+      textTranslation: "What color is your kitchen floor? And the ceiling?",
       audio: "../audio/04-kodu-a1/009.wav",
       answer: "Minu köögi põrand on pruun ja lagi on valge.",
+      answerTranslation: "My kitchen floor is brown and the ceiling is white.",
       answerAudio: "../audio/04-kodu-a1/009a.wav"
     },
     {
       text: "Kas roheline vannituba on ilus? Aga valge? Aga pruun?",
+      textTranslation: "Is a green bathroom beautiful? How about a white one? A brown one?",
       audio: "../audio/04-kodu-a1/010.wav",
       answer: "Minu arvates on valge vannituba väga ilus.",
+      answerTranslation: "In my opinion, a white bathroom is very beautiful.",
       answerAudio: "../audio/04-kodu-a1/010a.wav"
     },
     {
       text: "Kas teil on magamistuba? Kas teie magamistoas on öösel külm või soe?",
+      textTranslation: "Do you have a bedroom? Is it cold or warm in your bedroom at night?",
       audio: "../audio/04-kodu-a1/011.wav",
       answer: "Jah, mul on magamistuba. Tavaliselt on seal öösel soe.",
+      answerTranslation: "Yes, I have a bedroom. It is usually warm there at night.",
       answerAudio: "../audio/04-kodu-a1/011a.wav"
     },
     {
       text: "Kas teil on elutuba? Mis mööbel teie elutoas on?",
+      textTranslation: "Do you have a living room? What furniture is in your living room?",
       audio: "../audio/04-kodu-a1/012.wav",
       answer: "Jah, mul on elutuba. Seal on diivan, laud ja televiisor.",
+      answerTranslation: "Yes, I have a living room. There is a sofa, a table, and a TV.",
       answerAudio: "../audio/04-kodu-a1/012a.wav"
     },
     {
       text: "Kas teie kodus on televiisor? Aga kas teie magamistoas on televiisor?",
+      textTranslation: "Is there a TV in your home? And in your bedroom?",
       audio: "../audio/04-kodu-a1/013.wav",
       answer: "Jah, minu kodus on televiisor. Magamistoas televiisorit ei ole.",
+      answerTranslation: "Yes, there is a TV in my home. There is no TV in the bedroom.",
       answerAudio: "../audio/04-kodu-a1/013a.wav"
     },
     {
       text: "Mitu akent on teie kodus? Aga mitu ust?",
+      textTranslation: "How many windows are in your home? And how many doors?",
       audio: "../audio/04-kodu-a1/014.wav",
       answer: "Minu kodus on neli akent ja kolm ust.",
+      answerTranslation: "There are four windows and three doors in my home.",
       answerAudio: "../audio/04-kodu-a1/014a.wav"
     },
     {
       text: "Mitu peeglit on teie kodus? Aga mitu vaipa?",
+      textTranslation: "How many mirrors are in your home? And how many carpets?",
       audio: "../audio/04-kodu-a1/015.wav",
       answer: "Minu kodus on kaks peeglit ja kaks vaipa.",
+      answerTranslation: "There are two mirrors and two carpets in my home.",
       answerAudio: "../audio/04-kodu-a1/015a.wav"
     },
     {
       text: "Kas teil on diivan? Mis värvi on teie diivan?",
+      textTranslation: "Do you have a sofa? What color is your sofa?",
       audio: "../audio/04-kodu-a1/016.wav",
       answer: "Jah, mul on diivan. Minu diivan on hall.",
+      answerTranslation: "Yes, I have a sofa. My sofa is gray.",
       answerAudio: "../audio/04-kodu-a1/016a.wav"
     },
     {
       text: "Kas teie kodu lähedal on alkoholipood? Aga lemmikloomapood?",
+      textTranslation: "Is there a liquor store near your home? How about a pet store?",
       audio: "../audio/04-kodu-a1/017.wav",
       answer: "Jah, minu kodu lähedal on pood. Lemmikloomapood on ka lähedal.",
+      answerTranslation: "Yes, there is a store near my home. The pet store is also nearby.",
       answerAudio: "../audio/04-kodu-a1/017a.wav"
     },
     {
       text: "Kas te teate, mida tähendab pööning? Aga kelder? Aga uksekell? Aga värav?",
+      textTranslation: "Do you know what attic means? How about basement? Doorbell? Gate?",
       audio: "../audio/04-kodu-a1/018.wav",
       answer: "Jah, ma tean neid sõnu.",
+      answerTranslation: "Yes, I know these words.",
       answerAudio: "../audio/04-kodu-a1/018a.wav"
     },
     {
       text: "Kas te oskate remonti teha? Kas teile meeldib remonti teha?",
+      textTranslation: "Can you do repairs? Do you like to do repairs?",
       audio: "../audio/04-kodu-a1/019.wav",
       answer: "Natuke oskan. Aga mulle väga ei meeldi remonti teha.",
+      answerTranslation: "I can do a little. But I don't really like to do repairs.",
       answerAudio: "../audio/04-kodu-a1/019a.wav"
     },
     {
       text: "Kes on teie naaber? Mis tema nimi on?",
+      textTranslation: "Who is your neighbor? What is their name?",
       audio: "../audio/04-kodu-a1/020.wav",
       answer: "Minu naaber on sõbralik inimene. Tema nimi on Jaan.",
+      answerTranslation: "My neighbor is a friendly person. Their name is Jaan.",
       answerAudio: "../audio/04-kodu-a1/020a.wav"
     }
   ];

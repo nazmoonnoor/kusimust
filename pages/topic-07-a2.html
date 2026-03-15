@@ -23,9 +23,15 @@
       Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,92 +40,122 @@
   const items = [
     {
       text: "Mis kodumasinad on teie köögis?",
+      textTranslation: "What appliances are in your kitchen?",
       audio: "../audio/07-kook-a2/001.wav",
       answer: "Minu köögis on külmkapp, pliit, mikrolaineahi ja kohvimasin.",
+      answerTranslation: "In my kitchen there is a fridge, a stove, a microwave, and a coffee machine.",
       answerAudio: "../audio/07-kook-a2/001a.wav"
     },
     {
       text: "Mis mööbel on teie köögis?",
+      textTranslation: "What furniture is in your kitchen?",
       audio: "../audio/07-kook-a2/002.wav",
       answer: "Minu köögis on laud, toolid ja kapid.",
+      answerTranslation: "In my kitchen there is a table, chairs, and cupboards.",
       answerAudio: "../audio/07-kook-a2/002a.wav"
     },
     {
       text: "Mis nõud on teie köögikapis?",
+      textTranslation: "What dishes are in your kitchen cupboard?",
       audio: "../audio/07-kook-a2/003.wav",
       answer: "Minu köögikapis on taldrikud, tassid ja klaasid.",
+      answerTranslation: "There are plates, cups, and glasses in my kitchen cupboard.",
       answerAudio: "../audio/07-kook-a2/003a.wav"
     },
     {
       text: "Missugune on teie köögilaud?",
+      textTranslation: "What is your kitchen table like?",
       audio: "../audio/07-kook-a2/004.wav",
       answer: "Minu köögilaud on puidust ja keskmise suurusega.",
+      answerTranslation: "My kitchen table is wooden and medium-sized.",
       answerAudio: "../audio/07-kook-a2/004a.wav"
     },
     {
       text: "Mis on praegu teie köögilaual?",
+      textTranslation: "What is on your kitchen table right now?",
       audio: "../audio/07-kook-a2/005.wav",
       answer: "Praegu on minu köögilaual puuviljad ja tass.",
+      answerTranslation: "Right now there are fruits and a cup on my kitchen table.",
       answerAudio: "../audio/07-kook-a2/005a.wav"
     },
     {
       text: "Mis on teie köögis aknalaual?",
+      textTranslation: "What is on the windowsill in your kitchen?",
       audio: "../audio/07-kook-a2/006.wav",
       answer: "Minu köögis on aknalaual väike taim.",
+      answerTranslation: "There is a small plant on the windowsill in my kitchen.",
       answerAudio: "../audio/07-kook-a2/006a.wav"
     },
     {
       text: "Kas te pesete nõusid käsitsi või nõudepesumasinaga?",
+      textTranslation: "Do you wash dishes by hand or with a dishwasher?",
       audio: "../audio/07-kook-a2/007.wav",
       answer: "Tavaliselt ma pesen nõusid nõudepesumasinaga.",
+      answerTranslation: "Usually I wash dishes with a dishwasher.",
       answerAudio: "../audio/07-kook-a2/007a.wav"
     },
     {
       text: "Kes teie peres kõige rohkem nõusid peseb?",
+      textTranslation: "Who washes the most dishes in your family?",
       audio: "../audio/07-kook-a2/008.wav",
       answer: "Minu peres pesen nõusid tavaliselt mina.",
+      answerTranslation: "In my family, I usually wash the dishes.",
       answerAudio: "../audio/07-kook-a2/008a.wav"
     },
     {
       text: "Mis on teie köögilaual pühapäeva hommikul?",
+      textTranslation: "What is on your kitchen table on Sunday morning?",
       audio: "../audio/07-kook-a2/009.wav",
       answer: "Pühapäeva hommikul on köögilaual kohv ja hommikusöök.",
+      answerTranslation: "On Sunday morning there is coffee and breakfast on the kitchen table.",
       answerAudio: "../audio/07-kook-a2/009a.wav"
     },
     {
       text: "Kui tihti te kööki koristate? Mis kell te kööki koristate?",
+      textTranslation: "How often do you clean the kitchen? What time do you clean the kitchen?",
       audio: "../audio/07-kook-a2/010.wav",
       answer: "Ma koristan kööki iga päev. Tavaliselt õhtul.",
+      answerTranslation: "I clean the kitchen every day. Usually in the evening.",
       answerAudio: "../audio/07-kook-a2/010a.wav"
     },
     {
       text: "Mida te teete köögis iga päev?",
+      textTranslation: "What do you do in the kitchen every day?",
       audio: "../audio/07-kook-a2/011.wav",
       answer: "Ma teen köögis süüa ja joon kohvi.",
+      answerTranslation: "I cook and drink coffee in the kitchen every day.",
       answerAudio: "../audio/07-kook-a2/011a.wav"
     },
     {
       text: "Mis värvi nõud teile meeldivad? Mis värvi nõud teile ei meeldi?",
+      textTranslation: "What color dishes do you like? What color dishes do you not like?",
       audio: "../audio/07-kook-a2/012.wav",
       answer: "Mulle meeldivad valged nõud. Mulle ei meeldi väga tumedad nõud.",
+      answerTranslation: "I like white dishes. I do not really like very dark dishes.",
       answerAudio: "../audio/07-kook-a2/012a.wav"
     },
     {
       text: "Kas teie köögis tohib suitsetada? Aga kaarte mängida? Aga tantsida?",
+      textTranslation: "Is it allowed to smoke in your kitchen? How about playing cards? How about dancing?",
       audio: "../audio/07-kook-a2/013.wav",
       answer: "Minu köögis ei tohi suitsetada. Aga kaarte mängida võib.",
+      answerTranslation: "It is not allowed to smoke in my kitchen. But you can play cards.",
       answerAudio: "../audio/07-kook-a2/013a.wav"
     },
     {
       text: "Kus on teie köögis prügikast? Aga mikrolaineahi?",
+      textTranslation: "Where is the trash can in your kitchen? How about the microwave?",
       audio: "../audio/07-kook-a2/014.wav",
       answer: "Prügikast on kraanikausi all. Mikrolaineahi on laua peal.",
+      answerTranslation: "The trash can is under the sink. The microwave is on the table.",
       answerAudio: "../audio/07-kook-a2/014a.wav"
     },
     {
       text: "Mitu inimest saab teie köögis istuda?",
+      textTranslation: "How many people can sit in your kitchen?",
       audio: "../audio/07-kook-a2/015.wav",
       answer: "Minu köögis saab istuda neli inimest.",
+      answerTranslation: "Four people can sit in my kitchen.",
       answerAudio: "../audio/07-kook-a2/015a.wav"
     }
   ];

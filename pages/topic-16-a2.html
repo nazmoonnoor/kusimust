@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,92 +40,122 @@
     const items = [
       {
         text: "Kus teie rahakott praegu on? Kas taskus või kotis?",
+        textTranslation: "Where is your wallet right now? In your pocket or in your bag?",
         audio: "../audio/16-raha-a2/001.wav",
         answer: "Minu rahakott on praegu kotis.",
+        answerTranslation: "My wallet is in my bag right now.",
         answerAudio: "../audio/16-raha-a2/001a.wav"
       },
       {
         text: "Kas teil on praegu palju või vähe raha?",
+        textTranslation: "Do you have a lot or a little money right now?",
         audio: "../audio/16-raha-a2/002.wav",
         answer: "Praegu on mul natuke raha.",
+        answerTranslation: "Right now I have a little money.",
         answerAudio: "../audio/16-raha-a2/002a.wav"
       },
       {
         text: "Kus teie linnas on pangaautomaadid?",
+        textTranslation: "Where are ATMs in your city?",
         audio: "../audio/16-raha-a2/003.wav",
         answer: "Pangaautomaadid on kaubanduskeskustes ja pankade juures.",
+        answerTranslation: "ATMs are in shopping centers and near banks.",
         answerAudio: "../audio/16-raha-a2/003a.wav"
       },
       {
         text: "Mis te arvate, kui palju maksab Tallinn–Tartu bussipilet? Kas see on odav või kallis?",
+        textTranslation: "What do you think, how much does a Tallinn–Tartu bus ticket cost? Is it cheap or expensive?",
         audio: "../audio/16-raha-a2/004.wav",
         answer: "Ma arvan, et bussipilet maksab umbes 10–15 eurot. See ei ole väga kallis.",
+        answerTranslation: "I think a bus ticket costs about 10–15 euros. It is not very expensive.",
         answerAudio: "../audio/16-raha-a2/004a.wav"
       },
       {
         text: "Mis te arvate, kui palju maksab Tallinn–Helsingi laevapilet? Kas see on odav või kallis?",
+        textTranslation: "What do you think, how much does a Tallinn–Helsinki ferry ticket cost? Is it cheap or expensive?",
         audio: "../audio/16-raha-a2/005.wav",
         answer: "Laevapilet maksab umbes 20–40 eurot. Mõnikord on see odav.",
+        answerTranslation: "A ferry ticket costs about 20–40 euros. Sometimes it is cheap.",
         answerAudio: "../audio/16-raha-a2/005a.wav"
       },
       {
         text: "Kas te käite iga päev toidupoes? Kui suur on tavaliselt arve, kui te käite toidupoes?",
+        textTranslation: "Do you go to the grocery store every day? How big is the bill usually when you go to the grocery store?",
         audio: "../audio/16-raha-a2/006.wav",
         answer: "Ei, ma ei käi iga päev poes. Tavaliselt on arve umbes 20–40 eurot.",
+        answerTranslation: "No, I do not go to the store every day. Usually the bill is about 20–40 euros.",
         answerAudio: "../audio/16-raha-a2/006a.wav"
       },
       {
         text: "Kas te ostate toitu poest või turult? Kus on toit odavam?",
+        textTranslation: "Do you buy food from the store or the market? Where is food cheaper?",
         audio: "../audio/16-raha-a2/007.wav",
         answer: "Ma ostan tavaliselt poest. Mõnikord on turul odavam.",
+        answerTranslation: "I usually buy from the store. Sometimes it is cheaper at the market.",
         answerAudio: "../audio/16-raha-a2/007a.wav"
       },
       {
         text: "Kas te olete võitnud lotoga? Kui palju te võitsite?",
+        textTranslation: "Have you won the lottery? How much did you win?",
         audio: "../audio/16-raha-a2/008.wav",
         answer: "Ei, ma ei ole lotoga võitnud.",
+        answerTranslation: "No, I have not won the lottery.",
         answerAudio: "../audio/16-raha-a2/008a.wav"
       },
       {
         text: "Mida te eile ostsite? Kui palju see maksis?",
+        textTranslation: "What did you buy yesterday? How much did it cost?",
         audio: "../audio/16-raha-a2/009.wav",
         answer: "Eile ma ostsin toitu. See maksis umbes 15 eurot.",
+        answerTranslation: "Yesterday I bought food. It cost about 15 euros.",
         answerAudio: "../audio/16-raha-a2/009a.wav"
       },
       {
         text: "Kas te palun laenaksite mulle 10 eurot? Aga kaks eurot?",
+        textTranslation: "Could you please lend me 10 euros? How about two euros?",
         audio: "../audio/16-raha-a2/010.wav",
         answer: "Jah, ma saan laenata 10 eurot või 2 eurot.",
+        answerTranslation: "Yes, I can lend 10 euros or 2 euros.",
         answerAudio: "../audio/16-raha-a2/010a.wav"
       },
       {
         text: "Mis on viimane kingitus, mille te ostsite? Kui palju see maksis?",
+        textTranslation: "What is the last gift you bought? How much did it cost?",
         audio: "../audio/16-raha-a2/011.wav",
         answer: "Viimane kingitus oli raamat. See maksis umbes 20 eurot.",
+        answerTranslation: "The last gift was a book. It cost about 20 euros.",
         answerAudio: "../audio/16-raha-a2/011a.wav"
       },
       {
         text: "Kas te kogute raha?",
+        textTranslation: "Do you save money?",
         audio: "../audio/16-raha-a2/012.wav",
         answer: "Jah, ma kogun raha.",
+        answerTranslation: "Yes, I save money.",
         answerAudio: "../audio/16-raha-a2/012a.wav"
       },
       {
         text: "Kas te olete kunagi tänavalt raha leidnud? Kui palju raha te leidsite?",
+        textTranslation: "Have you ever found money on the street? How much money did you find?",
         audio: "../audio/16-raha-a2/013.wav",
         answer: "Jah, üks kord ma leidsin 5 eurot.",
+        answerTranslation: "Yes, once I found 5 euros.",
         answerAudio: "../audio/16-raha-a2/013a.wav"
       },
       {
         text: "Kas te olete kunagi raha kaotanud? Kui palju raha te kaotasite?",
+        textTranslation: "Have you ever lost money? How much money did you lose?",
         audio: "../audio/16-raha-a2/014.wav",
         answer: "Jah, üks kord ma kaotasin umbes 10 eurot.",
+        answerTranslation: "Yes, once I lost about 10 euros.",
         answerAudio: "../audio/16-raha-a2/014a.wav"
       },
       {
         text: "Kui te võtate pangaautomaadist sularaha, siis kui palju te tavaliselt võtate?",
+        textTranslation: "When you withdraw cash from an ATM, how much do you usually take out?",
         audio: "../audio/16-raha-a2/015.wav",
         answer: "Tavaliselt ma võtan umbes 50 või 100 eurot.",
+        answerTranslation: "Usually I take out about 50 or 100 euros.",
         answerAudio: "../audio/16-raha-a2/015a.wav"
       }
     ];

@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,92 +40,122 @@
     const items = [
       {
         text: "Millal te viimati kontserdil käisite? Kus see kontsert oli?",
+        textTranslation: "When did you last go to a concert? Where was the concert?",
         audio: "../audio/23-muusika-a2/001.wav",
         answer: "Ma käisin kontserdil eelmisel aastal. See oli Tallinnas.",
+        answerTranslation: "I went to a concert last year. It was in Tallinn.",
         answerAudio: "../audio/23-muusika-a2/001a.wav"
       },
       {
         text: "Missuguse kuulsa bändi kontserdil te käinud olete? Kus see kontsert oli?",
+        textTranslation: "At which famous band's concert have you been? Where was the concert?",
         audio: "../audio/23-muusika-a2/002.wav",
         answer: "Ma ei ole väga paljude bändide kontserdil käinud.",
+        answerTranslation: "I haven't been to many bands' concerts.",
         answerAudio: "../audio/23-muusika-a2/002a.wav"
       },
       {
         text: "Kas te laulate kooris? Kas teile meeldib koorilaul?",
+        textTranslation: "Do you sing in a choir? Do you like choral singing?",
         audio: "../audio/23-muusika-a2/003.wav",
         answer: "Ei, ma ei laula kooris. Aga mulle meeldib koorilaulu kuulata.",
+        answerTranslation: "No, I don't sing in a choir. But I like to listen to choral singing.",
         answerAudio: "../audio/23-muusika-a2/003a.wav"
       },
       {
         text: "Mis pilli te mängiksite, kui oleksite bändis? Kas te laulaksite bändis?",
+        textTranslation: "What instrument would you play if you were in a band? Would you sing in the band?",
         audio: "../audio/23-muusika-a2/004.wav",
         answer: "Kui ma oleks bändis, ma mängiks kitarri.",
+        answerTranslation: "If I were in a band, I would play the guitar.",
         answerAudio: "../audio/23-muusika-a2/004a.wav"
       },
       {
         text: "Kas te oskate laulda oma kodumaa hümni? Aga Eesti hümni?",
+        textTranslation: "Can you sing your homeland's anthem? How about the Estonian anthem?",
         audio: "../audio/23-muusika-a2/005.wav",
         answer: "Jah, ma oskan oma kodumaa hümni. Eesti hümni ma veel õpin.",
+        answerTranslation: "Yes, I can sing my homeland's anthem. I am still learning the Estonian anthem.",
         answerAudio: "../audio/23-muusika-a2/005a.wav"
       },
       {
         text: "Kas teil on kodus mõni pill? Kus see praegu on?",
+        textTranslation: "Do you have any instruments at home? Where is it now?",
         audio: "../audio/23-muusika-a2/006.wav",
         answer: "Ei, mul ei ole pilli kodus.",
+        answerTranslation: "No, I don't have any instruments at home.",
         answerAudio: "../audio/23-muusika-a2/006a.wav"
       },
       {
         text: "Millal teile meeldib muusikat kuulata? Millal te kindlasti muusikat ei kuula?",
+        textTranslation: "When do you like to listen to music? When do you definitely not listen to music?",
         audio: "../audio/23-muusika-a2/007.wav",
         answer: "Mulle meeldib muusikat kuulata õhtul. Ma ei kuula muusikat, kui ma töötan.",
+        answerTranslation: "I like to listen to music in the evening. I don't listen to music when I work.",
         answerAudio: "../audio/23-muusika-a2/007a.wav"
       },
       {
         text: "Kas bussis või rongis võiks olla muusika? Aga haigla koridoris?",
+        textTranslation: "Should there be music on a bus or train? How about in a hospital corridor?",
         audio: "../audio/23-muusika-a2/008.wav",
         answer: "Bussis võib olla muusika. Haiglas peaks olema vaikne.",
+        answerTranslation: "There can be music on a bus. In a hospital, it should be quiet.",
         answerAudio: "../audio/23-muusika-a2/008a.wav"
       },
       {
         text: "Kas ema laulis teile, kui te olite laps? Mida ta laulis?",
+        textTranslation: "Did your mother sing to you when you were a child? What did she sing?",
         audio: "../audio/23-muusika-a2/009.wav",
         answer: "Jah, mu ema laulis mulle unelaule.",
+        answerTranslation: "Yes, my mother sang lullabies to me.",
         answerAudio: "../audio/23-muusika-a2/009a.wav"
       },
       {
         text: "Kes on maailma kõige parem laulja? Aga maailma kõige kuulsam laulja?",
+        textTranslation: "Who is the best singer in the world? How about the most famous singer in the world?",
         audio: "../audio/23-muusika-a2/010.wav",
         answer: "Minu arvates on palju häid lauljaid maailmas.",
+        answerTranslation: "In my opinion, there are many good singers in the world.",
         answerAudio: "../audio/23-muusika-a2/010a.wav"
       },
       {
         text: "Kas teil on head kõlarid? Kus toas need on?",
+        textTranslation: "Do you have good speakers? In which room are they?",
         audio: "../audio/23-muusika-a2/011.wav",
         answer: "Jah, mul on kõlarid. Need on elutoas.",
+        answerTranslation: "Yes, I have speakers. They are in the living room.",
         answerAudio: "../audio/23-muusika-a2/011a.wav"
       },
       {
         text: "Mis laulu te viimati kuulasite? Kelle laul see on?",
+        textTranslation: "What song did you last listen to? Whose song is it?",
         audio: "../audio/23-muusika-a2/012.wav",
         answer: "Ma kuulasin viimati poplaulu.",
+        answerTranslation: "I last listened to a pop song.",
         answerAudio: "../audio/23-muusika-a2/012a.wav"
       },
       {
         text: "Kas teile meeldivad muusikalid? Aga ooperid? Aga rokkooperid?",
+        textTranslation: "Do you like musicals? How about operas? How about rock operas?",
         audio: "../audio/23-muusika-a2/013.wav",
         answer: "Mulle meeldivad muusikalid.",
+        answerTranslation: "I like musicals.",
         answerAudio: "../audio/23-muusika-a2/013a.wav"
       },
       {
         text: "Kas teil on oma playlist? Mitu laulu selles playlistis on?",
+        textTranslation: "Do you have your own playlist? How many songs are in the playlist?",
         audio: "../audio/23-muusika-a2/014.wav",
         answer: "Jah, mul on playlist. Seal on umbes 30 laulu.",
+        answerTranslation: "Yes, I have a playlist. There are about 30 songs in it.",
         answerAudio: "../audio/23-muusika-a2/014a.wav"
       },
       {
         text: "Kas te olete laulnud laval? Millal see oli?",
+        textTranslation: "Have you sung on stage? When was it?",
         audio: "../audio/23-muusika-a2/015.wav",
         answer: "Ei, ma ei ole laulnud laval.",
+        answerTranslation: "No, I haven't sung on stage.",
         answerAudio: "../audio/23-muusika-a2/015a.wav"
       }
     ];

@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,122 +40,162 @@
     const items = [
       {
         text: "Mitu senti on üks euro?",
+        textTranslation: "How many cents are in one euro?",
         audio: "../audio/16-raha-a1/001.wav",
         answer: "Üks euro on 100 senti.",
+        answerTranslation: "One euro is 100 cents.",
         answerAudio: "../audio/16-raha-a1/001a.wav"
       },
       {
         text: "Mitu senti on 10 eurot?",
+        textTranslation: "How many cents are in 10 euros?",
         audio: "../audio/16-raha-a1/002.wav",
         answer: "10 eurot on 1000 senti.",
+        answerTranslation: "10 euros is 1000 cents.",
         answerAudio: "../audio/16-raha-a1/002a.wav"
       },
       {
         text: "Mis värvi on 10 eurot? Aga 20 eurot? Aga 50 eurot?",
+        textTranslation: "What color is 10 euros? How about 20 euros? How about 50 euros?",
         audio: "../audio/16-raha-a1/003.wav",
         answer: "10 eurot on punane. 20 eurot on sinine. 50 eurot on oranž.",
+        answerTranslation: "10 euros is red. 20 euros is blue. 50 euros is orange.",
         answerAudio: "../audio/16-raha-a1/003a.wav"
       },
       {
         text: "Kas 10 eurot on suur või väike raha? Aga 100 eurot?",
+        textTranslation: "Is 10 euros a lot or a little money? How about 100 euros?",
         audio: "../audio/16-raha-a1/004.wav",
         answer: "10 eurot on väike raha. 100 eurot on juba suurem raha.",
+        answerTranslation: "10 euros is a little money. 100 euros is already more money.",
         answerAudio: "../audio/16-raha-a1/004a.wav"
       },
       {
         text: "Kas 1000 eurot on suur palk? Aga 2000 eurot?",
+        textTranslation: "Is 1000 euros a big salary? How about 2000 euros?",
         audio: "../audio/16-raha-a1/005.wav",
         answer: "1000 eurot on väike palk. 2000 eurot on parem palk.",
+        answerTranslation: "1000 euros is a small salary. 2000 euros is a better salary.",
         answerAudio: "../audio/16-raha-a1/005a.wav"
       },
       {
         text: "Kui palju maksab tass kohvi? Kas see on odav või kallis?",
+        textTranslation: "How much does a cup of coffee cost? Is it cheap or expensive?",
         audio: "../audio/16-raha-a1/006.wav",
         answer: "Tass kohvi maksab umbes 2–3 eurot. See on normaalne hind.",
+        answerTranslation: "A cup of coffee costs about 2–3 euros. That is a normal price.",
         answerAudio: "../audio/16-raha-a1/006a.wav"
       },
       {
         text: "Kui palju maksab pudel veini? Aga tahvel šokolaadi?",
+        textTranslation: "How much does a bottle of wine cost? How about a bar of chocolate?",
         audio: "../audio/16-raha-a1/007.wav",
         answer: "Pudel veini maksab umbes 8–12 eurot. Šokolaad maksab umbes 2 eurot.",
+        answerTranslation: "A bottle of wine costs about 8–12 euros. Chocolate costs about 2 euros.",
         answerAudio: "../audio/16-raha-a1/007a.wav"
       },
       {
         text: "Kui palju maksab praegu liiter bensiini?",
+        textTranslation: "How much does a liter of gasoline cost right now?",
         audio: "../audio/16-raha-a1/008.wav",
         answer: "Liiter bensiini maksab umbes 1,7–2 eurot.",
+        answerTranslation: "A liter of gasoline costs about 1.7–2 euros.",
         answerAudio: "../audio/16-raha-a1/008a.wav"
       },
       {
         text: "Kui palju maksab kinopilet? Aga hea raamat?",
+        textTranslation: "How much does a movie ticket cost? How about a good book?",
         audio: "../audio/16-raha-a1/009.wav",
         answer: "Kinopilet maksab umbes 8–12 eurot. Hea raamat maksab umbes 15–25 eurot.",
+        answerTranslation: "A movie ticket costs about 8–12 euros. A good book costs about 15–25 euros.",
         answerAudio: "../audio/16-raha-a1/009a.wav"
       },
       {
         text: "Kas leib on kallis või odav? Aga liha?",
+        textTranslation: "Is bread expensive or cheap? How about meat?",
         audio: "../audio/16-raha-a1/010.wav",
         answer: "Leib on tavaliselt odav. Liha on kallim.",
+        answerTranslation: "Bread is usually cheap. Meat is more expensive.",
         answerAudio: "../audio/16-raha-a1/010a.wav"
       },
       {
         text: "Kas te maksate toidupoes sularahas või pangakaardiga? Aga kohvikus?",
+        textTranslation: "Do you pay in cash or by card at the grocery store? How about in a café?",
         audio: "../audio/16-raha-a1/011.wav",
         answer: "Ma maksan tavaliselt pangakaardiga.",
+        answerTranslation: "I usually pay by card.",
         answerAudio: "../audio/16-raha-a1/011a.wav"
       },
       {
         text: "Mitu pangakaarti teil on?",
+        textTranslation: "How many bank cards do you have?",
         audio: "../audio/16-raha-a1/012.wav",
         answer: "Mul on kaks pangakaarti.",
+        answerTranslation: "I have two bank cards.",
         answerAudio: "../audio/16-raha-a1/012a.wav"
       },
       {
         text: "Mitu pangakontot teil on?",
+        textTranslation: "How many bank accounts do you have?",
         audio: "../audio/16-raha-a1/013.wav",
         answer: "Mul on üks või kaks pangakontot.",
+        answerTranslation: "I have one or two bank accounts.",
         answerAudio: "../audio/16-raha-a1/013a.wav"
       },
       {
         text: "Kas teil on krediitkaart? Kus te maksate krediitkaardiga?",
+        textTranslation: "Do you have a credit card? Where do you pay with a credit card?",
         audio: "../audio/16-raha-a1/014.wav",
         answer: "Jah, mul on krediitkaart. Ma maksan sellega poes ja internetis.",
+        answerTranslation: "Yes, I have a credit card. I pay with it in stores and online.",
         answerAudio: "../audio/16-raha-a1/014a.wav"
       },
       {
         text: "Kas teie pangakaardi PIN-kood on teie sünnipäev?",
+        textTranslation: "Is your bank card PIN code your birthday?",
         audio: "../audio/16-raha-a1/015.wav",
         answer: "Ei, minu PIN-kood ei ole minu sünnipäev.",
+        answerTranslation: "No, my PIN code is not my birthday.",
         answerAudio: "../audio/16-raha-a1/015a.wav"
       },
       {
         text: "Mis riigi raha on jeen? Aga mis riigi raha on nael? Aga mis riigi raha on grivna?",
+        textTranslation: "Which country's money is yen? How about pound? How about hryvnia?",
         audio: "../audio/16-raha-a1/016.wav",
         answer: "Jeen on Jaapani raha. Nael on Suurbritannia raha. Grivna on Ukraina raha.",
+        answerTranslation: "Yen is Japanese money. Pound is British money. Hryvnia is Ukrainian money.",
         answerAudio: "../audio/16-raha-a1/016a.wav"
       },
       {
         text: "Mis on teie lemmikpood?",
+        textTranslation: "What is your favorite store?",
         audio: "../audio/16-raha-a1/017.wav",
         answer: "Minu lemmikpood on Prisma või Rimi.",
+        answerTranslation: "My favorite store is Prisma or Rimi.",
         answerAudio: "../audio/16-raha-a1/017a.wav"
       },
       {
         text: "Kas te teate, mida tähendab jootraha? Aga taskuraha? Aga valeraha? Aga pangarööv?",
+        textTranslation: "Do you know what tip means? How about pocket money? How about counterfeit money? How about bank robbery?",
         audio: "../audio/16-raha-a1/018.wav",
         answer: "Jah, ma tean neid sõnu.",
+        answerTranslation: "Yes, I know these words.",
         answerAudio: "../audio/16-raha-a1/018a.wav"
       },
       {
         text: "Mis te ostate, kui ma annan teile 20 eurot?",
+        textTranslation: "What do you buy if I give you 20 euros?",
         audio: "../audio/16-raha-a1/019.wav",
         answer: "Ma ostan toitu või raamatu.",
+        answerTranslation: "I buy food or a book.",
         answerAudio: "../audio/16-raha-a1/019a.wav"
       },
       {
         text: "Mis te ostate, kui ma annan teile 1000 eurot?",
+        textTranslation: "What do you buy if I give you 1000 euros?",
         audio: "../audio/16-raha-a1/020.wav",
         answer: "Ma ostan uue telefoni või lähen reisile.",
+        answerTranslation: "I buy a new phone or go on a trip.",
         answerAudio: "../audio/16-raha-a1/020a.wav"
       }
     ];

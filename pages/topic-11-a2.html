@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,92 +40,122 @@
     const items = [
       {
         text: "Kas te lähete reisile kohvriga või seljakotiga?",
+        textTranslation: "Do you go on a trip with a suitcase or a backpack?",
         audio: "../audio/11-reisimine-a2/001.wav",
         answer: "Tavaliselt lähen reisile kohvriga. Kui reis on lühike, võtan seljakoti.",
+        answerTranslation: "Usually I go on a trip with a suitcase. If the trip is short, I take a backpack.",
         answerAudio: "../audio/11-reisimine-a2/001a.wav"
       },
       {
         text: "Kas te oskate hästi kohvrit pakkida?",
+        textTranslation: "Are you good at packing a suitcase?",
         audio: "../audio/11-reisimine-a2/002.wav",
         answer: "Jah, ma oskan üsna hästi kohvrit pakkida. Tavaliselt panen ainult vajalikud asjad.",
+        answerTranslation: "Yes, I am quite good at packing a suitcase. Usually, I only pack the necessary things.",
         answerAudio: "../audio/11-reisimine-a2/002a.wav"
       },
       {
         text: "Kas teie kohver on mõnikord liiga raske?",
+        textTranslation: "Is your suitcase sometimes too heavy?",
         audio: "../audio/11-reisimine-a2/003.wav",
         answer: "Jah, mõnikord on minu kohver liiga raske. Siis pean mõned asjad välja võtma.",
+        answerTranslation: "Yes, sometimes my suitcase is too heavy. Then I have to take some things out.",
         answerAudio: "../audio/11-reisimine-a2/003a.wav"
       },
       {
         text: "Mis asjad te alati reisile kaasa võtate?",
+        textTranslation: "What things do you always take with you on a trip?",
         audio: "../audio/11-reisimine-a2/004.wav",
         answer: "Ma võtan alati kaasa passi, telefoni, riided ja laadija.",
+        answerTranslation: "I always take my passport, phone, clothes, and charger with me.",
         answerAudio: "../audio/11-reisimine-a2/004a.wav"
       },
       {
         text: "Kas teile meeldib üksi reisida? Kellega teile meeldib reisida?",
+        textTranslation: "Do you like to travel alone? Who do you like to travel with?",
         audio: "../audio/11-reisimine-a2/005.wav",
         answer: "Mulle ei meeldi väga üksi reisida. Mulle meeldib reisida pere või sõpradega.",
+        answerTranslation: "I do not really like to travel alone. I like to travel with family or friends.",
         answerAudio: "../audio/11-reisimine-a2/005a.wav"
       },
       {
         text: "Kuhu te reisiksite oma sõbraga? Aga emaga?",
+        textTranslation: "Where would you travel with your friend? How about with your mother?",
         audio: "../audio/11-reisimine-a2/006.wav",
         answer: "Sõbraga reisiksin mõnda suurlinna, näiteks Berliini. Emaga reisiksin rahulikku kohta.",
+        answerTranslation: "With a friend, I would travel to a big city, for example, Berlin. With my mother, I would travel to a peaceful place.",
         answerAudio: "../audio/11-reisimine-a2/006a.wav"
       },
       {
         text: "Millal te viimati lennukiga lendasite? Aga millal te viimati rongiga sõitsite?",
+        textTranslation: "When did you last fly by plane? And when did you last travel by train?",
         audio: "../audio/11-reisimine-a2/007.wav",
         answer: "Ma lendasin lennukiga eelmisel aastal. Rongiga sõitsin paar kuud tagasi.",
+        answerTranslation: "I flew by plane last year. I traveled by train a couple of months ago.",
         answerAudio: "../audio/11-reisimine-a2/007a.wav"
       },
       {
         text: "Kas te rendite mõnikord reisil auto?",
+        textTranslation: "Do you sometimes rent a car when traveling?",
         audio: "../audio/11-reisimine-a2/008.wav",
         answer: "Jah, mõnikord rendin reisil auto. See on mugav.",
+        answerTranslation: "Yes, sometimes I rent a car when traveling. It is convenient.",
         answerAudio: "../audio/11-reisimine-a2/008a.wav"
       },
       {
         text: "Kas te olete käinud rattamatkal? Aga kanuumatkal?",
+        textTranslation: "Have you been on a cycling trip? How about a canoe trip?",
         audio: "../audio/11-reisimine-a2/009.wav",
         answer: "Ma olen käinud rattamatkal paar aastat tagasi. Kanuumatkal ma ei ole käinud.",
+        answerTranslation: "I have been on a cycling trip a couple of years ago. I have not been on a canoe trip.",
         answerAudio: "../audio/11-reisimine-a2/009a.wav"
       },
       {
         text: "Kas te olete öösel maganud lennujaamas? Aga raudteejaamas?",
+        textTranslation: "Have you ever slept at the airport at night? How about at the train station?",
         audio: "../audio/11-reisimine-a2/010.wav",
         answer: "Ei, ma ei ole lennujaamas ega jaamas maganud.",
+        answerTranslation: "No, I have not slept at the airport or at the station.",
         answerAudio: "../audio/11-reisimine-a2/010a.wav"
       },
       {
         text: "Mis keeli te oskate? Mis keeli te reisil räägite?",
+        textTranslation: "What languages do you speak? What languages do you speak when traveling?",
         audio: "../audio/11-reisimine-a2/011.wav",
         answer: "Ma oskan bengali ja inglise keelt. Reisil räägin tavaliselt inglise keeles.",
+        answerTranslation: "I speak Bengali and English. When traveling, I usually speak English.",
         answerAudio: "../audio/11-reisimine-a2/011a.wav"
       },
       {
         text: "Kas mõtlete mõnikord reisil: “Oh, siia tulen kindlasti tagasi!”? Kas lähete tagasi?",
+        textTranslation: "Do you sometimes think while traveling: 'Oh, I will definitely come back here!'? Do you go back?",
         audio: "../audio/11-reisimine-a2/012.wav",
         answer: "Jah, mõnikord mõtlen nii. Mõnda kohta tahaksin tagasi minna.",
+        answerTranslation: "Yes, sometimes I think so. I would like to go back to some places.",
         answerAudio: "../audio/11-reisimine-a2/012a.wav"
       },
       {
         text: "Kui teil oleks 2000 eurot, kuhu te sõidaksite?",
+        textTranslation: "If you had 2000 euros, where would you go?",
         audio: "../audio/11-reisimine-a2/013.wav",
         answer: "Kui mul oleks 2000 eurot, sõidaksin Itaaliasse.",
+        answerTranslation: "If I had 2000 euros, I would go to Italy.",
         answerAudio: "../audio/11-reisimine-a2/013a.wav"
       },
       {
         text: "Kas teile meeldiks suusareis? Kuhu te sõidaksite? Kui kaua te seal oleksite?",
+        textTranslation: "Would you like a ski trip? Where would you go? How long would you stay there?",
         audio: "../audio/11-reisimine-a2/014.wav",
         answer: "Jah, mulle meeldiks suusareis. Ma sõidaksin Alpidesse umbes üheks nädalaks.",
+        answerTranslation: "Yes, I would like a ski trip. I would go to the Alps for about a week.",
         answerAudio: "../audio/11-reisimine-a2/014a.wav"
       },
       {
         text: "Kas teile meeldiks puhkus soojal maal? Kuhu te sõidaksite? Kui kaua te seal oleksite? Mida te seal teeksite?",
+        textTranslation: "Would you like a holiday in a warm country? Where would you go? How long would you stay there? What would you do there?",
         audio: "../audio/11-reisimine-a2/015.wav",
         answer: "Jah, mulle meeldiks puhkus soojal maal. Ma sõidaksin Hispaaniasse kaheks nädalaks ja puhkaksin rannas.",
+        answerTranslation: "Yes, I would like a holiday in a warm country. I would go to Spain for two weeks and relax on the beach.",
         answerAudio: "../audio/11-reisimine-a2/015a.wav"
       }
     ];

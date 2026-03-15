@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,92 +40,122 @@
     const items = [
       {
         text: "Kui tihti te haige olete?",
+        textTranslation: "How often are you sick?",
         audio: "../audio/14-tervis-a2/001.wav",
         answer: "Ma olen harva haige. Tavaliselt üks või kaks korda aastas.",
+        answerTranslation: "I am rarely sick. Usually once or twice a year.",
         answerAudio: "../audio/14-tervis-a2/001a.wav"
       },
       {
         text: "Kes teie peres on tihti haige?",
+        textTranslation: "Who in your family is often sick?",
         audio: "../audio/14-tervis-a2/002.wav",
         answer: "Minu peres ei ole keegi väga tihti haige.",
+        answerTranslation: "No one in my family is very often sick.",
         answerAudio: "../audio/14-tervis-a2/002a.wav"
       },
       {
         text: "Mida te teete, et terve olla?",
+        textTranslation: "What do you do to stay healthy?",
         audio: "../audio/14-tervis-a2/003.wav",
         answer: "Ma püüan süüa tervislikult ja jalutan iga päev.",
+        answerTranslation: "I try to eat healthily and walk every day.",
         answerAudio: "../audio/14-tervis-a2/003a.wav"
       },
       {
         text: "Kas te võtate vitamiine? Mis vitamiine te võtate?",
+        textTranslation: "Do you take vitamins? What vitamins do you take?",
         audio: "../audio/14-tervis-a2/004.wav",
         answer: "Jah, ma võtan mõnikord vitamiine. Näiteks D-vitamiini.",
+        answerTranslation: "Yes, I sometimes take vitamins. For example, vitamin D.",
         answerAudio: "../audio/14-tervis-a2/004a.wav"
       },
       {
         text: "Kas hambavalu on hullem kui peavalu?",
+        textTranslation: "Is a toothache worse than a headache?",
         audio: "../audio/14-tervis-a2/005.wav",
         answer: "Minu arvates on hambavalu hullem kui peavalu.",
+        answerTranslation: "In my opinion, a toothache is worse than a headache.",
         answerAudio: "../audio/14-tervis-a2/005a.wav"
       },
       {
         text: "Kellele te helistate, kui olete haige?",
+        textTranslation: "Who do you call when you are sick?",
         audio: "../audio/14-tervis-a2/006.wav",
         answer: "Kui ma olen haige, helistan perearstile.",
+        answerTranslation: "When I am sick, I call the family doctor.",
         answerAudio: "../audio/14-tervis-a2/006a.wav"
       },
       {
         text: "Mida te teete, kui teil on nohu? Aga köha?",
+        textTranslation: "What do you do when you have a runny nose? How about a cough?",
         audio: "../audio/14-tervis-a2/007.wav",
         answer: "Kui mul on nohu, ma puhkan ja joon teed. Kui on köha, ma võtan ravimit.",
+        answerTranslation: "When I have a runny nose, I rest and drink tea. If I have a cough, I take medicine.",
         answerAudio: "../audio/14-tervis-a2/007a.wav"
       },
       {
         text: "Kas teil on prillid? Kas te näete lähedale või kaugele hästi?",
+        textTranslation: "Do you have glasses? Do you see well up close or far away?",
         audio: "../audio/14-tervis-a2/008.wav",
         answer: "Jah, mul on prillid. Ma näen paremini prillidega.",
+        answerTranslation: "Yes, I have glasses. I see better with glasses.",
         answerAudio: "../audio/14-tervis-a2/008a.wav"
       },
       {
         text: "Kas te olite tihti haige, kui te olite laps?",
+        textTranslation: "Were you often sick when you were a child?",
         audio: "../audio/14-tervis-a2/009.wav",
         answer: "Ei, lapsena ma ei olnud väga tihti haige.",
+        answerTranslation: "No, as a child I was not very often sick.",
         answerAudio: "../audio/14-tervis-a2/009a.wav"
       },
       {
         text: "Millal te viimati haige olite? Kas te käisite arsti juures?",
+        textTranslation: "When were you last sick? Did you go to the doctor?",
         audio: "../audio/14-tervis-a2/010.wav",
         answer: "Ma olin haige eelmisel talvel. Jah, ma käisin arsti juures.",
+        answerTranslation: "I was sick last winter. Yes, I went to the doctor.",
         answerAudio: "../audio/14-tervis-a2/010a.wav"
       },
       {
         text: "Kas te olete vaktsineeritud?",
+        textTranslation: "Are you vaccinated?",
         audio: "../audio/14-tervis-a2/011.wav",
         answer: "Jah, ma olen vaktsineeritud.",
+        answerTranslation: "Yes, I am vaccinated.",
         answerAudio: "../audio/14-tervis-a2/011a.wav"
       },
       {
         text: "Kas teil on olnud gripp? Aga koroonaviirus? Kui kaua te haige olite?",
+        textTranslation: "Have you had the flu? How about coronavirus? How long were you sick?",
         audio: "../audio/14-tervis-a2/012.wav",
         answer: "Jah, mul on olnud gripp. Ma olin haige umbes ühe nädala.",
+        answerTranslation: "Yes, I have had the flu. I was sick for about a week.",
         answerAudio: "../audio/14-tervis-a2/012a.wav"
       },
       {
         text: "Kui tihti te käite apteegis? Mida te ostate?",
+        textTranslation: "How often do you go to the pharmacy? What do you buy?",
         audio: "../audio/14-tervis-a2/013.wav",
         answer: "Ma käin apteegis mõnikord. Tavaliselt ostan vitamiine või ravimit.",
+        answerTranslation: "I go to the pharmacy sometimes. Usually I buy vitamins or medicine.",
         answerAudio: "../audio/14-tervis-a2/013a.wav"
       },
       {
         text: "Kas te istute palju arvutis? Kas teie selg hakkab valutama? Mida te siis teete?",
+        textTranslation: "Do you sit at the computer a lot? Does your back start to hurt? What do you do then?",
         audio: "../audio/14-tervis-a2/014.wav",
         answer: "Jah, ma istun palju arvutis. Mõnikord selg valutab ja ma teen pausi.",
+        answerTranslation: "Yes, I sit at the computer a lot. Sometimes my back hurts and I take a break.",
         answerAudio: "../audio/14-tervis-a2/014a.wav"
       },
       {
         text: "Kas te sööte tervislikult? Mis on tervislik toit?",
+        textTranslation: "Do you eat healthily? What is healthy food?",
         audio: "../audio/14-tervis-a2/015.wav",
         answer: "Jah, ma püüan süüa tervislikult. Tervislik toit on puuviljad, köögiviljad ja kala.",
+        answerTranslation: "Yes, I try to eat healthily. Healthy food is fruit, vegetables, and fish.",
         answerAudio: "../audio/14-tervis-a2/015a.wav"
       }
     ];

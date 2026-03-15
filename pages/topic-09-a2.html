@@ -30,7 +30,7 @@ Question audio plays first. If answer audio exists, it plays automatically after
 
 <div id="questionList" class="list"></div>
 
-<p class="footer-note">MUSTMILJON KÜSIMUST</p>
+ 
 
 </div>
 
@@ -42,108 +42,138 @@ Question audio plays first. If answer audio exists, it plays automatically after
 const items = [
 
 {
-text:"Kas täna on tuuline ilm? Kas täna on pilves ilm? Missugune ilm täna on?",
-audio:"../audio/09-ilm-a2/001.wav",
-answer:"Täna on natuke tuuline ja pilves ilm.",
-answerAudio:"../audio/09-ilm-a2/001a.wav"
+text: "Kas täna on tuuline ilm? Kas täna on pilves ilm? Missugune ilm täna on?",
+textTranslation: "Is it windy today? Is it cloudy today? What is the weather like today?",
+audio: "../audio/09-ilm-a2/001.wav",
+answer: "Täna on natuke tuuline ja pilves ilm.",
+answerTranslation: "Today the weather is a bit windy and cloudy.",
+answerAudio: "../audio/09-ilm-a2/001a.wav"
 },
 
 {
-text:"Missugune ilm eile oli?",
-audio:"../audio/09-ilm-a2/002.wav",
-answer:"Eile oli jahe ja pilvine ilm.",
-answerAudio:"../audio/09-ilm-a2/002a.wav"
+text: "Missugune ilm eile oli?",
+textTranslation: "What was the weather like yesterday?",
+audio: "../audio/09-ilm-a2/002.wav",
+answer: "Eile oli jahe ja pilvine ilm.",
+answerTranslation: "Yesterday the weather was cool and cloudy.",
+answerAudio: "../audio/09-ilm-a2/002a.wav"
 },
 
 {
-text:"Missugune ilm teile meeldib? Missugune ilm teile ei meeldi?",
-audio:"../audio/09-ilm-a2/003.wav",
-answer:"Mulle meeldib soe ja päikeseline ilm. Mulle ei meeldi väga külm ja tuuline ilm.",
-answerAudio:"../audio/09-ilm-a2/003a.wav"
+text: "Missugune ilm teile meeldib? Missugune ilm teile ei meeldi?",
+textTranslation: "What kind of weather do you like? What kind of weather do you not like?",
+audio: "../audio/09-ilm-a2/003.wav",
+answer: "Mulle meeldib soe ja päikeseline ilm. Mulle ei meeldi väga külm ja tuuline ilm.",
+answerTranslation: "I like warm and sunny weather. I do not like very cold and windy weather.",
+answerAudio: "../audio/09-ilm-a2/003a.wav"
 },
 
 {
-text:"Missugune ilm on Antarktikas?",
-audio:"../audio/09-ilm-a2/004.wav",
-answer:"Antarktikas on väga külm ja tuuline ilm.",
-answerAudio:"../audio/09-ilm-a2/004a.wav"
+text: "Missugune ilm on Antarktikas?",
+textTranslation: "What is the weather like in Antarctica?",
+audio: "../audio/09-ilm-a2/004.wav",
+answer: "Antarktikas on väga külm ja tuuline ilm.",
+answerTranslation: "In Antarctica, the weather is very cold and windy.",
+answerAudio: "../audio/09-ilm-a2/004a.wav"
 },
 
 {
-text:"Millal on teie sünnipäev? Missugune ilm on tavaliselt teie sünnipäeval?",
-audio:"../audio/09-ilm-a2/005.wav",
-answer:"Minu sünnipäev on detsembris. Tavaliselt on siis külm ilm.",
-answerAudio:"../audio/09-ilm-a2/005a.wav"
+text: "Millal on teie sünnipäev? Missugune ilm on tavaliselt teie sünnipäeval?",
+textTranslation: "When is your birthday? What is the weather usually like on your birthday?",
+audio: "../audio/09-ilm-a2/005.wav",
+answer: "Minu sünnipäev on detsembris. Tavaliselt on siis külm ilm.",
+answerTranslation: "My birthday is in December. Usually, the weather is cold then.",
+answerAudio: "../audio/09-ilm-a2/005a.wav"
 },
 
 {
-text:"Kust te kuulate ilmateadet? Kust te vaatate ilmateadet?",
-audio:"../audio/09-ilm-a2/006.wav",
-answer:"Ma vaatan ilmateadet telefonist või internetist.",
-answerAudio:"../audio/09-ilm-a2/006a.wav"
+text: "Kust te kuulate ilmateadet? Kust te vaatate ilmateadet?",
+textTranslation: "Where do you listen to the weather forecast? Where do you watch the weather forecast?",
+audio: "../audio/09-ilm-a2/006.wav",
+answer: "Ma vaatan ilmateadet telefonist või internetist.",
+answerTranslation: "I check the weather forecast on my phone or on the internet.",
+answerAudio: "../audio/09-ilm-a2/006a.wav"
 },
 
 {
-text:"Mis maal ja mis linnas on kõige parem ilm? Missugune ilm seal on?",
-audio:"../audio/09-ilm-a2/007.wav",
-answer:"Minu arvates on Hispaanias hea ilm. Seal on sageli soe ja päikeseline.",
-answerAudio:"../audio/09-ilm-a2/007a.wav"
+text: "Mis maal ja mis linnas on kõige parem ilm? Missugune ilm seal on?",
+textTranslation: "In which country and city is the best weather? What is the weather like there?",
+audio: "../audio/09-ilm-a2/007.wav",
+answer: "Minu arvates on Hispaanias hea ilm. Seal on sageli soe ja päikeseline.",
+answerTranslation: "In my opinion, Spain has good weather. It is often warm and sunny there.",
+answerAudio: "../audio/09-ilm-a2/007a.wav"
 },
 
 {
-text:"Mis aastaaeg teile meeldib? Missugune siis ilm on?",
-audio:"../audio/09-ilm-a2/008.wav",
-answer:"Mulle meeldib suvi. Siis on soe ja päikeseline ilm.",
-answerAudio:"../audio/09-ilm-a2/008a.wav"
+text: "Mis aastaaeg teile meeldib? Missugune siis ilm on?",
+textTranslation: "Which season do you like? What is the weather like then?",
+audio: "../audio/09-ilm-a2/008.wav",
+answer: "Mulle meeldib suvi. Siis on soe ja päikeseline ilm.",
+answerTranslation: "I like summer. Then the weather is warm and sunny.",
+answerAudio: "../audio/09-ilm-a2/008a.wav"
 },
 
 {
-text:"Mis on kõige külmem õhutemperatuur, mida te mäletate? Aga kõige soojem?",
-audio:"../audio/09-ilm-a2/009.wav",
-answer:"Kõige külmem oli umbes miinus kakskümmend kraadi. Kõige soojem oli umbes pluss kolmkümmend kraadi.",
-answerAudio:"../audio/09-ilm-a2/009a.wav"
+text: "Mis on kõige külmem õhutemperatuur, mida te mäletate? Aga kõige soojem?",
+textTranslation: "What is the coldest air temperature you remember? And the warmest?",
+audio: "../audio/09-ilm-a2/009.wav",
+answer: "Kõige külmem oli umbes miinus kakskümmend kraadi. Kõige soojem oli umbes pluss kolmkümmend kraadi.",
+answerTranslation: "The coldest was about minus twenty degrees. The warmest was about plus thirty degrees.",
+answerAudio: "../audio/09-ilm-a2/009a.wav"
 },
 
 {
-text:"Mis kuus sajab palju vihma? Mis kuus sajab palju lund?",
-audio:"../audio/09-ilm-a2/010.wav",
-answer:"Tavaliselt sajab palju vihma oktoobris. Lund sajab palju jaanuaris.",
-answerAudio:"../audio/09-ilm-a2/010a.wav"
+text: "Mis kuus sajab palju vihma? Mis kuus sajab palju lund?",
+textTranslation: "In which month does it rain a lot? In which month does it snow a lot?",
+audio: "../audio/09-ilm-a2/010.wav",
+answer: "Tavaliselt sajab palju vihma oktoobris. Lund sajab palju jaanuaris.",
+answerTranslation: "It usually rains a lot in October. It snows a lot in January.",
+answerAudio: "../audio/09-ilm-a2/010a.wav"
 },
 
 {
-text:"Mis kuus võiks abielluda? Mis kuus teie abiellusite? Missugune ilm siis oli?",
-audio:"../audio/09-ilm-a2/011.wav",
-answer:"Inimesed abielluvad sageli suvel. Mina abiellusin suvel ja ilm oli soe.",
-answerAudio:"../audio/09-ilm-a2/011a.wav"
+text: "Mis kuus võiks abielluda? Mis kuus teie abiellusite? Missugune ilm siis oli?",
+textTranslation: "In which month could one get married? In which month did you get married? What was the weather like then?",
+audio: "../audio/09-ilm-a2/011.wav",
+answer: "Inimesed abielluvad sageli suvel. Mina abiellusin suvel ja ilm oli soe.",
+answerTranslation: "People often get married in summer. I got married in summer and the weather was warm.",
+answerAudio: "../audio/09-ilm-a2/011a.wav"
 },
 
 {
-text:"Kas teile meeldib vihm? Kellele veel meeldib vihm? Kellele ei meeldi vihm?",
-audio:"../audio/09-ilm-a2/012.wav",
-answer:"Mulle vihm väga ei meeldi. Mõnele inimesele vihm meeldib.",
-answerAudio:"../audio/09-ilm-a2/012a.wav"
+text: "Kas teile meeldib vihm? Kellele veel meeldib vihm? Kellele ei meeldi vihm?",
+textTranslation: "Do you like rain? Who else likes rain? Who does not like rain?",
+audio: "../audio/09-ilm-a2/012.wav",
+answer: "Mulle vihm väga ei meeldi. Mõnele inimesele vihm meeldib.",
+answerTranslation: "I do not like rain very much. Some people like rain.",
+answerAudio: "../audio/09-ilm-a2/012a.wav"
 },
 
 {
-text:"Mis te selga panete, kui te lähete suvel rokk-kontserdile?",
-audio:"../audio/09-ilm-a2/013.wav",
-answer:"Ma panen selga T-särgi ja teksad.",
-answerAudio:"../audio/09-ilm-a2/013a.wav"
+text: "Mis te selga panete, kui te lähete suvel rokk-kontserdile?",
+textTranslation: "What do you wear when you go to a rock concert in summer?",
+audio: "../audio/09-ilm-a2/013.wav",
+answer: "Ma panen selga T-särgi ja teksad.",
+answerTranslation: "I wear a T-shirt and jeans.",
+answerAudio: "../audio/09-ilm-a2/013a.wav"
 },
 
 {
-text:"Mis te selga panete, kui te lähete talvel jõuluturule?",
-audio:"../audio/09-ilm-a2/014.wav",
-answer:"Ma panen selga sooja jope, mütsi ja kindad.",
-answerAudio:"../audio/09-ilm-a2/014a.wav"
+text: "Mis te selga panete, kui te lähete talvel jõuluturule?",
+textTranslation: "What do you wear when you go to a Christmas market in winter?",
+audio: "../audio/09-ilm-a2/014.wav",
+answer: "Ma panen selga sooja jope, mütsi ja kindad.",
+answerTranslation: "I wear a warm jacket, a hat, and gloves.",
+answerAudio: "../audio/09-ilm-a2/014a.wav"
 },
 
 {
-text:"Mis te selga panete, kui te lähete sügisel metsa seenele?",
-audio:"../audio/09-ilm-a2/015.wav",
-answer:"Ma panen selga jope, püksid ja kummikud.",
-answerAudio:"../audio/09-ilm-a2/015a.wav"
+text: "Mis te selga panete, kui te lähete sügisel metsa seenele?",
+textTranslation: "What do you wear when you go mushroom picking in the forest in autumn?",
+audio: "../audio/09-ilm-a2/015.wav",
+answer: "Ma panen selga jope, püksid ja kummikud.",
+answerTranslation: "I wear a jacket, trousers, and rubber boots.",
+answerAudio: "../audio/09-ilm-a2/015a.wav"
 }
 
 ];

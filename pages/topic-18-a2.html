@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,92 +40,122 @@
     const items = [
       {
         text: "Kas te helistate telefoniga iga päev? Mitu korda päevas te telefoniga helistate?",
+        textTranslation: "Do you call by phone every day? How many times a day do you make phone calls?",
         audio: "../audio/18-telefon-a2/001.wav",
         answer: "Jah, ma helistan telefoniga iga päev. Tavaliselt üks või kaks korda.",
+        answerTranslation: "Yes, I call by phone every day. Usually once or twice.",
         answerAudio: "../audio/18-telefon-a2/001a.wav"
       },
       {
         text: "Millal te viimati telefoniga rääkisite? Kellega te rääkisite? Mida te talle ütlesite?",
+        textTranslation: "When did you last talk on the phone? Who did you talk to? What did you say to them?",
         audio: "../audio/18-telefon-a2/002.wav",
         answer: "Ma rääkisin telefoniga täna hommikul. Ma rääkisin sõbraga. Ma ütlesin tere ja küsisin, kuidas tal läheb.",
+        answerTranslation: "I talked on the phone this morning. I talked to a friend. I said hello and asked how they are.",
         answerAudio: "../audio/18-telefon-a2/002a.wav"
       },
       {
         text: "Kes teile viimati helistas? Mida ta teile ütles?",
+        textTranslation: "Who called you last? What did they say to you?",
         audio: "../audio/18-telefon-a2/003.wav",
         answer: "Minu sõber helistas mulle. Ta küsis, kas mul on aega kohtuda.",
+        answerTranslation: "My friend called me. They asked if I have time to meet.",
         answerAudio: "../audio/18-telefon-a2/003a.wav"
       },
       {
         text: "Kellele te helistate tihti?",
+        textTranslation: "Who do you call often?",
         audio: "../audio/18-telefon-a2/004.wav",
         answer: "Ma helistan tihti oma perele ja sõpradele.",
+        answerTranslation: "I often call my family and friends.",
         answerAudio: "../audio/18-telefon-a2/004a.wav"
       },
       {
         text: "Kellele te saadate telefoniga sõnumeid?",
+        textTranslation: "To whom do you send messages by phone?",
         audio: "../audio/18-telefon-a2/005.wav",
         answer: "Ma saadan sõnumeid sõpradele ja töökaaslastele.",
+        answerTranslation: "I send messages to friends and colleagues.",
         answerAudio: "../audio/18-telefon-a2/005a.wav"
       },
       {
         text: "Kas te vastate alati telefonile? Kas te vastate telefonile, kui te ei tea, kes helistab?",
+        textTranslation: "Do you always answer the phone? Do you answer the phone if you don't know who is calling?",
         audio: "../audio/18-telefon-a2/006.wav",
         answer: "Tavaliselt ma vastan telefonile. Kui ma ei tea numbrit, mõnikord ei vasta.",
+        answerTranslation: "Usually I answer the phone. If I don't know the number, sometimes I don't answer.",
         answerAudio: "../audio/18-telefon-a2/006a.wav"
       },
       {
         text: "Kas te mängite telefoniga? Mitu mängu on teie telefonis?",
+        textTranslation: "Do you play with your phone? How many games are on your phone?",
         audio: "../audio/18-telefon-a2/007.wav",
         answer: "Mõnikord mängin. Minu telefonis on üks või kaks mängu.",
+        answerTranslation: "Sometimes I play. There is one or two games on my phone.",
         answerAudio: "../audio/18-telefon-a2/007a.wav"
       },
       {
         text: "Kas bussis tohib telefoniga rääkida? Aga teatris? Aga kinos?",
+        textTranslation: "Is it allowed to talk on the phone on the bus? How about in the theater? How about in the cinema?",
         audio: "../audio/18-telefon-a2/008.wav",
         answer: "Bussis võib rääkida. Teatris ja kinos tavaliselt ei räägita telefoniga.",
+        answerTranslation: "You can talk on the bus. In the theater and cinema, people usually don't talk on the phone.",
         answerAudio: "../audio/18-telefon-a2/008a.wav"
       },
       {
         text: "Kas te kasutate telefonis kalendrit? Aga kalkulaatorit? Aga kaamerat?",
+        textTranslation: "Do you use the calendar on your phone? How about the calculator? How about the camera?",
         audio: "../audio/18-telefon-a2/009.wav",
         answer: "Jah, ma kasutan kalendrit, kalkulaatorit ja kaamerat.",
+        answerTranslation: "Yes, I use the calendar, calculator, and camera.",
         answerAudio: "../audio/18-telefon-a2/009a.wav"
       },
       {
         text: "Kas teie telefonil on hea kaamera? Mida te pildistate telefoniga?",
+        textTranslation: "Does your phone have a good camera? What do you photograph with your phone?",
         audio: "../audio/18-telefon-a2/010.wav",
         answer: "Jah, kaamera on hea. Ma pildistan loodust ja perekonda.",
+        answerTranslation: "Yes, the camera is good. I photograph nature and family.",
         answerAudio: "../audio/18-telefon-a2/010a.wav"
       },
       {
         text: "Kas iPhone on parem kui androidtelefon?",
+        textTranslation: "Is iPhone better than an Android phone?",
         audio: "../audio/18-telefon-a2/011.wav",
         answer: "Mõlemad on head. See sõltub inimesest.",
+        answerTranslation: "Both are good. It depends on the person.",
         answerAudio: "../audio/18-telefon-a2/011a.wav"
       },
       {
         text: "Kas te teate peast oma telefoninumbrit? Aga oma ema numbrit? Aga ülemuse numbrit?",
+        textTranslation: "Do you know your phone number by heart? How about your mother's number? How about your boss's number?",
         audio: "../audio/18-telefon-a2/012.wav",
         answer: "Jah, ma tean oma telefoninumbrit.",
+        answerTranslation: "Yes, I know my phone number.",
         answerAudio: "../audio/18-telefon-a2/012a.wav"
       },
       {
         text: "Kui suur on teie telefoni arve? Kas see on suur või väike?",
+        textTranslation: "How big is your phone bill? Is it big or small?",
         audio: "../audio/18-telefon-a2/013.wav",
         answer: "Minu telefoni arve on umbes 20 eurot kuus. See ei ole väga suur.",
+        answerTranslation: "My phone bill is about 20 euros per month. It is not very big.",
         answerAudio: "../audio/18-telefon-a2/013a.wav"
       },
       {
         text: "Mitu tundi päevas te telefoni kasutate? Mida te telefoniga teete?",
+        textTranslation: "How many hours a day do you use your phone? What do you do with your phone?",
         audio: "../audio/18-telefon-a2/014.wav",
         answer: "Ma kasutan telefoni umbes kaks või kolm tundi päevas. Ma loen uudiseid ja räägin sõpradega.",
+        answerTranslation: "I use my phone about two or three hours a day. I read news and talk to friends.",
         answerAudio: "../audio/18-telefon-a2/014a.wav"
       },
       {
         text: "Kas te saaksite elada ilma telefonita?",
+        textTranslation: "Could you live without a phone?",
         audio: "../audio/18-telefon-a2/015.wav",
         answer: "See oleks raske, aga võib-olla saaksin.",
+        answerTranslation: "It would be difficult, but maybe I could.",
         answerAudio: "../audio/18-telefon-a2/015a.wav"
       }
     ];

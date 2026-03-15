@@ -23,138 +23,184 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
   <script src="../assets/player.js"></script>
   <script>
-    const items = [
-      {
-        text: "Kas teil on aed? Aga teie sõbral?",
-        audio: "../audio/28-aed-a1/001.wav",
-        answer: "Mul ei ole aeda, aga minu sõbral on aed.",
-        answerAudio: "../audio/28-aed-a1/001a.wav"
-      },
-      {
-        text: "Missugune on teie aed? Kas teie aed on väike, keskmine või suur?",
-        audio: "../audio/28-aed-a1/002.wav",
-        answer: "Minu sõbra aed on keskmine.",
-        answerAudio: "../audio/28-aed-a1/002a.wav"
-      },
-      {
-        text: "Kus teie aed on?",
-        audio: "../audio/28-aed-a1/003.wav",
-        answer: "Aed on maja taga.",
-        answerAudio: "../audio/28-aed-a1/003a.wav"
-      },
-      {
-        text: "Kui vana on teie aed?",
-        audio: "../audio/28-aed-a1/004.wav",
-        answer: "See aed on umbes kümme aastat vana.",
-        answerAudio: "../audio/28-aed-a1/004a.wav"
-      },
-      {
-        text: "Kas teie aias kasvab porgand? Aga sibul? Aga kartul?",
-        audio: "../audio/28-aed-a1/005.wav",
-        answer: "Jah, aias kasvavad porgandid ja kartulid.",
-        answerAudio: "../audio/28-aed-a1/005a.wav"
-      },
-      {
-        text: "Kas teie aias kasvavad maasikad? Aga vaarikad? Mis värvi need on?",
-        audio: "../audio/28-aed-a1/006.wav",
-        answer: "Jah, seal kasvavad maasikad ja vaarikad. Need on punased.",
-        answerAudio: "../audio/28-aed-a1/006a.wav"
-      },
-      {
-        text: "Kas teie aias kasvavad lilled? Mis värvi need on?",
-        audio: "../audio/28-aed-a1/007.wav",
-        answer: "Jah, aias kasvavad lilled. Need on punased, kollased ja valged.",
-        answerAudio: "../audio/28-aed-a1/007a.wav"
-      },
-      {
-        text: "Mitu puud on teie aias? Mis puud teie aias on?",
-        audio: "../audio/28-aed-a1/008.wav",
-        answer: "Aias on mõned puud, näiteks õunapuud.",
-        answerAudio: "../audio/28-aed-a1/008a.wav"
-      },
-      {
-        text: "Mis kell te tavaliselt aias olete?",
-        audio: "../audio/28-aed-a1/009.wav",
-        answer: "Tavaliselt olen aias õhtul.",
-        answerAudio: "../audio/28-aed-a1/009a.wav"
-      },
-      {
-        text: "Kas teile meeldib aias puhata või töötada?",
-        audio: "../audio/28-aed-a1/010.wav",
-        answer: "Mulle meeldib aias puhata.",
-        answerAudio: "../audio/28-aed-a1/010a.wav"
-      },
-      {
-        text: "Kes töötab teie aias? Aga kes puhkab?",
-        audio: "../audio/28-aed-a1/011.wav",
-        answer: "Minu isa töötab aias ja mina puhkan.",
-        answerAudio: "../audio/28-aed-a1/011a.wav"
-      },
-      {
-        text: "Mis teil seljas on, kui te töötate aias? Aga mis teil siis seljas on, kui te puhkate?",
-        audio: "../audio/28-aed-a1/012.wav",
-        answer: "Kui ma töötan aias, siis mul on tööriided. Kui ma puhkan, siis mul on mugavad riided.",
-        answerAudio: "../audio/28-aed-a1/012a.wav"
-      },
-      {
-        text: "Mida te teete aias hommikul? Aga õhtul?",
-        audio: "../audio/28-aed-a1/013.wav",
-        answer: "Hommikul kastan taimi. Õhtul puhkan.",
-        answerAudio: "../audio/28-aed-a1/013a.wav"
-      },
-      {
-        text: "Mis kell paistab teie aias kõige soojem päike?",
-        audio: "../audio/28-aed-a1/014.wav",
-        answer: "Kõige soojem päike paistab pärastlõunal.",
-        answerAudio: "../audio/28-aed-a1/014a.wav"
-      },
-      {
-        text: "Kas teie aias puhub mõnikord tugev tuul?",
-        audio: "../audio/28-aed-a1/015.wav",
-        answer: "Jah, mõnikord puhub tugev tuul.",
-        answerAudio: "../audio/28-aed-a1/015a.wav"
-      },
-      {
-        text: "Mitu aiatooli on teie aias? Aga mitu lauda?",
-        audio: "../audio/28-aed-a1/016.wav",
-        answer: "Aias on neli aiatooli ja üks laud.",
-        answerAudio: "../audio/28-aed-a1/016a.wav"
-      },
-      {
-        text: "Kas te teate, mida tähendab kompostikast? Aga pesakast? Aga lillepeenar? Aga võrkiik?",
-        audio: "../audio/28-aed-a1/017.wav",
-        answer: "Jah, ma tean neid sõnu.",
-        answerAudio: "../audio/28-aed-a1/017a.wav"
-      },
-      {
-        text: "Mitu kastekannu teil on? Mis värvi on teie kastekann?",
-        audio: "../audio/28-aed-a1/018.wav",
-        answer: "Mul on üks kastekann. See on roheline.",
-        answerAudio: "../audio/28-aed-a1/018a.wav"
-      },
-      {
-        text: "Kas teie aias on grill? Millal te grillite? Mida te grillite?",
-        audio: "../audio/28-aed-a1/019.wav",
-        answer: "Jah, aias on grill. Suvel grillime liha ja köögivilju.",
-        answerAudio: "../audio/28-aed-a1/019a.wav"
-      },
-      {
-        text: "Mis on teie aia taga?",
-        audio: "../audio/28-aed-a1/020.wav",
-        answer: "Minu aia taga on mets.",
-        answerAudio: "../audio/28-aed-a1/020a.wav"
-      }
-    ];
+  const items = [
+    {
+      text: "Kas teil on aed? Aga teie sõbral?",
+      textTranslation: "Do you have a garden? What about your friend?",
+      audio: "../audio/28-aed-a1/001.wav",
+      answer: "Mul ei ole aeda, aga minu sõbral on aed.",
+      answerTranslation: "I do not have a garden, but my friend has a garden.",
+      answerAudio: "../audio/28-aed-a1/001a.wav"
+    },
+    {
+      text: "Missugune on teie aed? Kas teie aed on väike, keskmine või suur?",
+      textTranslation: "What is your garden like? Is it small, medium, or big?",
+      audio: "../audio/28-aed-a1/002.wav",
+      answer: "Minu sõbra aed on keskmine.",
+      answerTranslation: "My friend's garden is medium-sized.",
+      answerAudio: "../audio/28-aed-a1/002a.wav"
+    },
+    {
+      text: "Kus teie aed on?",
+      textTranslation: "Where is your garden?",
+      audio: "../audio/28-aed-a1/003.wav",
+      answer: "Aed on maja taga.",
+      answerTranslation: "The garden is behind the house.",
+      answerAudio: "../audio/28-aed-a1/003a.wav"
+    },
+    {
+      text: "Kui vana on teie aed?",
+      textTranslation: "How old is your garden?",
+      audio: "../audio/28-aed-a1/004.wav",
+      answer: "See aed on umbes kümme aastat vana.",
+      answerTranslation: "This garden is about ten years old.",
+      answerAudio: "../audio/28-aed-a1/004a.wav"
+    },
+    {
+      text: "Kas teie aias kasvab porgand? Aga sibul? Aga kartul?",
+      textTranslation: "Do carrots grow in your garden? What about onions? What about potatoes?",
+      audio: "../audio/28-aed-a1/005.wav",
+      answer: "Jah, aias kasvavad porgandid ja kartulid.",
+      answerTranslation: "Yes, carrots and potatoes grow in the garden.",
+      answerAudio: "../audio/28-aed-a1/005a.wav"
+    },
+    {
+      text: "Kas teie aias kasvavad maasikad? Aga vaarikad? Mis värvi need on?",
+      textTranslation: "Do strawberries grow in your garden? What about raspberries? What color are they?",
+      audio: "../audio/28-aed-a1/006.wav",
+      answer: "Jah, seal kasvavad maasikad ja vaarikad. Need on punased.",
+      answerTranslation: "Yes, strawberries and raspberries grow there. They are red.",
+      answerAudio: "../audio/28-aed-a1/006a.wav"
+    },
+    {
+      text: "Kas teie aias kasvavad lilled? Mis värvi need on?",
+      textTranslation: "Do flowers grow in your garden? What color are they?",
+      audio: "../audio/28-aed-a1/007.wav",
+      answer: "Jah, aias kasvavad lilled. Need on punased, kollased ja valged.",
+      answerTranslation: "Yes, flowers grow in the garden. They are red, yellow, and white.",
+      answerAudio: "../audio/28-aed-a1/007a.wav"
+    },
+    {
+      text: "Mitu puud on teie aias? Mis puud teie aias on?",
+      textTranslation: "How many trees are in your garden? What trees are there?",
+      audio: "../audio/28-aed-a1/008.wav",
+      answer: "Aias on mõned puud, näiteks õunapuud.",
+      answerTranslation: "There are some trees in the garden, for example apple trees.",
+      answerAudio: "../audio/28-aed-a1/008a.wav"
+    },
+    {
+      text: "Mis kell te tavaliselt aias olete?",
+      textTranslation: "At what time are you usually in the garden?",
+      audio: "../audio/28-aed-a1/009.wav",
+      answer: "Tavaliselt olen aias õhtul.",
+      answerTranslation: "Usually I am in the garden in the evening.",
+      answerAudio: "../audio/28-aed-a1/009a.wav"
+    },
+    {
+      text: "Kas teile meeldib aias puhata või töötada?",
+      textTranslation: "Do you like relaxing in the garden or working there?",
+      audio: "../audio/28-aed-a1/010.wav",
+      answer: "Mulle meeldib aias puhata.",
+      answerTranslation: "I like relaxing in the garden.",
+      answerAudio: "../audio/28-aed-a1/010a.wav"
+    },
+    {
+      text: "Kes töötab teie aias? Aga kes puhkab?",
+      textTranslation: "Who works in your garden? And who relaxes?",
+      audio: "../audio/28-aed-a1/011.wav",
+      answer: "Minu isa töötab aias ja mina puhkan.",
+      answerTranslation: "My father works in the garden and I relax.",
+      answerAudio: "../audio/28-aed-a1/011a.wav"
+    },
+    {
+      text: "Mis teil seljas on, kui te töötate aias? Aga mis teil siis seljas on, kui te puhkate?",
+      textTranslation: "What do you wear when you work in the garden? What do you wear when you relax?",
+      audio: "../audio/28-aed-a1/012.wav",
+      answer: "Kui ma töötan aias, siis mul on tööriided. Kui ma puhkan, siis mul on mugavad riided.",
+      answerTranslation: "When I work in the garden, I wear work clothes. When I relax, I wear comfortable clothes.",
+      answerAudio: "../audio/28-aed-a1/012a.wav"
+    },
+    {
+      text: "Mida te teete aias hommikul? Aga õhtul?",
+      textTranslation: "What do you do in the garden in the morning? What about in the evening?",
+      audio: "../audio/28-aed-a1/013.wav",
+      answer: "Hommikul kastan taimi. Õhtul puhkan.",
+      answerTranslation: "In the morning I water the plants. In the evening I relax.",
+      answerAudio: "../audio/28-aed-a1/013a.wav"
+    },
+    {
+      text: "Mis kell paistab teie aias kõige soojem päike?",
+      textTranslation: "At what time does the warmest sun shine in your garden?",
+      audio: "../audio/28-aed-a1/014.wav",
+      answer: "Kõige soojem päike paistab pärastlõunal.",
+      answerTranslation: "The warmest sun shines in the afternoon.",
+      answerAudio: "../audio/28-aed-a1/014a.wav"
+    },
+    {
+      text: "Kas teie aias puhub mõnikord tugev tuul?",
+      textTranslation: "Does a strong wind sometimes blow in your garden?",
+      audio: "../audio/28-aed-a1/015.wav",
+      answer: "Jah, mõnikord puhub tugev tuul.",
+      answerTranslation: "Yes, sometimes a strong wind blows.",
+      answerAudio: "../audio/28-aed-a1/015a.wav"
+    },
+    {
+      text: "Mitu aiatooli on teie aias? Aga mitu lauda?",
+      textTranslation: "How many garden chairs are in your garden? And how many tables?",
+      audio: "../audio/28-aed-a1/016.wav",
+      answer: "Aias on neli aiatooli ja üks laud.",
+      answerTranslation: "There are four garden chairs and one table in the garden.",
+      answerAudio: "../audio/28-aed-a1/016a.wav"
+    },
+    {
+      text: "Kas te teate, mida tähendab kompostikast? Aga pesakast? Aga lillepeenar? Aga võrkiik?",
+      textTranslation: "Do you know what a compost box means? What about a nest box? A flower bed? A hammock?",
+      audio: "../audio/28-aed-a1/017.wav",
+      answer: "Jah, ma tean neid sõnu.",
+      answerTranslation: "Yes, I know those words.",
+      answerAudio: "../audio/28-aed-a1/017a.wav"
+    },
+    {
+      text: "Mitu kastekannu teil on? Mis värvi on teie kastekann?",
+      textTranslation: "How many watering cans do you have? What color is your watering can?",
+      audio: "../audio/28-aed-a1/018.wav",
+      answer: "Mul on üks kastekann. See on roheline.",
+      answerTranslation: "I have one watering can. It is green.",
+      answerAudio: "../audio/28-aed-a1/018a.wav"
+    },
+    {
+      text: "Kas teie aias on grill? Millal te grillite? Mida te grillite?",
+      textTranslation: "Is there a grill in your garden? When do you grill? What do you grill?",
+      audio: "../audio/28-aed-a1/019.wav",
+      answer: "Jah, aias on grill. Suvel grillime liha ja köögivilju.",
+      answerTranslation: "Yes, there is a grill in the garden. In summer we grill meat and vegetables.",
+      answerAudio: "../audio/28-aed-a1/019a.wav"
+    },
+    {
+      text: "Mis on teie aia taga?",
+      textTranslation: "What is behind your garden?",
+      audio: "../audio/28-aed-a1/020.wav",
+      answer: "Minu aia taga on mets.",
+      answerTranslation: "Behind my garden there is a forest.",
+      answerAudio: "../audio/28-aed-a1/020a.wav"
+    }
+  ];
 
-    initAudioList(items);
-  </script>
+  initAudioList(items);
+</script>
 </body>
 </html>

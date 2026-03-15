@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,92 +40,122 @@
     const items = [
       {
         text: "Mis on teie lemmiklinn? Kas te olete seal elanud? Kui kaua te seal elasite?",
+        textTranslation: "What is your favorite city? Have you lived there? How long did you live there?",
         audio: "../audio/15-linn-a2/001.wav",
         answer: "Minu lemmiklinn on Tallinn. Jah, ma elan seal juba mitu aastat.",
+        answerTranslation: "My favorite city is Tallinn. Yes, I have lived there for several years.",
         answerAudio: "../audio/15-linn-a2/001a.wav"
       },
       {
         text: "Kus selles linnas on ilusad kohad? Aga kus on inetud kohad?",
+        textTranslation: "Where are the beautiful places in this city? And where are the ugly places?",
         audio: "../audio/15-linn-a2/002.wav",
         answer: "Vanalinn ja Kadrioru park on väga ilusad. Mõned tööstuspiirkonnad ei ole nii ilusad.",
+        answerTranslation: "The Old Town and Kadriorg Park are very beautiful. Some industrial areas are not so beautiful.",
         answerAudio: "../audio/15-linn-a2/002a.wav"
       },
       {
         text: "Kas selles linnas on mõni mägi? Aga meri? Aga jõgi? Mitu silda seal on?",
+        textTranslation: "Is there a mountain in this city? How about the sea? How about a river? How many bridges are there?",
         audio: "../audio/15-linn-a2/003.wav",
         answer: "Tallinnas on meri. Seal ei ole suuri mägesid. Seal on ka mõned sillad.",
+        answerTranslation: "There is the sea in Tallinn. There are no big mountains. There are also some bridges.",
         answerAudio: "../audio/15-linn-a2/003a.wav"
       },
       {
         text: "Mis on selle linna kõige kuulsam hoone? Aga kõige ilusam?",
+        textTranslation: "What is the most famous building in this city? And the most beautiful?",
         audio: "../audio/15-linn-a2/004.wav",
         answer: "Üks kuulus hoone on Toompea loss. Vanalinna majad on väga ilusad.",
+        answerTranslation: "One famous building is Toompea Castle. The Old Town houses are very beautiful.",
         answerAudio: "../audio/15-linn-a2/004a.wav"
       },
       {
         text: "Kuhu selles linnas saab minna tasuta?",
+        textTranslation: "Where can you go for free in this city?",
         audio: "../audio/15-linn-a2/005.wav",
         answer: "Parki ja randa saab minna tasuta.",
+        answerTranslation: "You can go to the park and the beach for free.",
         answerAudio: "../audio/15-linn-a2/005a.wav"
       },
       {
         text: "Millega te selles linnas sõidate?",
+        textTranslation: "How do you get around in this city?",
         audio: "../audio/15-linn-a2/006.wav",
         answer: "Ma sõidan bussiga või autoga.",
+        answerTranslation: "I travel by bus or by car.",
         answerAudio: "../audio/15-linn-a2/006a.wav"
       },
       {
         text: "Kas selles linnas on palju või vähe liiklust? Millal on kõige rohkem liiklust?",
+        textTranslation: "Is there a lot or a little traffic in this city? When is there the most traffic?",
         audio: "../audio/15-linn-a2/007.wav",
         answer: "Tallinnas on üsna palju liiklust. Kõige rohkem on liiklust hommikul ja õhtul.",
+        answerTranslation: "There is quite a lot of traffic in Tallinn. The most traffic is in the morning and evening.",
         answerAudio: "../audio/15-linn-a2/007a.wav"
       },
       {
         text: "Kas selles linnas on lennujaam? Kus see on? Millega saab lennujaama sõita?",
+        textTranslation: "Is there an airport in this city? Where is it? How can you get to the airport?",
         audio: "../audio/15-linn-a2/008.wav",
         answer: "Jah, Tallinnas on lennujaam. See on kesklinna lähedal. Sinna saab sõita bussiga või taksoga.",
+        answerTranslation: "Yes, there is an airport in Tallinn. It is near the city center. You can get there by bus or taxi.",
         answerAudio: "../audio/15-linn-a2/008a.wav"
       },
       {
         text: "Mis toidupoed selles linnas on? Kas toidupoed on lahti iga päev? Mis kellast mis kellani on toidupoed lahti?",
+        textTranslation: "What grocery stores are there in this city? Are grocery stores open every day? From what time to what time are grocery stores open?",
         audio: "../audio/15-linn-a2/009.wav",
         answer: "Siin on Prisma, Rimi ja Selver. Need on tavaliselt lahti iga päev hommikust õhtuni.",
+        answerTranslation: "There are Prisma, Rimi, and Selver here. They are usually open every day from morning to evening.",
         answerAudio: "../audio/15-linn-a2/009a.wav"
       },
       {
         text: "Kas selles linnas on mõni monument? Kelle monument see on?",
+        textTranslation: "Is there a monument in this city? Whose monument is it?",
         audio: "../audio/15-linn-a2/010.wav",
         answer: "Jah, linnas on mitu monumenti. Näiteks Vabadussõja monument.",
+        answerTranslation: "Yes, there are several monuments in the city. For example, the War of Independence monument.",
         answerAudio: "../audio/15-linn-a2/010a.wav"
       },
       {
         text: "Kas selles linnas on mõni suur väljak? Mis seal on? Mida inimesed seal teevad?",
+        textTranslation: "Is there a big square in this city? What is there? What do people do there?",
         audio: "../audio/15-linn-a2/011.wav",
         answer: "Jah, Raekoja plats on suur väljak. Seal on kohvikud ja turistid jalutavad.",
+        answerTranslation: "Yes, Town Hall Square is a big square. There are cafés and tourists walk there.",
         answerAudio: "../audio/15-linn-a2/011a.wav"
       },
       {
         text: "Kus selles linnas on pargid? Mis on teie lemmikpark?",
+        textTranslation: "Where are the parks in this city? What is your favorite park?",
         audio: "../audio/15-linn-a2/012.wav",
         answer: "Linnas on palju parke. Minu lemmikpark on Kadrioru park.",
+        answerTranslation: "There are many parks in the city. My favorite park is Kadriorg Park.",
         answerAudio: "../audio/15-linn-a2/012a.wav"
       },
       {
         text: "Kas teie lemmikpargis tohib jalgrattaga sõita? Aga kas seal tohib koeraga jalutada? Aga muru peal kõndida?",
+        textTranslation: "Is it allowed to ride a bicycle in your favorite park? How about walking a dog there? How about walking on the grass?",
         audio: "../audio/15-linn-a2/013.wav",
         answer: "Jah, seal tohib jalgrattaga sõita ja koeraga jalutada. Mõnes kohas tohib ka muru peal kõndida.",
+        answerTranslation: "Yes, you can ride a bicycle and walk a dog there. In some places you can also walk on the grass.",
         answerAudio: "../audio/15-linn-a2/013a.wav"
       },
       {
         text: "Mis selles linnas teile meeldib? Aga mis meeldib turistidele? Aga lastele?",
+        textTranslation: "What do you like in this city? What do tourists like? What do children like?",
         audio: "../audio/15-linn-a2/014.wav",
         answer: "Mulle meeldivad pargid ja meri. Turistidele meeldib vanalinn. Lastele meeldivad mänguväljakud.",
+        answerTranslation: "I like the parks and the sea. Tourists like the Old Town. Children like playgrounds.",
         answerAudio: "../audio/15-linn-a2/014a.wav"
       },
       {
         text: "Kus selles linnas on ilus vaade? Mida te näete?",
+        textTranslation: "Where is a beautiful view in this city? What do you see?",
         audio: "../audio/15-linn-a2/015.wav",
         answer: "Toompeal on ilus vaade. Sealt näeb vanalinna ja merd.",
+        answerTranslation: "There is a beautiful view on Toompea. From there you can see the Old Town and the sea.",
         answerAudio: "../audio/15-linn-a2/015a.wav"
       }
     ];

@@ -23,9 +23,15 @@
       Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,92 +40,122 @@
   const items = [
     {
       text: "Mida te tavaliselt teete, kui teil on vaba aega?",
+      textTranslation: "What do you usually do when you have free time?",
       audio: "../audio/08-vaba-aeg-a2/001.wav",
       answer: "Kui mul on vaba aega, ma puhkan, jalutan ja õpin eesti keelt.",
+      answerTranslation: "When I have free time, I rest, walk, and study Estonian.",
       answerAudio: "../audio/08-vaba-aeg-a2/001a.wav"
     },
     {
       text: "Mida teie sõbrad teevad, kui neil on vaba aega?",
+      textTranslation: "What do your friends do when they have free time?",
       audio: "../audio/08-vaba-aeg-a2/002.wav",
       answer: "Minu sõbrad vaatavad filme, mängivad sporti ja kohtuvad sõpradega.",
+      answerTranslation: "My friends watch movies, play sports, and meet friends.",
       answerAudio: "../audio/08-vaba-aeg-a2/002a.wav"
     },
     {
       text: "Mida teie teete koos sõpradega?",
+      textTranslation: "What do you do together with your friends?",
       audio: "../audio/08-vaba-aeg-a2/003.wav",
       answer: "Me räägime, joome kohvi ja mõnikord läheme restorani.",
+      answerTranslation: "We talk, drink coffee, and sometimes go to a restaurant.",
       answerAudio: "../audio/08-vaba-aeg-a2/003a.wav"
     },
     {
       text: "Mida teile ei meeldi teha, kui teil on vaba aega?",
+      textTranslation: "What do you not like to do when you have free time?",
       audio: "../audio/08-vaba-aeg-a2/004.wav",
       answer: "Mulle ei meeldi koristada vabal ajal.",
+      answerTranslation: "I do not like to clean in my free time.",
       answerAudio: "../audio/08-vaba-aeg-a2/004a.wav"
     },
     {
       text: "Mida te tegite vabal ajal, kui te olite laps? Aga mida tegi teie isa? Aga ema? Aga vanaema? Aga vanaisa?",
+      textTranslation: "What did you do in your free time when you were a child? How about your father? And your mother? And your grandmother? And your grandfather?",
       audio: "../audio/08-vaba-aeg-a2/005.wav",
       answer: "Kui ma olin laps, ma mängisin jalgpalli. Minu isa töötas ja ema tegi süüa.",
+      answerTranslation: "When I was a child, I played football. My father worked and my mother cooked.",
       answerAudio: "../audio/08-vaba-aeg-a2/005a.wav"
     },
     {
       text: "Mis hobid on populaarsed teie kodumaal?",
+      textTranslation: "What hobbies are popular in your home country?",
       audio: "../audio/08-vaba-aeg-a2/006.wav",
       answer: "Minu kodumaal on populaarsed kriket ja jalgpall.",
+      answerTranslation: "In my home country, cricket and football are popular.",
       answerAudio: "../audio/08-vaba-aeg-a2/006a.wav"
     },
     {
       text: "Kas teile meeldib matkata? Aga telgis magada?",
+      textTranslation: "Do you like hiking? How about sleeping in a tent?",
       audio: "../audio/08-vaba-aeg-a2/007.wav",
       answer: "Jah, mulle meeldib matkata. Telgis magada mulle väga ei meeldi.",
+      answerTranslation: "Yes, I like hiking. I don't really like sleeping in a tent.",
       answerAudio: "../audio/08-vaba-aeg-a2/007a.wav"
     },
     {
       text: "Kas te oskate küpsetada? Mida te küpsetate?",
+      textTranslation: "Can you bake? What do you bake?",
       audio: "../audio/08-vaba-aeg-a2/008.wav",
       answer: "Ma oskan natuke küpsetada. Mõnikord ma küpsetan kooki.",
+      answerTranslation: "I can bake a little. Sometimes I bake a cake.",
       answerAudio: "../audio/08-vaba-aeg-a2/008a.wav"
     },
     {
       text: "Kas teile meeldib kalal käia? Aga marju korjata? Aga seeni korjata?",
+      textTranslation: "Do you like fishing? How about picking berries? How about picking mushrooms?",
       audio: "../audio/08-vaba-aeg-a2/009.wav",
       answer: "Kalal käia mulle väga ei meeldi. Marju korjata on huvitav.",
+      answerTranslation: "I don't really like fishing. Picking berries is interesting.",
       answerAudio: "../audio/08-vaba-aeg-a2/009a.wav"
     },
     {
       text: "Kas te oskate õmmelda? Aga remonti teha? Aga autot parandada?",
+      textTranslation: "Can you sew? How about do repairs? How about fix a car?",
       audio: "../audio/08-vaba-aeg-a2/010.wav",
       answer: "Õmmelda ma ei oska. Natuke oskan remonti teha.",
+      answerTranslation: "I can't sew. I can do a little repair work.",
       answerAudio: "../audio/08-vaba-aeg-a2/010a.wav"
     },
     {
       text: "Kas teil on kodus mõni asi, mille te ise tegite? Mis see on? Millal te selle tegite?",
+      textTranslation: "Do you have something at home that you made yourself? What is it? When did you make it?",
       audio: "../audio/08-vaba-aeg-a2/011.wav",
       answer: "Jah, ma tegin ühe väikese riiuli. Ma tegin selle eelmisel aastal.",
+      answerTranslation: "Yes, I made a small shelf. I made it last year.",
       answerAudio: "../audio/08-vaba-aeg-a2/011a.wav"
     },
     {
       text: "Kas te tunnete kedagi, kes teeb käsitööd? Aga puutööd?",
+      textTranslation: "Do you know anyone who does handicrafts? How about woodworking?",
       audio: "../audio/08-vaba-aeg-a2/012.wav",
       answer: "Jah, ma tunnen ühte sõpra, kes teeb puutööd.",
+      answerTranslation: "Yes, I know a friend who does woodworking.",
       answerAudio: "../audio/08-vaba-aeg-a2/012a.wav"
     },
     {
       text: "Kas te kogusite midagi, kui te olite laps? Mida te kogusite?",
+      textTranslation: "Did you collect anything when you were a child? What did you collect?",
       audio: "../audio/08-vaba-aeg-a2/013.wav",
       answer: "Jah, kui ma olin laps, ma kogusin münte.",
+      answerTranslation: "Yes, when I was a child, I collected coins.",
       answerAudio: "../audio/08-vaba-aeg-a2/013a.wav"
     },
     {
       text: "Kas te tunnete kedagi, kes kogub postmarke? Aga mänguasju? Aga salvrätte? Aga vana raha?",
+      textTranslation: "Do you know anyone who collects stamps? How about toys? How about napkins? How about old money?",
       audio: "../audio/08-vaba-aeg-a2/014.wav",
       answer: "Jah, ma tunnen ühte inimest, kes kogub vana raha.",
+      answerTranslation: "Yes, I know a person who collects old money.",
       answerAudio: "../audio/08-vaba-aeg-a2/014a.wav"
     },
     {
       text: "Mida te teete täna õhtul, kui teil on vaba aega?",
+      textTranslation: "What will you do this evening if you have free time?",
       audio: "../audio/08-vaba-aeg-a2/015.wav",
       answer: "Täna õhtul ma puhkan ja õpin eesti keelt.",
+      answerTranslation: "This evening I will rest and study Estonian.",
       answerAudio: "../audio/08-vaba-aeg-a2/015a.wav"
     }
   ];

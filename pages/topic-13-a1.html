@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,122 +40,162 @@
     const items = [
       {
         text: "Mis teil praegu seljas on?",
+        textTranslation: "What are you wearing right now?",
         audio: "../audio/13-riided-a1/001.wav",
         answer: "Mul on praegu seljas T-särk ja teksad.",
+        answerTranslation: "I am wearing a T-shirt and jeans right now.",
         answerAudio: "../audio/13-riided-a1/001a.wav"
       },
       {
         text: "Mis teil eile seljas oli?",
+        textTranslation: "What were you wearing yesterday?",
         audio: "../audio/13-riided-a1/002.wav",
         answer: "Eile oli mul seljas sinine särk ja mustad püksid.",
+        answerTranslation: "Yesterday I was wearing a blue shirt and black trousers.",
         answerAudio: "../audio/13-riided-a1/002a.wav"
       },
       {
         text: "Mis teil õhtul kodus seljas on?",
+        textTranslation: "What do you wear at home in the evening?",
         audio: "../audio/13-riided-a1/003.wav",
         answer: "Õhtul kodus on mul seljas mugavad riided.",
+        answerTranslation: "In the evening at home I wear comfortable clothes.",
         answerAudio: "../audio/13-riided-a1/003a.wav"
       },
       {
         text: "Mis teil tööl seljas on?",
+        textTranslation: "What do you wear at work?",
         audio: "../audio/13-riided-a1/004.wav",
         answer: "Tööl on mul tavaliselt särk ja püksid.",
+        answerTranslation: "At work I usually wear a shirt and trousers.",
         answerAudio: "../audio/13-riided-a1/004a.wav"
       },
       {
         text: "Kas teil on kollane pluus? Aga punane kampsun? Aga lillad püksid?",
+        textTranslation: "Do you have a yellow blouse? How about a red sweater? How about purple trousers?",
         audio: "../audio/13-riided-a1/005.wav",
         answer: "Mul ei ole kollast pluusi. Mul on punane kampsun.",
+        answerTranslation: "I do not have a yellow blouse. I have a red sweater.",
         answerAudio: "../audio/13-riided-a1/005a.wav"
       },
       {
         text: "Kas teil on väike must kleit? Kas teil on must ülikond?",
+        textTranslation: "Do you have a little black dress? Do you have a black suit?",
         audio: "../audio/13-riided-a1/006.wav",
         answer: "Mul ei ole kleiti. Mul on must ülikond.",
+        answerTranslation: "I do not have a dress. I have a black suit.",
         answerAudio: "../audio/13-riided-a1/006a.wav"
       },
       {
         text: "Mis talveriided teil on?",
+        textTranslation: "What winter clothes do you have?",
         audio: "../audio/13-riided-a1/007.wav",
         answer: "Mul on talvejope, sall, müts ja kindad.",
+        answerTranslation: "I have a winter jacket, a scarf, a hat, and gloves.",
         answerAudio: "../audio/13-riided-a1/007a.wav"
       },
       {
         text: "Mitu valget T-särki teil on?",
+        textTranslation: "How many white T-shirts do you have?",
         audio: "../audio/13-riided-a1/008.wav",
         answer: "Mul on kolm valget T-särki.",
+        answerTranslation: "I have three white T-shirts.",
         answerAudio: "../audio/13-riided-a1/008a.wav"
       },
       {
         text: "Mis värvi jope teil on?",
+        textTranslation: "What color is your jacket?",
         audio: "../audio/13-riided-a1/009.wav",
         answer: "Minu jope on must.",
+        answerTranslation: "My jacket is black.",
         answerAudio: "../audio/13-riided-a1/009a.wav"
       },
       {
         text: "Mis on teie lemmikriided?",
+        textTranslation: "What are your favorite clothes?",
         audio: "../audio/13-riided-a1/010.wav",
         answer: "Minu lemmikriided on mugavad T-särgid ja teksad.",
+        answerTranslation: "My favorite clothes are comfortable T-shirts and jeans.",
         answerAudio: "../audio/13-riided-a1/010a.wav"
       },
       {
         text: "Mis värvi ujumisriided teil on? Aga mis värvi ujumisprillid teil on?",
+        textTranslation: "What color are your swimwear? And what color are your swimming goggles?",
         audio: "../audio/13-riided-a1/011.wav",
         answer: "Minu ujumisriided on mustad. Ujumisprillid on sinised.",
+        answerTranslation: "My swimwear is black. The swimming goggles are blue.",
         answerAudio: "../audio/13-riided-a1/011a.wav"
       },
       {
         text: "Mis on väiksem, kas XS või XL?",
+        textTranslation: "Which is smaller, XS or XL?",
         audio: "../audio/13-riided-a1/012.wav",
         answer: "XS on väiksem kui XL.",
+        answerTranslation: "XS is smaller than XL.",
         answerAudio: "../audio/13-riided-a1/012a.wav"
       },
       {
         text: "Kas teil on mustad kingad? Aga pruunid saapad?",
+        textTranslation: "Do you have black shoes? How about brown boots?",
         audio: "../audio/13-riided-a1/013.wav",
         answer: "Jah, mul on mustad kingad. Pruune saapaid mul ei ole.",
+        answerTranslation: "Yes, I have black shoes. I do not have brown boots.",
         answerAudio: "../audio/13-riided-a1/013a.wav"
       },
       {
         text: "Kas teie kingad on mugavad?",
+        textTranslation: "Are your shoes comfortable?",
         audio: "../audio/13-riided-a1/014.wav",
         answer: "Jah, minu kingad on mugavad.",
+        answerTranslation: "Yes, my shoes are comfortable.",
         answerAudio: "../audio/13-riided-a1/014a.wav"
       },
       {
         text: "Kas teile meeldivad valged riided? Aga mustad riided?",
+        textTranslation: "Do you like white clothes? How about black clothes?",
         audio: "../audio/13-riided-a1/015.wav",
         answer: "Mulle meeldivad mustad riided rohkem kui valged.",
+        answerTranslation: "I like black clothes more than white ones.",
         answerAudio: "../audio/13-riided-a1/015a.wav"
       },
       {
         text: "Mis värvi riided teile meeldivad?",
+        textTranslation: "What color clothes do you like?",
         audio: "../audio/13-riided-a1/016.wav",
         answer: "Mulle meeldivad sinised ja mustad riided.",
+        answerTranslation: "I like blue and black clothes.",
         answerAudio: "../audio/13-riided-a1/016a.wav"
       },
       {
         text: "Kas te teate, mida tähendab öösärk? Aga rinnahoidja? Aga sukkpüksid? Aga traksid?",
+        textTranslation: "Do you know what 'nightgown' means? How about 'bra'? How about 'tights'? How about 'braces'?",
         audio: "../audio/13-riided-a1/017.wav",
         answer: "Jah, ma tean neid sõnu. Need on riiete nimetused.",
+        answerTranslation: "Yes, I know these words. They are names of clothes.",
         answerAudio: "../audio/13-riided-a1/017a.wav"
       },
       {
         text: "Mitu mütsi teil on? Mis värvi need on?",
+        textTranslation: "How many hats do you have? What color are they?",
         audio: "../audio/13-riided-a1/018.wav",
         answer: "Mul on kaks mütsi. Need on must ja hall.",
+        answerTranslation: "I have two hats. They are black and grey.",
         answerAudio: "../audio/13-riided-a1/018a.wav"
       },
       {
         text: "Mitu kampsunit teil on? Mis värvi need on?",
+        textTranslation: "How many sweaters do you have? What color are they?",
         audio: "../audio/13-riided-a1/019.wav",
         answer: "Mul on kolm kampsunit. Need on sinine, must ja hall.",
+        answerTranslation: "I have three sweaters. They are blue, black, and grey.",
         answerAudio: "../audio/13-riided-a1/019a.wav"
       },
       {
         text: "Kas teie riided on alati kapis? Kas teie riided on mõnikord põrandal?",
+        textTranslation: "Are your clothes always in the closet? Are your clothes sometimes on the floor?",
         audio: "../audio/13-riided-a1/020.wav",
         answer: "Tavaliselt on mu riided kapis. Mõnikord on need ka põrandal.",
+        answerTranslation: "Usually my clothes are in the closet. Sometimes they are also on the floor.",
         answerAudio: "../audio/13-riided-a1/020a.wav"
       }
     ];

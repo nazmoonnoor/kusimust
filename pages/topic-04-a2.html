@@ -23,9 +23,15 @@
       Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,92 +40,122 @@
   const items = [
     {
       text: "Mitu korrust on teie majas? Mitmendal korrusel te elate?",
+      textTranslation: "How many floors are in your building? On which floor do you live?",
       audio: "../audio/04-kodu-a2/001.wav",
       answer: "Minu majas on viis korrust. Ma elan kolmandal korrusel.",
+      answerTranslation: "There are five floors in my building. I live on the third floor.",
       answerAudio: "../audio/04-kodu-a2/001a.wav"
     },
     {
       text: "Kas teie kodus on köök ja elutuba koos või eraldi? Aga vannituba ja WC?",
+      textTranslation: "Are the kitchen and living room together or separate in your home? How about the bathroom and toilet?",
       audio: "../audio/04-kodu-a2/002.wav",
       answer: "Minu kodus on köök ja elutuba eraldi. Vannituba ja WC on koos.",
+      answerTranslation: "In my home, the kitchen and living room are separate. The bathroom and toilet are together.",
       answerAudio: "../audio/04-kodu-a2/002a.wav"
     },
     {
       text: "Kas teie köögis on laud? Mis on laua peal?",
+      textTranslation: "Is there a table in your kitchen? What is on the table?",
       audio: "../audio/04-kodu-a2/003.wav",
       answer: "Jah, minu köögis on laud. Laua peal on puuviljad ja tass.",
+      answerTranslation: "Yes, there is a table in my kitchen. There are fruits and a cup on the table.",
       answerAudio: "../audio/04-kodu-a2/003a.wav"
     },
     {
       text: "Mis on teie köögis? Kus on külmkapp? Aga laud? Aga kraanikauss?",
+      textTranslation: "What is in your kitchen? Where is the fridge? And the table? And the sink?",
       audio: "../audio/04-kodu-a2/004.wav",
       answer: "Minu köögis on laud, toolid ja külmkapp. Külmkapp on seina kõrval ja kraanikauss on akna all.",
+      answerTranslation: "There is a table, chairs, and a fridge in my kitchen. The fridge is next to the wall and the sink is under the window.",
       answerAudio: "../audio/04-kodu-a2/004a.wav"
     },
     {
       text: "Kes on teie kodus praegu?",
+      textTranslation: "Who is at your home right now?",
       audio: "../audio/04-kodu-a2/005.wav",
       answer: "Praegu on minu kodus minu pere.",
+      answerTranslation: "My family is at home right now.",
       answerAudio: "../audio/04-kodu-a2/005a.wav"
     },
     {
       text: "Kes elab teie peal? Aga all? Aga kõrval?",
+      textTranslation: "Who lives above you? And below? And next to you?",
       audio: "../audio/04-kodu-a2/006.wav",
       answer: "Minu peal elab naaber. All elab üks pere ja kõrval elab vana naine.",
+      answerTranslation: "A neighbor lives above me. A family lives below and an old woman lives next to me.",
       answerAudio: "../audio/04-kodu-a2/006a.wav"
     },
     {
       text: "Kuidas te koju lähete? Kas jalgsi, autoga või bussiga? Mis number bussiga?",
+      textTranslation: "How do you go home? On foot, by car, or by bus? Which bus number?",
       audio: "../audio/04-kodu-a2/007.wav",
       answer: "Tavaliselt ma lähen koju autoga. Mõnikord lähen bussiga.",
+      answerTranslation: "Usually I go home by car. Sometimes I go by bus.",
       answerAudio: "../audio/04-kodu-a2/007a.wav"
     },
     {
       text: "Missugused poed on teie kodu lähedal?",
+      textTranslation: "What shops are near your home?",
       audio: "../audio/04-kodu-a2/008.wav",
       answer: "Minu kodu lähedal on toidupood, apteek ja kohvik.",
+      answerTranslation: "There is a grocery store, a pharmacy, and a cafe near my home.",
       answerAudio: "../audio/04-kodu-a2/008a.wav"
     },
     {
       text: "Mis on teie elutoas? Mis on seinal? Aga laes?",
+      textTranslation: "What is in your living room? What is on the wall? And on the ceiling?",
       audio: "../audio/04-kodu-a2/009.wav",
       answer: "Minu elutoas on diivan ja laud. Seinal on pilt ja laes on lamp.",
+      answerTranslation: "There is a sofa and a table in my living room. There is a picture on the wall and a lamp on the ceiling.",
       answerAudio: "../audio/04-kodu-a2/009a.wav"
     },
     {
       text: "Mis värvi mööbel teile meeldib? Kas valge vaip on ilus? Aga kollane vaip?",
+      textTranslation: "What color furniture do you like? Is a white carpet beautiful? How about a yellow carpet?",
       audio: "../audio/04-kodu-a2/010.wav",
       answer: "Mulle meeldib hele mööbel. Valge vaip on ilus, aga kollane vaip mulle väga ei meeldi.",
+      answerTranslation: "I like light-colored furniture. A white carpet is beautiful, but I don't really like a yellow carpet.",
       answerAudio: "../audio/04-kodu-a2/010a.wav"
     },
     {
       text: "Mida te õhtuti kodus teete? Aga hommikuti?",
+      textTranslation: "What do you do at home in the evenings? And in the mornings?",
       audio: "../audio/04-kodu-a2/011.wav",
       answer: "Õhtuti ma puhkan ja vaatan televiisorit. Hommikuti ma joon kohvi ja lähen tööle.",
+      answerTranslation: "In the evenings I rest and watch TV. In the mornings I drink coffee and go to work.",
       answerAudio: "../audio/04-kodu-a2/011a.wav"
     },
     {
       text: "Kas teie kodu on praegu korras või segamini? Kas teile meeldib koristada?",
+      textTranslation: "Is your home tidy or messy right now? Do you like to clean?",
       audio: "../audio/04-kodu-a2/012.wav",
       answer: "Minu kodu on praegu korras. Mulle natuke meeldib koristada.",
+      answerTranslation: "My home is tidy right now. I like to clean a little.",
       answerAudio: "../audio/04-kodu-a2/012a.wav"
     },
     {
       text: "Mis kell te tavaliselt koju jõuate? Mis kell te tahaksite koju jõuda?",
+      textTranslation: "What time do you usually get home? What time would you like to get home?",
       audio: "../audio/04-kodu-a2/013.wav",
       answer: "Tavaliselt ma jõuan koju kell kuus. Ma tahaksin koju jõuda varem.",
+      answerTranslation: "I usually get home at six. I would like to get home earlier.",
       answerAudio: "../audio/04-kodu-a2/013a.wav"
     },
     {
       text: "Kas teie kodus elab ämblik? Kus tema elab?",
+      textTranslation: "Is there a spider living in your home? Where does it live?",
       audio: "../audio/04-kodu-a2/014.wav",
       answer: "Mõnikord on minu kodus ämblik. Tavaliselt elab ta nurgas.",
+      answerTranslation: "Sometimes there is a spider in my home. Usually it lives in the corner.",
       answerAudio: "../audio/04-kodu-a2/014a.wav"
     },
     {
       text: "Kes teil külas käib? Millal tema teil külas käib? Mida te koos teete?",
+      textTranslation: "Who visits you? When do they visit? What do you do together?",
       audio: "../audio/04-kodu-a2/015.wav",
       answer: "Minu sõbrad käivad mõnikord külas. Tavaliselt nädalavahetusel. Me räägime ja joome teed.",
+      answerTranslation: "My friends visit sometimes. Usually on weekends. We talk and drink tea.",
       answerAudio: "../audio/04-kodu-a2/015a.wav"
     }
   ];

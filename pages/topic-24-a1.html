@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,122 +40,162 @@
     const items = [
       {
         text: "Kas teil on lemmikloom? Mis loom see on?",
+        textTranslation: "Do you have a pet? What animal is it?",
         audio: "../audio/24-lemmikloom-a1/001.wav",
         answer: "Praegu mul ei ole lemmiklooma.",
+        answerTranslation: "I don't have a pet right now.",
         answerAudio: "../audio/24-lemmikloom-a1/001a.wav"
       },
       {
         text: "Mis tema nimi on? Kui vana ta on?",
+        textTranslation: "What is its name? How old is it?",
         audio: "../audio/24-lemmikloom-a1/002.wav",
         answer: "Mul ei ole lemmiklooma, aga mulle meeldivad kassid.",
+        answerTranslation: "I don't have a pet, but I like cats.",
         answerAudio: "../audio/24-lemmikloom-a1/002a.wav"
       },
       {
         text: "Kas ta on suur või väike?",
+        textTranslation: "Is it big or small?",
         audio: "../audio/24-lemmikloom-a1/003.wav",
         answer: "Kass on tavaliselt väike loom.",
+        answerTranslation: "A cat is usually a small animal.",
         answerAudio: "../audio/24-lemmikloom-a1/003a.wav"
       },
       {
         text: "Kas tal on saba? Aga hambad? Aga tiivad?",
+        textTranslation: "Does it have a tail? How about teeth? How about wings?",
         audio: "../audio/24-lemmikloom-a1/004.wav",
         answer: "Jah, kassil on saba ja hambad. Tal ei ole tiibu.",
+        answerTranslation: "Yes, a cat has a tail and teeth. It doesn't have wings.",
         answerAudio: "../audio/24-lemmikloom-a1/004a.wav"
       },
       {
         text: "Kas ta on emane või isane?",
+        textTranslation: "Is it female or male?",
         audio: "../audio/24-lemmikloom-a1/005.wav",
         answer: "Tavaliselt on kass kas emane või isane.",
+        answerTranslation: "Usually a cat is either female or male.",
         answerAudio: "../audio/24-lemmikloom-a1/005a.wav"
       },
       {
         text: "Mis värvi ta on? Kas ta on hele või tume?",
+        textTranslation: "What color is it? Is it light or dark?",
         audio: "../audio/24-lemmikloom-a1/006.wav",
         answer: "Kass võib olla must, valge või triibuline.",
+        answerTranslation: "A cat can be black, white, or striped.",
         answerAudio: "../audio/24-lemmikloom-a1/006a.wav"
       },
       {
         text: "Kus ta praegu on? Mida ta praegu teeb?",
+        textTranslation: "Where is it right now? What is it doing right now?",
         audio: "../audio/24-lemmikloom-a1/007.wav",
         answer: "Kui mul oleks kass, ta oleks kodus ja magaks.",
+        answerTranslation: "If I had a cat, it would be at home and sleeping.",
         answerAudio: "../audio/24-lemmikloom-a1/007a.wav"
       },
       {
         text: "Mitu tundi päevas ta magab?",
+        textTranslation: "How many hours a day does it sleep?",
         audio: "../audio/24-lemmikloom-a1/008.wav",
         answer: "Kass magab umbes 12–16 tundi päevas.",
+        answerTranslation: "A cat sleeps about 12–16 hours a day.",
         answerAudio: "../audio/24-lemmikloom-a1/008a.wav"
       },
       {
         text: "Mida ta öösel teeb?",
+        textTranslation: "What does it do at night?",
         audio: "../audio/24-lemmikloom-a1/009.wav",
         answer: "Öösel kass mõnikord mängib või liigub ringi.",
+        answerTranslation: "At night, a cat sometimes plays or moves around.",
         answerAudio: "../audio/24-lemmikloom-a1/009a.wav"
       },
       {
         text: "Mida ta tavaliselt sööb? Mis talle maitseb? Mis talle ei maitse?",
+        textTranslation: "What does it usually eat? What does it like? What does it not like?",
         audio: "../audio/24-lemmikloom-a1/010.wav",
         answer: "Kass sööb tavaliselt kassitoitu ja kala.",
+        answerTranslation: "A cat usually eats cat food and fish.",
         answerAudio: "../audio/24-lemmikloom-a1/010a.wav"
       },
       {
         text: "Kas talle meeldib jalutada? Aga mängida? Aga vannis käia?",
+        textTranslation: "Does it like to walk? How about play? How about take a bath?",
         audio: "../audio/24-lemmikloom-a1/011.wav",
         answer: "Kassile meeldib mängida, aga tavaliselt ei meeldi vannis käia.",
+        answerTranslation: "A cat likes to play, but usually doesn't like to take a bath.",
         answerAudio: "../audio/24-lemmikloom-a1/011a.wav"
       },
       {
         text: "Kas te räägite oma lemmikloomaga? Mis keeles te räägite? Mida te talle ütlete?",
+        textTranslation: "Do you talk to your pet? What language do you speak? What do you say to it?",
         audio: "../audio/24-lemmikloom-a1/012.wav",
         answer: "Jah, inimesed räägivad lemmikloomaga. Tavaliselt oma keeles.",
+        answerTranslation: "Yes, people talk to their pets. Usually in their own language.",
         answerAudio: "../audio/24-lemmikloom-a1/012a.wav"
       },
       {
         text: "Kas must kass on ilus? Aga valge? Aga triibuline?",
+        textTranslation: "Is a black cat beautiful? How about a white one? How about a striped one?",
         audio: "../audio/24-lemmikloom-a1/013.wav",
         answer: "Jah, kõik kassid võivad olla ilusad.",
+        answerTranslation: "Yes, all cats can be beautiful.",
         answerAudio: "../audio/24-lemmikloom-a1/013a.wav"
       },
       {
         text: "Mida kassid söövad? Mida kassid ei söö?",
+        textTranslation: "What do cats eat? What do cats not eat?",
         audio: "../audio/24-lemmikloom-a1/014.wav",
         answer: "Kassid söövad liha ja kassitoitu.",
+        answerTranslation: "Cats eat meat and cat food.",
         answerAudio: "../audio/24-lemmikloom-a1/014a.wav"
       },
       {
         text: "Kas bernhardiin on ilus? Aga dogi? Aga taks? Aga buldog?",
+        textTranslation: "Is a St. Bernard beautiful? How about a Great Dane? How about a dachshund? How about a bulldog?",
         audio: "../audio/24-lemmikloom-a1/015.wav",
         answer: "Jah, need on suured ja huvitavad koerad.",
+        answerTranslation: "Yes, they are big and interesting dogs.",
         answerAudio: "../audio/24-lemmikloom-a1/015a.wav"
       },
       {
         text: "Mida koerad söövad? Mida koerad ei söö?",
+        textTranslation: "What do dogs eat? What do dogs not eat?",
         audio: "../audio/24-lemmikloom-a1/016.wav",
         answer: "Koerad söövad koeratoitu ja liha.",
+        answerTranslation: "Dogs eat dog food and meat.",
         answerAudio: "../audio/24-lemmikloom-a1/016a.wav"
       },
       {
         text: "Kumb on parem lemmikloom, kas kass või koer? Missugune loom on kass? Missugune loom on koer?",
+        textTranslation: "Which is a better pet, a cat or a dog? What kind of animal is a cat? What kind of animal is a dog?",
         audio: "../audio/24-lemmikloom-a1/017.wav",
         answer: "Mõlemad on head lemmikloomad. Kass on rahulik, koer on aktiivne.",
+        answerTranslation: "Both are good pets. A cat is calm, a dog is active.",
         answerAudio: "../audio/24-lemmikloom-a1/017a.wav"
       },
       {
         text: "Kas teie kodulinnas on lemmikloomapood? Kas te käite tihti lemmikloomapoes? Mida te ostate?",
+        textTranslation: "Is there a pet store in your hometown? Do you often go to the pet store? What do you buy?",
         audio: "../audio/24-lemmikloom-a1/018.wav",
         answer: "Jah, minu linnas on lemmikloomapood.",
+        answerTranslation: "Yes, there is a pet store in my city.",
         answerAudio: "../audio/24-lemmikloom-a1/018a.wav"
       },
       {
         text: "Kas te teate, mida tähendab koerakaka? Aga kassipiss? Aga puur? Aga suukorv?",
+        textTranslation: "Do you know what dog poop means? How about cat pee? How about a cage? How about a muzzle?",
         audio: "../audio/24-lemmikloom-a1/019.wav",
         answer: "Jah, ma tean neid sõnu.",
+        answerTranslation: "Yes, I know these words.",
         answerAudio: "../audio/24-lemmikloom-a1/019a.wav"
       },
       {
         text: "Mis te arvate, kas kassile meeldib ujuda? Aga televiisorit vaadata?",
+        textTranslation: "What do you think, does a cat like to swim? How about watching TV?",
         audio: "../audio/24-lemmikloom-a1/020.wav",
         answer: "Tavaliselt kassile ei meeldi ujuda.",
+        answerTranslation: "Usually a cat doesn't like to swim.",
         answerAudio: "../audio/24-lemmikloom-a1/020a.wav"
       }
     ];

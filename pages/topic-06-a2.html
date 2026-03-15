@@ -23,9 +23,15 @@
       Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,92 +40,122 @@
   const items = [
     {
       text: "Kas teil on palju sugulasi? Kus nemad elavad?",
+      textTranslation: "Do you have many relatives? Where do they live?",
       audio: "../audio/06-pere-a2/001.wav",
       answer: "Jah, mul on palju sugulasi. Enamik neist elab Bangladeshis.",
+      answerTranslation: "Yes, I have many relatives. Most of them live in Bangladesh.",
       answerAudio: "../audio/06-pere-a2/001a.wav"
     },
     {
       text: "Mis pereliikmed teie peres on?",
+      textTranslation: "Which family members are in your family?",
       audio: "../audio/06-pere-a2/002.wav",
       answer: "Minu peres on minu naine ja kaks poega.",
+      answerTranslation: "In my family there is my wife and two sons.",
       answerAudio: "../audio/06-pere-a2/002a.wav"
     },
     {
       text: "Kes on teie peres kõige noorem? Mis tema nimi on? Kui vana tema on? Kus tema elab?",
+      textTranslation: "Who is the youngest in your family? What is their name? How old are they? Where do they live?",
       audio: "../audio/06-pere-a2/003.wav",
       answer: "Kõige noorem on minu poeg. Tema nimi on Zayan. Ta on noor ja elab minuga Tallinnas.",
+      answerTranslation: "The youngest is my son. His name is Zayan. He is young and lives with me in Tallinn.",
       answerAudio: "../audio/06-pere-a2/003a.wav"
     },
     {
       text: "Kes on teie peres kõige vanem? Mis tema nimi on? Kui vana tema on? Kus tema elab?",
+      textTranslation: "Who is the oldest in your family? What is their name? How old are they? Where do they live?",
       audio: "../audio/06-pere-a2/004.wav",
       answer: "Kõige vanem on minu ema. Ta on umbes 70-aastane ja elab Bangladeshis.",
+      answerTranslation: "The oldest is my mother. She is about 70 years old and lives in Bangladesh.",
       answerAudio: "../audio/06-pere-a2/004a.wav"
     },
     {
       text: "Kes on teie peres kõige targem? Aga kõige naljakam?",
+      textTranslation: "Who is the smartest in your family? And the funniest?",
       audio: "../audio/06-pere-a2/005.wav",
       answer: "Ma arvan, et minu naine on kõige targem. Minu noorem poeg on kõige naljakam.",
+      answerTranslation: "I think my wife is the smartest. My younger son is the funniest.",
       answerAudio: "../audio/06-pere-a2/005a.wav"
     },
     {
       text: "Kes on teie peres kõige pikem? Aga kõige lühem?",
+      textTranslation: "Who is the tallest in your family? And the shortest?",
       audio: "../audio/06-pere-a2/006.wav",
       answer: "Mina olen kõige pikem. Minu noorem poeg on kõige lühem.",
+      answerTranslation: "I am the tallest. My younger son is the shortest.",
       answerAudio: "../audio/06-pere-a2/006a.wav"
     },
     {
       text: "Mida te koos oma perega teete?",
+      textTranslation: "What do you do together with your family?",
       audio: "../audio/06-pere-a2/007.wav",
       answer: "Me vaatame koos filme, sööme koos ja käime jalutamas.",
+      answerTranslation: "We watch movies together, eat together, and go for walks.",
       answerAudio: "../audio/06-pere-a2/007a.wav"
     },
     {
       text: "Kus teie pere elas, kui te sündisite?",
+      textTranslation: "Where did your family live when you were born?",
       audio: "../audio/06-pere-a2/008.wav",
       answer: "Minu pere elas Bangladeshis, kui ma sündisin.",
+      answerTranslation: "My family lived in Bangladesh when I was born.",
       answerAudio: "../audio/06-pere-a2/008a.wav"
     },
     {
       text: "Kas teie isa on vanem kui ema?",
+      textTranslation: "Is your father older than your mother?",
       audio: "../audio/06-pere-a2/009.wav",
       answer: "Jah, minu isa on natuke vanem kui ema.",
+      answerTranslation: "Yes, my father is a little older than my mother.",
       answerAudio: "../audio/06-pere-a2/009a.wav"
     },
     {
       text: "Mis on teie vanavanemate nimed? Aga vanavanavanemate?",
+      textTranslation: "What are your grandparents' names? And your great-grandparents' names?",
       audio: "../audio/06-pere-a2/010.wav",
       answer: "Ma tean oma vanavanemate nimesid, aga ma ei mäleta vanavanavanemate nimesid.",
+      answerTranslation: "I know my grandparents' names, but I do not remember my great-grandparents' names.",
       answerAudio: "../audio/06-pere-a2/010a.wav"
     },
     {
       text: "Kas teie peres on kaksikuid?",
+      textTranslation: "Are there twins in your family?",
       audio: "../audio/06-pere-a2/011.wav",
       answer: "Ei, minu peres ei ole kaksikuid.",
+      answerTranslation: "No, there are no twins in my family.",
       answerAudio: "../audio/06-pere-a2/011a.wav"
     },
     {
       text: "Kumb on parem, kas õde või vend?",
+      textTranslation: "Which is better, a sister or a brother?",
       audio: "../audio/06-pere-a2/012.wav",
       answer: "Minu arvates on mõlemad head.",
+      answerTranslation: "In my opinion, both are good.",
       answerAudio: "../audio/06-pere-a2/012a.wav"
     },
     {
       text: "Kas te olete oma peres kõige vanem, noorem või keskmine laps?",
+      textTranslation: "Are you the oldest, youngest, or middle child in your family?",
       audio: "../audio/06-pere-a2/013.wav",
       answer: "Ma olen oma peres keskmine laps.",
+      answerTranslation: "I am the middle child in my family.",
       answerAudio: "../audio/06-pere-a2/013a.wav"
     },
     {
       text: "Kellena teie pereliikmed töötavad?",
+      textTranslation: "What do your family members do for work?",
       audio: "../audio/06-pere-a2/014.wav",
       answer: "Mõned minu pereliikmed töötavad õpetajana ja mõned ettevõttes.",
+      answerTranslation: "Some of my family members work as teachers and some in a company.",
       answerAudio: "../audio/06-pere-a2/014a.wav"
     },
     {
       text: "Keda te kallistate oma peres kõige rohkem?",
+      textTranslation: "Who do you hug the most in your family?",
       audio: "../audio/06-pere-a2/015.wav",
       answer: "Ma kallistan kõige rohkem oma lapsi.",
+      answerTranslation: "I hug my children the most.",
       answerAudio: "../audio/06-pere-a2/015a.wav"
     }
   ];

@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,122 +40,162 @@
     const items = [
       {
         text: "Mis linna te hästi tunnete? Kas see on suur või väike linn?",
+        textTranslation: "Which city do you know well? Is it a big or a small city?",
         audio: "../audio/15-linn-a1/001.wav",
         answer: "Ma tunnen hästi Tallinna. See on keskmise suurusega linn.",
+        answerTranslation: "I know Tallinn well. It is a medium-sized city.",
         answerAudio: "../audio/15-linn-a1/001a.wav"
       },
       {
         text: "Mis on kesklinnas?",
+        textTranslation: "What is in the city center?",
         audio: "../audio/15-linn-a1/002.wav",
         answer: "Kesklinnas on poed, restoranid ja kontorid.",
+        answerTranslation: "There are shops, restaurants, and offices in the city center.",
         answerAudio: "../audio/15-linn-a1/002a.wav"
       },
       {
         text: "Mis on kõige pikem tänav selles linnas?",
+        textTranslation: "What is the longest street in this city?",
         audio: "../audio/15-linn-a1/003.wav",
         answer: "Ma arvan, et üks pikk tänav on Pärnu maantee.",
+        answerTranslation: "I think one long street is Pärnu road.",
         answerAudio: "../audio/15-linn-a1/003a.wav"
       },
       {
         text: "Kas selles linnas on raudteejaam? Aga bussijaam? Aga sadam?",
+        textTranslation: "Is there a railway station in this city? How about a bus station? How about a port?",
         audio: "../audio/15-linn-a1/004.wav",
         answer: "Jah, Tallinnas on raudteejaam, bussijaam ja sadam.",
+        answerTranslation: "Yes, Tallinn has a railway station, a bus station, and a port.",
         answerAudio: "../audio/15-linn-a1/004a.wav"
       },
       {
         text: "Kas selles linnas on suur kirik? Kus see on? Mis selle nimi on?",
+        textTranslation: "Is there a big church in this city? Where is it? What is its name?",
         audio: "../audio/15-linn-a1/005.wav",
         answer: "Jah, seal on suur kirik. See on Toomkirik ja see on vanalinnas.",
+        answerTranslation: "Yes, there is a big church. It is the Dome Church and it is in the Old Town.",
         answerAudio: "../audio/15-linn-a1/005a.wav"
       },
       {
         text: "Kas selles linnas on veekeskus? Aga teater? Aga ülikool?",
+        textTranslation: "Is there a water park in this city? How about a theatre? How about a university?",
         audio: "../audio/15-linn-a1/006.wav",
         answer: "Jah, seal on veekeskus, teater ja ülikool.",
+        answerTranslation: "Yes, there is a water park, a theatre, and a university.",
         answerAudio: "../audio/15-linn-a1/006a.wav"
       },
       {
         text: "Kas selles linnas on rand? Aga loomaaed? Aga botaanikaaed?",
+        textTranslation: "Is there a beach in this city? How about a zoo? How about a botanical garden?",
         audio: "../audio/15-linn-a1/007.wav",
         answer: "Jah, Tallinnas on rand, loomaaed ja botaanikaaed.",
+        answerTranslation: "Yes, Tallinn has a beach, a zoo, and a botanical garden.",
         answerAudio: "../audio/15-linn-a1/007a.wav"
       },
       {
         text: "Kus on hea toidupood? Aga hea raamatukogu? Aga hea haigla? Aga hea kool?",
+        textTranslation: "Where is a good grocery store? How about a good library? How about a good hospital? How about a good school?",
         audio: "../audio/15-linn-a1/008.wav",
         answer: "Hea toidupood on minu kodu lähedal. Raamatukogu ja haigla on kesklinnas.",
+        answerTranslation: "A good grocery store is near my home. The library and hospital are in the city center.",
         answerAudio: "../audio/15-linn-a1/008a.wav"
       },
       {
         text: "Missugune park on kõige ilusam? Missugune kaubanduskeskus on kõige suurem?",
+        textTranslation: "Which park is the most beautiful? Which shopping center is the biggest?",
         audio: "../audio/15-linn-a1/009.wav",
         answer: "Minu arvates on Kadrioru park väga ilus. Üks suur kaubanduskeskus on Ülemiste keskus.",
+        answerTranslation: "In my opinion, Kadriorg Park is very beautiful. One big shopping center is Ülemiste Center.",
         answerAudio: "../audio/15-linn-a1/009a.wav"
       },
       {
         text: "Mitu parki on selles linnas? Aga mitu kaubanduskeskust?",
+        textTranslation: "How many parks are there in this city? And how many shopping centers?",
         audio: "../audio/15-linn-a1/010.wav",
         answer: "Tallinnas on palju parke ja mitu kaubanduskeskust.",
+        answerTranslation: "There are many parks and several shopping centers in Tallinn.",
         answerAudio: "../audio/15-linn-a1/010a.wav"
       },
       {
         text: "Kas selles linnas on metroo?",
+        textTranslation: "Is there a metro in this city?",
         audio: "../audio/15-linn-a1/011.wav",
         answer: "Ei, Tallinnas ei ole metrood.",
+        answerTranslation: "No, there is no metro in Tallinn.",
         answerAudio: "../audio/15-linn-a1/011a.wav"
       },
       {
         text: "Kas selles linnas sõidavad bussid? Aga trammid? Aga trollid? Aga taksod?",
+        textTranslation: "Do buses run in this city? How about trams? How about trolleys? How about taxis?",
         audio: "../audio/15-linn-a1/012.wav",
         answer: "Jah, siin sõidavad bussid, trammid, trollid ja taksod.",
+        answerTranslation: "Yes, there are buses, trams, trolleys, and taxis here.",
         answerAudio: "../audio/15-linn-a1/012a.wav"
       },
       {
         text: "Kas selles linnas on head jalgrattateed?",
+        textTranslation: "Are there good bicycle paths in this city?",
         audio: "../audio/15-linn-a1/013.wav",
         answer: "Jah, siin on head jalgrattateed.",
+        answerTranslation: "Yes, there are good bicycle paths here.",
         answerAudio: "../audio/15-linn-a1/013a.wav"
       },
       {
         text: "Kas teil on selles linnas lemmikkohvik? Aga restoran? Kus see on? Mis selle nimi on?",
+        textTranslation: "Do you have a favorite café in this city? How about a restaurant? Where is it? What is its name?",
         audio: "../audio/15-linn-a1/014.wav",
         answer: "Jah, mul on lemmikkohvik kesklinnas.",
+        answerTranslation: "Yes, I have a favorite café in the city center.",
         answerAudio: "../audio/15-linn-a1/014a.wav"
       },
       {
         text: "Kas see linn on ilusam suvel või talvel?",
+        textTranslation: "Is this city more beautiful in summer or in winter?",
         audio: "../audio/15-linn-a1/015.wav",
         answer: "Minu arvates on linn ilusam suvel.",
+        answerTranslation: "In my opinion, the city is more beautiful in summer.",
         answerAudio: "../audio/15-linn-a1/015a.wav"
       },
       {
         text: "Kas selles linnas on talvel jõulukuusk? Kus see on?",
+        textTranslation: "Is there a Christmas tree in this city in winter? Where is it?",
         audio: "../audio/15-linn-a1/016.wav",
         answer: "Jah, jõulukuusk on tavaliselt Raekoja platsil.",
+        answerTranslation: "Yes, the Christmas tree is usually at Town Hall Square.",
         answerAudio: "../audio/15-linn-a1/016a.wav"
       },
       {
         text: "Kas selles linnas on suvel festival? Kus see on? Millal see toimub?",
+        textTranslation: "Is there a festival in this city in summer? Where is it? When does it take place?",
         audio: "../audio/15-linn-a1/017.wav",
         answer: "Jah, suvel on festivalid kesklinnas ja parkides.",
+        answerTranslation: "Yes, in summer there are festivals in the city center and in parks.",
         answerAudio: "../audio/15-linn-a1/017a.wav"
       },
       {
         text: "Kas te teate, mida tähendab pilvelõhkuja? Aga lõbustuspark? Aga purskkaev? Aga peatänav?",
+        textTranslation: "Do you know what a skyscraper means? How about amusement park? How about fountain? How about main street?",
         audio: "../audio/15-linn-a1/018.wav",
         answer: "Jah, ma tean neid sõnu.",
+        answerTranslation: "Yes, I know these words.",
         answerAudio: "../audio/15-linn-a1/018a.wav"
       },
       {
         text: "Kus selles linnas on hea jalutada? Aga kus on hea tõukerattaga sõita?",
+        textTranslation: "Where is it good to walk in this city? And where is it good to ride a scooter?",
         audio: "../audio/15-linn-a1/019.wav",
         answer: "Hea jalutada on vanalinnas ja parkides.",
+        answerTranslation: "It is good to walk in the Old Town and in parks.",
         answerAudio: "../audio/15-linn-a1/019a.wav"
       },
       {
         text: "Kas teile meeldib suvel linnas olla? Aga talvel?",
+        textTranslation: "Do you like being in the city in summer? How about in winter?",
         audio: "../audio/15-linn-a1/020.wav",
         answer: "Jah, mulle meeldib linnas olla suvel ja ka talvel.",
+        answerTranslation: "Yes, I like being in the city in summer and also in winter.",
         answerAudio: "../audio/15-linn-a1/020a.wav"
       }
     ];

@@ -23,108 +23,144 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
   <script src="../assets/player.js"></script>
   <script>
-    const items = [
-      {
-        text: "Kas teile meeldib rohkem telekat vaadata või raadiot kuulata?",
-        audio: "../audio/25-tv-ja-filmid-a2/001.wav",
-        answer: "Mulle meeldib rohkem telekat vaadata.",
-        answerAudio: "../audio/25-tv-ja-filmid-a2/001a.wav"
-      },
-      {
-        text: "Mis on teie lemmikseriaal? Kas see on uus või vana seriaal?",
-        audio: "../audio/25-tv-ja-filmid-a2/002.wav",
-        answer: "Minu lemmikseriaal on üks uus seriaal Netflixis.",
-        answerAudio: "../audio/25-tv-ja-filmid-a2/002a.wav"
-      },
-      {
-        text: "Kas 20-osaline seriaal on pikk seriaal? Kui pikk on liiga pikk seriaal?",
-        audio: "../audio/25-tv-ja-filmid-a2/003.wav",
-        answer: "Jah, 20 osa on üsna pikk seriaal.",
-        answerAudio: "../audio/25-tv-ja-filmid-a2/003a.wav"
-      },
-      {
-        text: "Mis seriaali te viimati vaatasite?",
-        audio: "../audio/25-tv-ja-filmid-a2/004.wav",
-        answer: "Viimati vaatasin ühte krimiseriaali.",
-        answerAudio: "../audio/25-tv-ja-filmid-a2/004a.wav"
-      },
-      {
-        text: "Mis seriaal on kõige vanem, mida te teate?",
-        audio: "../audio/25-tv-ja-filmid-a2/005.wav",
-        answer: "Üks vana seriaal on näiteks “Friends”.",
-        answerAudio: "../audio/25-tv-ja-filmid-a2/005a.wav"
-      },
-      {
-        text: "Mis te arvate, mitu tundi te päevas seriaale ja filme vaatate? Aga nädalas?",
-        audio: "../audio/25-tv-ja-filmid-a2/006.wav",
-        answer: "Ma vaatan umbes üks tund päevas.",
-        answerAudio: "../audio/25-tv-ja-filmid-a2/006a.wav"
-      },
-      {
-        text: "Kas te vaatate filme üksi või koos perega? Kellega koos teile meeldib filme vaadata?",
-        audio: "../audio/25-tv-ja-filmid-a2/007.wav",
-        answer: "Tavaliselt vaatan koos perega.",
-        answerAudio: "../audio/25-tv-ja-filmid-a2/007a.wav"
-      },
-      {
-        text: "Kas te vaatate õhtul filme? Mis kellani te tavaliselt filme vaatate?",
-        audio: "../audio/25-tv-ja-filmid-a2/008.wav",
-        answer: "Jah, ma vaatan õhtul filme. Tavaliselt kuni kell kümme.",
-        answerAudio: "../audio/25-tv-ja-filmid-a2/008a.wav"
-      },
-      {
-        text: "Kas te vaatasite eile filme? Aga üleeile? Mida te vaatasite?",
-        audio: "../audio/25-tv-ja-filmid-a2/009.wav",
-        answer: "Eile vaatasin filmi.",
-        answerAudio: "../audio/25-tv-ja-filmid-a2/009a.wav"
-      },
-      {
-        text: "Kus on praegu teie telekapult või arvutihiir?",
-        audio: "../audio/25-tv-ja-filmid-a2/010.wav",
-        answer: "Telekapult on laua peal.",
-        answerAudio: "../audio/25-tv-ja-filmid-a2/010a.wav"
-      },
-      {
-        text: "Mida te vaatate laupäeviti? Aga pühapäeviti?",
-        audio: "../audio/25-tv-ja-filmid-a2/011.wav",
-        answer: "Laupäeval vaatan filmi. Pühapäeval vaatan mõnikord seriaali.",
-        answerAudio: "../audio/25-tv-ja-filmid-a2/011a.wav"
-      },
-      {
-        text: "Mis keeles te filme vaatate? Mis keeles on subtiitrid?",
-        audio: "../audio/25-tv-ja-filmid-a2/012.wav",
-        answer: "Ma vaatan filme inglise keeles. Subtiitrid on inglise või eesti keeles.",
-        answerAudio: "../audio/25-tv-ja-filmid-a2/012a.wav"
-      },
-      {
-        text: "Mis filmid teile meeldivad? Mis filmid teile ei meeldi?",
-        audio: "../audio/25-tv-ja-filmid-a2/013.wav",
-        answer: "Mulle meeldivad seiklus- ja dokumentaalfilmid. Õudusfilmid ei meeldi.",
-        answerAudio: "../audio/25-tv-ja-filmid-a2/013a.wav"
-      },
-      {
-        text: "Kas te vaatate Netflixi? Mida te Netflixist vaatate?",
-        audio: "../audio/25-tv-ja-filmid-a2/014.wav",
-        answer: "Jah, ma vaatan Netflixi. Tavaliselt vaatan seriaale ja filme.",
-        answerAudio: "../audio/25-tv-ja-filmid-a2/014a.wav"
-      },
-      {
-        text: "Kas te vaatate Jupiteri? Mida te Jupiterist vaatate?",
-        audio: "../audio/25-tv-ja-filmid-a2/015.wav",
-        answer: "Mõnikord vaatan Jupiterit. Seal vaatan Eesti filme ja seriaale.",
-        answerAudio: "../audio/25-tv-ja-filmid-a2/015a.wav"
-      }
-    ];
+  const items = [
+    {
+      text: "Kas teile meeldib rohkem telekat vaadata või raadiot kuulata?",
+      textTranslation: "Do you prefer watching TV or listening to the radio?",
+      audio: "../audio/25-tv-ja-filmid-a2/001.wav",
+      answer: "Mulle meeldib rohkem telekat vaadata.",
+      answerTranslation: "I prefer watching TV.",
+      answerAudio: "../audio/25-tv-ja-filmid-a2/001a.wav"
+    },
+    {
+      text: "Mis on teie lemmikseriaal? Kas see on uus või vana seriaal?",
+      textTranslation: "What is your favorite TV series? Is it a new or an old series?",
+      audio: "../audio/25-tv-ja-filmid-a2/002.wav",
+      answer: "Minu lemmikseriaal on üks uus seriaal Netflixis.",
+      answerTranslation: "My favorite series is a new series on Netflix.",
+      answerAudio: "../audio/25-tv-ja-filmid-a2/002a.wav"
+    },
+    {
+      text: "Kas 20-osaline seriaal on pikk seriaal? Kui pikk on liiga pikk seriaal?",
+      textTranslation: "Is a 20-episode series a long series? How long is too long?",
+      audio: "../audio/25-tv-ja-filmid-a2/003.wav",
+      answer: "Jah, 20 osa on üsna pikk seriaal.",
+      answerTranslation: "Yes, 20 episodes is quite a long series.",
+      answerAudio: "../audio/25-tv-ja-filmid-a2/003a.wav"
+    },
+    {
+      text: "Mis seriaali te viimati vaatasite?",
+      textTranslation: "What series did you watch most recently?",
+      audio: "../audio/25-tv-ja-filmid-a2/004.wav",
+      answer: "Viimati vaatasin ühte krimiseriaali.",
+      answerTranslation: "Most recently I watched a crime series.",
+      answerAudio: "../audio/25-tv-ja-filmid-a2/004a.wav"
+    },
+    {
+      text: "Mis seriaal on kõige vanem, mida te teate?",
+      textTranslation: "What is the oldest TV series you know?",
+      audio: "../audio/25-tv-ja-filmid-a2/005.wav",
+      answer: "Üks vana seriaal on näiteks “Friends”.",
+      answerTranslation: "One old series is, for example, 'Friends'.",
+      answerAudio: "../audio/25-tv-ja-filmid-a2/005a.wav"
+    },
+    {
+      text: "Mis te arvate, mitu tundi te päevas seriaale ja filme vaatate? Aga nädalas?",
+      textTranslation: "How many hours a day do you think you watch series and films? And per week?",
+      audio: "../audio/25-tv-ja-filmid-a2/006.wav",
+      answer: "Ma vaatan umbes üks tund päevas.",
+      answerTranslation: "I watch about one hour per day.",
+      answerAudio: "../audio/25-tv-ja-filmid-a2/006a.wav"
+    },
+    {
+      text: "Kas te vaatate filme üksi või koos perega? Kellega koos teile meeldib filme vaadata?",
+      textTranslation: "Do you watch films alone or with family? With whom do you like watching films?",
+      audio: "../audio/25-tv-ja-filmid-a2/007.wav",
+      answer: "Tavaliselt vaatan koos perega.",
+      answerTranslation: "Usually I watch with my family.",
+      answerAudio: "../audio/25-tv-ja-filmid-a2/007a.wav"
+    },
+    {
+      text: "Kas te vaatate õhtul filme? Mis kellani te tavaliselt filme vaatate?",
+      textTranslation: "Do you watch films in the evening? Until what time do you usually watch?",
+      audio: "../audio/25-tv-ja-filmid-a2/008.wav",
+      answer: "Jah, ma vaatan õhtul filme. Tavaliselt kuni kell kümme.",
+      answerTranslation: "Yes, I watch films in the evening. Usually until ten o’clock.",
+      answerAudio: "../audio/25-tv-ja-filmid-a2/008a.wav"
+    },
+    {
+      text: "Kas te vaatasite eile filme? Aga üleeile? Mida te vaatasite?",
+      textTranslation: "Did you watch films yesterday? What about the day before yesterday? What did you watch?",
+      audio: "../audio/25-tv-ja-filmid-a2/009.wav",
+      answer: "Eile vaatasin filmi.",
+      answerTranslation: "Yesterday I watched a film.",
+      answerAudio: "../audio/25-tv-ja-filmid-a2/009a.wav"
+    },
+    {
+      text: "Kus on praegu teie telekapult või arvutihiir?",
+      textTranslation: "Where is your TV remote or computer mouse right now?",
+      audio: "../audio/25-tv-ja-filmid-a2/010.wav",
+      answer: "Telekapult on laua peal.",
+      answerTranslation: "The TV remote is on the table.",
+      answerAudio: "../audio/25-tv-ja-filmid-a2/010a.wav"
+    },
+    {
+      text: "Mida te vaatate laupäeviti? Aga pühapäeviti?",
+      textTranslation: "What do you watch on Saturdays? And on Sundays?",
+      audio: "../audio/25-tv-ja-filmid-a2/011.wav",
+      answer: "Laupäeval vaatan filmi. Pühapäeval vaatan mõnikord seriaali.",
+      answerTranslation: "On Saturday I watch a movie. On Sunday I sometimes watch a series.",
+      answerAudio: "../audio/25-tv-ja-filmid-a2/011a.wav"
+    },
+    {
+      text: "Mis keeles te filme vaatate? Mis keeles on subtiitrid?",
+      textTranslation: "In what language do you watch films? What language are the subtitles in?",
+      audio: "../audio/25-tv-ja-filmid-a2/012.wav",
+      answer: "Ma vaatan filme inglise keeles. Subtiitrid on inglise või eesti keeles.",
+      answerTranslation: "I watch films in English. The subtitles are in English or Estonian.",
+      answerAudio: "../audio/25-tv-ja-filmid-a2/012a.wav"
+    },
+    {
+      text: "Mis filmid teile meeldivad? Mis filmid teile ei meeldi?",
+      textTranslation: "What films do you like? What films do you not like?",
+      audio: "../audio/25-tv-ja-filmid-a2/013.wav",
+      answer: "Mulle meeldivad seiklus- ja dokumentaalfilmid. Õudusfilmid ei meeldi.",
+      answerTranslation: "I like adventure and documentary films. I don't like horror films.",
+      answerAudio: "../audio/25-tv-ja-filmid-a2/013a.wav"
+    },
+    {
+      text: "Kas te vaatate Netflixi? Mida te Netflixist vaatate?",
+      textTranslation: "Do you watch Netflix? What do you watch on Netflix?",
+      audio: "../audio/25-tv-ja-filmid-a2/014.wav",
+      answer: "Jah, ma vaatan Netflixi. Tavaliselt vaatan seriaale ja filme.",
+      answerTranslation: "Yes, I watch Netflix. Usually I watch series and films.",
+      answerAudio: "../audio/25-tv-ja-filmid-a2/014a.wav"
+    },
+    {
+      text: "Kas te vaatate Jupiteri? Mida te Jupiterist vaatate?",
+      textTranslation: "Do you watch Jupiter? What do you watch on Jupiter?",
+      audio: "../audio/25-tv-ja-filmid-a2/015.wav",
+      answer: "Mõnikord vaatan Jupiterit. Seal vaatan Eesti filme ja seriaale.",
+      answerTranslation: "Sometimes I watch Jupiter. There I watch Estonian films and series.",
+      answerAudio: "../audio/25-tv-ja-filmid-a2/015a.wav"
+    }
+  ];
 
-    initAudioList(items);
-  </script>
+  initAudioList(items);
+</script>
 </body>
 </html>

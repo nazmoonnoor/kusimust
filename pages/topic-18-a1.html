@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>18. TELEFON - A2 | MUSTMILJON KÜSIMUST</title>
+  <title>18. TELEFON - A1 | MUSTMILJON KÜSIMUST</title>
   <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body>
@@ -14,7 +14,7 @@
     </div>
 
     <section class="topic-banner">
-      <div class="topic-badge">TOPIC 18 • A2</div>
+      <div class="topic-badge">TOPIC 18 • A1</div>
       <h1 class="topic-heading">18. TELEFON - HALLOO, MA KUULEN!</h1>
       <p>Hover over a sentence to play its audio. Click also works on mobile.</p>
     </section>
@@ -33,94 +33,164 @@
   <script>
     const items = [
       {
-        text: "Kas te helistate telefoniga iga päev? Mitu korda päevas te telefoniga helistate?",
-        audio: "../audio/18-telefon-a2/001.wav",
-        answer: "Jah, ma helistan telefoniga iga päev. Tavaliselt üks või kaks korda.",
-        answerAudio: "../audio/18-telefon-a2/001a.wav"
+        text: "Mitu telefoni teil on?",
+        textTranslation: "How many phones do you have?",
+        audio: "../audio/18-telefon-a1/001.wav",
+        answer: "Mul on üks telefon.",
+        answerTranslation: "I have one phone.",
+        answerAudio: "../audio/18-telefon-a1/001a.wav"
       },
       {
-        text: "Millal te viimati telefoniga rääkisite? Kellega te rääkisite? Mida te talle ütlesite?",
-        audio: "../audio/18-telefon-a2/002.wav",
-        answer: "Ma rääkisin telefoniga täna hommikul. Ma rääkisin sõbraga. Ma ütlesin tere ja küsisin, kuidas tal läheb.",
-        answerAudio: "../audio/18-telefon-a2/002a.wav"
+        text: "Mis värvi on teie telefon?",
+        textTranslation: "What color is your phone?",
+        audio: "../audio/18-telefon-a1/002.wav",
+        answer: "Minu telefon on must.",
+        answerTranslation: "My phone is black.",
+        answerAudio: "../audio/18-telefon-a1/002a.wav"
       },
       {
-        text: "Kes teile viimati helistas? Mida ta teile ütles?",
-        audio: "../audio/18-telefon-a2/003.wav",
-        answer: "Minu sõber helistas mulle. Ta küsis, kas mul on aega kohtuda.",
-        answerAudio: "../audio/18-telefon-a2/003a.wav"
+        text: "Kui vana on teie telefon?",
+        textTranslation: "How old is your phone?",
+        audio: "../audio/18-telefon-a1/003.wav",
+        answer: "Minu telefon on umbes kaks aastat vana.",
+        answerTranslation: "My phone is about two years old.",
+        answerAudio: "../audio/18-telefon-a1/003a.wav"
       },
       {
-        text: "Kellele te helistate tihti?",
-        audio: "../audio/18-telefon-a2/004.wav",
-        answer: "Ma helistan tihti oma perele ja sõpradele.",
-        answerAudio: "../audio/18-telefon-a2/004a.wav"
+        text: "Kas teie telefon on odav või kallis? Kas teie telefon on moodne või vanamoodne?",
+        textTranslation: "Is your phone cheap or expensive? Is your phone modern or old-fashioned?",
+        audio: "../audio/18-telefon-a1/004.wav",
+        answer: "Minu telefon on üsna kallis ja üsna moodne.",
+        answerTranslation: "My phone is quite expensive and quite modern.",
+        answerAudio: "../audio/18-telefon-a1/004a.wav"
       },
       {
-        text: "Kellele te saadate telefoniga sõnumeid?",
-        audio: "../audio/18-telefon-a2/005.wav",
-        answer: "Ma saadan sõnumeid sõpradele ja töökaaslastele.",
-        answerAudio: "../audio/18-telefon-a2/005a.wav"
+        text: "Kas te ostsite oma telefoni Eestist või välismaalt?",
+        textTranslation: "Did you buy your phone in Estonia or abroad?",
+        audio: "../audio/18-telefon-a1/005.wav",
+        answer: "Ma ostsin oma telefoni Eestist.",
+        answerTranslation: "I bought my phone in Estonia.",
+        answerAudio: "../audio/18-telefon-a1/005a.wav"
       },
       {
-        text: "Kas te vastate alati telefonile? Kas te vastate telefonile, kui te ei tea, kes helistab?",
-        audio: "../audio/18-telefon-a2/006.wav",
-        answer: "Tavaliselt ma vastan telefonile. Kui ma ei tea numbrit, mõnikord ei vasta.",
-        answerAudio: "../audio/18-telefon-a2/006a.wav"
+        text: "Kus teie telefon praegu on?",
+        textTranslation: "Where is your phone right now?",
+        audio: "../audio/18-telefon-a1/006.wav",
+        answer: "Minu telefon on praegu laua peal.",
+        answerTranslation: "My phone is on the table right now.",
+        answerAudio: "../audio/18-telefon-a1/006a.wav"
       },
       {
-        text: "Kas te mängite telefoniga? Mitu mängu on teie telefonis?",
-        audio: "../audio/18-telefon-a2/007.wav",
-        answer: "Mõnikord mängin. Minu telefonis on üks või kaks mängu.",
-        answerAudio: "../audio/18-telefon-a2/007a.wav"
+        text: "Kus teie telefon on, kui te olete tänaval?",
+        textTranslation: "Where is your phone when you are on the street?",
+        audio: "../audio/18-telefon-a1/007.wav",
+        answer: "Kui ma olen tänaval, on telefon taskus.",
+        answerTranslation: "When I am on the street, the phone is in my pocket.",
+        answerAudio: "../audio/18-telefon-a1/007a.wav"
       },
       {
-        text: "Kas bussis tohib telefoniga rääkida? Aga teatris? Aga kinos?",
-        audio: "../audio/18-telefon-a2/008.wav",
-        answer: "Bussis võib rääkida. Teatris ja kinos tavaliselt ei räägita telefoniga.",
-        answerAudio: "../audio/18-telefon-a2/008a.wav"
+        text: "Kas teile meeldib telefoniga rääkida? Kellega te räägite telefoniga?",
+        textTranslation: "Do you like talking on the phone? Who do you talk to on the phone?",
+        audio: "../audio/18-telefon-a1/008.wav",
+        answer: "Jah, mulle meeldib telefoniga rääkida. Ma räägin pere ja sõpradega.",
+        answerTranslation: "Yes, I like talking on the phone. I talk to family and friends.",
+        answerAudio: "../audio/18-telefon-a1/008a.wav"
       },
       {
-        text: "Kas te kasutate telefonis kalendrit? Aga kalkulaatorit? Aga kaamerat?",
-        audio: "../audio/18-telefon-a2/009.wav",
-        answer: "Jah, ma kasutan kalendrit, kalkulaatorit ja kaamerat.",
-        answerAudio: "../audio/18-telefon-a2/009a.wav"
+        text: "Kas te loete telefonist uudiseid? Aga e-kirju?",
+        textTranslation: "Do you read news on your phone? How about emails?",
+        audio: "../audio/18-telefon-a1/009.wav",
+        answer: "Jah, ma loen telefonist uudiseid ja e-kirju.",
+        answerTranslation: "Yes, I read news and emails on my phone.",
+        answerAudio: "../audio/18-telefon-a1/009a.wav"
       },
       {
-        text: "Kas teie telefonil on hea kaamera? Mida te pildistate telefoniga?",
-        audio: "../audio/18-telefon-a2/010.wav",
-        answer: "Jah, kaamera on hea. Ma pildistan loodust ja perekonda.",
-        answerAudio: "../audio/18-telefon-a2/010a.wav"
+        text: "Kas te vaatate telefonist videoid? Mis videoid te vaatate?",
+        textTranslation: "Do you watch videos on your phone? What videos do you watch?",
+        audio: "../audio/18-telefon-a1/010.wav",
+        answer: "Jah, ma vaatan telefonist videoid. Tavaliselt vaatan uudiseid ja õpetusvideoid.",
+        answerTranslation: "Yes, I watch videos on my phone. Usually I watch news and tutorial videos.",
+        answerAudio: "../audio/18-telefon-a1/010a.wav"
       },
       {
-        text: "Kas iPhone on parem kui androidtelefon?",
-        audio: "../audio/18-telefon-a2/011.wav",
-        answer: "Mõlemad on head. See sõltub inimesest.",
-        answerAudio: "../audio/18-telefon-a2/011a.wav"
+        text: "Kas te teete telefoniga pilti? Mitu pilti on teie telefonis?",
+        textTranslation: "Do you take pictures with your phone? How many pictures are on your phone?",
+        audio: "../audio/18-telefon-a1/011.wav",
+        answer: "Jah, ma teen pilte. Minu telefonis on palju pilte.",
+        answerTranslation: "Yes, I take pictures. There are many pictures on my phone.",
+        answerAudio: "../audio/18-telefon-a1/011a.wav"
       },
       {
-        text: "Kas te teate peast oma telefoninumbrit? Aga oma ema numbrit? Aga ülemuse numbrit?",
-        audio: "../audio/18-telefon-a2/012.wav",
-        answer: "Jah, ma tean oma telefoninumbrit.",
-        answerAudio: "../audio/18-telefon-a2/012a.wav"
+        text: "Kas teie telefoni PIN-kood on neli nulli?",
+        textTranslation: "Is your phone's PIN code four zeros?",
+        audio: "../audio/18-telefon-a1/012.wav",
+        answer: "Ei, minu PIN-kood ei ole neli nulli.",
+        answerTranslation: "No, my PIN code is not four zeros.",
+        answerAudio: "../audio/18-telefon-a1/012a.wav"
       },
       {
-        text: "Kui suur on teie telefoni arve? Kas see on suur või väike?",
-        audio: "../audio/18-telefon-a2/013.wav",
-        answer: "Minu telefoni arve on umbes 20 eurot kuus. See ei ole väga suur.",
-        answerAudio: "../audio/18-telefon-a2/013a.wav"
+        text: "Kas teie telefoninumbri lõpus on kaheksa? Aga kaks? Aga kolm?",
+        textTranslation: "Does your phone number end with eight? How about two? How about three?",
+        audio: "../audio/18-telefon-a1/013.wav",
+        answer: "Ei, minu number ei lõpe kaheksaga.",
+        answerTranslation: "No, my number does not end with eight.",
+        answerAudio: "../audio/18-telefon-a1/013a.wav"
       },
       {
-        text: "Mitu tundi päevas te telefoni kasutate? Mida te telefoniga teete?",
-        audio: "../audio/18-telefon-a2/014.wav",
-        answer: "Ma kasutan telefoni umbes kaks või kolm tundi päevas. Ma loen uudiseid ja räägin sõpradega.",
-        answerAudio: "../audio/18-telefon-a2/014a.wav"
+        text: "Kus on teie telefon, kui te magate?",
+        textTranslation: "Where is your phone when you sleep?",
+        audio: "../audio/18-telefon-a1/014.wav",
+        answer: "Kui ma magan, on telefon laua peal voodi kõrval.",
+        answerTranslation: "When I sleep, the phone is on the table next to the bed.",
+        answerAudio: "../audio/18-telefon-a1/014a.wav"
       },
       {
-        text: "Kas te saaksite elada ilma telefonita?",
-        audio: "../audio/18-telefon-a2/015.wav",
-        answer: "See oleks raske, aga võib-olla saaksin.",
-        answerAudio: "../audio/18-telefon-a2/015a.wav"
+        text: "Kas teil on öösel telefon sees või väljas?",
+        textTranslation: "Is your phone on or off at night?",
+        audio: "../audio/18-telefon-a1/015.wav",
+        answer: "Tavaliselt on telefon öösel vaiksel režiimil.",
+        answerTranslation: "Usually the phone is on silent mode at night.",
+        answerAudio: "../audio/18-telefon-a1/015a.wav"
+      },
+      {
+        text: "Kas te helistate mõnikord välismaale? Kas see on kallis või odav?",
+        textTranslation: "Do you sometimes call abroad? Is it expensive or cheap?",
+        audio: "../audio/18-telefon-a1/016.wav",
+        answer: "Jah, mõnikord helistan. Tavaliselt ei ole see väga kallis.",
+        answerTranslation: "Yes, sometimes I call. Usually it is not very expensive.",
+        answerAudio: "../audio/18-telefon-a1/016a.wav"
+      },
+      {
+        text: "Mis on Eesti suunakood? Aga mis on teie kodumaa suunakood?",
+        textTranslation: "What is Estonia's country code? How about your home country's code?",
+        audio: "../audio/18-telefon-a1/017.wav",
+        answer: "Eesti suunakood on +372. Minu kodumaa suunakood on +880.",
+        answerTranslation: "Estonia's country code is +372. My home country's code is +880.",
+        answerAudio: "../audio/18-telefon-a1/017a.wav"
+      },
+      {
+        text: "Kas te teate, mida tähendab lennurežiim? Aga vaikne režiim? Aga kuumkoht? Aga leviauk?",
+        textTranslation: "Do you know what airplane mode means? How about silent mode? How about hotspot? How about dead zone?",
+        audio: "../audio/18-telefon-a1/018.wav",
+        answer: "Jah, ma tean neid sõnu.",
+        answerTranslation: "Yes, I know these words.",
+        answerAudio: "../audio/18-telefon-a1/018a.wav"
+      },
+      {
+        text: "Mis on politsei telefoninumber? Aga kiirabi telefoninumber?",
+        textTranslation: "What is the police phone number? How about the ambulance phone number?",
+        audio: "../audio/18-telefon-a1/019.wav",
+        answer: "Politsei ja kiirabi number on 112.",
+        answerTranslation: "The police and ambulance number is 112.",
+        answerAudio: "../audio/18-telefon-a1/019a.wav"
+      },
+      {
+        text: "Missugune on teie telefoni hääl?",
+        textTranslation: "What is your phone's sound like?",
+        audio: "../audio/18-telefon-a1/020.wav",
+        answer: "Minu telefoni hääl on vaikne ja lihtne.",
+        answerTranslation: "My phone's sound is quiet and simple.",
+        answerAudio: "../audio/18-telefon-a1/020a.wav"
       }
     ];
 

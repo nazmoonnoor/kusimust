@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,122 +40,162 @@
     const items = [
       {
         text: "Kas teile meeldivad lapsed?",
+        textTranslation: "Do you like children?",
         audio: "../audio/21-laps-a1/001.wav",
         answer: "Jah, mulle meeldivad lapsed.",
+        answerTranslation: "Yes, I like children.",
         answerAudio: "../audio/21-laps-a1/001a.wav"
       },
       {
         text: "Kas teil on laps? Mitu last teil on?",
+        textTranslation: "Do you have a child? How many children do you have?",
         audio: "../audio/21-laps-a1/002.wav",
         answer: "Jah, mul on kaks last.",
+        answerTranslation: "Yes, I have two children.",
         answerAudio: "../audio/21-laps-a1/002a.wav"
       },
       {
         text: "Kas teil on poeg või tütar? Mitu poega ja tütart teil on?",
+        textTranslation: "Do you have a son or a daughter? How many sons and daughters do you have?",
         audio: "../audio/21-laps-a1/003.wav",
         answer: "Mul on kaks poega.",
+        answerTranslation: "I have two sons.",
         answerAudio: "../audio/21-laps-a1/003a.wav"
       },
       {
         text: "Kui vana teie laps on? Kui vanad teie lapsed on?",
+        textTranslation: "How old is your child? How old are your children?",
         audio: "../audio/21-laps-a1/004.wav",
         answer: "Minu pojad on umbes kaheksa ja üksteist aastat vanad.",
+        answerTranslation: "My sons are about eight and eleven years old.",
         answerAudio: "../audio/21-laps-a1/004a.wav"
       },
       {
         text: "Mis teie lapse nimi on? Mis teie laste nimed on?",
+        textTranslation: "What is your child's name? What are your children's names?",
         audio: "../audio/21-laps-a1/005.wav",
         answer: "Minu laste nimed on Zayan ja Wasif.",
+        answerTranslation: "My children's names are Zayan and Wasif.",
         answerAudio: "../audio/21-laps-a1/005a.wav"
       },
       {
         text: "Kus on teie laps või lapsed hommikul? Aga päeval? Aga õhtul?",
+        textTranslation: "Where is your child or children in the morning? How about during the day? How about in the evening?",
         audio: "../audio/21-laps-a1/006.wav",
         answer: "Hommikul on nad koolis. Päeval on nad koolis või kodus. Õhtul on nad kodus.",
+        answerTranslation: "In the morning they are at school. During the day they are at school or at home. In the evening they are at home.",
         answerAudio: "../audio/21-laps-a1/006a.wav"
       },
       {
         text: "Kus on teie laps või lapsed praegu?",
+        textTranslation: "Where is your child or children right now?",
         audio: "../audio/21-laps-a1/007.wav",
         answer: "Praegu on nad kodus või koolis.",
+        answerTranslation: "Right now they are at home or at school.",
         answerAudio: "../audio/21-laps-a1/007a.wav"
       },
       {
         text: "Millal on teie lapse sünnipäev? Millal on teie laste sünnipäevad?",
+        textTranslation: "When is your child's birthday? When are your children's birthdays?",
         audio: "../audio/21-laps-a1/008.wav",
         answer: "Minu laste sünnipäevad on talvel.",
+        answerTranslation: "My children's birthdays are in winter.",
         answerAudio: "../audio/21-laps-a1/008a.wav"
       },
       {
         text: "Kas teie laps oskab laulda? Aga joonistada?",
+        textTranslation: "Can your child sing? How about draw?",
         audio: "../audio/21-laps-a1/009.wav",
         answer: "Jah, nad oskavad laulda ja joonistada.",
+        answerTranslation: "Yes, they can sing and draw.",
         answerAudio: "../audio/21-laps-a1/009a.wav"
       },
       {
         text: "Kas teie laps oskab ujuda? Aga jalgrattaga sõita?",
+        textTranslation: "Can your child swim? How about ride a bicycle?",
         audio: "../audio/21-laps-a1/010.wav",
         answer: "Jah, nad oskavad ujuda ja jalgrattaga sõita.",
+        answerTranslation: "Yes, they can swim and ride a bicycle.",
         answerAudio: "../audio/21-laps-a1/010a.wav"
       },
       {
         text: "Kas teie laps oskab lugeda? Aga kirjutada? Aga kas teie laps oskab eesti keelt rääkida?",
+        textTranslation: "Can your child read? How about write? And can your child speak Estonian?",
         audio: "../audio/21-laps-a1/011.wav",
         answer: "Jah, nad oskavad lugeda ja kirjutada. Eesti keelt nad õpivad.",
+        answerTranslation: "Yes, they can read and write. They are learning Estonian.",
         answerAudio: "../audio/21-laps-a1/011a.wav"
       },
       {
         text: "Kas teie lapsel on palju või vähe mänguasju?",
+        textTranslation: "Does your child have many or few toys?",
         audio: "../audio/21-laps-a1/012.wav",
         answer: "Neil on üsna palju mänguasju.",
+        answerTranslation: "They have quite a lot of toys.",
         answerAudio: "../audio/21-laps-a1/012a.wav"
       },
       {
         text: "Mis on teie lapse lemmikmänguasi?",
+        textTranslation: "What is your child's favorite toy?",
         audio: "../audio/21-laps-a1/013.wav",
         answer: "Nende lemmikmänguasi on lego.",
+        answerTranslation: "Their favorite toy is Lego.",
         answerAudio: "../audio/21-laps-a1/013a.wav"
       },
       {
         text: "Kas teie lapsele meeldib sporti teha? Mis sporti ta teeb?",
+        textTranslation: "Does your child like to do sports? What sport do they do?",
         audio: "../audio/21-laps-a1/014.wav",
         answer: "Jah, neile meeldib sport. Nad mängivad jalgpalli ja sulgpalli.",
+        answerTranslation: "Yes, they like sports. They play football and badminton.",
         answerAudio: "../audio/21-laps-a1/014a.wav"
       },
       {
         text: "Mis kell teie laps magama läheb?",
+        textTranslation: "What time does your child go to bed?",
         audio: "../audio/21-laps-a1/015.wav",
         answer: "Tavaliselt lähevad nad magama umbes kell üheksa.",
+        answerTranslation: "Usually they go to bed around nine o'clock.",
         answerAudio: "../audio/21-laps-a1/015a.wav"
       },
       {
         text: "Mis teie lapsele maitseb? Mis teie lapsele ei maitse?",
+        textTranslation: "What does your child like to eat? What does your child not like?",
         audio: "../audio/21-laps-a1/016.wav",
         answer: "Neile maitseb pizza ja pasta. Neile ei meeldi mõned köögiviljad.",
+        answerTranslation: "They like pizza and pasta. They don't like some vegetables.",
         answerAudio: "../audio/21-laps-a1/016a.wav"
       },
       {
         text: "Mis on teie lapse lemmiksöök?",
+        textTranslation: "What is your child's favorite food?",
         audio: "../audio/21-laps-a1/017.wav",
         answer: "Nende lemmiksöök on pizza.",
+        answerTranslation: "Their favorite food is pizza.",
         answerAudio: "../audio/21-laps-a1/017a.wav"
       },
       {
         text: "Kas te teate, mida tähendab tita? Aga pepu? Aga mähkmed? Aga lutt?",
+        textTranslation: "Do you know what baby means? How about bottom? How about diapers? How about pacifier?",
         audio: "../audio/21-laps-a1/018.wav",
         answer: "Jah, ma tean neid sõnu.",
+        answerTranslation: "Yes, I know these words.",
         answerAudio: "../audio/21-laps-a1/018a.wav"
       },
       {
         text: "Kas teie lapsele meeldivad roosad riided? Aga sinised?",
+        textTranslation: "Does your child like pink clothes? How about blue ones?",
         audio: "../audio/21-laps-a1/019.wav",
         answer: "Neile meeldivad rohkem sinised riided.",
+        answerTranslation: "They like blue clothes more.",
         answerAudio: "../audio/21-laps-a1/019a.wav"
       },
       {
         text: "Kas teie lapsele meeldib muuseumis käia? Aga teatris? Aga kinos?",
+        textTranslation: "Does your child like to go to museums? How about the theater? How about the cinema?",
         audio: "../audio/21-laps-a1/020.wav",
         answer: "Neile meeldib kinos käia.",
+        answerTranslation: "They like to go to the cinema.",
         answerAudio: "../audio/21-laps-a1/020a.wav"
       }
     ];

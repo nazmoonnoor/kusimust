@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,86 +40,114 @@
     const items = [
       {
         text: "Kas teil on nõudepesumasin? Kas te oskate seda kasutada?",
+        textTranslation: "Do you have a dishwasher? Do you know how to use it?",
         audio: "../audio/12-kodumasinad-a2/001.wav",
         answer: "Jah, mul on nõudepesumasin. Jah, ma oskan seda kasutada.",
+        answerTranslation: "Yes, I have a dishwasher. Yes, I know how to use it.",
         answerAudio: "../audio/12-kodumasinad-a2/001a.wav"
       },
       {
         text: "Mis kodumasina te kingiksite oma emale? Aga isale?",
+        textTranslation: "What household appliance would you give to your mother? And to your father?",
         audio: "../audio/12-kodumasinad-a2/002.wav",
         answer: "Ma kingiksin emale kohvimasina. Isale kingiksin uue veekeetja.",
+        answerTranslation: "I would give a coffee machine to my mother. I would give a new kettle to my father.",
         answerAudio: "../audio/12-kodumasinad-a2/002a.wav"
       },
       {
         text: "Mis kodumasinat te viimati kasutasite?",
+        textTranslation: "Which household appliance did you use last?",
         audio: "../audio/12-kodumasinad-a2/003.wav",
         answer: "Viimati kasutasin veekeetjat.",
+        answerTranslation: "The last household appliance I used was the kettle.",
         answerAudio: "../audio/12-kodumasinad-a2/003a.wav"
       },
       {
         text: "Mis kodumasinat te kasutate rohkem suvel kui talvel?",
+        textTranslation: "Which household appliance do you use more in summer than in winter?",
         audio: "../audio/12-kodumasinad-a2/004.wav",
         answer: "Suvel kasutan rohkem ventilaatorit.",
+        answerTranslation: "In summer I use the fan more.",
         answerAudio: "../audio/12-kodumasinad-a2/004a.wav"
       },
       {
         text: "Mis kodumasinat teil ei ole, aga oleks vaja? Kui palju see maksab?",
+        textTranslation: "Which household appliance do you not have but need? How much does it cost?",
         audio: "../audio/12-kodumasinad-a2/005.wav",
         answer: "Mul ei ole robottolmuimejat, aga ma tahaksin seda. See maksab umbes 300 eurot.",
+        answerTranslation: "I do not have a robot vacuum cleaner, but I would like one. It costs about 300 euros.",
         answerAudio: "../audio/12-kodumasinad-a2/005a.wav"
       },
       {
         text: "Kas te ostaksite kodumasina veebipoest?",
+        textTranslation: "Would you buy a household appliance from an online store?",
         audio: "../audio/12-kodumasinad-a2/006.wav",
         answer: "Jah, ma ostaksin kodumasina veebipoest.",
+        answerTranslation: "Yes, I would buy a household appliance from an online store.",
         answerAudio: "../audio/12-kodumasinad-a2/006a.wav"
       },
       {
         text: "Kas teil on elektri- või gaasipliit? Mitu nuppu teie pliidil on?",
+        textTranslation: "Do you have an electric or a gas stove? How many buttons does your stove have?",
         audio: "../audio/12-kodumasinad-a2/007.wav",
         answer: "Mul on elektripliit. Minu pliidil on neli nuppu.",
+        answerTranslation: "I have an electric stove. My stove has four buttons.",
         answerAudio: "../audio/12-kodumasinad-a2/007a.wav"
       },
       {
         text: "Kas teil on külmkapp? Kas teie külmkapil on sügavkülmik üleval või all?",
+        textTranslation: "Do you have a fridge? Is the freezer on your fridge at the top or at the bottom?",
         audio: "../audio/12-kodumasinad-a2/008.wav",
         answer: "Jah, mul on külmkapp. Sügavkülmik on all.",
+        answerTranslation: "Yes, I have a fridge. The freezer is at the bottom.",
         answerAudio: "../audio/12-kodumasinad-a2/008a.wav"
       },
       {
         text: "Mis on teie kõige uuem kodumasin? Aga kõige vanem? Kui vanad need on?",
+        textTranslation: "What is your newest household appliance? And the oldest? How old are they?",
         audio: "../audio/12-kodumasinad-a2/009.wav",
         answer: "Minu kõige uuem kodumasin on kohvimasin. See on üks aasta vana. Kõige vanem on veekeetja.",
+        answerTranslation: "My newest household appliance is the coffee machine. It is one year old. The oldest is the kettle.",
         answerAudio: "../audio/12-kodumasinad-a2/009a.wav"
       },
       {
         text: "Mis on teie kõige kallim kodumasin? Kes selle kodumasina ostis?",
+        textTranslation: "What is your most expensive household appliance? Who bought this appliance?",
         audio: "../audio/12-kodumasinad-a2/010.wav",
         answer: "Minu kõige kallim kodumasin on külmkapp. Mina ostsin selle.",
+        answerTranslation: "My most expensive household appliance is the fridge. I bought it.",
         answerAudio: "../audio/12-kodumasinad-a2/010a.wav"
       },
       {
         text: "Mis on teie külmkapi peal? Aga mis on teie külmkapi all?",
+        textTranslation: "What is on top of your fridge? And what is under your fridge?",
         audio: "../audio/12-kodumasinad-a2/011.wav",
         answer: "Külmkapi peal on mõned karbid. Külmkapi all on põrand.",
+        answerTranslation: "There are some boxes on top of the fridge. The floor is under the fridge.",
         answerAudio: "../audio/12-kodumasinad-a2/011a.wav"
       },
       {
         text: "Kas te teate, kui palju maksab moodne kohvimasin?",
+        textTranslation: "Do you know how much a modern coffee machine costs?",
         audio: "../audio/12-kodumasinad-a2/012.wav",
         answer: "Jah, moodne kohvimasin maksab umbes 200–500 eurot.",
+        answerTranslation: "Yes, a modern coffee machine costs about 200–500 euros.",
         answerAudio: "../audio/12-kodumasinad-a2/012a.wav"
       },
       {
         text: "Kas te kuulate muusikat? Millega te muusikat kuulate?",
+        textTranslation: "Do you listen to music? What do you use to listen to music?",
         audio: "../audio/12-kodumasinad-a2/013.wav",
         answer: "Jah, ma kuulan muusikat. Tavaliselt kuulan telefoniga või arvutiga.",
+        answerTranslation: "Yes, I listen to music. I usually listen with my phone or computer.",
         answerAudio: "../audio/12-kodumasinad-a2/013a.wav"
       },
       {
         text: "Mida te teete, kui teie pesumasin läheb katki? Aga kui teie veekeetja läheb katki?",
+        textTranslation: "What do you do if your washing machine breaks? And if your kettle breaks?",
         audio: "../audio/12-kodumasinad-a2/014.wav",
         answer: "Siia lisage oma vastus.",
+        answerTranslation: "Add your answer here.",
         answerAudio: "../audio/12-kodumasinad-a2/014a.wav"
       }
     ];

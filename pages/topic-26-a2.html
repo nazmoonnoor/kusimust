@@ -23,108 +23,144 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
   <script src="../assets/player.js"></script>
-  <script>
-    const items = [
-      {
-        text: "Mis sporti te lapsena tegite?",
-        audio: "../audio/26-sport-a2/001.wav",
-        answer: "Lapsena mängisin jalgpalli ja sõitsin jalgrattaga.",
-        answerAudio: "../audio/26-sport-a2/001a.wav"
-      },
-      {
-        text: "Mitu kilomeetrit te päevas liigute?",
-        audio: "../audio/26-sport-a2/002.wav",
-        answer: "Ma liigun päevas umbes kaks või kolm kilomeetrit.",
-        answerAudio: "../audio/26-sport-a2/002a.wav"
-      },
-      {
-        text: "Mitu tundi te päevas liigute? Aga mitu tundi te päevas istute?",
-        audio: "../audio/26-sport-a2/003.wav",
-        answer: "Ma liigun umbes üks tund päevas, aga ma istun palju, umbes kuus tundi.",
-        answerAudio: "../audio/26-sport-a2/003a.wav"
-      },
-      {
-        text: "Mis sport teile meeldib? Mis sport teile üldse ei meeldi?",
-        audio: "../audio/26-sport-a2/004.wav",
-        answer: "Mulle meeldib jalgpall ja ujumine. Mulle ei meeldi poks.",
-        answerAudio: "../audio/26-sport-a2/004a.wav"
-      },
-      {
-        text: "Mitu inimest on vaja, kui tahate jalgpalli mängida? Aga tennist?",
-        audio: "../audio/26-sport-a2/005.wav",
-        answer: "Jalgpalli jaoks on vaja palju inimesi, tavaliselt 22. Tennise jaoks on vaja kahte või nelja inimest.",
-        answerAudio: "../audio/26-sport-a2/005a.wav"
-      },
-      {
-        text: "Mis sporti te teete väljas? Mis sporti te teete sees?",
-        audio: "../audio/26-sport-a2/006.wav",
-        answer: "Väljas ma jalutan ja sõidan rattaga. Sees ma teen mõnikord jõusaalis trenni.",
-        answerAudio: "../audio/26-sport-a2/006a.wav"
-      },
-      {
-        text: "Kui soe peab olema vesi, kui te lähete ujuma?",
-        audio: "../audio/26-sport-a2/007.wav",
-        answer: "Mulle meeldib, kui vesi on umbes 22–25 kraadi.",
-        answerAudio: "../audio/26-sport-a2/007a.wav"
-      },
-      {
-        text: "Kas te olete käinud spordivõistlusel? Mis võistlusel?",
-        audio: "../audio/26-sport-a2/008.wav",
-        answer: "Jah, ma olen käinud jalgpallivõistlusel.",
-        answerAudio: "../audio/26-sport-a2/008a.wav"
-      },
-      {
-        text: "Kas teil on mõni spordivõistluse medal? Kus see medal praegu on?",
-        audio: "../audio/26-sport-a2/009.wav",
-        answer: "Ei, mul ei ole medalit.",
-        answerAudio: "../audio/26-sport-a2/009a.wav"
-      },
-      {
-        text: "Mis riigi sportlased on väga head?",
-        audio: "../audio/26-sport-a2/010.wav",
-        answer: "Ameerika ja Eesti sportlased on väga head.",
-        answerAudio: "../audio/26-sport-a2/010a.wav"
-      },
-      {
-        text: "Mis sport on ohtlik? Aga kallis? Aga igav?",
-        audio: "../audio/26-sport-a2/011.wav",
-        answer: "Poks on ohtlik. Golf on kallis. Mõnele inimesele on male igav.",
-        answerAudio: "../audio/26-sport-a2/011a.wav"
-      },
-      {
-        text: "Kas Eesti inimesed on sportlikud või ebasportlikud? Kas teie olete sportlik?",
-        audio: "../audio/26-sport-a2/012.wav",
-        answer: "Eesti inimesed on üsna sportlikud. Ma olen natuke sportlik.",
-        answerAudio: "../audio/26-sport-a2/012a.wav"
-      },
-      {
-        text: "Kas mõni teie sõber on professionaalne sportlane? Mis sporti ta teeb?",
-        audio: "../audio/26-sport-a2/013.wav",
-        answer: "Ei, minu sõbrad ei ole professionaalsed sportlased.",
-        answerAudio: "../audio/26-sport-a2/013a.wav"
-      },
-      {
-        text: "Kas te olete oma emaga tennist mänginud? Aga isaga?",
-        audio: "../audio/26-sport-a2/014.wav",
-        answer: "Ei, ma ei ole emaga tennist mänginud.",
-        answerAudio: "../audio/26-sport-a2/014a.wav"
-      },
-      {
-        text: "Kes on parem ujuja, kas teie või teie ema?",
-        audio: "../audio/26-sport-a2/015.wav",
-        answer: "Ma arvan, et mina olen parem ujuja.",
-        answerAudio: "../audio/26-sport-a2/015a.wav"
-      }
-    ];
+<script>
+  const items = [
+    {
+      text: "Mis sporti te lapsena tegite?",
+      textTranslation: "What sport did you do as a child?",
+      audio: "../audio/26-sport-a2/001.wav",
+      answer: "Lapsena mängisin jalgpalli ja sõitsin jalgrattaga.",
+      answerTranslation: "As a child I played football and rode a bicycle.",
+      answerAudio: "../audio/26-sport-a2/001a.wav"
+    },
+    {
+      text: "Mitu kilomeetrit te päevas liigute?",
+      textTranslation: "How many kilometers do you move per day?",
+      audio: "../audio/26-sport-a2/002.wav",
+      answer: "Ma liigun päevas umbes kaks või kolm kilomeetrit.",
+      answerTranslation: "I move about two or three kilometers per day.",
+      answerAudio: "../audio/26-sport-a2/002a.wav"
+    },
+    {
+      text: "Mitu tundi te päevas liigute? Aga mitu tundi te päevas istute?",
+      textTranslation: "How many hours do you move per day? And how many hours do you sit?",
+      audio: "../audio/26-sport-a2/003.wav",
+      answer: "Ma liigun umbes üks tund päevas, aga ma istun palju, umbes kuus tundi.",
+      answerTranslation: "I move about one hour per day, but I sit a lot, about six hours.",
+      answerAudio: "../audio/26-sport-a2/003a.wav"
+    },
+    {
+      text: "Mis sport teile meeldib? Mis sport teile üldse ei meeldi?",
+      textTranslation: "What sport do you like? What sport do you not like at all?",
+      audio: "../audio/26-sport-a2/004.wav",
+      answer: "Mulle meeldib jalgpall ja ujumine. Mulle ei meeldi poks.",
+      answerTranslation: "I like football and swimming. I do not like boxing.",
+      answerAudio: "../audio/26-sport-a2/004a.wav"
+    },
+    {
+      text: "Mitu inimest on vaja, kui tahate jalgpalli mängida? Aga tennist?",
+      textTranslation: "How many people are needed if you want to play football? What about tennis?",
+      audio: "../audio/26-sport-a2/005.wav",
+      answer: "Jalgpalli jaoks on vaja palju inimesi, tavaliselt 22. Tennise jaoks on vaja kahte või nelja inimest.",
+      answerTranslation: "For football you need many people, usually 22. For tennis you need two or four people.",
+      answerAudio: "../audio/26-sport-a2/005a.wav"
+    },
+    {
+      text: "Mis sporti te teete väljas? Mis sporti te teete sees?",
+      textTranslation: "What sports do you do outside? What sports do you do inside?",
+      audio: "../audio/26-sport-a2/006.wav",
+      answer: "Väljas ma jalutan ja sõidan rattaga. Sees ma teen mõnikord jõusaalis trenni.",
+      answerTranslation: "Outside I walk and ride a bicycle. Inside I sometimes train in the gym.",
+      answerAudio: "../audio/26-sport-a2/006a.wav"
+    },
+    {
+      text: "Kui soe peab olema vesi, kui te lähete ujuma?",
+      textTranslation: "How warm should the water be when you go swimming?",
+      audio: "../audio/26-sport-a2/007.wav",
+      answer: "Mulle meeldib, kui vesi on umbes 22–25 kraadi.",
+      answerTranslation: "I like it when the water is about 22–25 degrees.",
+      answerAudio: "../audio/26-sport-a2/007a.wav"
+    },
+    {
+      text: "Kas te olete käinud spordivõistlusel? Mis võistlusel?",
+      textTranslation: "Have you attended a sports competition? Which competition?",
+      audio: "../audio/26-sport-a2/008.wav",
+      answer: "Jah, ma olen käinud jalgpallivõistlusel.",
+      answerTranslation: "Yes, I have attended a football competition.",
+      answerAudio: "../audio/26-sport-a2/008a.wav"
+    },
+    {
+      text: "Kas teil on mõni spordivõistluse medal? Kus see medal praegu on?",
+      textTranslation: "Do you have a sports competition medal? Where is it now?",
+      audio: "../audio/26-sport-a2/009.wav",
+      answer: "Ei, mul ei ole medalit.",
+      answerTranslation: "No, I do not have a medal.",
+      answerAudio: "../audio/26-sport-a2/009a.wav"
+    },
+    {
+      text: "Mis riigi sportlased on väga head?",
+      textTranslation: "Athletes from which country are very good?",
+      audio: "../audio/26-sport-a2/010.wav",
+      answer: "Ameerika ja Eesti sportlased on väga head.",
+      answerTranslation: "American and Estonian athletes are very good.",
+      answerAudio: "../audio/26-sport-a2/010a.wav"
+    },
+    {
+      text: "Mis sport on ohtlik? Aga kallis? Aga igav?",
+      textTranslation: "Which sport is dangerous? Which is expensive? Which is boring?",
+      audio: "../audio/26-sport-a2/011.wav",
+      answer: "Poks on ohtlik. Golf on kallis. Mõnele inimesele on male igav.",
+      answerTranslation: "Boxing is dangerous. Golf is expensive. For some people chess is boring.",
+      answerAudio: "../audio/26-sport-a2/011a.wav"
+    },
+    {
+      text: "Kas Eesti inimesed on sportlikud või ebasportlikud? Kas teie olete sportlik?",
+      textTranslation: "Are Estonian people sporty or not sporty? Are you sporty?",
+      audio: "../audio/26-sport-a2/012.wav",
+      answer: "Eesti inimesed on üsna sportlikud. Ma olen natuke sportlik.",
+      answerTranslation: "Estonian people are quite sporty. I am a little sporty.",
+      answerAudio: "../audio/26-sport-a2/012a.wav"
+    },
+    {
+      text: "Kas mõni teie sõber on professionaalne sportlane? Mis sporti ta teeb?",
+      textTranslation: "Is any of your friends a professional athlete? What sport does he or she do?",
+      audio: "../audio/26-sport-a2/013.wav",
+      answer: "Ei, minu sõbrad ei ole professionaalsed sportlased.",
+      answerTranslation: "No, my friends are not professional athletes.",
+      answerAudio: "../audio/26-sport-a2/013a.wav"
+    },
+    {
+      text: "Kas te olete oma emaga tennist mänginud? Aga isaga?",
+      textTranslation: "Have you played tennis with your mother? What about with your father?",
+      audio: "../audio/26-sport-a2/014.wav",
+      answer: "Ei, ma ei ole emaga tennist mänginud.",
+      answerTranslation: "No, I have not played tennis with my mother.",
+      answerAudio: "../audio/26-sport-a2/014a.wav"
+    },
+    {
+      text: "Kes on parem ujuja, kas teie või teie ema?",
+      textTranslation: "Who is a better swimmer, you or your mother?",
+      audio: "../audio/26-sport-a2/015.wav",
+      answer: "Ma arvan, et mina olen parem ujuja.",
+      answerTranslation: "I think I am the better swimmer.",
+      answerAudio: "../audio/26-sport-a2/015a.wav"
+    }
+  ];
 
-    initAudioList(items);
-  </script>
+  initAudioList(items);
+</script>
 </body>
 </html>

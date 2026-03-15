@@ -20,12 +20,14 @@
     </section>
 
     <div class="instructions">
-      Question audio paths are relative to this page. Answers are shown as text now and can later have audio too, for example <code>001a.wav</code>.
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,122 +36,162 @@
 const items = [
   {
     text: "Mis on teie eesnimi? Aga perekonnanimi?",
+    textTranslation: "What is your first name? And your last name?",
     audio: "../audio/01-mina-a1/001.wav",
-    answer: "Minu eesnimi on Nazmoon ja minu perekonnanimi on Noor.",
+    answer: "Minu eesnimi on Maarja ja minu perekonnanimi on Kriisa.",
+    answerTranslation: "My first name is Maarja and my last name is Kriisa.",
     answerAudio: "../audio/01-mina-a1/001a.wav"
   },
   {
     text: "Mida teie perekonnanimi tähendab?",
+    textTranslation: "What does your last name mean?",
     audio: "../audio/01-mina-a1/002.wav",
     answer: "Minu perekonnanimi tähendab „valgus”.",
+    answerTranslation: "My last name means 'light'.",
     answerAudio: "../audio/01-mina-a1/002a.wav"
   },
   {
     text: "Kas teile meeldib teie nimi?",
+    textTranslation: "Do you like your name?",
     audio: "../audio/01-mina-a1/003.wav",
     answer: "Jah, mulle meeldib minu nimi.",
+    answerTranslation: "Yes, I like my name.",
     answerAudio: "../audio/01-mina-a1/003a.wav"
   },
   {
     text: "Kust te pärit olete? Mis linnast te pärit olete? Kas te olete eestlane?",
+    textTranslation: "Where are you from? Which city are you from? Are you Estonian?",
     audio: "../audio/01-mina-a1/004.wav",
-    answer: "Ma olen pärit Bangladeshist. Ma ei ole eestlane.",
+    answer: "Ma olen pärit Soomest. Ma ei ole eestlane.",
+    answerTranslation: "I am from Finland. I am not Estonian.",
     answerAudio: "../audio/01-mina-a1/004a.wav"
   },
   {
     text: "Kus te praegu elate? Mis on teie aadress?",
+    textTranslation: "Where do you live now? What is your address?",
     audio: "../audio/01-mina-a1/005.wav",
     answer: "Ma elan praegu Tallinnas. Minu aadress on Tallinnas.",
+    answerTranslation: "I live in Tallinn now. My address is in Tallinn.",
     answerAudio: "../audio/01-mina-a1/005a.wav"
   },
   {
     text: "Mis on teie maja number? Aga korteri number?",
+    textTranslation: "What is your house number? And your apartment number?",
     audio: "../audio/01-mina-a1/006.wav",
     answer: "Minu maja number on 10 ja korteri number on 5.",
+    answerTranslation: "My house number is 10 and my apartment number is 5.",
     answerAudio: "../audio/01-mina-a1/006a.wav"
   },
   {
     text: "Kas te oskate inglise keelt? Aga hispaania keelt? Aga hiina keelt? Aga eesti keelt?",
+    textTranslation: "Do you speak English? How about Spanish? Chinese? Estonian?",
     audio: "../audio/01-mina-a1/007.wav",
     answer: "Ma oskan inglise keelt ja natuke eesti keelt. Ma ei oska hispaania ega hiina keelt.",
+    answerTranslation: "I speak English and a little Estonian. I don't speak Spanish or Chinese.",
     answerAudio: "../audio/01-mina-a1/007a.wav"
   },
   {
     text: "Mis keelt te räägite?",
+    textTranslation: "What language do you speak?",
     audio: "../audio/01-mina-a1/008.wav",
-    answer: "Ma räägin bengali keelt ja inglise keelt. Ma õpin eesti keelt.",
+    answer: "Ma räägin soome keelt ja inglise keelt. Ma õpin eesti keelt.",
+    answerTranslation: "I speak Finnish and English. I am learning Estonian.",
     answerAudio: "../audio/01-mina-a1/008a.wav"
   },
   {
     text: "Kas te olete praegu kodus? Kus te praegu olete?",
+    textTranslation: "Are you at home now? Where are you now?",
     audio: "../audio/01-mina-a1/009.wav",
     answer: "Jah, ma olen praegu kodus.",
+    answerTranslation: "Yes, I am at home now.",
     answerAudio: "../audio/01-mina-a1/009a.wav"
   },
   {
     text: "Millal on teie sünnipäev?",
+    textTranslation: "When is your birthday?",
     audio: "../audio/01-mina-a1/010.wav",
     answer: "Minu sünnipäev on detsembris.",
+    answerTranslation: "My birthday is in December.",
     answerAudio: "../audio/01-mina-a1/010a.wav"
   },
   {
     text: "Kui vana te olete? Kas te olete noor või vana?",
+    textTranslation: "How old are you? Are you young or old?",
     audio: "../audio/01-mina-a1/011.wav",
     answer: "Ma olen 43-aastane. Ma ei ole väga noor, aga ma ei ole ka vana.",
+    answerTranslation: "I am 43 years old. I am not very young, but I am not old either.",
     answerAudio: "../audio/01-mina-a1/011a.wav"
   },
   {
     text: "Mis on teie telefoninumber?",
+    textTranslation: "What is your phone number?",
     audio: "../audio/01-mina-a1/012.wav",
     answer: "Minu telefoninumber on 55 123 456.",
+    answerTranslation: "My phone number is 55 123 456.",
     answerAudio: "../audio/01-mina-a1/012a.wav"
   },
   {
     text: "Kas te töötate praegu? Kus te töötate?",
+    textTranslation: "Are you working now? Where do you work?",
     audio: "../audio/01-mina-a1/013.wav",
     answer: "Jah, ma töötan praegu. Ma töötan IT-ettevõttes.",
+    answerTranslation: "Yes, I am working now. I work at an IT company.",
     answerAudio: "../audio/01-mina-a1/013a.wav"
   },
   {
     text: "Kas te olete abielus? Kas te olete õnnelikus abielus?",
+    textTranslation: "Are you married? Are you happily married?",
     audio: "../audio/01-mina-a1/014.wav",
     answer: "Jah, ma olen abielus ja ma olen õnnelik.",
+    answerTranslation: "Yes, I am married and I am happy.",
     answerAudio: "../audio/01-mina-a1/014a.wav"
   },
   {
     text: "Kas teil on laps? Aga koer? Aga kass? Mis tema nimi on?",
+    textTranslation: "Do you have a child? A dog? A cat? What is their name?",
     audio: "../audio/01-mina-a1/015.wav",
     answer: "Jah, mul on kaks last. Mul ei ole koera ega kassi.",
+    answerTranslation: "Yes, I have two children. I don't have a dog or a cat.",
     answerAudio: "../audio/01-mina-a1/015a.wav"
   },
   {
     text: "Mis on teie e-posti aadress? Mitu e-posti aadressi teil on?",
+    textTranslation: "What is your email address? How many email addresses do you have?",
     audio: "../audio/01-mina-a1/016.wav",
-    answer: "Minu e-posti aadress on nazmoon@email.com. Mul on kaks e-posti aadressi.",
+    answer: "Minu e-posti aadress on maarjakriisa@email.com. Mul on kaks e-posti aadressi.",
+    answerTranslation: "My email address is maarjakriisa@email.com. I have two email addresses.",
     answerAudio: "../audio/01-mina-a1/016a.wav"
   },
   {
     text: "Mis on teie lemmikvärv?",
+    textTranslation: "What is your favorite color?",
     audio: "../audio/01-mina-a1/017.wav",
     answer: "Minu lemmikvärv on sinine.",
+    answerTranslation: "My favorite color is blue.",
     answerAudio: "../audio/01-mina-a1/017a.wav"
   },
   {
     text: "Kas teil on hüüdnimi? Mis see on?",
+    textTranslation: "Do you have a nickname? What is it?",
     audio: "../audio/01-mina-a1/018.wav",
-    answer: "Jah, minu hüüdnimi on Naz.",
+    answer: "Jah, minu hüüdnimi on Maarja.",
+    answerTranslation: "Yes, my nickname is Maarja.",
     answerAudio: "../audio/01-mina-a1/018a.wav"
   },
   {
     text: "Mis on teie lemmiksöök? Aga lemmikjook?",
+    textTranslation: "What is your favorite food? And favorite drink?",
     audio: "../audio/01-mina-a1/019.wav",
     answer: "Minu lemmiksöök on riis ja kana. Minu lemmikjook on tee.",
+    answerTranslation: "My favorite food is rice and chicken. My favorite drink is tea.",
     answerAudio: "../audio/01-mina-a1/019a.wav"
   },
   {
     text: "Mida te täna õhtul teete?",
+    textTranslation: "What are you doing this evening?",
     audio: "../audio/01-mina-a1/020.wav",
     answer: "Täna õhtul ma õpin eesti keelt ja vaatan natuke televiisorit.",
+    answerTranslation: "This evening I am studying Estonian and watching a bit of television.",
     answerAudio: "../audio/01-mina-a1/020a.wav"
   }
 ];

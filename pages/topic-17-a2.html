@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,92 +40,122 @@
     const items = [
       {
         text: "Millal te viimati raamatut lugesite? Mis raamat see oli?",
+        textTranslation: "When did you last read a book? What book was it?",
         audio: "../audio/17-raamatud-a2/001.wav",
         answer: "Ma lugesin raamatut eile õhtul. See oli eesti keele õpik.",
+        answerTranslation: "I read a book last night. It was an Estonian language textbook.",
         answerAudio: "../audio/17-raamatud-a2/001a.wav"
       },
       {
         text: "Kas te olete lugenud raamatut eesti keeles? Mis raamat see oli?",
+        textTranslation: "Have you read a book in Estonian? What book was it?",
         audio: "../audio/17-raamatud-a2/002.wav",
         answer: "Jah, ma olen lugenud lihtsat raamatut eesti keeles.",
+        answerTranslation: "Yes, I have read a simple book in Estonian.",
         answerAudio: "../audio/17-raamatud-a2/002a.wav"
       },
       {
         text: "Kas mõni teie sõber on kirjutanud raamatu? Mis selle pealkiri on?",
+        textTranslation: "Has any of your friends written a book? What is its title?",
         audio: "../audio/17-raamatud-a2/003.wav",
         answer: "Ei, minu sõbrad ei ole raamatut kirjutanud.",
+        answerTranslation: "No, my friends have not written a book.",
         answerAudio: "../audio/17-raamatud-a2/003a.wav"
       },
       {
         text: "Mis on teie kõige kallim raamat? Kust see pärit on?",
+        textTranslation: "What is your most expensive book? Where is it from?",
         audio: "../audio/17-raamatud-a2/004.wav",
         answer: "Minu kõige kallim raamat on inglise keeles. Ma ostsin selle raamatupoest.",
+        answerTranslation: "My most expensive book is in English. I bought it from a bookstore.",
         answerAudio: "../audio/17-raamatud-a2/004a.wav"
       },
       {
         text: "Kes on hea kirjanik?",
+        textTranslation: "Who is a good writer?",
         audio: "../audio/17-raamatud-a2/005.wav",
         answer: "Minu arvates on hea kirjanik J. K. Rowling.",
+        answerTranslation: "In my opinion, a good writer is J. K. Rowling.",
         answerAudio: "../audio/17-raamatud-a2/005a.wav"
       },
       {
         text: "Mis oli viimane raamat, mille te ostsite? Kas raamatud on liiga kallid?",
+        textTranslation: "What was the last book you bought? Are books too expensive?",
         audio: "../audio/17-raamatud-a2/006.wav",
         answer: "Viimane raamat oli keeleõpik. Mõned raamatud on kallid.",
+        answerTranslation: "The last book was a language textbook. Some books are expensive.",
         answerAudio: "../audio/17-raamatud-a2/006a.wav"
       },
       {
         text: "Kui vana te olite, kui te lugema õppisite?",
+        textTranslation: "How old were you when you learned to read?",
         audio: "../audio/17-raamatud-a2/007.wav",
         answer: "Ma õppisin lugema umbes kuueaastaselt.",
+        answerTranslation: "I learned to read at about six years old.",
         answerAudio: "../audio/17-raamatud-a2/007a.wav"
       },
       {
         text: "Kas teie ema või isa luges teile, kui te olite laps?",
+        textTranslation: "Did your mother or father read to you when you were a child?",
         audio: "../audio/17-raamatud-a2/008.wav",
         answer: "Jah, mu ema luges mulle raamatuid.",
+        answerTranslation: "Yes, my mother read books to me.",
         answerAudio: "../audio/17-raamatud-a2/008a.wav"
       },
       {
         text: "Kas te lugesite öösel voodis teki all, kui te olite laps? Mida te lugesite?",
+        textTranslation: "Did you read under the covers at night when you were a child? What did you read?",
         audio: "../audio/17-raamatud-a2/009.wav",
         answer: "Jah, mõnikord lugesin. Ma lugesin lasteraamatuid.",
+        answerTranslation: "Yes, sometimes I did. I read children's books.",
         answerAudio: "../audio/17-raamatud-a2/009a.wav"
       },
       {
         text: "Kas teile meeldib lugeda kõva häälega?",
+        textTranslation: "Do you like to read aloud?",
         audio: "../audio/17-raamatud-a2/010.wav",
         answer: "Mõnikord meeldib, eriti kui ma õpin keelt.",
+        answerTranslation: "Sometimes I like it, especially when I am learning a language.",
         answerAudio: "../audio/17-raamatud-a2/010a.wav"
       },
       {
         text: "Kas teil on kodus mõni luuleraamat? Kes on selle autor?",
+        textTranslation: "Do you have a poetry book at home? Who is the author?",
         audio: "../audio/17-raamatud-a2/011.wav",
         answer: "Jah, mul on üks luuleraamat. Autor on eesti luuletaja.",
+        answerTranslation: "Yes, I have a poetry book. The author is an Estonian poet.",
         answerAudio: "../audio/17-raamatud-a2/011a.wav"
       },
       {
         text: "Kas teil käib praegu mõni ajakiri? Mis ajakiri see on? Kas teil käis mõni ajakiri, kui te olite laps?",
+        textTranslation: "Do you currently subscribe to a magazine? What magazine is it? Did you subscribe to a magazine when you were a child?",
         audio: "../audio/17-raamatud-a2/012.wav",
         answer: "Praegu ei käi ajakirja. Lapsena lugesin mõnikord ajakirju.",
+        answerTranslation: "Currently I do not subscribe to a magazine. As a child I sometimes read magazines.",
         answerAudio: "../audio/17-raamatud-a2/012a.wav"
       },
       {
         text: "Kas te loete elulooraamatuid? Aga kriminaalromaane? Aga reisiraamatuid?",
+        textTranslation: "Do you read biographies? How about crime novels? How about travel books?",
         audio: "../audio/17-raamatud-a2/013.wav",
         answer: "Mõnikord loen reisiraamatuid ja elulooraamatuid.",
+        answerTranslation: "Sometimes I read travel books and biographies.",
         answerAudio: "../audio/17-raamatud-a2/013a.wav"
       },
       {
         text: "Kas te loete digiraamatuid? Aga kas te kuulate audioraamatuid?",
+        textTranslation: "Do you read e-books? And do you listen to audiobooks?",
         audio: "../audio/17-raamatud-a2/014.wav",
         answer: "Jah, mõnikord loen digiraamatuid ja kuulan audioraamatuid.",
+        answerTranslation: "Yes, sometimes I read e-books and listen to audiobooks.",
         answerAudio: "../audio/17-raamatud-a2/014a.wav"
       },
       {
         text: "Mis raamatu te viimati raamatukogust võtsite?",
+        textTranslation: "What book did you last borrow from the library?",
         audio: "../audio/17-raamatud-a2/015.wav",
         answer: "Viimati võtsin raamatukogust eesti keele raamatu.",
+        answerTranslation: "The last book I borrowed from the library was an Estonian language book.",
         answerAudio: "../audio/17-raamatud-a2/015a.wav"
       }
     ];

@@ -23,9 +23,15 @@
       Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,122 +40,162 @@
   const items = [
     {
       text: "Mis on teie ema nimi?",
+      textTranslation: "What is your mother's name?",
       audio: "../audio/06-pere-a1/001.wav",
       answer: "Minu ema nimi on Rahima.",
+      answerTranslation: "My mother's name is Rahima.",
       answerAudio: "../audio/06-pere-a1/001a.wav"
     },
     {
       text: "Kui vana on teie ema?",
+      textTranslation: "How old is your mother?",
       audio: "../audio/06-pere-a1/002.wav",
       answer: "Minu ema on umbes 70-aastane.",
+      answerTranslation: "My mother is about 70 years old.",
       answerAudio: "../audio/06-pere-a1/002a.wav"
     },
     {
       text: "Millal on teie ema sünnipäev?",
+      textTranslation: "When is your mother's birthday?",
       audio: "../audio/06-pere-a1/003.wav",
       answer: "Minu ema sünnipäev on mais.",
+      answerTranslation: "My mother's birthday is in May.",
       answerAudio: "../audio/06-pere-a1/003a.wav"
     },
     {
       text: "Mis värvi on teie ema silmad?",
+      textTranslation: "What color are your mother's eyes?",
       audio: "../audio/06-pere-a1/004.wav",
       answer: "Minu ema silmad on pruunid.",
+      answerTranslation: "My mother's eyes are brown.",
       answerAudio: "../audio/06-pere-a1/004a.wav"
     },
     {
       text: "Missugused on teie ema juuksed?",
+      textTranslation: "What is your mother's hair like?",
       audio: "../audio/06-pere-a1/005.wav",
       answer: "Minu ema juuksed on mustad ja natuke hallid.",
+      answerTranslation: "My mother's hair is black and a little gray.",
       answerAudio: "../audio/06-pere-a1/005a.wav"
     },
     {
       text: "Kus teie ema elab?",
+      textTranslation: "Where does your mother live?",
       audio: "../audio/06-pere-a1/006.wav",
       answer: "Minu ema elab Bangladeshis.",
+      answerTranslation: "My mother lives in Bangladesh.",
       answerAudio: "../audio/06-pere-a1/006a.wav"
     },
     {
       text: "Kus teie ema töötab?",
+      textTranslation: "Where does your mother work?",
       audio: "../audio/06-pere-a1/007.wav",
       answer: "Minu ema ei tööta praegu. Ta on pensionil.",
+      answerTranslation: "My mother does not work now. She is retired.",
       answerAudio: "../audio/06-pere-a1/007a.wav"
     },
     {
       text: "Mis keeli teie ema räägib?",
+      textTranslation: "What languages does your mother speak?",
       audio: "../audio/06-pere-a1/008.wav",
       answer: "Minu ema räägib bengali keelt.",
+      answerTranslation: "My mother speaks Bengali.",
       answerAudio: "../audio/06-pere-a1/008a.wav"
     },
     {
       text: "Mis teie emale meeldib? Mis teie ema hobi on?",
+      textTranslation: "What does your mother like? What is your mother's hobby?",
       audio: "../audio/06-pere-a1/009.wav",
       answer: "Minu emale meeldib süüa teha ja televiisorit vaadata.",
+      answerTranslation: "My mother likes to cook and watch TV.",
       answerAudio: "../audio/06-pere-a1/009a.wav"
     },
     {
       text: "Kas teie ema on hea kokk?",
+      textTranslation: "Is your mother a good cook?",
       audio: "../audio/06-pere-a1/010.wav",
       answer: "Jah, minu ema on väga hea kokk.",
+      answerTranslation: "Yes, my mother is a very good cook.",
       answerAudio: "../audio/06-pere-a1/010a.wav"
     },
     {
       text: "Kas teie ema on hea autojuht?",
+      textTranslation: "Is your mother a good driver?",
       audio: "../audio/06-pere-a1/011.wav",
       answer: "Ei, minu ema ei juhi autot.",
+      answerTranslation: "No, my mother does not drive a car.",
       answerAudio: "../audio/06-pere-a1/011a.wav"
     },
     {
       text: "Missugune teie ema on? Kas tema on sõbralik või kuri?",
+      textTranslation: "What is your mother like? Is she friendly or strict?",
       audio: "../audio/06-pere-a1/012.wav",
       answer: "Minu ema on väga sõbralik ja lahke.",
+      answerTranslation: "My mother is very friendly and kind.",
       answerAudio: "../audio/06-pere-a1/012a.wav"
     },
     {
       text: "Mis on teie ema lemmikvärv? Aga lemmiklill?",
+      textTranslation: "What is your mother's favorite color? And favorite flower?",
       audio: "../audio/06-pere-a1/013.wav",
       answer: "Minu ema lemmikvärv on sinine. Tema lemmiklill on roos.",
+      answerTranslation: "My mother's favorite color is blue. Her favorite flower is a rose.",
       answerAudio: "../audio/06-pere-a1/013a.wav"
     },
     {
       text: "Kes on teie ema lemmiklaps?",
+      textTranslation: "Who is your mother's favorite child?",
       audio: "../audio/06-pere-a1/014.wav",
       answer: "Ma arvan, et kõik lapsed on tema lemmikud.",
+      answerTranslation: "I think all the children are her favorites.",
       answerAudio: "../audio/06-pere-a1/014a.wav"
     },
     {
       text: "Mis on teie ema kinganumber?",
+      textTranslation: "What is your mother's shoe size?",
       audio: "../audio/06-pere-a1/015.wav",
       answer: "Ma arvan, et tema kinganumber on 38.",
+      answerTranslation: "I think her shoe size is 38.",
       answerAudio: "../audio/06-pere-a1/015a.wav"
     },
     {
       text: "Kus teie ema praegu on? Mida teie ema praegu teeb?",
+      textTranslation: "Where is your mother right now? What is your mother doing right now?",
       audio: "../audio/06-pere-a1/016.wav",
       answer: "Minu ema on praegu kodus. Ta puhkab või vaatab televiisorit.",
+      answerTranslation: "My mother is at home right now. She is resting or watching TV.",
       answerAudio: "../audio/06-pere-a1/016a.wav"
     },
     {
       text: "Kas te räägite emaga iga päev?",
+      textTranslation: "Do you talk to your mother every day?",
       audio: "../audio/06-pere-a1/017.wav",
       answer: "Jah, ma räägin emaga peaaegu iga päev.",
+      answerTranslation: "Yes, I talk to my mother almost every day.",
       answerAudio: "../audio/06-pere-a1/017a.wav"
     },
     {
       text: "Kas te teate, mida tähendab pesamuna? Aga noorpaar? Aga pruut? Aga peigmees?",
+      textTranslation: "Do you know what 'pesamuna' means? How about 'noorpaar'? How about 'bride'? How about 'groom'?",
       audio: "../audio/06-pere-a1/018.wav",
       answer: "Jah, ma tean neid sõnu. Need on seotud pere ja abieluga.",
+      answerTranslation: "Yes, I know these words. They are related to family and marriage.",
       answerAudio: "../audio/06-pere-a1/018a.wav"
     },
     {
       text: "Kas teie pere on suur, väike või keskmine?",
+      textTranslation: "Is your family big, small, or medium?",
       audio: "../audio/06-pere-a1/019.wav",
       answer: "Minu pere on keskmine.",
+      answerTranslation: "My family is medium-sized.",
       answerAudio: "../audio/06-pere-a1/019a.wav"
     },
     {
       text: "Kas teil on õde või vend? Kas teil on vanaema või vanaisa? Aga tädi või onu?",
+      textTranslation: "Do you have a sister or a brother? Do you have a grandmother or a grandfather? How about an aunt or an uncle?",
       audio: "../audio/06-pere-a1/020.wav",
       answer: "Jah, mul on vend ja õde. Mul on ka tädid ja onud.",
+      answerTranslation: "Yes, I have a brother and a sister. I also have aunts and uncles.",
       answerAudio: "../audio/06-pere-a1/020a.wav"
     }
   ];

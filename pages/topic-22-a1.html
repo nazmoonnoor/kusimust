@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,122 +40,162 @@
     const items = [
       {
         text: "Kas teile meeldib linn või loodus?",
+        textTranslation: "Do you like the city or nature?",
         audio: "../audio/22-loodus-ja-loomad-a1/001.wav",
         answer: "Mulle meeldivad nii linn kui loodus.",
+        answerTranslation: "I like both the city and nature.",
         answerAudio: "../audio/22-loodus-ja-loomad-a1/001a.wav"
       },
       {
         text: "Kas te jalutate mõnikord metsas? Millal te jalutate metsas?",
+        textTranslation: "Do you sometimes walk in the forest? When do you walk in the forest?",
         audio: "../audio/22-loodus-ja-loomad-a1/002.wav",
         answer: "Jah, mõnikord jalutan metsas. Tavaliselt nädalavahetusel.",
+        answerTranslation: "Yes, I sometimes walk in the forest. Usually on weekends.",
         answerAudio: "../audio/22-loodus-ja-loomad-a1/002a.wav"
       },
       {
         text: "Kas teie kodu lähedal on meri? Aga mets?",
+        textTranslation: "Is there a sea near your home? How about a forest?",
         audio: "../audio/22-loodus-ja-loomad-a1/003.wav",
         answer: "Jah, minu kodu lähedal on meri ja mets.",
+        answerTranslation: "Yes, there is a sea and a forest near my home.",
         answerAudio: "../audio/22-loodus-ja-loomad-a1/003a.wav"
       },
       {
         text: "Mis värvi on meri? Aga mis värvi on mets?",
+        textTranslation: "What color is the sea? How about the forest?",
         audio: "../audio/22-loodus-ja-loomad-a1/004.wav",
         answer: "Meri on tavaliselt sinine või hall. Mets on roheline.",
+        answerTranslation: "The sea is usually blue or gray. The forest is green.",
         answerAudio: "../audio/22-loodus-ja-loomad-a1/004a.wav"
       },
       {
         text: "Kas Eesti metsad on suured või väikesed?",
+        textTranslation: "Are Estonian forests big or small?",
         audio: "../audio/22-loodus-ja-loomad-a1/005.wav",
         answer: "Eesti metsad on üsna suured.",
+        answerTranslation: "Estonian forests are quite big.",
         answerAudio: "../audio/22-loodus-ja-loomad-a1/005a.wav"
       },
       {
         text: "Kes elab metsas? Aga kes elab meres?",
+        textTranslation: "Who lives in the forest? How about in the sea?",
         audio: "../audio/22-loodus-ja-loomad-a1/006.wav",
         answer: "Metsas elavad loomad ja linnud. Meres elavad kalad.",
+        answerTranslation: "Animals and birds live in the forest. Fish live in the sea.",
         answerAudio: "../audio/22-loodus-ja-loomad-a1/006a.wav"
       },
       {
         text: "Mida te näete, kui te vaatate aknast välja?",
+        textTranslation: "What do you see when you look out the window?",
         audio: "../audio/22-loodus-ja-loomad-a1/007.wav",
         answer: "Ma näen tänavat ja maju.",
+        answerTranslation: "I see the street and houses.",
         answerAudio: "../audio/22-loodus-ja-loomad-a1/007a.wav"
       },
       {
         text: "Kas teile meeldivad liblikad? Aga mesilased?",
+        textTranslation: "Do you like butterflies? How about bees?",
         audio: "../audio/22-loodus-ja-loomad-a1/008.wav",
         answer: "Jah, mulle meeldivad liblikad. Mesilased on ka kasulikud.",
+        answerTranslation: "Yes, I like butterflies. Bees are also useful.",
         answerAudio: "../audio/22-loodus-ja-loomad-a1/008a.wav"
       },
       {
         text: "Kas te teate, mis kell homme päike tõuseb?",
+        textTranslation: "Do you know what time the sun rises tomorrow?",
         audio: "../audio/22-loodus-ja-loomad-a1/009.wav",
         answer: "Ma ei tea täpselt, aga umbes hommikul vara.",
+        answerTranslation: "I don't know exactly, but early in the morning.",
         answerAudio: "../audio/22-loodus-ja-loomad-a1/009a.wav"
       },
       {
         text: "Kas teie kodu lähedal on jõgi? Aga järv?",
+        textTranslation: "Is there a river near your home? How about a lake?",
         audio: "../audio/22-loodus-ja-loomad-a1/010.wav",
         answer: "Jah, minu kodu lähedal on meri ja ka järv.",
+        answerTranslation: "Yes, there is a sea and also a lake near my home.",
         answerAudio: "../audio/22-loodus-ja-loomad-a1/010a.wav"
       },
       {
         text: "Kas teie kodu lähedal on mägi? Kui kõrge see mägi on?",
+        textTranslation: "Is there a mountain near your home? How high is that mountain?",
         audio: "../audio/22-loodus-ja-loomad-a1/011.wav",
         answer: "Ei, siin ei ole suuri mägesid.",
+        answerTranslation: "No, there are no big mountains here.",
         answerAudio: "../audio/22-loodus-ja-loomad-a1/011a.wav"
       },
       {
         text: "Mis on maailma kõige suurem saar?",
+        textTranslation: "What is the largest island in the world?",
         audio: "../audio/22-loodus-ja-loomad-a1/012.wav",
         answer: "Ma arvan, et Gröönimaa on kõige suurem saar.",
+        answerTranslation: "I think Greenland is the largest island.",
         answerAudio: "../audio/22-loodus-ja-loomad-a1/012a.wav"
       },
       {
         text: "Mis värvi on flamingo? Aga sebra?",
+        textTranslation: "What color is a flamingo? How about a zebra?",
         audio: "../audio/22-loodus-ja-loomad-a1/013.wav",
         answer: "Flamingo on roosa. Sebra on must ja valge.",
+        answerTranslation: "A flamingo is pink. A zebra is black and white.",
         answerAudio: "../audio/22-loodus-ja-loomad-a1/013a.wav"
       },
       {
         text: "Mis loom on ilus? Aga naljakas? Aga tark?",
+        textTranslation: "What animal is beautiful? How about funny? How about smart?",
         audio: "../audio/22-loodus-ja-loomad-a1/014.wav",
         answer: "Liblikas on ilus. Ahv on naljakas. Delfiin on tark.",
+        answerTranslation: "A butterfly is beautiful. A monkey is funny. A dolphin is smart.",
         answerAudio: "../audio/22-loodus-ja-loomad-a1/014a.wav"
       },
       {
         text: "Kas teile meeldib Eesti loodus? Aga kas teile meeldib teie kodumaa loodus?",
+        textTranslation: "Do you like Estonian nature? How about the nature of your home country?",
         audio: "../audio/22-loodus-ja-loomad-a1/015.wav",
         answer: "Jah, mulle meeldib Eesti loodus ja ka minu kodumaa loodus.",
+        answerTranslation: "Yes, I like Estonian nature and also the nature of my home country.",
         answerAudio: "../audio/22-loodus-ja-loomad-a1/015a.wav"
       },
       {
         text: "Mis riigis on kõrged mäed?",
+        textTranslation: "In which country are there high mountains?",
         audio: "../audio/22-loodus-ja-loomad-a1/016.wav",
         answer: "Näiteks Šveitsis ja Nepalis on kõrged mäed.",
+        answerTranslation: "For example, there are high mountains in Switzerland and Nepal.",
         answerAudio: "../audio/22-loodus-ja-loomad-a1/016a.wav"
       },
       {
         text: "Mis riigis on suured järved? Aga suured metsad?",
+        textTranslation: "In which country are there big lakes? How about big forests?",
         audio: "../audio/22-loodus-ja-loomad-a1/017.wav",
         answer: "Kanadas on suured järved ja metsad.",
+        answerTranslation: "In Canada there are big lakes and forests.",
         answerAudio: "../audio/22-loodus-ja-loomad-a1/017a.wav"
       },
       {
         text: "Mis riigis on ilusad rannad?",
+        textTranslation: "In which country are there beautiful beaches?",
         audio: "../audio/22-loodus-ja-loomad-a1/018.wav",
         answer: "Näiteks Hispaanias ja Tais on ilusad rannad.",
+        answerTranslation: "For example, there are beautiful beaches in Spain and Thailand.",
         answerAudio: "../audio/22-loodus-ja-loomad-a1/018a.wav"
       },
       {
         text: "Kas te teate, mida tähendab vaal? Aga koolibri? Aga puuk? Aga prussakas?",
+        textTranslation: "Do you know what whale means? How about hummingbird? How about tick? How about cockroach?",
         audio: "../audio/22-loodus-ja-loomad-a1/019.wav",
         answer: "Jah, ma tean neid sõnu.",
+        answerTranslation: "Yes, I know these words.",
         answerAudio: "../audio/22-loodus-ja-loomad-a1/019a.wav"
       },
       {
         text: "Millal on loodus kõige ilusam? Kas kevadel, suvel, sügisel või talvel?",
+        textTranslation: "When is nature the most beautiful? In spring, summer, autumn or winter?",
         audio: "../audio/22-loodus-ja-loomad-a1/020.wav",
         answer: "Minu arvates on loodus kõige ilusam suvel ja kevadel.",
+        answerTranslation: "In my opinion, nature is the most beautiful in summer and spring.",
         answerAudio: "../audio/22-loodus-ja-loomad-a1/020a.wav"
       }
     ];

@@ -23,9 +23,15 @@
       Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,122 +40,162 @@
   const items = [
     {
       text: "Kas teie köök on suur või väike?",
+      textTranslation: "Is your kitchen big or small?",
       audio: "../audio/07-kook-a1/001.wav",
       answer: "Minu köök on keskmine.",
+      answerTranslation: "My kitchen is medium-sized.",
       answerAudio: "../audio/07-kook-a1/001a.wav"
     },
     {
       text: "Mis värvi on teie köögikardin?",
+      textTranslation: "What color is your kitchen curtain?",
       audio: "../audio/07-kook-a1/002.wav",
       answer: "Minu köögikardin on valge.",
+      answerTranslation: "My kitchen curtain is white.",
       answerAudio: "../audio/07-kook-a1/002a.wav"
     },
     {
       text: "Kas teie köögis on kohvimasin?",
+      textTranslation: "Is there a coffee machine in your kitchen?",
       audio: "../audio/07-kook-a1/003.wav",
       answer: "Jah, minu köögis on kohvimasin.",
+      answerTranslation: "Yes, there is a coffee machine in my kitchen.",
       answerAudio: "../audio/07-kook-a1/003a.wav"
     },
     {
       text: "Mis värvi on teie külmkapp?",
+      textTranslation: "What color is your fridge?",
       audio: "../audio/07-kook-a1/004.wav",
       answer: "Minu külmkapp on valge.",
+      answerTranslation: "My fridge is white.",
       answerAudio: "../audio/07-kook-a1/004a.wav"
     },
     {
       text: "Mis puuviljad on teie külmkapis?",
+      textTranslation: "What fruits are in your fridge?",
       audio: "../audio/07-kook-a1/005.wav",
       answer: "Minu külmkapis on õunad ja banaanid.",
+      answerTranslation: "There are apples and bananas in my fridge.",
       answerAudio: "../audio/07-kook-a1/005a.wav"
     },
     {
       text: "Mis joogid on teie külmkapis?",
+      textTranslation: "What drinks are in your fridge?",
       audio: "../audio/07-kook-a1/006.wav",
       answer: "Minu külmkapis on piim ja mahl.",
+      answerTranslation: "There is milk and juice in my fridge.",
       answerAudio: "../audio/07-kook-a1/006a.wav"
     },
     {
       text: "Kas teie külmkapis on ketšup? Aga majonees? Aga sinep?",
+      textTranslation: "Is there ketchup in your fridge? How about mayonnaise? How about mustard?",
       audio: "../audio/07-kook-a1/007.wav",
       answer: "Jah, minu külmkapis on ketšup ja majonees. Sinepit mõnikord on.",
+      answerTranslation: "Yes, there is ketchup and mayonnaise in my fridge. Sometimes there is mustard.",
       answerAudio: "../audio/07-kook-a1/007a.wav"
     },
     {
       text: "Kas te teate, mida tähendab salvrätik? Aga pajalapp? Aga sõel? Aga tainarull?",
+      textTranslation: "Do you know what 'napkin' means? How about 'pot holder'? How about 'sieve'? How about 'rolling pin'?",
       audio: "../audio/07-kook-a1/008.wav",
       answer: "Jah, ma tean neid sõnu. Need on köögiasjad.",
+      answerTranslation: "Yes, I know these words. They are kitchen items.",
       answerAudio: "../audio/07-kook-a1/008a.wav"
     },
     {
       text: "Mitu põlle teil on? Mis värvi teie põll on?",
+      textTranslation: "How many aprons do you have? What color is your apron?",
       audio: "../audio/07-kook-a1/009.wav",
       answer: "Mul on üks põll. See on sinine.",
+      answerTranslation: "I have one apron. It is blue.",
       answerAudio: "../audio/07-kook-a1/009a.wav"
     },
     {
       text: "Kas teie köögilaual on praegu mustad nõud?",
+      textTranslation: "Are there dirty dishes on your kitchen table right now?",
       audio: "../audio/07-kook-a1/010.wav",
       answer: "Ei, minu köögilaual ei ole musti nõusid.",
+      answerTranslation: "No, there are no dirty dishes on my kitchen table.",
       answerAudio: "../audio/07-kook-a1/010a.wav"
     },
     {
       text: "Kas teie köögilaual on lilled?",
+      textTranslation: "Are there flowers on your kitchen table?",
       audio: "../audio/07-kook-a1/011.wav",
       answer: "Ei, tavaliselt ei ole.",
+      answerTranslation: "No, usually there are not.",
       answerAudio: "../audio/07-kook-a1/011a.wav"
     },
     {
       text: "Kas teil on ilusad šampuseklaasid?",
+      textTranslation: "Do you have beautiful champagne glasses?",
       audio: "../audio/07-kook-a1/012.wav",
       answer: "Jah, mul on paar ilusat šampuseklaasi.",
+      answerTranslation: "Yes, I have a couple of beautiful champagne glasses.",
       answerAudio: "../audio/07-kook-a1/012a.wav"
     },
     {
       text: "Mida te teete hommikul köögis? Mida te hommikul köögis ei tee?",
+      textTranslation: "What do you do in the kitchen in the morning? What do you not do in the kitchen in the morning?",
       audio: "../audio/07-kook-a1/013.wav",
       answer: "Hommikul ma teen kohvi ja söön hommikusööki. Ma ei küpseta kooki hommikul.",
+      answerTranslation: "In the morning I make coffee and eat breakfast. I do not bake a cake in the morning.",
       answerAudio: "../audio/07-kook-a1/013a.wav"
     },
     {
       text: "Kas punast või sinist värvi köök on ilus?",
+      textTranslation: "Is a red or blue kitchen beautiful?",
       audio: "../audio/07-kook-a1/014.wav",
       answer: "Minu arvates on sinine köök ilus.",
+      answerTranslation: "In my opinion, a blue kitchen is beautiful.",
       answerAudio: "../audio/07-kook-a1/014a.wav"
     },
     {
       text: "Kas teie köögis on vaip? Mis värvi vaip on?",
+      textTranslation: "Is there a carpet in your kitchen? What color is the carpet?",
       audio: "../audio/07-kook-a1/015.wav",
       answer: "Jah, minu köögis on vaip. See on pruun.",
+      answerTranslation: "Yes, there is a carpet in my kitchen. It is brown.",
       answerAudio: "../audio/07-kook-a1/015a.wav"
     },
     {
       text: "Kas teie köögikapis on kaneel? Aga ingver? Aga must pipar? Aga pruun suhkur?",
+      textTranslation: "Is there cinnamon in your kitchen cupboard? How about ginger? How about black pepper? How about brown sugar?",
       audio: "../audio/07-kook-a1/016.wav",
       answer: "Jah, minu köögikapis on kaneel ja must pipar.",
+      answerTranslation: "Yes, there is cinnamon and black pepper in my kitchen cupboard.",
       answerAudio: "../audio/07-kook-a1/016a.wav"
     },
     {
       text: "Mitu tooli on teie köögis?",
+      textTranslation: "How many chairs are in your kitchen?",
       audio: "../audio/07-kook-a1/017.wav",
       answer: "Minu köögis on neli tooli.",
+      answerTranslation: "There are four chairs in my kitchen.",
       answerAudio: "../audio/07-kook-a1/017a.wav"
     },
     {
       text: "Kas te küpsetate mõnikord kooki?",
+      textTranslation: "Do you sometimes bake a cake?",
       audio: "../audio/07-kook-a1/018.wav",
       answer: "Jah, mõnikord ma küpsetan kooki.",
+      answerTranslation: "Yes, sometimes I bake a cake.",
       answerAudio: "../audio/07-kook-a1/018a.wav"
     },
     {
       text: "Kas teie köögis on kell? Kus see on?",
+      textTranslation: "Is there a clock in your kitchen? Where is it?",
       audio: "../audio/07-kook-a1/019.wav",
       answer: "Jah, köögis on kell. See on seinal.",
+      answerTranslation: "Yes, there is a clock in the kitchen. It is on the wall.",
       answerAudio: "../audio/07-kook-a1/019a.wav"
     },
     {
       text: "Mitu kokaraamatut teil on?",
+      textTranslation: "How many cookbooks do you have?",
       audio: "../audio/07-kook-a1/020.wav",
       answer: "Mul on kaks kokaraamatut.",
+      answerTranslation: "I have two cookbooks.",
       answerAudio: "../audio/07-kook-a1/020a.wav"
     }
   ];

@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,92 +40,122 @@
     const items = [
       {
         text: "Kui palju inimesi elab Eestis? Aga Tallinnas?",
+        textTranslation: "How many people live in Estonia? And in Tallinn?",
         audio: "../audio/10-eesti-a2/001.wav",
         answer: "Eestis elab umbes 1,3 miljonit inimest. Tallinnas elab umbes 450 000 inimest.",
+        answerTranslation: "About 1.3 million people live in Estonia. About 450,000 people live in Tallinn.",
         answerAudio: "../audio/10-eesti-a2/001a.wav"
       },
       {
         text: "Mitu maakonda on Eestis? Kas 15 või rohkem?",
+        textTranslation: "How many counties are there in Estonia? 15 or more?",
         audio: "../audio/10-eesti-a2/002.wav",
         answer: "Eestis on 15 maakonda.",
+        answerTranslation: "There are 15 counties in Estonia.",
         answerAudio: "../audio/10-eesti-a2/002a.wav"
       },
       {
         text: "Mis on Eesti kõige suuremad linnad?",
+        textTranslation: "What are the biggest cities in Estonia?",
         audio: "../audio/10-eesti-a2/003.wav",
         answer: "Eesti kõige suuremad linnad on Tallinn, Tartu ja Narva.",
+        answerTranslation: "The biggest cities in Estonia are Tallinn, Tartu, and Narva.",
         answerAudio: "../audio/10-eesti-a2/003a.wav"
       },
       {
         text: "Kas te olete käinud Tartus? Aga Haapsalus? Aga Viljandis? Kus te Eestis käinud olete?",
+        textTranslation: "Have you been to Tartu? How about Haapsalu? How about Viljandi? Where have you been in Estonia?",
         audio: "../audio/10-eesti-a2/004.wav",
         answer: "Jah, ma olen käinud Tartus. Ma olen käinud ka Pärnus ja Narvas.",
+        answerTranslation: "Yes, I have been to Tartu. I have also been to Pärnu and Narva.",
         answerAudio: "../audio/10-eesti-a2/004a.wav"
       },
       {
         text: "Kus teile Eestis meeldib olla?",
+        textTranslation: "Where do you like to be in Estonia?",
         audio: "../audio/10-eesti-a2/005.wav",
         answer: "Mulle meeldib olla Tallinnas ja mere ääres.",
+        answerTranslation: "I like to be in Tallinn and by the sea.",
         answerAudio: "../audio/10-eesti-a2/005a.wav"
       },
       {
         text: "Kas te teate, kes on Arvo Pärt? Aga Ott Tänak? Aga Kristjan Järvi? Aga Anne Veski?",
+        textTranslation: "Do you know who Arvo Pärt is? How about Ott Tänak? How about Kristjan Järvi? How about Anne Veski?",
         audio: "../audio/10-eesti-a2/006.wav",
         answer: "Jah, ma tean neid. Nad on kuulsad Eesti inimesed.",
+        answerTranslation: "Yes, I know them. They are famous Estonian people.",
         answerAudio: "../audio/10-eesti-a2/006a.wav"
       },
       {
         text: "Kas te olete käinud Tallinna jõuluturul?",
+        textTranslation: "Have you been to the Tallinn Christmas market?",
         audio: "../audio/10-eesti-a2/007.wav",
         answer: "Jah, ma olen käinud Tallinna jõuluturul.",
+        answerTranslation: "Yes, I have been to the Tallinn Christmas market.",
         answerAudio: "../audio/10-eesti-a2/007a.wav"
       },
       {
         text: "Kas te olete käinud Estonia teatris?",
+        textTranslation: "Have you been to the Estonia theatre?",
         audio: "../audio/10-eesti-a2/008.wav",
         answer: "Ei, ma ei ole veel käinud Estonia teatris.",
+        answerTranslation: "No, I have not yet been to the Estonia theatre.",
         answerAudio: "../audio/10-eesti-a2/008a.wav"
       },
       {
         text: "Kas te olete söönud kohukest? Aga kamašokolaadi?",
+        textTranslation: "Have you eaten kohuke? How about kama chocolate?",
         audio: "../audio/10-eesti-a2/009.wav",
         answer: "Jah, ma olen söönud kohukest. Kamašokolaadi ma olen ka proovinud.",
+        answerTranslation: "Yes, I have eaten kohuke. I have also tried kama chocolate.",
         answerAudio: "../audio/10-eesti-a2/009a.wav"
       },
       {
         text: "Missugune on Eesti ilm? Aga loodus? Aga toit? Aga inimesed?",
+        textTranslation: "What is the weather like in Estonia? How about nature? How about food? How about people?",
         audio: "../audio/10-eesti-a2/010.wav",
         answer: "Eesti ilm on külm talvel ja soe suvel. Loodus on väga ilus ja inimesed on rahulikud.",
+        answerTranslation: "The weather in Estonia is cold in winter and warm in summer. Nature is very beautiful and people are calm.",
         answerAudio: "../audio/10-eesti-a2/010a.wav"
       },
       {
         text: "Kas te teate, mis on Jazzkaar? Aga mis on Pimedate Ööde Filmifestival? Aga mis on laulupidu?",
+        textTranslation: "Do you know what Jazzkaar is? How about the Black Nights Film Festival? How about the Song Festival?",
         audio: "../audio/10-eesti-a2/011.wav",
         answer: "Jah, need on Eesti festivalid ja kultuuriüritused.",
+        answerTranslation: "Yes, these are Estonian festivals and cultural events.",
         answerAudio: "../audio/10-eesti-a2/011a.wav"
       },
       {
         text: "Mis teile Eestis meeldib? Mis teile ei meeldi?",
+        textTranslation: "What do you like in Estonia? What do you not like?",
         audio: "../audio/10-eesti-a2/012.wav",
         answer: "Mulle meeldib Eesti loodus ja rahulik elu. Mulle ei meeldi väga külm talv.",
+        answerTranslation: "I like Estonian nature and peaceful life. I do not like the very cold winter.",
         answerAudio: "../audio/10-eesti-a2/012a.wav"
       },
       {
         text: "Kas teil on Eestis mõni sõber? Kes ta on?",
+        textTranslation: "Do you have any friends in Estonia? Who are they?",
         audio: "../audio/10-eesti-a2/013.wav",
         answer: "Jah, mul on Eestis sõpru. Nad on minu töökaaslased.",
+        answerTranslation: "Yes, I have friends in Estonia. They are my colleagues.",
         answerAudio: "../audio/10-eesti-a2/013a.wav"
       },
       {
         text: "Kas te teate mõnda Eesti firmat?",
+        textTranslation: "Do you know any Estonian companies?",
         audio: "../audio/10-eesti-a2/014.wav",
         answer: "Jah, ma tean firmat Bolt ja Skype.",
+        answerTranslation: "Yes, I know the companies Bolt and Skype.",
         answerAudio: "../audio/10-eesti-a2/014a.wav"
       },
       {
         text: "Kas teil on Eestis hea olla?",
+        textTranslation: "Do you feel good in Estonia?",
         audio: "../audio/10-eesti-a2/015.wav",
         answer: "Jah, mul on Eestis väga hea olla.",
+        answerTranslation: "Yes, I feel very good in Estonia.",
         answerAudio: "../audio/10-eesti-a2/015a.wav"
       }
     ];

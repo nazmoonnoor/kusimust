@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,122 +40,162 @@
     const items = [
       {
         text: "Kas teil on pesumasin? Kus teie pesumasin on?",
+        textTranslation: "Do you have a washing machine? Where is your washing machine?",
         audio: "../audio/12-kodumasinad-a1/001.wav",
         answer: "Jah, mul on pesumasin. See on vannitoas.",
+        answerTranslation: "Yes, I have a washing machine. It is in the bathroom.",
         answerAudio: "../audio/12-kodumasinad-a1/001a.wav"
       },
       {
         text: "Kas teil on tolmuimeja? Aga robottolmuimeja? Mis värvi teie tolmuimeja on?",
+        textTranslation: "Do you have a vacuum cleaner? How about a robot vacuum cleaner? What color is your vacuum cleaner?",
         audio: "../audio/12-kodumasinad-a1/002.wav",
         answer: "Jah, mul on tolmuimeja. Mul ei ole robottolmuimejat. Minu tolmuimeja on must.",
+        answerTranslation: "Yes, I have a vacuum cleaner. I do not have a robot vacuum cleaner. My vacuum cleaner is black.",
         answerAudio: "../audio/12-kodumasinad-a1/002a.wav"
       },
       {
         text: "Mis kodumasinad teil on? Kus need teie kodus on?",
+        textTranslation: "What household appliances do you have? Where are they in your home?",
         audio: "../audio/12-kodumasinad-a1/003.wav",
         answer: "Mul on külmkapp, pesumasin ja mikrolaineahi. Need on köögis ja vannitoas.",
+        answerTranslation: "I have a fridge, a washing machine, and a microwave oven. They are in the kitchen and bathroom.",
         answerAudio: "../audio/12-kodumasinad-a1/003a.wav"
       },
       {
         text: "Mis kodumasinat te iga päev kasutate? Aga iga nädal?",
+        textTranslation: "Which household appliance do you use every day? And every week?",
         audio: "../audio/12-kodumasinad-a1/004.wav",
         answer: "Iga päev kasutan veekeetjat. Iga nädal kasutan pesumasinat.",
+        answerTranslation: "I use the kettle every day. I use the washing machine every week.",
         answerAudio: "../audio/12-kodumasinad-a1/004a.wav"
       },
       {
         text: "Mis kodumasinat te kasutate öösel? Mis kodumasinat te kasutate päeval?",
+        textTranslation: "Which household appliance do you use at night? Which one do you use during the day?",
         audio: "../audio/12-kodumasinad-a1/005.wav",
         answer: "Öösel ma tavaliselt kodumasinaid ei kasuta. Päeval kasutan veekeetjat ja arvutit.",
+        answerTranslation: "At night I usually do not use household appliances. During the day I use the kettle and the computer.",
         answerAudio: "../audio/12-kodumasinad-a1/005a.wav"
       },
       {
         text: "Mitu korda päevas te veekeetjat kasutate?",
+        textTranslation: "How many times a day do you use the kettle?",
         audio: "../audio/12-kodumasinad-a1/006.wav",
         answer: "Tavaliselt kasutan veekeetjat kaks korda päevas.",
+        answerTranslation: "I usually use the kettle twice a day.",
         answerAudio: "../audio/12-kodumasinad-a1/006a.wav"
       },
       {
         text: "Kas teil on tavaline või elektriline hambahari? Mis värvi see on?",
+        textTranslation: "Do you have a regular or an electric toothbrush? What color is it?",
         audio: "../audio/12-kodumasinad-a1/007.wav",
         answer: "Mul on elektriline hambahari. See on valge.",
+        answerTranslation: "I have an electric toothbrush. It is white.",
         answerAudio: "../audio/12-kodumasinad-a1/007a.wav"
       },
       {
         text: "Mis on teie lemmikkodumasin? Kus see on?",
+        textTranslation: "What is your favorite household appliance? Where is it?",
         audio: "../audio/12-kodumasinad-a1/008.wav",
         answer: "Minu lemmikkodumasin on kohvimasin. See on köögis.",
+        answerTranslation: "My favorite household appliance is the coffee machine. It is in the kitchen.",
         answerAudio: "../audio/12-kodumasinad-a1/008a.wav"
       },
       {
         text: "Mis firma kodumasinad on head?",
+        textTranslation: "Which brand of household appliances is good?",
         audio: "../audio/12-kodumasinad-a1/009.wav",
         answer: "Minu arvates on Bosch ja Samsung head firmad.",
+        answerTranslation: "In my opinion, Bosch and Samsung are good brands.",
         answerAudio: "../audio/12-kodumasinad-a1/009a.wav"
       },
       {
         text: "Kas teil on föön? Kus teie föön on?",
+        textTranslation: "Do you have a hair dryer? Where is your hair dryer?",
         audio: "../audio/12-kodumasinad-a1/010.wav",
         answer: "Jah, mul on föön. See on vannitoas.",
+        answerTranslation: "Yes, I have a hair dryer. It is in the bathroom.",
         answerAudio: "../audio/12-kodumasinad-a1/010a.wav"
       },
       {
         text: "Kas te teate, mida tähendab pistikupesa? Mitu pistikupesa teie köögis on?",
+        textTranslation: "Do you know what a socket means? How many sockets are there in your kitchen?",
         audio: "../audio/12-kodumasinad-a1/011.wav",
         answer: "Jah, ma tean seda sõna. Minu köögis on umbes neli pistikupesa.",
+        answerTranslation: "Yes, I know this word. There are about four sockets in my kitchen.",
         answerAudio: "../audio/12-kodumasinad-a1/011a.wav"
       },
       {
         text: "Kas teil on röster? Mitu sekundit te saia röstite?",
+        textTranslation: "Do you have a toaster? How many seconds do you toast bread?",
         audio: "../audio/12-kodumasinad-a1/012.wav",
         answer: "Jah, mul on röster. Tavaliselt röstin saia umbes 60 sekundit.",
+        answerTranslation: "Yes, I have a toaster. I usually toast bread for about 60 seconds.",
         answerAudio: "../audio/12-kodumasinad-a1/012a.wav"
       },
       {
         text: "Kas teil on arvuti? Kus teie arvuti praegu on?",
+        textTranslation: "Do you have a computer? Where is your computer right now?",
         audio: "../audio/12-kodumasinad-a1/013.wav",
         answer: "Jah, mul on arvuti. See on minu laua peal.",
+        answerTranslation: "Yes, I have a computer. It is on my desk.",
         answerAudio: "../audio/12-kodumasinad-a1/013a.wav"
       },
       {
         text: "Mis kodumasinad on teie vannitoas? Aga magamistoas?",
+        textTranslation: "What household appliances are in your bathroom? And in your bedroom?",
         audio: "../audio/12-kodumasinad-a1/014.wav",
         answer: "Vannitoas on pesumasin ja föön. Magamistoas on arvuti ja lamp.",
+        answerTranslation: "There is a washing machine and a hair dryer in the bathroom. There is a computer and a lamp in the bedroom.",
         answerAudio: "../audio/12-kodumasinad-a1/014a.wav"
       },
       {
         text: "Kas teil on raadio? Kus see on?",
+        textTranslation: "Do you have a radio? Where is it?",
         audio: "../audio/12-kodumasinad-a1/015.wav",
         answer: "Jah, mul on raadio. See on elutoas.",
+        answerTranslation: "Yes, I have a radio. It is in the living room.",
         answerAudio: "../audio/12-kodumasinad-a1/015a.wav"
       },
       {
         text: "Kas kõik teie kodumasinad töötavad elektriga?",
+        textTranslation: "Do all your household appliances run on electricity?",
         audio: "../audio/12-kodumasinad-a1/016.wav",
         answer: "Jah, enamik minu kodumasinaid töötab elektriga.",
+        answerTranslation: "Yes, most of my household appliances run on electricity.",
         answerAudio: "../audio/12-kodumasinad-a1/016a.wav"
       },
       {
         text: "Kas kodumasin on hea kingitus?",
+        textTranslation: "Is a household appliance a good gift?",
         audio: "../audio/12-kodumasinad-a1/017.wav",
         answer: "Jah, kodumasin võib olla hea kingitus.",
+        answerTranslation: "Yes, a household appliance can be a good gift.",
         answerAudio: "../audio/12-kodumasinad-a1/017a.wav"
       },
       {
         text: "Kas teie emal on nõudepesumasin? Aga pesumasin?",
+        textTranslation: "Does your mother have a dishwasher? How about a washing machine?",
         audio: "../audio/12-kodumasinad-a1/018.wav",
         answer: "Jah, mu emal on pesumasin. Nõudepesumasinat tal ei ole.",
+        answerTranslation: "Yes, my mother has a washing machine. She does not have a dishwasher.",
         answerAudio: "../audio/12-kodumasinad-a1/018a.wav"
       },
       {
         text: "Kas te teate, mida tähendab õmblusmasin? Aga akutrell? Aga vahvlimasin? Aga köögikombain?",
+        textTranslation: "Do you know what a sewing machine means? How about a cordless drill? How about a waffle maker? How about a food processor?",
         audio: "../audio/12-kodumasinad-a1/019.wav",
         answer: "Jah, ma tean neid sõnu. Need on erinevad masinad kodus.",
+        answerTranslation: "Yes, I know these words. They are different machines at home.",
         answerAudio: "../audio/12-kodumasinad-a1/019a.wav"
       },
       {
         text: "Mis on teie kõige ilusam kodumasin? Kus see teie kodus on? Mis on teie kõige suurem kodumasin? Kus see teie kodus on?",
+        textTranslation: "What is your most beautiful household appliance? Where is it in your home? What is your biggest household appliance? Where is it in your home?",
         audio: "../audio/12-kodumasinad-a1/020.wav",
         answer: "Minu kõige ilusam kodumasin on kohvimasin. See on köögis. Kõige suurem kodumasin on külmkapp ja see on ka köögis.",
+        answerTranslation: "My most beautiful household appliance is the coffee machine. It is in the kitchen. The biggest household appliance is the fridge and it is also in the kitchen.",
         answerAudio: "../audio/12-kodumasinad-a1/020a.wav"
       }
     ];

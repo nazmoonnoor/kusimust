@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,92 +40,122 @@
     const items = [
       {
         text: "Kas teil oli lemmikloom, kui te olite laps? Mitu lemmiklooma teil on olnud?",
+        textTranslation: "Did you have a pet when you were a child? How many pets have you had?",
         audio: "../audio/24-lemmikloom-a2/001.wav",
         answer: "Jah, lapsena oli mul lemmikloom. Mul on olnud üks või kaks lemmiklooma.",
+        answerTranslation: "Yes, as a child I had a pet. I have had one or two pets.",
         answerAudio: "../audio/24-lemmikloom-a2/001a.wav"
       },
       {
         text: "Millal te saite oma esimese lemmiklooma? Kui vana te olite?",
+        textTranslation: "When did you get your first pet? How old were you?",
         audio: "../audio/24-lemmikloom-a2/002.wav",
         answer: "Ma sain oma esimese lemmiklooma, kui olin umbes kümneaastane.",
+        answerTranslation: "I got my first pet when I was about ten years old.",
         answerAudio: "../audio/24-lemmikloom-a2/002a.wav"
       },
       {
         text: "Kas te tahaksite praegu lemmiklooma? Mis looma te tahaksite?",
+        textTranslation: "Would you like a pet now? What animal would you like?",
         audio: "../audio/24-lemmikloom-a2/003.wav",
         answer: "Jah, võib-olla tahaksin kassi.",
+        answerTranslation: "Yes, maybe I would like a cat.",
         answerAudio: "../audio/24-lemmikloom-a2/003a.wav"
       },
       {
         text: "Kas madu on hea lemmikloom? Aga papagoi? Aga jänes?",
+        textTranslation: "Is a snake a good pet? How about a parrot? How about a rabbit?",
         audio: "../audio/24-lemmikloom-a2/004.wav",
         answer: "Papagoi ja jänes võivad olla head lemmikloomad.",
+        answerTranslation: "A parrot and a rabbit can be good pets.",
         answerAudio: "../audio/24-lemmikloom-a2/004a.wav"
       },
       {
         text: "Kas teile meeldivad akvaariumid? Kas teil on akvaarium? Kus teie linnas on akvaarium?",
+        textTranslation: "Do you like aquariums? Do you have an aquarium? Where is an aquarium in your city?",
         audio: "../audio/24-lemmikloom-a2/005.wav",
         answer: "Jah, mulle meeldivad akvaariumid. Mul ei ole akvaariumi.",
+        answerTranslation: "Yes, I like aquariums. I don't have an aquarium.",
         answerAudio: "../audio/24-lemmikloom-a2/005a.wav"
       },
       {
         text: "Eesti keeles on tavaline kassi nimi Miisu või Nurri. Mis on tavaline kassi nimi teie emakeeles?",
+        textTranslation: "In Estonian, a common cat name is Miisu or Nurri. What is a common cat name in your native language?",
         audio: "../audio/24-lemmikloom-a2/006.wav",
         answer: "Minu emakeeles on tavaline kassi nimi näiteks Mimi.",
+        answerTranslation: "In my native language, a common cat name is for example Mimi.",
         answerAudio: "../audio/24-lemmikloom-a2/006a.wav"
       },
       {
         text: "Eesti keeles on tavaline koera nimi Pontu või Muri. Mis on tavaline koera nimi teie emakeeles?",
+        textTranslation: "In Estonian, a common dog name is Pontu or Muri. What is a common dog name in your native language?",
         audio: "../audio/24-lemmikloom-a2/007.wav",
         answer: "Minu emakeeles on tavaline koera nimi näiteks Tommy.",
+        answerTranslation: "In my native language, a common dog name is for example Tommy.",
         answerAudio: "../audio/24-lemmikloom-a2/007a.wav"
       },
       {
         text: "Kas teile meeldib, kui restoranis on inimene koos koeraga? Aga bussis?",
+        textTranslation: "Do you like it when there is a person with a dog in a restaurant? How about on a bus?",
         audio: "../audio/24-lemmikloom-a2/008.wav",
         answer: "Restoranis see ei ole alati hea. Bussis võib olla okei.",
+        answerTranslation: "In a restaurant, it's not always good. On a bus, it can be okay.",
         answerAudio: "../audio/24-lemmikloom-a2/008a.wav"
       },
       {
         text: "Mis häält teeb kass? Aga koer?",
+        textTranslation: "What sound does a cat make? How about a dog?",
         audio: "../audio/24-lemmikloom-a2/009.wav",
         answer: "Kass ütleb “mjäu”. Koer haugub.",
+        answerTranslation: "A cat says 'meow'. A dog barks.",
         answerAudio: "../audio/24-lemmikloom-a2/009a.wav"
       },
       {
         text: "Mis loom on ideaalne lemmikloom?",
+        textTranslation: "What animal is the ideal pet?",
         audio: "../audio/24-lemmikloom-a2/010.wav",
         answer: "Minu arvates on kass väga hea lemmikloom.",
+        answerTranslation: "In my opinion, a cat is a very good pet.",
         answerAudio: "../audio/24-lemmikloom-a2/010a.wav"
       },
       {
         text: "Kui vanaks koerad elavad? Aga kassid? Aga kilpkonnad?",
+        textTranslation: "How long do dogs live? How about cats? How about turtles?",
         audio: "../audio/24-lemmikloom-a2/011.wav",
         answer: "Koerad elavad umbes 10–15 aastat. Kassid umbes 15 aastat. Kilpkonnad võivad elada väga kaua.",
+        answerTranslation: "Dogs live about 10–15 years. Cats about 15 years. Turtles can live very long.",
         answerAudio: "../audio/24-lemmikloom-a2/011a.wav"
       },
       {
         text: "Kui teil oleks koer või kass, kas ta võiks teie voodis magada?",
+        textTranslation: "If you had a dog or a cat, could it sleep in your bed?",
         audio: "../audio/24-lemmikloom-a2/012.wav",
         answer: "Võib-olla jah, aga mitte iga päev.",
+        answerTranslation: "Maybe yes, but not every day.",
         answerAudio: "../audio/24-lemmikloom-a2/012a.wav"
       },
       {
         text: "Mida teie lemmikloom tohib teha? Mida ta ei tohi teha?",
+        textTranslation: "What is your pet allowed to do? What is it not allowed to do?",
         audio: "../audio/24-lemmikloom-a2/013.wav",
         answer: "Ta tohib mängida ja jalutada. Ta ei tohi mööblit rikkuda.",
+        answerTranslation: "It is allowed to play and walk. It is not allowed to damage the furniture.",
         answerAudio: "../audio/24-lemmikloom-a2/013a.wav"
       },
       {
         text: "Kas rebane võiks olla lemmikloom? Aga siga? Aga rott?",
+        textTranslation: "Could a fox be a pet? How about a pig? How about a rat?",
         audio: "../audio/24-lemmikloom-a2/014.wav",
         answer: "Rott võib olla lemmikloom, aga rebane tavaliselt ei ole.",
+        answerTranslation: "A rat can be a pet, but a fox usually isn't.",
         answerAudio: "../audio/24-lemmikloom-a2/014a.wav"
       },
       {
         text: "Kuidas te hoolitsete lemmiklooma eest? Mida te peate iga päev tegema?",
+        textTranslation: "How do you take care of a pet? What do you have to do every day?",
         audio: "../audio/24-lemmikloom-a2/015.wav",
         answer: "Iga päev peab looma toitma, temaga mängima ja tema eest hoolitsema.",
+        answerTranslation: "Every day you have to feed the animal, play with it, and take care of it.",
         answerAudio: "../audio/24-lemmikloom-a2/015a.wav"
       }
     ];

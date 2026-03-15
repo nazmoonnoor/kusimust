@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,122 +40,162 @@
     const items = [
       {
         text: "Kas te kuulate iga päev muusikat? Kus te kuulate muusikat?",
+        textTranslation: "Do you listen to music every day? Where do you listen to music?",
         audio: "../audio/23-muusika-a1/001.wav",
         answer: "Jah, ma kuulan muusikat iga päev. Tavaliselt kuulan telefonist või autos.",
+        answerTranslation: "Yes, I listen to music every day. I usually listen on my phone or in the car.",
         answerAudio: "../audio/23-muusika-a1/001a.wav"
       },
       {
         text: "Kas te kuulate muusikat, kui te õpite eesti keelt? Mis muusikat te kuulate?",
+        textTranslation: "Do you listen to music when you study Estonian? What kind of music do you listen to?",
         audio: "../audio/23-muusika-a1/002.wav",
         answer: "Mõnikord kuulan. Ma kuulan rahulikku muusikat.",
+        answerTranslation: "Sometimes I do. I listen to calm music.",
         answerAudio: "../audio/23-muusika-a1/002a.wav"
       },
       {
         text: "Mitu tundi päevas te muusikat kuulate?",
+        textTranslation: "How many hours a day do you listen to music?",
         audio: "../audio/23-muusika-a1/003.wav",
         answer: "Ma kuulan muusikat umbes üks tund päevas.",
+        answerTranslation: "I listen to music about one hour a day.",
         answerAudio: "../audio/23-muusika-a1/003a.wav"
       },
       {
         text: "Kas te laulate hästi? Millal te tavaliselt laulate?",
+        textTranslation: "Do you sing well? When do you usually sing?",
         audio: "../audio/23-muusika-a1/004.wav",
         answer: "Ma ei laula väga hästi. Mõnikord laulan autos või kodus.",
+        answerTranslation: "I don't sing very well. Sometimes I sing in the car or at home.",
         answerAudio: "../audio/23-muusika-a1/004a.wav"
       },
       {
         text: "Kas te käite mõnikord karaokebaaris? Kas te laulate karaoket?",
+        textTranslation: "Do you sometimes go to karaoke bars? Do you sing karaoke?",
         audio: "../audio/23-muusika-a1/005.wav",
         answer: "Ei, ma ei käi sageli karaokebaaris.",
+        answerTranslation: "No, I don't often go to karaoke bars.",
         answerAudio: "../audio/23-muusika-a1/005a.wav"
       },
       {
         text: "Kas te käite mõnikord kontserdil?",
+        textTranslation: "Do you sometimes go to concerts?",
         audio: "../audio/23-muusika-a1/006.wav",
         answer: "Jah, mõnikord käin kontserdil.",
+        answerTranslation: "Yes, I sometimes go to concerts.",
         answerAudio: "../audio/23-muusika-a1/006a.wav"
       },
       {
         text: "Kas te mängite klaverit? Aga kitarri? Aga trummi?",
+        textTranslation: "Do you play the piano? How about the guitar? How about the drums?",
         audio: "../audio/23-muusika-a1/007.wav",
         answer: "Ei, ma ei mängi pilli.",
+        answerTranslation: "No, I don't play an instrument.",
         answerAudio: "../audio/23-muusika-a1/007a.wav"
       },
       {
         text: "Kas teie pere on muusikaline? Kes teie peres on muusikaline?",
+        textTranslation: "Is your family musical? Who in your family is musical?",
         audio: "../audio/23-muusika-a1/008.wav",
         answer: "Minu pere ei ole väga muusikaline.",
+        answerTranslation: "My family is not very musical.",
         answerAudio: "../audio/23-muusika-a1/008a.wav"
       },
       {
         text: "Kas teile meeldib, kui kohvikus on muusika? Kas kohvikus on mõnikord liiga vali muusika?",
+        textTranslation: "Do you like it when there is music in a café? Is the music sometimes too loud in a café?",
         audio: "../audio/23-muusika-a1/009.wav",
         answer: "Jah, mulle meeldib vaikne muusika. Mõnikord on muusika liiga vali.",
+        answerTranslation: "Yes, I like quiet music. Sometimes the music is too loud.",
         answerAudio: "../audio/23-muusika-a1/009a.wav"
       },
       {
         text: "Kas teile meeldib klassikaline muusika? Aga disko? Aga džäss? Aga räpp?",
+        textTranslation: "Do you like classical music? How about disco? How about jazz? How about rap?",
         audio: "../audio/23-muusika-a1/010.wav",
         answer: "Mulle meeldib rahulik muusika ja natuke džässi.",
+        answerTranslation: "I like calm music and a bit of jazz.",
         answerAudio: "../audio/23-muusika-a1/010a.wav"
       },
       {
         text: "Missugune muusika teile meeldib? Missugune muusika teile ei meeldi?",
+        textTranslation: "What kind of music do you like? What kind of music do you not like?",
         audio: "../audio/23-muusika-a1/011.wav",
         answer: "Mulle meeldib rahulik ja meloodiline muusika. Väga vali muusika ei meeldi.",
+        answerTranslation: "I like calm and melodic music. I don't like very loud music.",
         answerAudio: "../audio/23-muusika-a1/011a.wav"
       },
       {
         text: "Kas te tantsite mõnikord kodus? Mis muusikaga te tantsite?",
+        textTranslation: "Do you sometimes dance at home? What music do you dance to?",
         audio: "../audio/23-muusika-a1/012.wav",
         answer: "Mõnikord tantsin kodus. Ma tantsin popmuusikaga.",
+        answerTranslation: "Sometimes I dance at home. I dance to pop music.",
         answerAudio: "../audio/23-muusika-a1/012a.wav"
       },
       {
         text: "Kas te kuulate muusikat raadiost? Aga arvutist? Aga telefonist? Aga plaadilt?",
+        textTranslation: "Do you listen to music on the radio? How about on the computer? On the phone? On a record?",
         audio: "../audio/23-muusika-a1/013.wav",
         answer: "Ma kuulan muusikat telefonist ja arvutist.",
+        answerTranslation: "I listen to music on my phone and computer.",
         answerAudio: "../audio/23-muusika-a1/013a.wav"
       },
       {
         text: "Kas teil on lemmiklaulja või lemmikbänd? Kes või mis see on?",
+        textTranslation: "Do you have a favorite singer or band? Who or what is it?",
         audio: "../audio/23-muusika-a1/014.wav",
         answer: "Jah, mul on mõned lemmiklauljad.",
+        answerTranslation: "Yes, I have some favorite singers.",
         answerAudio: "../audio/23-muusika-a1/014a.wav"
       },
       {
         text: "Mis on selle aasta hitt?",
+        textTranslation: "What is this year's hit?",
         audio: "../audio/23-muusika-a1/015.wav",
         answer: "Ma ei tea täpselt selle aasta hitti.",
+        answerTranslation: "I don't know exactly this year's hit song.",
         answerAudio: "../audio/23-muusika-a1/015a.wav"
       },
       {
         text: "Kas te teate, mida tähendab unelaul? Aga koorilaul? Aga helilooja? Aga dirigent?",
+        textTranslation: "Do you know what a lullaby means? How about a choir song? How about a composer? How about a conductor?",
         audio: "../audio/23-muusika-a1/016.wav",
         answer: "Jah, ma tean neid sõnu.",
+        answerTranslation: "Yes, I know these words.",
         answerAudio: "../audio/23-muusika-a1/016a.wav"
       },
       {
         text: "Kas te ostate muusikat? Kust te ostate muusikat?",
+        textTranslation: "Do you buy music? Where do you buy music?",
         audio: "../audio/23-muusika-a1/017.wav",
         answer: "Tavaliselt ma ei osta muusikat. Ma kuulan internetist.",
+        answerTranslation: "Usually I don't buy music. I listen on the internet.",
         answerAudio: "../audio/23-muusika-a1/017a.wav"
       },
       {
         text: "Mis filmis on väga hea muusika?",
+        textTranslation: "In which movie is there very good music?",
         audio: "../audio/23-muusika-a1/018.wav",
         answer: "Mõnes filmis on väga hea muusika, näiteks muusikafilmides.",
+        answerTranslation: "Some movies have very good music, for example, musicals.",
         answerAudio: "../audio/23-muusika-a1/018a.wav"
       },
       {
         text: "Mitu vinüülplaati teil kodus on? Aga mitu CD-plaati teil kodus on?",
+        textTranslation: "How many vinyl records do you have at home? How many CDs do you have at home?",
         audio: "../audio/23-muusika-a1/019.wav",
         answer: "Mul ei ole vinüülplaate. Mul on mõned CD-plaadid.",
+        answerTranslation: "I don't have vinyl records. I have some CDs.",
         answerAudio: "../audio/23-muusika-a1/019a.wav"
       },
       {
         text: "Kas teie emale meeldib sama muusika, mis teile? Aga teie lapsele?",
+        textTranslation: "Does your mother like the same music as you? How about your child?",
         audio: "../audio/23-muusika-a1/020.wav",
         answer: "Mõnikord meeldib sama muusika. Minu lapsele meeldib tavaliselt teine muusika.",
+        answerTranslation: "Sometimes she likes the same music. My child usually likes different music.",
         answerAudio: "../audio/23-muusika-a1/020a.wav"
       }
     ];

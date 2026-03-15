@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,122 +40,162 @@
     const items = [
       {
         text: "Mis värvi on teie silmad?",
+        textTranslation: "What color are your eyes?",
         audio: "../audio/20-valmis-a1/001.wav",
         answer: "Minu silmad on pruunid.",
+        answerTranslation: "My eyes are brown.",
         answerAudio: "../audio/20-valmis-a1/001a.wav"
       },
       {
         text: "Kellel teie peres on pruunid silmad? Aga sinised silmad?",
+        textTranslation: "Who in your family has brown eyes? How about blue eyes?",
         audio: "../audio/20-valmis-a1/002.wav",
         answer: "Minu emal on pruunid silmad. Minu sõbral on sinised silmad.",
+        answerTranslation: "My mother has brown eyes. My friend has blue eyes.",
         answerAudio: "../audio/20-valmis-a1/002a.wav"
       },
       {
         text: "Mis värvi on teie kõige parema sõbra silmad? Aga juuksed?",
+        textTranslation: "What color are your best friend's eyes? How about their hair?",
         audio: "../audio/20-valmis-a1/003.wav",
         answer: "Minu sõbral on pruunid silmad ja mustad juuksed.",
+        answerTranslation: "My friend has brown eyes and black hair.",
         answerAudio: "../audio/20-valmis-a1/003a.wav"
       },
       {
         text: "Kas teil on pikad juuksed? Kas teil on lokkis juuksed?",
+        textTranslation: "Do you have long hair? Do you have curly hair?",
         audio: "../audio/20-valmis-a1/004.wav",
         answer: "Ei, mul on lühikesed ja sirged juuksed.",
+        answerTranslation: "No, I have short and straight hair.",
         answerAudio: "../audio/20-valmis-a1/004a.wav"
       },
       {
         text: "Kellel teie peres on pikad juuksed? Kellel teie peres on lokkis juuksed?",
+        textTranslation: "Who in your family has long hair? Who in your family has curly hair?",
         audio: "../audio/20-valmis-a1/005.wav",
         answer: "Minu õel on pikad juuksed.",
+        answerTranslation: "My sister has long hair.",
         answerAudio: "../audio/20-valmis-a1/005a.wav"
       },
       {
         text: "Kas teile meeldivad lokkis juuksed?",
+        textTranslation: "Do you like curly hair?",
         audio: "../audio/20-valmis-a1/006.wav",
         answer: "Jah, mulle meeldivad lokkis juuksed.",
+        answerTranslation: "Yes, I like curly hair.",
         answerAudio: "../audio/20-valmis-a1/006a.wav"
       },
       {
         text: "Mitu korda nädalas te pead pesete?",
+        textTranslation: "How many times a week do you wash your hair?",
         audio: "../audio/20-valmis-a1/007.wav",
         answer: "Ma pesen pead kaks või kolm korda nädalas.",
+        answerTranslation: "I wash my hair two or three times a week.",
         answerAudio: "../audio/20-valmis-a1/007a.wav"
       },
       {
         text: "Mitu korda aastas te juuksuris käite?",
+        textTranslation: "How many times a year do you go to the hairdresser?",
         audio: "../audio/20-valmis-a1/008.wav",
         answer: "Ma käin juuksuris umbes kuus korda aastas.",
+        answerTranslation: "I go to the hairdresser about six times a year.",
         answerAudio: "../audio/20-valmis-a1/008a.wav"
       },
       {
         text: "Mitu kammi teil on? Kui tihti te juukseid kammite?",
+        textTranslation: "How many combs do you have? How often do you comb your hair?",
         audio: "../audio/20-valmis-a1/009.wav",
         answer: "Mul on üks kamm. Ma kammin juukseid iga päev.",
+        answerTranslation: "I have one comb. I comb my hair every day.",
         answerAudio: "../audio/20-valmis-a1/009a.wav"
       },
       {
         text: "Kas te olete pikk või lühike inimene? Kes on teie peres kõige pikem? Aga kõige lühem?",
+        textTranslation: "Are you a tall or short person? Who is the tallest in your family? How about the shortest?",
         audio: "../audio/20-valmis-a1/010.wav",
         answer: "Ma olen keskmise pikkusega. Minu vend on kõige pikem.",
+        answerTranslation: "I am of average height. My brother is the tallest.",
         answerAudio: "../audio/20-valmis-a1/010a.wav"
       },
       {
         text: "Mis on teie kinganumber?",
+        textTranslation: "What is your shoe size?",
         audio: "../audio/20-valmis-a1/011.wav",
         answer: "Minu kinganumber on 42.",
+        answerTranslation: "My shoe size is 42.",
         answerAudio: "../audio/20-valmis-a1/011a.wav"
       },
       {
         text: "Mitu hammast teil on?",
+        textTranslation: "How many teeth do you have?",
         audio: "../audio/20-valmis-a1/012.wav",
         answer: "Mul on umbes 32 hammast.",
+        answerTranslation: "I have about 32 teeth.",
         answerAudio: "../audio/20-valmis-a1/012a.wav"
       },
       {
         text: "Kas teile meeldivad tätoveeringud? Kas teil on tätoveering?",
+        textTranslation: "Do you like tattoos? Do you have a tattoo?",
         audio: "../audio/20-valmis-a1/013.wav",
         answer: "Mõnikord meeldivad tätoveeringud, aga mul ei ole tätoveeringut.",
+        answerTranslation: "Sometimes I like tattoos, but I don't have a tattoo.",
         answerAudio: "../audio/20-valmis-a1/013a.wav"
       },
       {
         text: "Kas inimene on ilusam meigiga või meigita?",
+        textTranslation: "Is a person more beautiful with makeup or without?",
         audio: "../audio/20-valmis-a1/014.wav",
         answer: "Minu arvates on inimene ilus mõlemal viisil.",
+        answerTranslation: "In my opinion, a person is beautiful both ways.",
         answerAudio: "../audio/20-valmis-a1/014a.wav"
       },
       {
         text: "Kas teie teete meiki? Mitu minutit te meiki teete?",
+        textTranslation: "Do you do makeup? How many minutes do you spend on makeup?",
         audio: "../audio/20-valmis-a1/015.wav",
         answer: "Ei, ma ei tee meiki.",
+        answerTranslation: "No, I don't do makeup.",
         answerAudio: "../audio/20-valmis-a1/015a.wav"
       },
       {
         text: "Kas pikad ja paksud inimesed on ilusad? Aga lühikesed ja saledad?",
+        textTranslation: "Are tall and fat people beautiful? How about short and slim people?",
         audio: "../audio/20-valmis-a1/016.wav",
         answer: "Minu arvates võivad kõik inimesed olla ilusad.",
+        answerTranslation: "In my opinion, all people can be beautiful.",
         answerAudio: "../audio/20-valmis-a1/016a.wav"
       },
       {
         text: "Kas hallid juuksed on ilusad? Aga punased juuksed?",
+        textTranslation: "Are gray hair beautiful? How about red hair?",
         audio: "../audio/20-valmis-a1/017.wav",
         answer: "Jah, hallid ja punased juuksed võivad olla ilusad.",
+        answerTranslation: "Yes, gray and red hair can be beautiful.",
         answerAudio: "../audio/20-valmis-a1/017a.wav"
       },
       {
         text: "Missugused juuksed on Eesti presidendil?",
+        textTranslation: "What kind of hair does the Estonian president have?",
         audio: "../audio/20-valmis-a1/018.wav",
         answer: "Eesti presidendil on lühikesed hallid juuksed.",
+        answerTranslation: "The Estonian president has short gray hair.",
         answerAudio: "../audio/20-valmis-a1/018a.wav"
       },
       {
         text: "Kas te teate, mida tähendab hobusesaba? Aga siilisoeng? Aga kiilakas? Aga poisipea?",
+        textTranslation: "Do you know what a ponytail means? How about a crew cut? How about bald? How about a boy's haircut?",
         audio: "../audio/20-valmis-a1/019.wav",
         answer: "Jah, ma tean neid sõnu.",
+        answerTranslation: "Yes, I know these words.",
         answerAudio: "../audio/20-valmis-a1/019a.wav"
       },
       {
         text: "Mis riigis elavad kõige ilusamad naised? Aga mehed?",
+        textTranslation: "In which country do the most beautiful women live? How about men?",
         audio: "../audio/20-valmis-a1/020.wav",
         answer: "Minu arvates on ilusad inimesed igas riigis.",
+        answerTranslation: "In my opinion, there are beautiful people in every country.",
         answerAudio: "../audio/20-valmis-a1/020a.wav"
       }
     ];

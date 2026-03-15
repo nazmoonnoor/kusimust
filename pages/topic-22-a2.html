@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,92 +40,122 @@
     const items = [
       {
         text: "Kas inimene on loom? Aga kas nahkhiir on loom või lind?",
+        textTranslation: "Is a human an animal? And is a bat an animal or a bird?",
         audio: "../audio/22-loodus-ja-loomad-a2/001.wav",
         answer: "Jah, inimene on loom. Nahkhiir on loom.",
+        answerTranslation: "Yes, a human is an animal. A bat is an animal.",
         answerAudio: "../audio/22-loodus-ja-loomad-a2/001a.wav"
       },
       {
         text: "Mis loomad algavad k-tähega? Aga l-tähega?",
+        textTranslation: "What animals start with the letter K? How about with the letter L?",
         audio: "../audio/22-loodus-ja-loomad-a2/002.wav",
         answer: "K-tähega algab kass ja koer. L-tähega algab lõvi ja lammas.",
+        answerTranslation: "Cat and dog start with K. Lion and sheep start with L.",
         answerAudio: "../audio/22-loodus-ja-loomad-a2/002a.wav"
       },
       {
         text: "Kui te oleksite loom, mis loom te oleksite?",
+        textTranslation: "If you were an animal, what animal would you be?",
         audio: "../audio/22-loodus-ja-loomad-a2/003.wav",
         answer: "Kui ma oleks loom, ma oleks delfiin.",
+        answerTranslation: "If I were an animal, I would be a dolphin.",
         answerAudio: "../audio/22-loodus-ja-loomad-a2/003a.wav"
       },
       {
         text: "Mis metsloomad elavad linnas?",
+        textTranslation: "What wild animals live in the city?",
         audio: "../audio/22-loodus-ja-loomad-a2/004.wav",
         answer: "Linnas elavad näiteks rebased ja siilid.",
+        answerTranslation: "For example, foxes and hedgehogs live in the city.",
         answerAudio: "../audio/22-loodus-ja-loomad-a2/004a.wav"
       },
       {
         text: "Kas kärbes on ohtlik? Aga sääsk? Aga ämblik?",
+        textTranslation: "Is a fly dangerous? How about a mosquito? How about a spider?",
         audio: "../audio/22-loodus-ja-loomad-a2/005.wav",
         answer: "Kärbes ei ole ohtlik. Sääsk võib hammustada. Mõned ämblikud võivad olla ohtlikud.",
+        answerTranslation: "A fly is not dangerous. A mosquito can bite. Some spiders can be dangerous.",
         answerAudio: "../audio/22-loodus-ja-loomad-a2/005a.wav"
       },
       {
         text: "Kas kana oskab lennata? Aga lehm? Aga siga?",
+        textTranslation: "Can a chicken fly? How about a cow? How about a pig?",
         audio: "../audio/22-loodus-ja-loomad-a2/006.wav",
         answer: "Kana võib natuke lennata. Lehm ja siga ei oska lennata.",
+        answerTranslation: "A chicken can fly a little. A cow and a pig cannot fly.",
         answerAudio: "../audio/22-loodus-ja-loomad-a2/006a.wav"
       },
       {
         text: "Mis loom hüppab? Aga mis loom lendab? Aga mis loom ujub?",
+        textTranslation: "What animal jumps? What animal flies? What animal swims?",
         audio: "../audio/22-loodus-ja-loomad-a2/007.wav",
         answer: "Känguru hüppab. Lind lendab. Kala ujub.",
+        answerTranslation: "A kangaroo jumps. A bird flies. A fish swims.",
         answerAudio: "../audio/22-loodus-ja-loomad-a2/007a.wav"
       },
       {
         text: "Kas tigu on kiire või aeglane loom? Aga siil? Aga sisalik?",
+        textTranslation: "Is a snail a fast or slow animal? How about a hedgehog? How about a lizard?",
         audio: "../audio/22-loodus-ja-loomad-a2/008.wav",
         answer: "Tigu on aeglane. Siil ja sisalik on kiiremad.",
+        answerTranslation: "A snail is slow. A hedgehog and a lizard are faster.",
         answerAudio: "../audio/22-loodus-ja-loomad-a2/008a.wav"
       },
       {
         text: "Kas te olete näinud rebast? Aga põtra? Aga rotti?",
+        textTranslation: "Have you seen a fox? How about a moose? How about a rat?",
         audio: "../audio/22-loodus-ja-loomad-a2/009.wav",
         answer: "Jah, ma olen näinud rebast ja rotti.",
+        answerTranslation: "Yes, I have seen a fox and a rat.",
         answerAudio: "../audio/22-loodus-ja-loomad-a2/009a.wav"
       },
       {
         text: "Mis loom on öösel üleval ja päeval magab?",
+        textTranslation: "What animal is awake at night and sleeps during the day?",
         audio: "../audio/22-loodus-ja-loomad-a2/010.wav",
         answer: "Näiteks öökull.",
+        answerTranslation: "For example, an owl.",
         answerAudio: "../audio/22-loodus-ja-loomad-a2/010a.wav"
       },
       {
         text: "Mis loomi te kardate?",
+        textTranslation: "What animals are you afraid of?",
         audio: "../audio/22-loodus-ja-loomad-a2/011.wav",
         answer: "Ma kardan natuke suuri ämblikke.",
+        answerTranslation: "I am a little afraid of big spiders.",
         answerAudio: "../audio/22-loodus-ja-loomad-a2/011a.wav"
       },
       {
         text: "Mis loomad elavad grupis? Aga mis loomad elavad üksi?",
+        textTranslation: "What animals live in groups? How about animals that live alone?",
         audio: "../audio/22-loodus-ja-loomad-a2/012.wav",
         answer: "Hundid elavad grupis. Tiiger elab tavaliselt üksi.",
+        answerTranslation: "Wolves live in groups. A tiger usually lives alone.",
         answerAudio: "../audio/22-loodus-ja-loomad-a2/012a.wav"
       },
       {
         text: "Mis loom sööb taimi? Mis loom sööb liha?",
+        textTranslation: "What animal eats plants? What animal eats meat?",
         audio: "../audio/22-loodus-ja-loomad-a2/013.wav",
         answer: "Lehm sööb taimi. Lõvi sööb liha.",
+        answerTranslation: "A cow eats plants. A lion eats meat.",
         answerAudio: "../audio/22-loodus-ja-loomad-a2/013a.wav"
       },
       {
         text: "Kumb on ohtlikum, kas lõvi või haikala?",
+        textTranslation: "Which is more dangerous, a lion or a shark?",
         audio: "../audio/22-loodus-ja-loomad-a2/014.wav",
         answer: "Mõlemad on ohtlikud loomad.",
+        answerTranslation: "Both are dangerous animals.",
         answerAudio: "../audio/22-loodus-ja-loomad-a2/014a.wav"
       },
       {
         text: "Mida te teete, kui teie toas on hiir? Aga skorpion? Aga sääsk?",
+        textTranslation: "What do you do if there is a mouse in your room? How about a scorpion? How about a mosquito?",
         audio: "../audio/22-loodus-ja-loomad-a2/015.wav",
         answer: "Kui toas on hiir või sääsk, ma püüan selle kinni või ajan välja.",
+        answerTranslation: "If there is a mouse or a mosquito in the room, I try to catch it or chase it out.",
         answerAudio: "../audio/22-loodus-ja-loomad-a2/015a.wav"
       }
     ];

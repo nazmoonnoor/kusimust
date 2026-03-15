@@ -23,9 +23,15 @@
       Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,122 +40,162 @@
   const items = [
     {
       text: "Mida te sööte hommikul? Aga mida te sööte öösel?",
+      textTranslation: "What do you eat in the morning? And what do you eat at night?",
       audio: "../audio/03-soogid-ja-joogid-a1/001.wav",
       answer: "Hommikul ma söön leiba ja muna. Öösel ma tavaliselt ei söö.",
+      answerTranslation: "In the morning I eat bread and eggs. At night I usually don't eat.",
       answerAudio: "../audio/03-soogid-ja-joogid-a1/001a.wav"
     },
     {
       text: "Mitu minutit te hommikul sööte?",
+      textTranslation: "How many minutes do you eat in the morning?",
       audio: "../audio/03-soogid-ja-joogid-a1/002.wav",
       answer: "Ma söön hommikul umbes kümme minutit.",
+      answerTranslation: "I eat for about ten minutes in the morning.",
       answerAudio: "../audio/03-soogid-ja-joogid-a1/002a.wav"
     },
     {
       text: "Kas te joote kohvi? Mitu kohvi te päevas joote?",
+      textTranslation: "Do you drink coffee? How many coffees do you drink per day?",
       audio: "../audio/03-soogid-ja-joogid-a1/003.wav",
       answer: "Jah, ma joon kohvi. Ma joon kaks kohvi päevas.",
+      answerTranslation: "Yes, I drink coffee. I drink two coffees a day.",
       answerAudio: "../audio/03-soogid-ja-joogid-a1/003a.wav"
     },
     {
       text: "Mitu kohvitassi teil kodus on?",
+      textTranslation: "How many coffee cups do you have at home?",
       audio: "../audio/03-soogid-ja-joogid-a1/004.wav",
       answer: "Minu kodus on umbes kuus kohvitassi.",
+      answerTranslation: "I have about six coffee cups at home.",
       answerAudio: "../audio/03-soogid-ja-joogid-a1/004a.wav"
     },
     {
       text: "Mis värvi on teie lemmiktass?",
+      textTranslation: "What color is your favorite cup?",
       audio: "../audio/03-soogid-ja-joogid-a1/005.wav",
       answer: "Minu lemmiktass on sinine.",
+      answerTranslation: "My favorite cup is blue.",
       answerAudio: "../audio/03-soogid-ja-joogid-a1/005a.wav"
     },
     {
       text: "Kus te lõunat sööte?",
+      textTranslation: "Where do you eat lunch?",
       audio: "../audio/03-soogid-ja-joogid-a1/006.wav",
       answer: "Tavaliselt ma söön lõunat tööl või kodus.",
+      answerTranslation: "Usually I eat lunch at work or at home.",
       answerAudio: "../audio/03-soogid-ja-joogid-a1/006a.wav"
     },
     {
       text: "Kas te olete hea kokk? Mis toitu te teete väga hästi?",
+      textTranslation: "Are you a good cook? What food do you make very well?",
       audio: "../audio/03-soogid-ja-joogid-a1/007.wav",
       answer: "Ma ei ole väga hea kokk, aga ma teen hästi riisi ja kana.",
+      answerTranslation: "I am not a very good cook, but I make rice and chicken well.",
       answerAudio: "../audio/03-soogid-ja-joogid-a1/007a.wav"
     },
     {
       text: "Kas teile maitseb must leib? Aga valge vein? Aga punane kala?",
+      textTranslation: "Do you like black bread? How about white wine? Red fish?",
       audio: "../audio/03-soogid-ja-joogid-a1/008.wav",
       answer: "Mulle maitseb must leib ja punane kala. Ma ei joo valget viina.",
+      answerTranslation: "I like black bread and red fish. I don't drink white vodka.",
       answerAudio: "../audio/03-soogid-ja-joogid-a1/008a.wav"
     },
     {
       text: "Kas teile maitsevad seened? Aga rosinad? Aga kummikommid?",
+      textTranslation: "Do you like mushrooms? How about raisins? Gummy candies?",
       audio: "../audio/03-soogid-ja-joogid-a1/009.wav",
       answer: "Mulle maitsevad seened. Rosinad mulle väga ei meeldi. Kummikommid mulle meeldivad natuke.",
+      answerTranslation: "I like mushrooms. I don't really like raisins. I like gummy candies a little.",
       answerAudio: "../audio/03-soogid-ja-joogid-a1/009a.wav"
     },
     {
       text: "Mis on teie lemmikrestoran? Kas see restoran on kallis?",
+      textTranslation: "What is your favorite restaurant? Is this restaurant expensive?",
       audio: "../audio/03-soogid-ja-joogid-a1/010.wav",
       answer: "Minu lemmikrestoran on üks väike restoran Tallinnas. See ei ole väga kallis.",
+      answerTranslation: "My favorite restaurant is a small restaurant in Tallinn. It is not very expensive.",
       answerAudio: "../audio/03-soogid-ja-joogid-a1/010a.wav"
     },
     {
       text: "Kas te sööte leiba, kui te sööte suppi?",
+      textTranslation: "Do you eat bread when you eat soup?",
       audio: "../audio/03-soogid-ja-joogid-a1/011.wav",
       answer: "Jah, ma söön suppi leivaga.",
+      answerTranslation: "Yes, I eat soup with bread.",
       answerAudio: "../audio/03-soogid-ja-joogid-a1/011a.wav"
     },
     {
       text: "Kas teie külmkapis on piim? Aga õlu? Aga mesi?",
+      textTranslation: "Is there milk in your fridge? How about beer? Honey?",
       audio: "../audio/03-soogid-ja-joogid-a1/012.wav",
       answer: "Minu külmkapis on piim ja mesi. Õlut tavaliselt ei ole.",
+      answerTranslation: "There is milk and honey in my fridge. Usually there is no beer.",
       answerAudio: "../audio/03-soogid-ja-joogid-a1/012a.wav"
     },
     {
       text: "Mis teie külmkapis alati on?",
+      textTranslation: "What is always in your fridge?",
       audio: "../audio/03-soogid-ja-joogid-a1/013.wav",
       answer: "Minu külmkapis on alati piim, muna ja puuviljad.",
+      answerTranslation: "There is always milk, eggs, and fruit in my fridge.",
       answerAudio: "../audio/03-soogid-ja-joogid-a1/013a.wav"
     },
     {
       text: "Kas te sööte friikartuleid ketšupiga? Aga makarone? Aga pitsat?",
+      textTranslation: "Do you eat French fries with ketchup? How about pasta? Pizza?",
       audio: "../audio/03-soogid-ja-joogid-a1/014.wav",
       answer: "Jah, ma söön friikartuleid ketšupiga. Mulle meeldivad ka makaronid ja pitsa.",
+      answerTranslation: "Yes, I eat French fries with ketchup. I also like pasta and pizza.",
       answerAudio: "../audio/03-soogid-ja-joogid-a1/014a.wav"
     },
     {
       text: "Mida te sööte ja joote, kui teil on sünnipäev?",
+      textTranslation: "What do you eat and drink on your birthday?",
       audio: "../audio/03-soogid-ja-joogid-a1/015.wav",
       answer: "Sünnipäeval ma söön torti ja head toitu. Ma joon mahla või teed.",
+      answerTranslation: "On my birthday I eat cake and good food. I drink juice or tea.",
       answerAudio: "../audio/03-soogid-ja-joogid-a1/015a.wav"
     },
     {
       text: "Kui palju maksab pudel head veini? Aga kilo suhkrut? Aga väike šokolaad?",
+      textTranslation: "How much does a bottle of good wine cost? How about a kilo of sugar? A small chocolate?",
       audio: "../audio/03-soogid-ja-joogid-a1/016.wav",
       answer: "Pudel head veini maksab umbes kümme eurot. Kilo suhkrut maksab umbes kaks eurot. Väike šokolaad maksab umbes üks euro.",
+      answerTranslation: "A bottle of good wine costs about ten euros. A kilo of sugar costs about two euros. A small chocolate costs about one euro.",
       answerAudio: "../audio/03-soogid-ja-joogid-a1/016a.wav"
     },
     {
       text: "Mitu grammi on pool kilo jahu?",
+      textTranslation: "How many grams is half a kilo of flour?",
       audio: "../audio/03-soogid-ja-joogid-a1/017.wav",
       answer: "Pool kilo jahu on viissada grammi.",
+      answerTranslation: "Half a kilo of flour is five hundred grams.",
       answerAudio: "../audio/03-soogid-ja-joogid-a1/017a.wav"
     },
     {
       text: "Mitu korda te päevas sööte?",
+      textTranslation: "How many times a day do you eat?",
       audio: "../audio/03-soogid-ja-joogid-a1/018.wav",
       answer: "Ma söön tavaliselt kolm korda päevas.",
+      answerTranslation: "I usually eat three times a day.",
       answerAudio: "../audio/03-soogid-ja-joogid-a1/018a.wav"
     },
     {
       text: "Kas te teate, mida tähendab hapukapsas? Aga morss? Aga kohuke? Aga piparkook?",
+      textTranslation: "Do you know what sauerkraut means? How about morss? Curd snack? Gingerbread?",
       audio: "../audio/03-soogid-ja-joogid-a1/019.wav",
       answer: "Jah, ma tean. Need on Eesti toidud ja joogid.",
+      answerTranslation: "Yes, I know. These are Estonian foods and drinks.",
       answerAudio: "../audio/03-soogid-ja-joogid-a1/019a.wav"
     },
     {
       text: "Mis söök on Eestis väga hea? Mis söök ei ole Eestis väga hea?",
+      textTranslation: "What food is very good in Estonia? What food is not very good in Estonia?",
       audio: "../audio/03-soogid-ja-joogid-a1/020.wav",
       answer: "Eestis on väga hea must leib ja kala. Mõni söök mulle väga ei meeldi.",
+      answerTranslation: "Black bread and fish are very good in Estonia. Some food I don't like very much.",
       answerAudio: "../audio/03-soogid-ja-joogid-a1/020a.wav"
     }
   ];

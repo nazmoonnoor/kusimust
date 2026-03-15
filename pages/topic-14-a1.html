@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,122 +40,162 @@
     const items = [
       {
         text: "Kas te olete praegu haige või terve?",
+        textTranslation: "Are you currently sick or healthy?",
         audio: "../audio/14-tervis-a1/001.wav",
         answer: "Praegu ma olen terve.",
+        answerTranslation: "I am healthy right now.",
         answerAudio: "../audio/14-tervis-a1/001a.wav"
       },
       {
         text: "Kas te olete mõnikord haige? Kas te olete haige tavaliselt talvel, kevadel, suvel või sügisel?",
+        textTranslation: "Are you sometimes sick? Are you usually sick in winter, spring, summer, or autumn?",
         audio: "../audio/14-tervis-a1/002.wav",
         answer: "Jah, mõnikord olen haige. Tavaliselt talvel.",
+        answerTranslation: "Yes, sometimes I am sick. Usually in winter.",
         answerAudio: "../audio/14-tervis-a1/002a.wav"
       },
       {
         text: "Kus te olete, kui te olete haige? Kas teile meeldib kodus haige olla?",
+        textTranslation: "Where are you when you are sick? Do you like being sick at home?",
         audio: "../audio/14-tervis-a1/003.wav",
         answer: "Kui ma olen haige, olen kodus. Mulle ei meeldi haige olla.",
+        answerTranslation: "When I am sick, I am at home. I do not like being sick.",
         answerAudio: "../audio/14-tervis-a1/003a.wav"
       },
       {
         text: "Mida te teete, kui te olete haige?",
+        textTranslation: "What do you do when you are sick?",
         audio: "../audio/14-tervis-a1/004.wav",
         answer: "Kui ma olen haige, ma puhkan ja joon teed.",
+        answerTranslation: "When I am sick, I rest and drink tea.",
         answerAudio: "../audio/14-tervis-a1/004a.wav"
       },
       {
         text: "Mida te sööte, kui te olete haige? Aga mida te joote?",
+        textTranslation: "What do you eat when you are sick? And what do you drink?",
         audio: "../audio/14-tervis-a1/005.wav",
         answer: "Ma söön suppi ja joon teed või vett.",
+        answerTranslation: "I eat soup and drink tea or water.",
         answerAudio: "../audio/14-tervis-a1/005a.wav"
       },
       {
         text: "Kas te olete praegu väsinud?",
+        textTranslation: "Are you tired right now?",
         audio: "../audio/14-tervis-a1/006.wav",
         answer: "Natuke olen väsinud.",
+        answerTranslation: "I am a little tired.",
         answerAudio: "../audio/14-tervis-a1/006a.wav"
       },
       {
         text: "Kas teie pea valutab praegu? Aga selg? Aga hammas?",
+        textTranslation: "Does your head hurt right now? How about your back? How about your tooth?",
         audio: "../audio/14-tervis-a1/007.wav",
         answer: "Ei, praegu ei valuta pea, selg ega hammas.",
+        answerTranslation: "No, right now my head, back, and tooth do not hurt.",
         answerAudio: "../audio/14-tervis-a1/007a.wav"
       },
       {
         text: "Mida te teete, kui teie hammas valutab? Aga mida te teete, kui teie pea valutab?",
+        textTranslation: "What do you do when your tooth hurts? And what do you do when your head hurts?",
         audio: "../audio/14-tervis-a1/008.wav",
         answer: "Kui hammas valutab, ma lähen hambaarsti juurde. Kui pea valutab, ma puhkan.",
+        answerTranslation: "When my tooth hurts, I go to the dentist. When my head hurts, I rest.",
         answerAudio: "../audio/14-tervis-a1/008a.wav"
       },
       {
         text: "Kas teil on perearst? Mis tema nimi on?",
+        textTranslation: "Do you have a family doctor? What is their name?",
         audio: "../audio/14-tervis-a1/009.wav",
         answer: "Jah, mul on perearst. Tema nimi on dr. Kask.",
+        answerTranslation: "Yes, I have a family doctor. Their name is Dr. Kask.",
         answerAudio: "../audio/14-tervis-a1/009a.wav"
       },
       {
         text: "Kas teie perearst töötab iga päev? Mis päeval tema töötab? Mis kell tema töötab?",
+        textTranslation: "Does your family doctor work every day? On which days do they work? At what time do they work?",
         audio: "../audio/14-tervis-a1/010.wav",
         answer: "Perearst töötab tööpäevadel. Tavaliselt hommikul ja päeval.",
+        answerTranslation: "The family doctor works on weekdays. Usually in the morning and during the day.",
         answerAudio: "../audio/14-tervis-a1/010a.wav"
       },
       {
         text: "Mitu haiglat on teie kodulinnas? Kas teie kodu lähedal on haigla või polikliinik?",
+        textTranslation: "How many hospitals are there in your hometown? Is there a hospital or clinic near your home?",
         audio: "../audio/14-tervis-a1/011.wav",
         answer: "Tallinnas on mitu haiglat. Minu kodu lähedal on polikliinik.",
+        answerTranslation: "There are several hospitals in Tallinn. There is a clinic near my home.",
         answerAudio: "../audio/14-tervis-a1/011a.wav"
       },
       {
         text: "Kas te käite tihti apteegis?",
+        textTranslation: "Do you often go to the pharmacy?",
         audio: "../audio/14-tervis-a1/012.wav",
         answer: "Ei, ma ei käi tihti apteegis.",
+        answerTranslation: "No, I do not often go to the pharmacy.",
         answerAudio: "../audio/14-tervis-a1/012a.wav"
       },
       {
         text: "Kas te suitsetate? Aga kas te joote alkoholi?",
+        textTranslation: "Do you smoke? And do you drink alcohol?",
         audio: "../audio/14-tervis-a1/013.wav",
         answer: "Ma ei suitseta. Mõnikord joon natuke alkoholi.",
+        answerTranslation: "I do not smoke. Sometimes I drink a little alcohol.",
         answerAudio: "../audio/14-tervis-a1/013a.wav"
       },
       {
         text: "Kas teie elus on palju või vähe stressi?",
+        textTranslation: "Do you have a lot or a little stress in your life?",
         audio: "../audio/14-tervis-a1/014.wav",
         answer: "Mõnikord on stressi, aga tavaliselt mitte palju.",
+        answerTranslation: "Sometimes there is stress, but usually not much.",
         answerAudio: "../audio/14-tervis-a1/014a.wav"
       },
       {
         text: "Mitu tundi te tavaliselt magate? Kas te magate hästi või halvasti?",
+        textTranslation: "How many hours do you usually sleep? Do you sleep well or badly?",
         audio: "../audio/14-tervis-a1/015.wav",
         answer: "Ma magan umbes kuus tundi. Tavaliselt magan hästi.",
+        answerTranslation: "I usually sleep about six hours. Usually I sleep well.",
         answerAudio: "../audio/14-tervis-a1/015a.wav"
       },
       {
         text: "Mitu korda aastas te käite hambaarsti juures?",
+        textTranslation: "How many times a year do you go to the dentist?",
         audio: "../audio/14-tervis-a1/016.wav",
         answer: "Ma käin hambaarsti juures üks või kaks korda aastas.",
+        answerTranslation: "I go to the dentist once or twice a year.",
         answerAudio: "../audio/14-tervis-a1/016a.wav"
       },
       {
         text: "Kas te kardate hambaarsti?",
+        textTranslation: "Are you afraid of the dentist?",
         audio: "../audio/14-tervis-a1/017.wav",
         answer: "Natuke kardan, aga see on normaalne.",
+        answerTranslation: "I am a little afraid, but that is normal.",
         answerAudio: "../audio/14-tervis-a1/017a.wav"
       },
       {
         text: "Kas te teate, mida tähendab kraadiklaas? Aga valuvaigisti? Aga vereproov? Aga röntgenipilt?",
+        textTranslation: "Do you know what a thermometer means? How about a painkiller? How about a blood test? How about an X-ray?",
         audio: "../audio/14-tervis-a1/018.wav",
         answer: "Jah, ma tean neid sõnu. Need on seotud tervisega.",
+        answerTranslation: "Yes, I know these words. They are related to health.",
         answerAudio: "../audio/14-tervis-a1/018a.wav"
       },
       {
         text: "Mitu kraadi on palavik?",
+        textTranslation: "How many degrees is a fever?",
         audio: "../audio/14-tervis-a1/019.wav",
         answer: "Tavaliselt on palavik üle 38 kraadi.",
+        answerTranslation: "Usually a fever is over 38 degrees.",
         answerAudio: "../audio/14-tervis-a1/019a.wav"
       },
       {
         text: "Kas teile meeldib massaaž? Aga meditatsioon? Aga saun?",
+        textTranslation: "Do you like massage? How about meditation? How about sauna?",
         audio: "../audio/14-tervis-a1/020.wav",
         answer: "Jah, mulle meeldib massaaž ja saun. Meditatsiooni ma teen mõnikord.",
+        answerTranslation: "Yes, I like massage and sauna. I do meditation sometimes.",
         answerAudio: "../audio/14-tervis-a1/020a.wav"
       }
     ];

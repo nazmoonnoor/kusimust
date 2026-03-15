@@ -23,9 +23,15 @@
       Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,92 +40,122 @@
   const items = [
     {
       text: "Kuidas teil läheb?",
+      textTranslation: "How are you?",
       audio: "../audio/01-mina-a2/001.wav",
       answer: "Mul läheb hästi, aitäh.",
+      answerTranslation: "I'm fine, thank you.",
       answerAudio: "../audio/01-mina-a2/001a.wav"
     },
     {
       text: "Mis kell te täna ärkasite?",
+      textTranslation: "What time did you wake up today?",
       audio: "../audio/01-mina-a2/002.wav",
       answer: "Ma ärkasin täna kell seitse.",
+      answerTranslation: "I woke up at seven today.",
       answerAudio: "../audio/01-mina-a2/002a.wav"
     },
     {
       text: "Mida te täna hommikul sõite? Ja mida te jõite? Kas teil on praegu kõht tühi? Kas teil on praegu janu?",
+      textTranslation: "What did you eat this morning? And what did you drink? Are you hungry now? Are you thirsty now?",
       audio: "../audio/01-mina-a2/003.wav",
       answer: "Ma sõin täna hommikul võileiba ja muna. Ma jõin teed. Ei, mul ei ole praegu kõht tühi. Ei, mul ei ole praegu janu.",
+      answerTranslation: "I ate a sandwich and an egg this morning. I drank tea. No, I am not hungry now. No, I am not thirsty now.",
       answerAudio: "../audio/01-mina-a2/003a.wav"
     },
     {
       text: "Kuhu te täna õhtul lähete?",
+      textTranslation: "Where are you going this evening?",
       audio: "../audio/01-mina-a2/004.wav",
       answer: "Täna õhtul ma lähen koju.",
+      answerTranslation: "This evening I am going home.",
       answerAudio: "../audio/01-mina-a2/004a.wav"
     },
     {
       text: "Kellega te täna kohtute?",
+      textTranslation: "Who are you meeting today?",
       audio: "../audio/01-mina-a2/005.wav",
       answer: "Ma kohtun täna oma sõbraga.",
+      answerTranslation: "I am meeting my friend today.",
       answerAudio: "../audio/01-mina-a2/005a.wav"
     },
     {
       text: "Missugune ilm täna on?",
+      textTranslation: "What is the weather like today?",
       audio: "../audio/01-mina-a2/006.wav",
       answer: "Täna on jahe ja pilvine ilm.",
+      answerTranslation: "Today the weather is cool and cloudy.",
       answerAudio: "../audio/01-mina-a2/006a.wav"
     },
     {
       text: "Mis teil praegu seljas on? Aga jalas?",
+      textTranslation: "What are you wearing right now? And on your feet?",
       audio: "../audio/01-mina-a2/007.wav",
       answer: "Mul on praegu seljas sinine särk ja mustad püksid. Mul on jalas mustad kingad.",
+      answerTranslation: "I am wearing a blue shirt and black pants. I have black shoes on my feet.",
       answerAudio: "../audio/01-mina-a2/007a.wav"
     },
     {
       text: "Mis mööbel teie toas on?",
+      textTranslation: "What furniture is in your room?",
       audio: "../audio/01-mina-a2/008.wav",
       answer: "Minu toas on voodi, laud, tool ja kapp.",
+      answerTranslation: "There is a bed, a table, a chair, and a cupboard in my room.",
       answerAudio: "../audio/01-mina-a2/008a.wav"
     },
     {
       text: "Kas te olete praegu terve? Millal te viimati haige olite?",
+      textTranslation: "Are you healthy right now? When were you last sick?",
       audio: "../audio/01-mina-a2/009.wav",
       answer: "Jah, ma olen praegu terve. Ma olin viimati haige eelmisel kuul.",
+      answerTranslation: "Yes, I am healthy right now. I was last sick last month.",
       answerAudio: "../audio/01-mina-a2/009a.wav"
     },
     {
       text: "Mitu raamatut teie kodus on? Aga mitu vaasi? Aga mitu televiisorit?",
+      textTranslation: "How many books do you have at home? How many vases? How many televisions?",
       audio: "../audio/01-mina-a2/010.wav",
       answer: "Minu kodus on umbes kakskümmend raamatut, kaks vaasi ja üks televiisor.",
+      answerTranslation: "I have about twenty books, two vases, and one television at home.",
       answerAudio: "../audio/01-mina-a2/010a.wav"
     },
     {
       text: "Kas te lähete sel nädalal tööle? Aga poodi? Aga diskole? Aga trenni?",
+      textTranslation: "Are you going to work this week? To the store? To a disco? To the gym?",
       audio: "../audio/01-mina-a2/011.wav",
       answer: "Jah, ma lähen sel nädalal tööle ja poodi. Ei, ma ei lähe diskole. Võib-olla ma lähen trenni.",
+      answerTranslation: "Yes, I am going to work and to the store this week. No, I am not going to a disco. Maybe I will go to the gym.",
       answerAudio: "../audio/01-mina-a2/011a.wav"
     },
     {
       text: "Mida te teete nädalavahetusel?",
+      textTranslation: "What are you doing on the weekend?",
       audio: "../audio/01-mina-a2/012.wav",
       answer: "Nädalavahetusel ma puhkan, õpin eesti keelt ja veedan aega perega.",
+      answerTranslation: "On the weekend I rest, study Estonian, and spend time with my family.",
       answerAudio: "../audio/01-mina-a2/012a.wav"
     },
     {
       text: "Kas te olete parema- või vasakukäeline?",
+      textTranslation: "Are you right- or left-handed?",
       audio: "../audio/01-mina-a2/013.wav",
       answer: "Ma olen paremakäeline.",
+      answerTranslation: "I am right-handed.",
       answerAudio: "../audio/01-mina-a2/013a.wav"
     },
     {
       text: "Kas te olete rohkem hommiku- või õhtuinimene? Aga kas te olete hea inimene?",
+      textTranslation: "Are you more of a morning or evening person? And are you a good person?",
       audio: "../audio/01-mina-a2/014.wav",
       answer: "Ma olen rohkem hommikuinimene. Jah, ma arvan, et ma olen hea inimene.",
+      answerTranslation: "I am more of a morning person. Yes, I think I am a good person.",
       answerAudio: "../audio/01-mina-a2/014a.wav"
     },
     {
       text: "Kas teile meeldivad rohkem kassid või koerad? Kas teile meeldivad rohkem filmid või raamatud?",
+      textTranslation: "Do you like cats or dogs more? Do you like movies or books more?",
       audio: "../audio/01-mina-a2/015.wav",
       answer: "Mulle meeldivad rohkem kassid. Mulle meeldivad rohkem raamatud kui filmid.",
+      answerTranslation: "I like cats more. I like books more than movies.",
       answerAudio: "../audio/01-mina-a2/015a.wav"
     }
   ];

@@ -23,9 +23,15 @@
       Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,122 +40,162 @@
   const items = [
     {
       text: "Kas te töötate? Kus te töötate?",
+      textTranslation: "Do you work? Where do you work?",
       audio: "../audio/05-too-a1/001.wav",
       answer: "Jah, ma töötan. Ma töötan IT-ettevõttes Tallinnas.",
+      answerTranslation: "Yes, I work. I work at an IT company in Tallinn.",
       answerAudio: "../audio/05-too-a1/001a.wav"
     },
     {
       text: "Mis päeval te töötate? Mis päeval te ei tööta?",
+      textTranslation: "On which days do you work? On which days do you not work?",
       audio: "../audio/05-too-a1/002.wav",
       answer: "Ma töötan esmaspäevast reedeni. Laupäeval ja pühapäeval ma ei tööta.",
+      answerTranslation: "I work from Monday to Friday. On Saturday and Sunday I do not work.",
       answerAudio: "../audio/05-too-a1/002a.wav"
     },
     {
       text: "Kas te töötate mõnikord nädalavahetusel?",
+      textTranslation: "Do you sometimes work on weekends?",
       audio: "../audio/05-too-a1/003.wav",
       answer: "Mõnikord ma töötan natuke nädalavahetusel.",
+      answerTranslation: "Sometimes I work a little on weekends.",
       answerAudio: "../audio/05-too-a1/003a.wav"
     },
     {
       text: "Mis kell teie tööpäev algab?",
+      textTranslation: "What time does your workday start?",
       audio: "../audio/05-too-a1/004.wav",
       answer: "Minu tööpäev algab kell üheksa.",
+      answerTranslation: "My workday starts at nine o'clock.",
       answerAudio: "../audio/05-too-a1/004a.wav"
     },
     {
       text: "Mis kell teie tööpäev lõpeb?",
+      textTranslation: "What time does your workday end?",
       audio: "../audio/05-too-a1/005.wav",
       answer: "Minu tööpäev lõpeb kell viis.",
+      answerTranslation: "My workday ends at five o'clock.",
       answerAudio: "../audio/05-too-a1/005a.wav"
     },
     {
       text: "Millal on teie puhkus? Kas suvel?",
+      textTranslation: "When is your vacation? Is it in summer?",
       audio: "../audio/05-too-a1/006.wav",
       answer: "Tavaliselt on minu puhkus suvel.",
+      answerTranslation: "Usually my vacation is in summer.",
       answerAudio: "../audio/05-too-a1/006a.wav"
     },
     {
       text: "Mitu päeva teie puhkus on?",
+      textTranslation: "How many days is your vacation?",
       audio: "../audio/05-too-a1/007.wav",
       answer: "Minu puhkus on umbes kakskümmend päeva.",
+      answerTranslation: "My vacation is about twenty days.",
       answerAudio: "../audio/05-too-a1/007a.wav"
     },
     {
       text: "Kellena teie ema töötab? Aga isa? Aga vend või õde?",
+      textTranslation: "What does your mother do for work? And your father? And your brother or sister?",
       audio: "../audio/05-too-a1/008.wav",
       answer: "Minu ema on kodus. Minu isa on pensionil.",
+      answerTranslation: "My mother is at home. My father is retired.",
       answerAudio: "../audio/05-too-a1/008a.wav"
     },
     {
       text: "Mitu kolleegi teil on?",
+      textTranslation: "How many colleagues do you have?",
       audio: "../audio/05-too-a1/009.wav",
       answer: "Mul on umbes kümme kolleegi.",
+      answerTranslation: "I have about ten colleagues.",
       answerAudio: "../audio/05-too-a1/009a.wav"
     },
     {
       text: "Kas teie ülemus on noor või vana? Kas tema on mees või naine?",
+      textTranslation: "Is your boss young or old? Is your boss a man or a woman?",
       audio: "../audio/05-too-a1/010.wav",
       answer: "Minu ülemus on mees ja ta on keskealine.",
+      answerTranslation: "My boss is a man and he is middle-aged.",
       answerAudio: "../audio/05-too-a1/010a.wav"
     },
     {
       text: "Kas te joote tööl kohvi? Mitu kohvi te joote?",
+      textTranslation: "Do you drink coffee at work? How many coffees do you drink?",
       audio: "../audio/05-too-a1/011.wav",
       answer: "Jah, ma joon tööl kohvi. Tavaliselt ma joon kaks kohvi.",
+      answerTranslation: "Yes, I drink coffee at work. Usually I drink two coffees.",
       answerAudio: "../audio/05-too-a1/011a.wav"
     },
     {
       text: "Kas te sööte tööl lõunat? Mis kell?",
+      textTranslation: "Do you eat lunch at work? What time?",
       audio: "../audio/05-too-a1/012.wav",
       answer: "Jah, ma söön tööl lõunat. Tavaliselt kell kaksteist.",
+      answerTranslation: "Yes, I eat lunch at work. Usually at twelve o'clock.",
       answerAudio: "../audio/05-too-a1/012a.wav"
     },
     {
       text: "Kas te teate, mida tähendab tööleping? Aga koosolek? Aga koostöö? Aga puhkepaus?",
+      textTranslation: "Do you know what 'employment contract' means? How about 'meeting'? How about 'cooperation'? How about 'break'?",
       audio: "../audio/05-too-a1/013.wav",
       answer: "Jah, ma tean neid sõnu. Need on seotud tööga.",
+      answerTranslation: "Yes, I know these words. They are related to work.",
       answerAudio: "../audio/05-too-a1/013a.wav"
     },
     {
       text: "Kus teie töökoht on? Kas kesklinnas või äärelinnas?",
+      textTranslation: "Where is your workplace? Is it in the city center or in the suburbs?",
       audio: "../audio/05-too-a1/014.wav",
       answer: "Minu töökoht on kesklinna lähedal.",
+      answerTranslation: "My workplace is near the city center.",
       answerAudio: "../audio/05-too-a1/014a.wav"
     },
     {
       text: "Kuidas te tööle lähete? Kas bussiga, autoga või jalgsi?",
+      textTranslation: "How do you go to work? By bus, by car, or on foot?",
       audio: "../audio/05-too-a1/015.wav",
       answer: "Tavaliselt ma lähen tööle autoga.",
+      answerTranslation: "Usually I go to work by car.",
       answerAudio: "../audio/05-too-a1/015a.wav"
     },
     {
       text: "Kas te räägite tööl telefoniga? Kas te kirjutate e-kirju?",
+      textTranslation: "Do you talk on the phone at work? Do you write emails?",
       audio: "../audio/05-too-a1/016.wav",
       answer: "Jah, ma räägin telefoniga ja kirjutan e-kirju.",
+      answerTranslation: "Yes, I talk on the phone and write emails.",
       answerAudio: "../audio/05-too-a1/016a.wav"
     },
     {
       text: "Kas te magate mõnikord tööl?",
+      textTranslation: "Do you sometimes sleep at work?",
       audio: "../audio/05-too-a1/017.wav",
       answer: "Ei, ma ei maga tööl.",
+      answerTranslation: "No, I do not sleep at work.",
       answerAudio: "../audio/05-too-a1/017a.wav"
     },
     {
       text: "Mis keelt te tööl räägite?",
+      textTranslation: "What language do you speak at work?",
       audio: "../audio/05-too-a1/018.wav",
       answer: "Ma räägin tööl inglise keelt.",
+      answerTranslation: "I speak English at work.",
       answerAudio: "../audio/05-too-a1/018a.wav"
     },
     {
       text: "Kas teie töö on igav või huvitav? Kas teie töö on raske või kerge? Kas teile meeldib teie töö?",
+      textTranslation: "Is your work boring or interesting? Is your work hard or easy? Do you like your work?",
       audio: "../audio/05-too-a1/019.wav",
       answer: "Minu töö on huvitav. Mõnikord on see raske, aga mulle meeldib minu töö.",
+      answerTranslation: "My work is interesting. Sometimes it is hard, but I like my work.",
       answerAudio: "../audio/05-too-a1/019a.wav"
     },
     {
       text: "Kas teile meeldib teie palk?",
+      textTranslation: "Do you like your salary?",
       audio: "../audio/05-too-a1/020.wav",
       answer: "Jah, minu palk on hea.",
+      answerTranslation: "Yes, my salary is good.",
       answerAudio: "../audio/05-too-a1/020a.wav"
     }
   ];

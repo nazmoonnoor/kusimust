@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,92 +40,122 @@
     const items = [
       {
         text: "Kas te olete rohkem oma ema või isa sarnane?",
+        textTranslation: "Are you more like your mother or your father?",
         audio: "../audio/20-valmis-a2/001.wav",
         answer: "Ma olen natuke rohkem oma isa sarnane.",
+        answerTranslation: "I am a bit more like my father.",
         answerAudio: "../audio/20-valmis-a2/001a.wav"
       },
       {
         text: "Mis värvi olid teie juuksed siis, kui te olite laps?",
+        textTranslation: "What color was your hair when you were a child?",
         audio: "../audio/20-valmis-a2/002.wav",
         answer: "Kui ma olin laps, olid minu juuksed mustad.",
+        answerTranslation: "When I was a child, my hair was black.",
         answerAudio: "../audio/20-valmis-a2/002a.wav"
       },
       {
         text: "Millal teil olid kõige pikemad juuksed?",
+        textTranslation: "When did you have the longest hair?",
         audio: "../audio/20-valmis-a2/003.wav",
         answer: "Mul olid pikemad juuksed, kui ma olin noorem.",
+        answerTranslation: "I had longer hair when I was younger.",
         answerAudio: "../audio/20-valmis-a2/003a.wav"
       },
       {
         text: "Kas te olete kunagi olnud kiilakas?",
+        textTranslation: "Have you ever been bald?",
         audio: "../audio/20-valmis-a2/004.wav",
         answer: "Ei, ma ei ole kunagi olnud kiilakas.",
+        answerTranslation: "No, I have never been bald.",
         answerAudio: "../audio/20-valmis-a2/004a.wav"
       },
       {
         text: "Kas te värvite juukseid? Mitu korda te olete juukseid värvinud?",
+        textTranslation: "Do you dye your hair? How many times have you dyed your hair?",
         audio: "../audio/20-valmis-a2/005.wav",
         answer: "Ei, ma ei värvi juukseid.",
+        answerTranslation: "No, I don't dye my hair.",
         answerAudio: "../audio/20-valmis-a2/005a.wav"
       },
       {
         text: "Kas teil on kunagi olnud punased juuksed? Aga lillad? Aga rohelised?",
+        textTranslation: "Have you ever had red hair? How about purple? How about green?",
         audio: "../audio/20-valmis-a2/006.wav",
         answer: "Ei, mul ei ole olnud punaseid ega rohelisi juukseid.",
+        answerTranslation: "No, I have not had red or green hair.",
         answerAudio: "../audio/20-valmis-a2/006a.wav"
       },
       {
         text: "Mis värvi silmad on tavaliselt inimestel teie kodumaal?",
+        textTranslation: "What color eyes do people usually have in your home country?",
         audio: "../audio/20-valmis-a2/007.wav",
         answer: "Minu kodumaal on inimestel tavaliselt pruunid silmad.",
+        answerTranslation: "In my home country, people usually have brown eyes.",
         answerAudio: "../audio/20-valmis-a2/007a.wav"
       },
       {
         text: "Kas te naeratate tihti? Kas teil on ilus naeratus?",
+        textTranslation: "Do you smile often? Do you have a beautiful smile?",
         audio: "../audio/20-valmis-a2/008.wav",
         answer: "Jah, ma naeratan tihti.",
+        answerTranslation: "Yes, I smile often.",
         answerAudio: "../audio/20-valmis-a2/008a.wav"
       },
       {
         text: "Kas teie ülemusel on habe? Aga vuntsid?",
+        textTranslation: "Does your boss have a beard? How about a mustache?",
         audio: "../audio/20-valmis-a2/009.wav",
         answer: "Minu ülemusel ei ole habet ega vuntse.",
+        answerTranslation: "My boss does not have a beard or a mustache.",
         answerAudio: "../audio/20-valmis-a2/009a.wav"
       },
       {
         text: "Kes on kuulus ja kellel on habe? Aga kes on kuulus ja kellel on vuntsid? Aga kes on kuulus ja kellel on tätoveering?",
+        textTranslation: "Who is famous and has a beard? Who is famous and has a mustache? Who is famous and has a tattoo?",
         audio: "../audio/20-valmis-a2/010.wav",
         answer: "Mõnel kuulsal näitlejal on habe või tätoveering.",
+        answerTranslation: "Some famous actors have a beard or a tattoo.",
         answerAudio: "../audio/20-valmis-a2/010a.wav"
       },
       {
         text: "Missugune oli teie esimene õpetaja? Aga teie viimane õpetaja?",
+        textTranslation: "What was your first teacher like? How about your last teacher?",
         audio: "../audio/20-valmis-a2/011.wav",
         answer: "Minu esimene õpetaja oli väga sõbralik. Minu viimane õpetaja on samuti väga hea.",
+        answerTranslation: "My first teacher was very friendly. My last teacher is also very good.",
         answerAudio: "../audio/20-valmis-a2/011a.wav"
       },
       {
         text: "Missugune on tüüpiline eestlane?",
+        textTranslation: "What is a typical Estonian like?",
         audio: "../audio/20-valmis-a2/012.wav",
         answer: "Minu arvates on eestlane rahulik ja sõbralik.",
+        answerTranslation: "In my opinion, an Estonian is calm and friendly.",
         answerAudio: "../audio/20-valmis-a2/012a.wav"
       },
       {
         text: "Kas teile meeldivad kõrvarõngad? Kas kuldkõrvarõngad on ilusad? Aga plastmassist kõrvarõngad?",
+        textTranslation: "Do you like earrings? Are gold earrings beautiful? How about plastic earrings?",
         audio: "../audio/20-valmis-a2/013.wav",
         answer: "Jah, kuldkõrvarõngad on ilusad.",
+        answerTranslation: "Yes, gold earrings are beautiful.",
         answerAudio: "../audio/20-valmis-a2/013a.wav"
       },
       {
         text: "Kes on maailma kõige ilusam mees? Missugune ta on?",
+        textTranslation: "Who is the most handsome man in the world? What is he like?",
         audio: "../audio/20-valmis-a2/014.wav",
         answer: "Minu arvates ei ole ühte kõige ilusamat meest.",
+        answerTranslation: "In my opinion, there is not one most handsome man.",
         answerAudio: "../audio/20-valmis-a2/014a.wav"
       },
       {
         text: "Kes on maailma kõige ilusam naine? Missugune ta on?",
+        textTranslation: "Who is the most beautiful woman in the world? What is she like?",
         audio: "../audio/20-valmis-a2/015.wav",
         answer: "Minu arvates võivad paljud naised olla ilusad.",
+        answerTranslation: "In my opinion, many women can be beautiful.",
         answerAudio: "../audio/20-valmis-a2/015a.wav"
       }
     ];

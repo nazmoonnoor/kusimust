@@ -23,108 +23,144 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
   <script src="../assets/player.js"></script>
   <script>
-    const items = [
-      {
-        text: "Mis veebilehel te kõige rohkem käite?",
-        audio: "../audio/30-internet-a2/001.wav",
-        answer: "Ma käin kõige rohkem YouTube’is ja uudiste lehtedel.",
-        answerAudio: "../audio/30-internet-a2/001a.wav"
-      },
-      {
-        text: "Mitu akent on teie arvutis tavaliselt lahti, kui te olete internetis?",
-        audio: "../audio/30-internet-a2/002.wav",
-        answer: "Tavaliselt on mul kolm või neli akent lahti.",
-        answerAudio: "../audio/30-internet-a2/002a.wav"
-      },
-      {
-        text: "Kui vana te olite, kui te internetti kasutama hakkasite?",
-        audio: "../audio/30-internet-a2/003.wav",
-        answer: "Ma olin umbes 15 aastat vana.",
-        answerAudio: "../audio/30-internet-a2/003a.wav"
-      },
-      {
-        text: "Kas 7-aastasel lapsel võib olla sotsiaalmeedias konto?",
-        audio: "../audio/30-internet-a2/004.wav",
-        answer: "Ma arvan, et see ei ole väga hea mõte.",
-        answerAudio: "../audio/30-internet-a2/004a.wav"
-      },
-      {
-        text: "Mis sotsiaalmeedias te olete? Mida te sotsiaalmeedias teete?",
-        audio: "../audio/30-internet-a2/005.wav",
-        answer: "Ma kasutan Facebooki ja YouTube’i. Ma loen uudiseid ja vaatan videoid.",
-        answerAudio: "../audio/30-internet-a2/005a.wav"
-      },
-      {
-        text: "Kas teil on mõni sõber, kellega te räägite või kirjutate ainult internetis?",
-        audio: "../audio/30-internet-a2/006.wav",
-        answer: "Jah, mul on mõned sõbrad, kellega ma räägin internetis.",
-        answerAudio: "../audio/30-internet-a2/006a.wav"
-      },
-      {
-        text: "Mida te ostate internetist? Mida te ei osta internetist?",
-        audio: "../audio/30-internet-a2/007.wav",
-        answer: "Ma ostan internetist pileteid ja mõnikord riideid.",
-        answerAudio: "../audio/30-internet-a2/007a.wav"
-      },
-      {
-        text: "Kas te olete käinud mõnel veebikursusel? Mis kursus see oli?",
-        audio: "../audio/30-internet-a2/008.wav",
-        answer: "Jah, ma olen käinud eesti keele veebikursusel.",
-        answerAudio: "../audio/30-internet-a2/008a.wav"
-      },
-      {
-        text: "Millal te viimati veebikoosolekul käisite? Kui pikk see koosolek oli?",
-        audio: "../audio/30-internet-a2/009.wav",
-        answer: "Ma käisin veebikoosolekul eile. See kestis umbes ühe tunni.",
-        answerAudio: "../audio/30-internet-a2/009a.wav"
-      },
-      {
-        text: "Kas internet on kallis? Kas internet peaks olema tasuta?",
-        audio: "../audio/30-internet-a2/010.wav",
-        answer: "Internet ei ole väga kallis, aga tasuta oleks parem.",
-        answerAudio: "../audio/30-internet-a2/010a.wav"
-      },
-      {
-        text: "Millal te viimati internetis olite? Mida te seal tegite?",
-        audio: "../audio/30-internet-a2/011.wav",
-        answer: "Ma olin internetis täna hommikul. Ma lugesin uudiseid.",
-        answerAudio: "../audio/30-internet-a2/011a.wav"
-      },
-      {
-        text: "Kas te kasutate rongis internetti? Aga restoranis? Aga lennukis?",
-        audio: "../audio/30-internet-a2/012.wav",
-        answer: "Jah, ma kasutan mõnikord internetti rongis ja restoranis.",
-        answerAudio: "../audio/30-internet-a2/012a.wav"
-      },
-      {
-        text: "Mida te teete, kui internet läheb ära? Mitu päeva te saate elada ilma internetita?",
-        audio: "../audio/30-internet-a2/013.wav",
-        answer: "Kui internet läheb ära, ma loen raamatut.",
-        answerAudio: "../audio/30-internet-a2/013a.wav"
-      },
-      {
-        text: "Kas te tohite töö ajal internetis olla? Aga sotsiaalmeedias?",
-        audio: "../audio/30-internet-a2/014.wav",
-        answer: "Jah, ma tohin töö ajal internetti kasutada.",
-        answerAudio: "../audio/30-internet-a2/014a.wav"
-      },
-      {
-        text: "Kas te mäletate elu ilma internetita? Mis aastal see oli? Mida te siis tegite, kui internetti ei olnud?",
-        audio: "../audio/30-internet-a2/015.wav",
-        answer: "Jah, ma mäletan. Siis lugesin rohkem raamatuid ja kohtusin sõpradega.",
-        answerAudio: "../audio/30-internet-a2/015a.wav"
-      }
-    ];
+  const items = [
+    {
+      text: "Mis veebilehel te kõige rohkem käite?",
+      textTranslation: "Which website do you visit the most?",
+      audio: "../audio/30-internet-a2/001.wav",
+      answer: "Ma käin kõige rohkem YouTube’is ja uudiste lehtedel.",
+      answerTranslation: "I visit YouTube and news websites the most.",
+      answerAudio: "../audio/30-internet-a2/001a.wav"
+    },
+    {
+      text: "Mitu akent on teie arvutis tavaliselt lahti, kui te olete internetis?",
+      textTranslation: "How many windows are usually open on your computer when you are on the internet?",
+      audio: "../audio/30-internet-a2/002.wav",
+      answer: "Tavaliselt on mul kolm või neli akent lahti.",
+      answerTranslation: "Usually I have three or four windows open.",
+      answerAudio: "../audio/30-internet-a2/002a.wav"
+    },
+    {
+      text: "Kui vana te olite, kui te internetti kasutama hakkasite?",
+      textTranslation: "How old were you when you started using the internet?",
+      audio: "../audio/30-internet-a2/003.wav",
+      answer: "Ma olin umbes 15 aastat vana.",
+      answerTranslation: "I was about 15 years old.",
+      answerAudio: "../audio/30-internet-a2/003a.wav"
+    },
+    {
+      text: "Kas 7-aastasel lapsel võib olla sotsiaalmeedias konto?",
+      textTranslation: "Can a 7-year-old child have a social media account?",
+      audio: "../audio/30-internet-a2/004.wav",
+      answer: "Ma arvan, et see ei ole väga hea mõte.",
+      answerTranslation: "I think it is not a very good idea.",
+      answerAudio: "../audio/30-internet-a2/004a.wav"
+    },
+    {
+      text: "Mis sotsiaalmeedias te olete? Mida te sotsiaalmeedias teete?",
+      textTranslation: "Which social media do you use? What do you do on social media?",
+      audio: "../audio/30-internet-a2/005.wav",
+      answer: "Ma kasutan Facebooki ja YouTube’i. Ma loen uudiseid ja vaatan videoid.",
+      answerTranslation: "I use Facebook and YouTube. I read news and watch videos.",
+      answerAudio: "../audio/30-internet-a2/005a.wav"
+    },
+    {
+      text: "Kas teil on mõni sõber, kellega te räägite või kirjutate ainult internetis?",
+      textTranslation: "Do you have a friend with whom you only talk or write on the internet?",
+      audio: "../audio/30-internet-a2/006.wav",
+      answer: "Jah, mul on mõned sõbrad, kellega ma räägin internetis.",
+      answerTranslation: "Yes, I have some friends with whom I talk on the internet.",
+      answerAudio: "../audio/30-internet-a2/006a.wav"
+    },
+    {
+      text: "Mida te ostate internetist? Mida te ei osta internetist?",
+      textTranslation: "What do you buy online? What do you not buy online?",
+      audio: "../audio/30-internet-a2/007.wav",
+      answer: "Ma ostan internetist pileteid ja mõnikord riideid.",
+      answerTranslation: "I buy tickets and sometimes clothes online.",
+      answerAudio: "../audio/30-internet-a2/007a.wav"
+    },
+    {
+      text: "Kas te olete käinud mõnel veebikursusel? Mis kursus see oli?",
+      textTranslation: "Have you taken an online course? What course was it?",
+      audio: "../audio/30-internet-a2/008.wav",
+      answer: "Jah, ma olen käinud eesti keele veebikursusel.",
+      answerTranslation: "Yes, I have taken an Estonian language online course.",
+      answerAudio: "../audio/30-internet-a2/008a.wav"
+    },
+    {
+      text: "Millal te viimati veebikoosolekul käisite? Kui pikk see koosolek oli?",
+      textTranslation: "When did you last attend an online meeting? How long was the meeting?",
+      audio: "../audio/30-internet-a2/009.wav",
+      answer: "Ma käisin veebikoosolekul eile. See kestis umbes ühe tunni.",
+      answerTranslation: "I attended an online meeting yesterday. It lasted about one hour.",
+      answerAudio: "../audio/30-internet-a2/009a.wav"
+    },
+    {
+      text: "Kas internet on kallis? Kas internet peaks olema tasuta?",
+      textTranslation: "Is the internet expensive? Should the internet be free?",
+      audio: "../audio/30-internet-a2/010.wav",
+      answer: "Internet ei ole väga kallis, aga tasuta oleks parem.",
+      answerTranslation: "The internet is not very expensive, but free would be better.",
+      answerAudio: "../audio/30-internet-a2/010a.wav"
+    },
+    {
+      text: "Millal te viimati internetis olite? Mida te seal tegite?",
+      textTranslation: "When were you last on the internet? What did you do there?",
+      audio: "../audio/30-internet-a2/011.wav",
+      answer: "Ma olin internetis täna hommikul. Ma lugesin uudiseid.",
+      answerTranslation: "I was on the internet this morning. I read news.",
+      answerAudio: "../audio/30-internet-a2/011a.wav"
+    },
+    {
+      text: "Kas te kasutate rongis internetti? Aga restoranis? Aga lennukis?",
+      textTranslation: "Do you use the internet on the train? In a restaurant? On an airplane?",
+      audio: "../audio/30-internet-a2/012.wav",
+      answer: "Jah, ma kasutan mõnikord internetti rongis ja restoranis.",
+      answerTranslation: "Yes, sometimes I use the internet on the train and in restaurants.",
+      answerAudio: "../audio/30-internet-a2/012a.wav"
+    },
+    {
+      text: "Mida te teete, kui internet läheb ära? Mitu päeva te saate elada ilma internetita?",
+      textTranslation: "What do you do when the internet goes down? How many days can you live without the internet?",
+      audio: "../audio/30-internet-a2/013.wav",
+      answer: "Kui internet läheb ära, ma loen raamatut.",
+      answerTranslation: "When the internet goes down, I read a book.",
+      answerAudio: "../audio/30-internet-a2/013a.wav"
+    },
+    {
+      text: "Kas te tohite töö ajal internetis olla? Aga sotsiaalmeedias?",
+      textTranslation: "Are you allowed to use the internet at work? What about social media?",
+      audio: "../audio/30-internet-a2/014.wav",
+      answer: "Jah, ma tohin töö ajal internetti kasutada.",
+      answerTranslation: "Yes, I am allowed to use the internet during work.",
+      answerAudio: "../audio/30-internet-a2/014a.wav"
+    },
+    {
+      text: "Kas te mäletate elu ilma internetita? Mis aastal see oli? Mida te siis tegite, kui internetti ei olnud?",
+      textTranslation: "Do you remember life without the internet? What year was it? What did you do when there was no internet?",
+      audio: "../audio/30-internet-a2/015.wav",
+      answer: "Jah, ma mäletan. Siis lugesin rohkem raamatuid ja kohtusin sõpradega.",
+      answerTranslation: "Yes, I remember. I read more books and met friends.",
+      answerAudio: "../audio/30-internet-a2/015a.wav"
+    }
+  ];
 
-    initAudioList(items);
-  </script>
+  initAudioList(items);
+</script>
 </body>
 </html>

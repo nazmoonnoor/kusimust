@@ -23,108 +23,144 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
   <script src="../assets/player.js"></script>
   <script>
-    const items = [
-      {
-        text: "Kas teie aias elab siil? Aga orav? Aga konn?",
-        audio: "../audio/28-aed-a2/001.wav",
-        answer: "Mõnikord tuleb siil aeda.",
-        answerAudio: "../audio/28-aed-a2/001a.wav"
-      },
-      {
-        text: "Kas teil on kasvuhoone? Mis on teie kasvuhoones?",
-        audio: "../audio/28-aed-a2/002.wav",
-        answer: "Jah, mul on kasvuhoone. Seal kasvavad tomatid ja kurgid.",
-        answerAudio: "../audio/28-aed-a2/002a.wav"
-      },
-      {
-        text: "Kas te näete naabrit, kui olete aias? Mida naaber tavaliselt teeb?",
-        audio: "../audio/28-aed-a2/003.wav",
-        answer: "Jah, ma näen naabrit. Ta töötab aias või kastab taimi.",
-        answerAudio: "../audio/28-aed-a2/003a.wav"
-      },
-      {
-        text: "Mis aastaajal on teie aed kõige ilusam?",
-        audio: "../audio/28-aed-a2/004.wav",
-        answer: "Minu aed on kõige ilusam suvel.",
-        answerAudio: "../audio/28-aed-a2/004a.wav"
-      },
-      {
-        text: "Kas te tellite seemneid internetist või ostate poest?",
-        audio: "../audio/28-aed-a2/005.wav",
-        answer: "Tavaliselt ostan seemneid poest.",
-        answerAudio: "../audio/28-aed-a2/005a.wav"
-      },
-      {
-        text: "Mida te teete aias kevadel? Aga sügisel?",
-        audio: "../audio/28-aed-a2/006.wav",
-        answer: "Kevadel istutan taimi. Sügisel koristan aeda.",
-        answerAudio: "../audio/28-aed-a2/006a.wav"
-      },
-      {
-        text: "Mida te peate igal aastal aias tegema?",
-        audio: "../audio/28-aed-a2/007.wav",
-        answer: "Igal aastal pean muru niitma ja taimi kastma.",
-        answerAudio: "../audio/28-aed-a2/007a.wav"
-      },
-      {
-        text: "Mis värvi on sinilill? Aga lumikelluke? Aga võilill?",
-        audio: "../audio/28-aed-a2/008.wav",
-        answer: "Sinilill on sinine, lumikelluke on valge ja võilill on kollane.",
-        answerAudio: "../audio/28-aed-a2/008a.wav"
-      },
-      {
-        text: "Kes töötab teie aias kõige rohkem?",
-        audio: "../audio/28-aed-a2/009.wav",
-        answer: "Minu isa töötab aias kõige rohkem.",
-        answerAudio: "../audio/28-aed-a2/009a.wav"
-      },
-      {
-        text: "Mis kellast mis kellani te tavaliselt olete aias?",
-        audio: "../audio/28-aed-a2/010.wav",
-        answer: "Tavaliselt olen aias kella kuuest kuni kaheksani õhtul.",
-        answerAudio: "../audio/28-aed-a2/010a.wav"
-      },
-      {
-        text: "Kas teile meeldib muru niita? Aga lilli kasta?",
-        audio: "../audio/28-aed-a2/011.wav",
-        answer: "Mulle meeldib lilli kasta, aga muru niita väga ei meeldi.",
-        answerAudio: "../audio/28-aed-a2/011a.wav"
-      },
-      {
-        text: "Kui vana on teie aia kõige vanem taim? Mis taim see on? Kust te selle saite?",
-        audio: "../audio/28-aed-a2/012.wav",
-        answer: "Kõige vanem taim on õunapuu. See on umbes 20 aastat vana.",
-        answerAudio: "../audio/28-aed-a2/012a.wav"
-      },
-      {
-        text: "Mida te tegite aias eile? Mida te teete homme?",
-        audio: "../audio/28-aed-a2/013.wav",
-        answer: "Eile kastsin taimi. Homme niidan muru.",
-        answerAudio: "../audio/28-aed-a2/013a.wav"
-      },
-      {
-        text: "Kas teile meeldib, kui teie aias on lapsed? Aga koerad?",
-        audio: "../audio/28-aed-a2/014.wav",
-        answer: "Jah, mulle meeldib, kui aias on lapsed ja koerad.",
-        answerAudio: "../audio/28-aed-a2/014a.wav"
-      },
-      {
-        text: "Mida teie aias tohib teha? Aga mida teie aias ei tohi teha?",
-        audio: "../audio/28-aed-a2/015.wav",
-        answer: "Minu aias tohib mängida ja puhata, aga ei tohi prügi visata.",
-        answerAudio: "../audio/28-aed-a2/015a.wav"
-      }
-    ];
+  const items = [
+    {
+      text: "Kas teie aias elab siil? Aga orav? Aga konn?",
+      textTranslation: "Does a hedgehog live in your garden? What about a squirrel? What about a frog?",
+      audio: "../audio/28-aed-a2/001.wav",
+      answer: "Mõnikord tuleb siil aeda.",
+      answerTranslation: "Sometimes a hedgehog comes to the garden.",
+      answerAudio: "../audio/28-aed-a2/001a.wav"
+    },
+    {
+      text: "Kas teil on kasvuhoone? Mis on teie kasvuhoones?",
+      textTranslation: "Do you have a greenhouse? What is in your greenhouse?",
+      audio: "../audio/28-aed-a2/002.wav",
+      answer: "Jah, mul on kasvuhoone. Seal kasvavad tomatid ja kurgid.",
+      answerTranslation: "Yes, I have a greenhouse. Tomatoes and cucumbers grow there.",
+      answerAudio: "../audio/28-aed-a2/002a.wav"
+    },
+    {
+      text: "Kas te näete naabrit, kui olete aias? Mida naaber tavaliselt teeb?",
+      textTranslation: "Do you see your neighbor when you are in the garden? What does the neighbor usually do?",
+      audio: "../audio/28-aed-a2/003.wav",
+      answer: "Jah, ma näen naabrit. Ta töötab aias või kastab taimi.",
+      answerTranslation: "Yes, I see the neighbor. He works in the garden or waters the plants.",
+      answerAudio: "../audio/28-aed-a2/003a.wav"
+    },
+    {
+      text: "Mis aastaajal on teie aed kõige ilusam?",
+      textTranslation: "In which season is your garden the most beautiful?",
+      audio: "../audio/28-aed-a2/004.wav",
+      answer: "Minu aed on kõige ilusam suvel.",
+      answerTranslation: "My garden is the most beautiful in summer.",
+      answerAudio: "../audio/28-aed-a2/004a.wav"
+    },
+    {
+      text: "Kas te tellite seemneid internetist või ostate poest?",
+      textTranslation: "Do you order seeds from the internet or buy them from the store?",
+      audio: "../audio/28-aed-a2/005.wav",
+      answer: "Tavaliselt ostan seemneid poest.",
+      answerTranslation: "Usually I buy seeds from the store.",
+      answerAudio: "../audio/28-aed-a2/005a.wav"
+    },
+    {
+      text: "Mida te teete aias kevadel? Aga sügisel?",
+      textTranslation: "What do you do in the garden in spring? What about in autumn?",
+      audio: "../audio/28-aed-a2/006.wav",
+      answer: "Kevadel istutan taimi. Sügisel koristan aeda.",
+      answerTranslation: "In spring I plant plants. In autumn I clean the garden.",
+      answerAudio: "../audio/28-aed-a2/006a.wav"
+    },
+    {
+      text: "Mida te peate igal aastal aias tegema?",
+      textTranslation: "What do you have to do in the garden every year?",
+      audio: "../audio/28-aed-a2/007.wav",
+      answer: "Igal aastal pean muru niitma ja taimi kastma.",
+      answerTranslation: "Every year I have to mow the lawn and water the plants.",
+      answerAudio: "../audio/28-aed-a2/007a.wav"
+    },
+    {
+      text: "Mis värvi on sinilill? Aga lumikelluke? Aga võilill?",
+      textTranslation: "What color is a liverleaf flower? What about a snowdrop? What about a dandelion?",
+      audio: "../audio/28-aed-a2/008.wav",
+      answer: "Sinilill on sinine, lumikelluke on valge ja võilill on kollane.",
+      answerTranslation: "The liverleaf flower is blue, the snowdrop is white, and the dandelion is yellow.",
+      answerAudio: "../audio/28-aed-a2/008a.wav"
+    },
+    {
+      text: "Kes töötab teie aias kõige rohkem?",
+      textTranslation: "Who works the most in your garden?",
+      audio: "../audio/28-aed-a2/009.wav",
+      answer: "Minu isa töötab aias kõige rohkem.",
+      answerTranslation: "My father works the most in the garden.",
+      answerAudio: "../audio/28-aed-a2/009a.wav"
+    },
+    {
+      text: "Mis kellast mis kellani te tavaliselt olete aias?",
+      textTranslation: "From what time to what time are you usually in the garden?",
+      audio: "../audio/28-aed-a2/010.wav",
+      answer: "Tavaliselt olen aias kella kuuest kuni kaheksani õhtul.",
+      answerTranslation: "Usually I am in the garden from six to eight in the evening.",
+      answerAudio: "../audio/28-aed-a2/010a.wav"
+    },
+    {
+      text: "Kas teile meeldib muru niita? Aga lilli kasta?",
+      textTranslation: "Do you like mowing the lawn? What about watering flowers?",
+      audio: "../audio/28-aed-a2/011.wav",
+      answer: "Mulle meeldib lilli kasta, aga muru niita väga ei meeldi.",
+      answerTranslation: "I like watering flowers, but I do not really like mowing the lawn.",
+      answerAudio: "../audio/28-aed-a2/011a.wav"
+    },
+    {
+      text: "Kui vana on teie aia kõige vanem taim? Mis taim see on? Kust te selle saite?",
+      textTranslation: "How old is the oldest plant in your garden? What plant is it? Where did you get it?",
+      audio: "../audio/28-aed-a2/012.wav",
+      answer: "Kõige vanem taim on õunapuu. See on umbes 20 aastat vana.",
+      answerTranslation: "The oldest plant is an apple tree. It is about 20 years old.",
+      answerAudio: "../audio/28-aed-a2/012a.wav"
+    },
+    {
+      text: "Mida te tegite aias eile? Mida te teete homme?",
+      textTranslation: "What did you do in the garden yesterday? What will you do tomorrow?",
+      audio: "../audio/28-aed-a2/013.wav",
+      answer: "Eile kastsin taimi. Homme niidan muru.",
+      answerTranslation: "Yesterday I watered the plants. Tomorrow I will mow the lawn.",
+      answerAudio: "../audio/28-aed-a2/013a.wav"
+    },
+    {
+      text: "Kas teile meeldib, kui teie aias on lapsed? Aga koerad?",
+      textTranslation: "Do you like it when there are children in your garden? What about dogs?",
+      audio: "../audio/28-aed-a2/014.wav",
+      answer: "Jah, mulle meeldib, kui aias on lapsed ja koerad.",
+      answerTranslation: "Yes, I like it when there are children and dogs in the garden.",
+      answerAudio: "../audio/28-aed-a2/014a.wav"
+    },
+    {
+      text: "Mida teie aias tohib teha? Aga mida teie aias ei tohi teha?",
+      textTranslation: "What are you allowed to do in your garden? What are you not allowed to do?",
+      audio: "../audio/28-aed-a2/015.wav",
+      answer: "Minu aias tohib mängida ja puhata, aga ei tohi prügi visata.",
+      answerTranslation: "In my garden you may play and relax, but you may not throw garbage.",
+      answerAudio: "../audio/28-aed-a2/015a.wav"
+    }
+  ];
 
-    initAudioList(items);
-  </script>
+  initAudioList(items);
+</script>
 </body>
 </html>

@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,92 +40,122 @@
     const items = [
       {
         text: "Mida beebid tavaliselt teevad? Mis neile meeldib? Mis neile ei meeldi?",
+        textTranslation: "What do babies usually do? What do they like? What do they not like?",
         audio: "../audio/21-laps-a2/001.wav",
         answer: "Beebid tavaliselt magavad, söövad ja mängivad. Neile meeldib mängida. Neile ei meeldi olla näljased.",
+        answerTranslation: "Babies usually sleep, eat, and play. They like to play. They don't like to be hungry.",
         answerAudio: "../audio/21-laps-a2/001a.wav"
       },
       {
         text: "Mida teismelised tavaliselt teevad? Mis neile meeldib? Mis neile ei meeldi?",
+        textTranslation: "What do teenagers usually do? What do they like? What do they not like?",
         audio: "../audio/21-laps-a2/002.wav",
         answer: "Teismelised käivad koolis ja veedavad aega sõpradega. Neile meeldib muusika ja sport.",
+        answerTranslation: "Teenagers go to school and spend time with friends. They like music and sports.",
         answerAudio: "../audio/21-laps-a2/002a.wav"
       },
       {
         text: "Kas viieaastane laps on väike või suur? Aga kolmeteistaastane?",
+        textTranslation: "Is a five-year-old child small or big? How about a thirteen-year-old?",
         audio: "../audio/21-laps-a2/003.wav",
         answer: "Viieaastane laps on väike. Kolmeteistaastane on juba üsna suur.",
+        answerTranslation: "A five-year-old child is small. A thirteen-year-old is already quite big.",
         answerAudio: "../audio/21-laps-a2/003a.wav"
       },
       {
         text: "Kas teie laps käib juba lasteaias, koolis, ülikoolis või tööl?",
+        textTranslation: "Does your child already go to kindergarten, school, university, or work?",
         audio: "../audio/21-laps-a2/004.wav",
         answer: "Minu lapsed käivad koolis.",
+        answerTranslation: "My children go to school.",
         answerAudio: "../audio/21-laps-a2/004a.wav"
       },
       {
         text: "Kas teie laps on rahulik või rahutu?",
+        textTranslation: "Is your child calm or restless?",
         audio: "../audio/21-laps-a2/005.wav",
         answer: "Mõnikord on nad rahulikud, mõnikord aktiivsed.",
+        answerTranslation: "Sometimes they are calm, sometimes active.",
         answerAudio: "../audio/21-laps-a2/005a.wav"
       },
       {
         text: "Kas teie lapsel on palju või vähe sõpru?",
+        textTranslation: "Does your child have many or few friends?",
         audio: "../audio/21-laps-a2/006.wav",
         answer: "Minu lastel on palju sõpru.",
+        answerTranslation: "My children have many friends.",
         answerAudio: "../audio/21-laps-a2/006a.wav"
       },
       {
         text: "Kes on teie lapse kõige parem sõber?",
+        textTranslation: "Who is your child's best friend?",
         audio: "../audio/21-laps-a2/007.wav",
         answer: "Tema kõige parem sõber on tema klassikaaslane.",
+        answerTranslation: "His or her best friend is a classmate.",
         answerAudio: "../audio/21-laps-a2/007a.wav"
       },
       {
         text: "Kas teie lapsel on oma tuba? Mis mööbel tema toas on?",
+        textTranslation: "Does your child have their own room? What furniture is in their room?",
         audio: "../audio/21-laps-a2/008.wav",
         answer: "Jah, tal on oma tuba. Seal on voodi, laud ja kapp.",
+        answerTranslation: "Yes, he or she has their own room. There is a bed, a table, and a wardrobe.",
         answerAudio: "../audio/21-laps-a2/008a.wav"
       },
       {
         text: "Mida te koos oma lapsega teete?",
+        textTranslation: "What do you do together with your child?",
         audio: "../audio/21-laps-a2/009.wav",
         answer: "Me mängime, jalutame ja vaatame filme.",
+        answerTranslation: "We play, walk, and watch movies.",
         answerAudio: "../audio/21-laps-a2/009a.wav"
       },
       {
         text: "Kas teie lapsel on lemmikloom? Mis loom see on? Mis tema nimi on?",
+        textTranslation: "Does your child have a pet? What animal is it? What is its name?",
         audio: "../audio/21-laps-a2/010.wav",
         answer: "Ei, meil ei ole praegu lemmiklooma.",
+        answerTranslation: "No, we don't have a pet right now.",
         answerAudio: "../audio/21-laps-a2/010a.wav"
       },
       {
         text: "Kas teie lapsele meeldib reisida? Kuhu te koos reisite?",
+        textTranslation: "Does your child like to travel? Where do you travel together?",
         audio: "../audio/21-laps-a2/011.wav",
         answer: "Jah, talle meeldib reisida. Me reisime mõnikord teistesse linnadesse.",
+        answerTranslation: "Yes, he or she likes to travel. We sometimes travel to other cities.",
         answerAudio: "../audio/21-laps-a2/011a.wav"
       },
       {
         text: "Mida teie lapsele meeldib teha? Mida talle ei meeldi teha?",
+        textTranslation: "What does your child like to do? What does your child not like to do?",
         audio: "../audio/21-laps-a2/012.wav",
         answer: "Talle meeldib mängida ja sporti teha. Talle ei meeldi vara ärgata.",
+        answerTranslation: "He or she likes to play and do sports. He or she does not like to wake up early.",
         answerAudio: "../audio/21-laps-a2/012a.wav"
       },
       {
         text: "Kas teie lapsel on tõukeratas? Aga tuulelohe? Aga kaisukaru?",
+        textTranslation: "Does your child have a scooter? How about a kite? How about a teddy bear?",
         audio: "../audio/21-laps-a2/013.wav",
         answer: "Jah, tal on tõukeratas ja kaisukaru.",
+        answerTranslation: "Yes, he or she has a scooter and a teddy bear.",
         answerAudio: "../audio/21-laps-a2/013a.wav"
       },
       {
         text: "Kas teie laps loeb palju või vähe? Mida ta loeb?",
+        textTranslation: "Does your child read a lot or a little? What does he or she read?",
         audio: "../audio/21-laps-a2/014.wav",
         answer: "Ta loeb mõnikord. Tavaliselt loeb lasteraamatuid.",
+        answerTranslation: "He or she reads sometimes. Usually reads children's books.",
         answerAudio: "../audio/21-laps-a2/014a.wav"
       },
       {
         text: "Mis oli teie lapse esimene sõna?",
+        textTranslation: "What was your child's first word?",
         audio: "../audio/21-laps-a2/015.wav",
         answer: "Tema esimene sõna oli “ema”.",
+        answerTranslation: "His or her first word was 'mother'.",
         answerAudio: "../audio/21-laps-a2/015a.wav"
       }
     ];

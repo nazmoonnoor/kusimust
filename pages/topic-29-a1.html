@@ -23,138 +23,184 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
   <script src="../assets/player.js"></script>
   <script>
-    const items = [
-      {
-        text: "Kas teil on juhiluba?",
-        audio: "../audio/29-auto-a1/001.wav",
-        answer: "Jah, mul on juhiluba.",
-        answerAudio: "../audio/29-auto-a1/001a.wav"
-      },
-      {
-        text: "Mis kategooria juhiluba teil on?",
-        audio: "../audio/29-auto-a1/002.wav",
-        answer: "Mul on B-kategooria juhiluba.",
-        answerAudio: "../audio/29-auto-a1/002a.wav"
-      },
-      {
-        text: "Mitu aastat teil juhiluba on?",
-        audio: "../audio/29-auto-a1/003.wav",
-        answer: "Mul on juhiluba umbes kümme aastat.",
-        answerAudio: "../audio/29-auto-a1/003a.wav"
-      },
-      {
-        text: "Kas teil on auto?",
-        audio: "../audio/29-auto-a1/004.wav",
-        answer: "Jah, mul on auto.",
-        answerAudio: "../audio/29-auto-a1/004a.wav"
-      },
-      {
-        text: "Mis värvi teie auto on? Mis marki teie auto on?",
-        audio: "../audio/29-auto-a1/005.wav",
-        answer: "Minu auto on valge ja see on Toyota.",
-        answerAudio: "../audio/29-auto-a1/005a.wav"
-      },
-      {
-        text: "Kui vana teie auto on?",
-        audio: "../audio/29-auto-a1/006.wav",
-        answer: "Minu auto on umbes kolm aastat vana.",
-        answerAudio: "../audio/29-auto-a1/006a.wav"
-      },
-      {
-        text: "Kus teie auto praegu on? Aga kus teie auto öösel on?",
-        audio: "../audio/29-auto-a1/007.wav",
-        answer: "Praegu on auto parkimisplatsil. Öösel on see maja juures.",
-        answerAudio: "../audio/29-auto-a1/007a.wav"
-      },
-      {
-        text: "Kus te autot pesete?",
-        audio: "../audio/29-auto-a1/008.wav",
-        answer: "Ma pesen autot autopesulas.",
-        answerAudio: "../audio/29-auto-a1/008a.wav"
-      },
-      {
-        text: "Kas teie auto on automaat või manuaal?",
-        audio: "../audio/29-auto-a1/009.wav",
-        answer: "Minu auto on automaat.",
-        answerAudio: "../audio/29-auto-a1/009a.wav"
-      },
-      {
-        text: "Kas teie auto sõidab bensiiniga või diisliga või elektriga?",
-        audio: "../audio/29-auto-a1/010.wav",
-        answer: "Minu auto sõidab bensiiniga.",
-        answerAudio: "../audio/29-auto-a1/010a.wav"
-      },
-      {
-        text: "Kui palju bensiin praegu maksab?",
-        audio: "../audio/29-auto-a1/011.wav",
-        answer: "Bensiin maksab umbes kaks eurot liiter.",
-        answerAudio: "../audio/29-auto-a1/011a.wav"
-      },
-      {
-        text: "Mis teie auto number on?",
-        audio: "../audio/29-auto-a1/012.wav",
-        answer: "Minu auto number on kolm tähte ja kolm numbrit.",
-        answerAudio: "../audio/29-auto-a1/012a.wav"
-      },
-      {
-        text: "Kas te sõidate autoga vasakul või paremal pool teed?",
-        audio: "../audio/29-auto-a1/013.wav",
-        answer: "Eestis sõidan paremal pool teed.",
-        answerAudio: "../audio/29-auto-a1/013a.wav"
-      },
-      {
-        text: "Kas teile meeldib öösel autoga sõita?",
-        audio: "../audio/29-auto-a1/014.wav",
-        answer: "Mõnikord meeldib, sest liiklust on vähem.",
-        answerAudio: "../audio/29-auto-a1/014a.wav"
-      },
-      {
-        text: "Kas teie emal ja isal on auto? Mis auto see on?",
-        audio: "../audio/29-auto-a1/015.wav",
-        answer: "Jah, minu isal on auto.",
-        answerAudio: "../audio/29-auto-a1/015a.wav"
-      },
-      {
-        text: "Kas te teate, mida tähendab kiiruskaamera? Aga suunatuli? Aga kojamehed? Aga pakiruum?",
-        audio: "../audio/29-auto-a1/016.wav",
-        answer: "Jah, ma tean neid sõnu.",
-        answerAudio: "../audio/29-auto-a1/016a.wav"
-      },
-      {
-        text: "Mis värvi autod teile meeldivad? Aga mis marki autod teile meeldivad?",
-        audio: "../audio/29-auto-a1/017.wav",
-        answer: "Mulle meeldivad mustad ja valged autod.",
-        answerAudio: "../audio/29-auto-a1/017a.wav"
-      },
-      {
-        text: "Mis autoga sõidab Eesti president?",
-        audio: "../audio/29-auto-a1/018.wav",
-        answer: "Eesti president sõidab tavaliselt suure musta autoga.",
-        answerAudio: "../audio/29-auto-a1/018a.wav"
-      },
-      {
-        text: "Mis värvi on Eesti politseiauto? Aga kiirabiauto?",
-        audio: "../audio/29-auto-a1/019.wav",
-        answer: "Politseiauto on sinine ja valge. Kiirabiauto on kollane.",
-        answerAudio: "../audio/29-auto-a1/019a.wav"
-      },
-      {
-        text: "Missugune on Eesti autonumber? Mitu numbrit? Mitu tähte?",
-        audio: "../audio/29-auto-a1/020.wav",
-        answer: "Eesti autonumbril on kolm tähte ja kolm numbrit.",
-        answerAudio: "../audio/29-auto-a1/020a.wav"
-      }
-    ];
+  const items = [
+    {
+      text: "Kas teil on juhiluba?",
+      textTranslation: "Do you have a driving license?",
+      audio: "../audio/29-auto-a1/001.wav",
+      answer: "Jah, mul on juhiluba.",
+      answerTranslation: "Yes, I have a driving license.",
+      answerAudio: "../audio/29-auto-a1/001a.wav"
+    },
+    {
+      text: "Mis kategooria juhiluba teil on?",
+      textTranslation: "What category driving license do you have?",
+      audio: "../audio/29-auto-a1/002.wav",
+      answer: "Mul on B-kategooria juhiluba.",
+      answerTranslation: "I have a category B driving license.",
+      answerAudio: "../audio/29-auto-a1/002a.wav"
+    },
+    {
+      text: "Mitu aastat teil juhiluba on?",
+      textTranslation: "How many years have you had your driving license?",
+      audio: "../audio/29-auto-a1/003.wav",
+      answer: "Mul on juhiluba umbes kümme aastat.",
+      answerTranslation: "I have had a driving license for about ten years.",
+      answerAudio: "../audio/29-auto-a1/003a.wav"
+    },
+    {
+      text: "Kas teil on auto?",
+      textTranslation: "Do you have a car?",
+      audio: "../audio/29-auto-a1/004.wav",
+      answer: "Jah, mul on auto.",
+      answerTranslation: "Yes, I have a car.",
+      answerAudio: "../audio/29-auto-a1/004a.wav"
+    },
+    {
+      text: "Mis värvi teie auto on? Mis marki teie auto on?",
+      textTranslation: "What color is your car? What brand is your car?",
+      audio: "../audio/29-auto-a1/005.wav",
+      answer: "Minu auto on valge ja see on Toyota.",
+      answerTranslation: "My car is white and it is a Toyota.",
+      answerAudio: "../audio/29-auto-a1/005a.wav"
+    },
+    {
+      text: "Kui vana teie auto on?",
+      textTranslation: "How old is your car?",
+      audio: "../audio/29-auto-a1/006.wav",
+      answer: "Minu auto on umbes kolm aastat vana.",
+      answerTranslation: "My car is about three years old.",
+      answerAudio: "../audio/29-auto-a1/006a.wav"
+    },
+    {
+      text: "Kus teie auto praegu on? Aga kus teie auto öösel on?",
+      textTranslation: "Where is your car now? Where is your car at night?",
+      audio: "../audio/29-auto-a1/007.wav",
+      answer: "Praegu on auto parkimisplatsil. Öösel on see maja juures.",
+      answerTranslation: "Now the car is in the parking lot. At night it is near the house.",
+      answerAudio: "../audio/29-auto-a1/007a.wav"
+    },
+    {
+      text: "Kus te autot pesete?",
+      textTranslation: "Where do you wash your car?",
+      audio: "../audio/29-auto-a1/008.wav",
+      answer: "Ma pesen autot autopesulas.",
+      answerTranslation: "I wash the car at a car wash.",
+      answerAudio: "../audio/29-auto-a1/008a.wav"
+    },
+    {
+      text: "Kas teie auto on automaat või manuaal?",
+      textTranslation: "Is your car automatic or manual?",
+      audio: "../audio/29-auto-a1/009.wav",
+      answer: "Minu auto on automaat.",
+      answerTranslation: "My car is automatic.",
+      answerAudio: "../audio/29-auto-a1/009a.wav"
+    },
+    {
+      text: "Kas teie auto sõidab bensiiniga või diisliga või elektriga?",
+      textTranslation: "Does your car run on petrol, diesel, or electricity?",
+      audio: "../audio/29-auto-a1/010.wav",
+      answer: "Minu auto sõidab bensiiniga.",
+      answerTranslation: "My car runs on petrol.",
+      answerAudio: "../audio/29-auto-a1/010a.wav"
+    },
+    {
+      text: "Kui palju bensiin praegu maksab?",
+      textTranslation: "How much does petrol cost now?",
+      audio: "../audio/29-auto-a1/011.wav",
+      answer: "Bensiin maksab umbes kaks eurot liiter.",
+      answerTranslation: "Petrol costs about two euros per liter.",
+      answerAudio: "../audio/29-auto-a1/011a.wav"
+    },
+    {
+      text: "Mis teie auto number on?",
+      textTranslation: "What is your car number (license plate)?",
+      audio: "../audio/29-auto-a1/012.wav",
+      answer: "Minu auto number on kolm tähte ja kolm numbrit.",
+      answerTranslation: "My car number has three letters and three numbers.",
+      answerAudio: "../audio/29-auto-a1/012a.wav"
+    },
+    {
+      text: "Kas te sõidate autoga vasakul või paremal pool teed?",
+      textTranslation: "Do you drive on the left or right side of the road?",
+      audio: "../audio/29-auto-a1/013.wav",
+      answer: "Eestis sõidan paremal pool teed.",
+      answerTranslation: "In Estonia I drive on the right side of the road.",
+      answerAudio: "../audio/29-auto-a1/013a.wav"
+    },
+    {
+      text: "Kas teile meeldib öösel autoga sõita?",
+      textTranslation: "Do you like driving at night?",
+      audio: "../audio/29-auto-a1/014.wav",
+      answer: "Mõnikord meeldib, sest liiklust on vähem.",
+      answerTranslation: "Sometimes I like it because there is less traffic.",
+      answerAudio: "../audio/29-auto-a1/014a.wav"
+    },
+    {
+      text: "Kas teie emal ja isal on auto? Mis auto see on?",
+      textTranslation: "Do your mother and father have a car? What car is it?",
+      audio: "../audio/29-auto-a1/015.wav",
+      answer: "Jah, minu isal on auto.",
+      answerTranslation: "Yes, my father has a car.",
+      answerAudio: "../audio/29-auto-a1/015a.wav"
+    },
+    {
+      text: "Kas te teate, mida tähendab kiiruskaamera? Aga suunatuli? Aga kojamehed? Aga pakiruum?",
+      textTranslation: "Do you know what speed camera means? What about turn signal? What about windshield wipers? What about trunk?",
+      audio: "../audio/29-auto-a1/016.wav",
+      answer: "Jah, ma tean neid sõnu.",
+      answerTranslation: "Yes, I know these words.",
+      answerAudio: "../audio/29-auto-a1/016a.wav"
+    },
+    {
+      text: "Mis värvi autod teile meeldivad? Aga mis marki autod teile meeldivad?",
+      textTranslation: "What color cars do you like? What car brands do you like?",
+      audio: "../audio/29-auto-a1/017.wav",
+      answer: "Mulle meeldivad mustad ja valged autod.",
+      answerTranslation: "I like black and white cars.",
+      answerAudio: "../audio/29-auto-a1/017a.wav"
+    },
+    {
+      text: "Mis autoga sõidab Eesti president?",
+      textTranslation: "What car does the President of Estonia drive?",
+      audio: "../audio/29-auto-a1/018.wav",
+      answer: "Eesti president sõidab tavaliselt suure musta autoga.",
+      answerTranslation: "The Estonian president usually drives a big black car.",
+      answerAudio: "../audio/29-auto-a1/018a.wav"
+    },
+    {
+      text: "Mis värvi on Eesti politseiauto? Aga kiirabiauto?",
+      textTranslation: "What color is the Estonian police car? What about the ambulance?",
+      audio: "../audio/29-auto-a1/019.wav",
+      answer: "Politseiauto on sinine ja valge. Kiirabiauto on kollane.",
+      answerTranslation: "The police car is blue and white. The ambulance is yellow.",
+      answerAudio: "../audio/29-auto-a1/019a.wav"
+    },
+    {
+      text: "Missugune on Eesti autonumber? Mitu numbrit? Mitu tähte?",
+      textTranslation: "What does an Estonian license plate look like? How many numbers? How many letters?",
+      audio: "../audio/29-auto-a1/020.wav",
+      answer: "Eesti autonumbril on kolm tähte ja kolm numbrit.",
+      answerTranslation: "An Estonian license plate has three letters and three numbers.",
+      answerAudio: "../audio/29-auto-a1/020a.wav"
+    }
+  ];
 
-    initAudioList(items);
-  </script>
+  initAudioList(items);
+</script>
 </body>
 </html>

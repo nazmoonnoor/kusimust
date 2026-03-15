@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,122 +40,162 @@
     const items = [
       {
         text: "Mis on Eesti pealinn? Aga Eesti suvepealinn? Aga Eesti talvepealinn?",
+        textTranslation: "What is the capital of Estonia? And the summer capital of Estonia? And the winter capital of Estonia?",
         audio: "../audio/10-eesti-a1/001.wav",
         answer: "Eesti pealinn on Tallinn. Suvepealinn on Pärnu ja talvepealinn on Otepää.",
+        answerTranslation: "The capital of Estonia is Tallinn. The summer capital is Pärnu and the winter capital is Otepää.",
         answerAudio: "../audio/10-eesti-a1/001a.wav"
       },
       {
         text: "Mis keelt eestlased räägivad? Kas teie oskate eesti keelt?",
+        textTranslation: "What language do Estonians speak? Do you speak Estonian?",
         audio: "../audio/10-eesti-a1/002.wav",
         answer: "Eestlased räägivad eesti keelt. Ma õpin eesti keelt.",
+        answerTranslation: "Estonians speak Estonian. I am learning Estonian.",
         answerAudio: "../audio/10-eesti-a1/002a.wav"
       },
       {
         text: "Missugune on eesti keel? Kas teile meeldib eesti keel?",
+        textTranslation: "What is Estonian like? Do you like the Estonian language?",
         audio: "../audio/10-eesti-a1/003.wav",
         answer: "Eesti keel on huvitav ja natuke raske. Mulle meeldib eesti keel.",
+        answerTranslation: "Estonian is interesting and a bit difficult. I like the Estonian language.",
         answerAudio: "../audio/10-eesti-a1/003a.wav"
       },
       {
         text: "Mida te loete eesti keeles?",
+        textTranslation: "What do you read in Estonian?",
         audio: "../audio/10-eesti-a1/004.wav",
         answer: "Ma loen lihtsaid tekste ja uudiseid eesti keeles.",
+        answerTranslation: "I read simple texts and news in Estonian.",
         answerAudio: "../audio/10-eesti-a1/004a.wav"
       },
       {
         text: "Kui vana on Eesti Vabariik?",
+        textTranslation: "How old is the Republic of Estonia?",
         audio: "../audio/10-eesti-a1/005.wav",
         answer: "Eesti Vabariik on üle saja aasta vana.",
+        answerTranslation: "The Republic of Estonia is over one hundred years old.",
         answerAudio: "../audio/10-eesti-a1/005a.wav"
       },
       {
         text: "Kas Leedu on Eesti naaberriik? Aga Läti? Aga Venemaa?",
+        textTranslation: "Is Lithuania a neighboring country of Estonia? How about Latvia? How about Russia?",
         audio: "../audio/10-eesti-a1/006.wav",
         answer: "Läti ja Venemaa on Eesti naaberriigid. Leedu ei ole otsene naaberriik.",
+        answerTranslation: "Latvia and Russia are neighboring countries of Estonia. Lithuania is not a direct neighbor.",
         answerAudio: "../audio/10-eesti-a1/006a.wav"
       },
       {
         text: "Kes on praegu Eesti president? Aga peaminister?",
+        textTranslation: "Who is the current president of Estonia? And the prime minister?",
         audio: "../audio/10-eesti-a1/007.wav",
         answer: "Eesti president on Alar Karis. Peaminister on Kristen Michal.",
+        answerTranslation: "The president of Estonia is Alar Karis. The prime minister is Kristen Michal.",
         answerAudio: "../audio/10-eesti-a1/007a.wav"
       },
       {
         text: "Mis värvi on Eesti lipp? Kas see on ilus või inetu lipp?",
+        textTranslation: "What colors are on the Estonian flag? Is it a beautiful or an ugly flag?",
         audio: "../audio/10-eesti-a1/008.wav",
         answer: "Eesti lipp on sinine, must ja valge. Minu arvates on see väga ilus lipp.",
+        answerTranslation: "The Estonian flag is blue, black, and white. In my opinion, it is a very beautiful flag.",
         answerAudio: "../audio/10-eesti-a1/008a.wav"
       },
       {
         text: "Mis on Eesti kõige suurem järv?",
+        textTranslation: "What is the largest lake in Estonia?",
         audio: "../audio/10-eesti-a1/009.wav",
         answer: "Eesti kõige suurem järv on Peipsi järv.",
+        answerTranslation: "The largest lake in Estonia is Lake Peipus.",
         answerAudio: "../audio/10-eesti-a1/009a.wav"
       },
       {
         text: "Mis on Eesti kõige suurem saar?",
+        textTranslation: "What is the largest island in Estonia?",
         audio: "../audio/10-eesti-a1/010.wav",
         answer: "Eesti kõige suurem saar on Saaremaa.",
+        answerTranslation: "The largest island in Estonia is Saaremaa.",
         answerAudio: "../audio/10-eesti-a1/010a.wav"
       },
       {
         text: "Mis on Eesti kõige kõrgem mägi? Kui kõrge see on?",
+        textTranslation: "What is the highest mountain in Estonia? How high is it?",
         audio: "../audio/10-eesti-a1/011.wav",
         answer: "Eesti kõige kõrgem mägi on Suur Munamägi. See on umbes 318 meetrit kõrge.",
+        answerTranslation: "The highest mountain in Estonia is Suur Munamägi. It is about 318 meters high.",
         answerAudio: "../audio/10-eesti-a1/011a.wav"
       },
       {
         text: "Kas Eesti on suur või väike riik?",
+        textTranslation: "Is Estonia a big or a small country?",
         audio: "../audio/10-eesti-a1/012.wav",
         answer: "Eesti on väike riik.",
+        answerTranslation: "Estonia is a small country.",
         answerAudio: "../audio/10-eesti-a1/012a.wav"
       },
       {
         text: "Kus elavad eestlased?",
+        textTranslation: "Where do Estonians live?",
         audio: "../audio/10-eesti-a1/013.wav",
         answer: "Eestlased elavad peamiselt Eestis.",
+        answerTranslation: "Estonians mainly live in Estonia.",
         answerAudio: "../audio/10-eesti-a1/013a.wav"
       },
       {
         text: "Mis raha on Eestis?",
+        textTranslation: "What is the currency in Estonia?",
         audio: "../audio/10-eesti-a1/014.wav",
         answer: "Eestis on euro.",
+        answerTranslation: "The currency in Estonia is the euro.",
         answerAudio: "../audio/10-eesti-a1/014a.wav"
       },
       {
         text: "Kas teile maitseb Eesti toit? Mis teile maitseb?",
+        textTranslation: "Do you like Estonian food? What do you like?",
         audio: "../audio/10-eesti-a1/015.wav",
         answer: "Jah, mulle maitseb Eesti toit. Mulle meeldib must leib ja kala.",
+        answerTranslation: "Yes, I like Estonian food. I like black bread and fish.",
         answerAudio: "../audio/10-eesti-a1/015a.wav"
       },
       {
         text: "Kas teile meeldib november Eestis? Aga märts? Aga august?",
+        textTranslation: "Do you like November in Estonia? How about March? How about August?",
         audio: "../audio/10-eesti-a1/016.wav",
         answer: "August mulle meeldib väga, sest ilm on soe. November on natuke külm ja pime.",
+        answerTranslation: "I like August very much because the weather is warm. November is a bit cold and dark.",
         answerAudio: "../audio/10-eesti-a1/016a.wav"
       },
       {
         text: "Kas teile meeldivad Eesti filmid? Aga Eesti laulud?",
+        textTranslation: "Do you like Estonian movies? How about Estonian songs?",
         audio: "../audio/10-eesti-a1/017.wav",
         answer: "Mõned Eesti filmid ja laulud mulle meeldivad.",
+        answerTranslation: "I like some Estonian movies and songs.",
         answerAudio: "../audio/10-eesti-a1/017a.wav"
       },
       {
         text: "Missugused on eestlased? Kas teile meeldivad eestlased?",
+        textTranslation: "What are Estonians like? Do you like Estonians?",
         audio: "../audio/10-eesti-a1/018.wav",
         answer: "Eestlased on rahulikud ja sõbralikud. Jah, mulle meeldivad eestlased.",
+        answerTranslation: "Estonians are calm and friendly. Yes, I like Estonians.",
         answerAudio: "../audio/10-eesti-a1/018a.wav"
       },
       {
         text: "Kas te teate, mida tähendab rukkilill? Aga suitsupääsuke? Aga vapp? Aga hümn?",
+        textTranslation: "Do you know what 'cornflower' means? How about 'barn swallow'? How about 'coat of arms'? How about 'anthem'?",
         audio: "../audio/10-eesti-a1/019.wav",
         answer: "Jah, ma tean neid sõnu. Need on seotud Eesti sümbolitega.",
+        answerTranslation: "Yes, I know these words. They are related to Estonian symbols.",
         answerAudio: "../audio/10-eesti-a1/019a.wav"
       },
       {
         text: "Mis on Eestis väga ilus? Aga väga maitsev? Aga väga huvitav?",
+        textTranslation: "What is very beautiful in Estonia? And very tasty? And very interesting?",
         audio: "../audio/10-eesti-a1/020.wav",
         answer: "Eestis on väga ilus loodus. Must leib on väga maitsev ja Eesti ajalugu on huvitav.",
+        answerTranslation: "Nature is very beautiful in Estonia. Black bread is very tasty and Estonian history is interesting.",
         answerAudio: "../audio/10-eesti-a1/020a.wav"
       }
     ];

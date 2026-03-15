@@ -28,7 +28,7 @@ Question audio plays first. If answer audio exists, it can play automatically af
 
 <div id="questionList" class="list"></div>
 
-<p class="footer-note">MUSTMILJON KÜSIMUST</p>
+ 
 
 </div>
 
@@ -41,141 +41,181 @@ const items = [
 
 {
 text:"Kas teile meeldivad raamatud? Aga ajakirjad?",
+textTranslation: "Do you like books? How about magazines?",
 audio:"../audio/17-raamatud-a1/001.wav",
 answer:"Jah, mulle meeldivad raamatud. Mõnikord loen ka ajakirju.",
+answerTranslation: "Yes, I like books. Sometimes I also read magazines.",
 answerAudio:"../audio/17-raamatud-a1/001a.wav"
 },
 
 {
 text:"Kas te loete iga päev? Kui tihti te loete? Millal te loete?",
+textTranslation: "Do you read every day? How often do you read? When do you read?",
 audio:"../audio/17-raamatud-a1/002.wav",
 answer:"Ma loen peaaegu iga päev. Tavaliselt õhtul.",
+answerTranslation: "I read almost every day. Usually in the evening.",
 answerAudio:"../audio/17-raamatud-a1/002a.wav"
 },
 
 {
 text:"Kas teil on raamaturiiul? Kus see on? Mis värvi see on?",
+textTranslation: "Do you have a bookshelf? Where is it? What color is it?",
 audio:"../audio/17-raamatud-a1/003.wav",
 answer:"Jah, mul on raamaturiiul. See on elutoas ja see on valge.",
+answerTranslation: "Yes, I have a bookshelf. It is in the living room and it is white.",
 answerAudio:"../audio/17-raamatud-a1/003a.wav"
 },
 
 {
 text:"Kas te loete raamatut köögis? Aga vannitoas? Aga WC-s?",
+textTranslation: "Do you read a book in the kitchen? How about in the bathroom? How about in the toilet?",
 audio:"../audio/17-raamatud-a1/004.wav",
 answer:"Tavaliselt loen elutoas või magamistoas.",
+answerTranslation: "Usually I read in the living room or bedroom.",
 answerAudio:"../audio/17-raamatud-a1/004a.wav"
 },
 
 {
 text:"Kas te loete raamatut voodis? Mitu raamatut on praegu teie magamistoas?",
+textTranslation: "Do you read a book in bed? How many books are in your bedroom right now?",
 audio:"../audio/17-raamatud-a1/005.wav",
 answer:"Jah, mõnikord loen voodis. Magamistoas on umbes kolm raamatut.",
+answerTranslation: "Yes, sometimes I read in bed. There are about three books in the bedroom.",
 answerAudio:"../audio/17-raamatud-a1/005a.wav"
 },
 
 {
 text:"Kas teil on eesti keele õpik? Kus see praegu on?",
+textTranslation: "Do you have an Estonian language textbook? Where is it right now?",
 audio:"../audio/17-raamatud-a1/006.wav",
 answer:"Jah, mul on eesti keele õpik. See on minu laual.",
+answerTranslation: "Yes, I have an Estonian language textbook. It is on my desk.",
 answerAudio:"../audio/17-raamatud-a1/006a.wav"
 },
 
 {
 text:"Mitu sõnaraamatut teil on? Missugune sõnaraamat on kõige paksem?",
+textTranslation: "How many dictionaries do you have? Which dictionary is the thickest?",
 audio:"../audio/17-raamatud-a1/007.wav",
 answer:"Mul on kaks sõnaraamatut. Eesti-inglise sõnaraamat on kõige paksem.",
+answerTranslation: "I have two dictionaries. The Estonian-English dictionary is the thickest.",
 answerAudio:"../audio/17-raamatud-a1/007a.wav"
 },
 
 {
 text:"Kas teil on raamat, mis on eesti keeles? Mis raamat see on?",
+textTranslation: "Do you have a book that is in Estonian? What book is it?",
 audio:"../audio/17-raamatud-a1/008.wav",
 answer:"Jah, mul on eesti keeles õpik ja mõned lihtsad raamatud.",
+answerTranslation: "Yes, I have a textbook in Estonian and some simple books.",
 answerAudio:"../audio/17-raamatud-a1/008a.wav"
 },
 
 {
 text:"Kui vana on teie kõige vanem raamat?",
+textTranslation: "How old is your oldest book?",
 audio:"../audio/17-raamatud-a1/009.wav",
 answer:"Minu kõige vanem raamat on umbes kümme aastat vana.",
+answerTranslation: "My oldest book is about ten years old.",
 answerAudio:"../audio/17-raamatud-a1/009a.wav"
 },
 
 {
 text:"Kas te käite raamatukogus?",
+textTranslation: "Do you go to the library?",
 audio:"../audio/17-raamatud-a1/010.wav",
 answer:"Jah, mõnikord käin raamatukogus.",
+answerTranslation: "Yes, I sometimes go to the library.",
 answerAudio:"../audio/17-raamatud-a1/010a.wav"
 },
 
 {
 text:"Kas teie kodu lähedal on raamatukogu? Kus see on? Kas see on praegu avatud?",
+textTranslation: "Is there a library near your home? Where is it? Is it open right now?",
 audio:"../audio/17-raamatud-a1/011.wav",
 answer:"Jah, raamatukogu on minu kodu lähedal. See on kesklinnas.",
+answerTranslation: "Yes, the library is near my home. It is in the city center.",
 answerAudio:"../audio/17-raamatud-a1/011a.wav"
 },
 
 {
 text:"Kas teile meeldivad raamatupoed? Mis on teie lemmikraamatupood?",
+textTranslation: "Do you like bookstores? What is your favorite bookstore?",
 audio:"../audio/17-raamatud-a1/012.wav",
 answer:"Jah, mulle meeldivad raamatupoed. Minu lemmik on Rahva Raamat.",
+answerTranslation: "Yes, I like bookstores. My favorite is Rahva Raamat.",
 answerAudio:"../audio/17-raamatud-a1/012a.wav"
 },
 
 {
 text:"Kas te ostate mõnikord raamatu lennujaamast?",
+textTranslation: "Do you sometimes buy a book at the airport?",
 audio:"../audio/17-raamatud-a1/013.wav",
 answer:"Mõnikord ostan raamatu lennujaamast.",
+answerTranslation: "Sometimes I buy a book at the airport.",
 answerAudio:"../audio/17-raamatud-a1/013a.wav"
 },
 
 {
 text:"Kas te loete raamatut bussis? Aga rongis? Aga lennukis? Aga autos?",
+textTranslation: "Do you read a book on the bus? How about on the train? How about on the plane? How about in the car?",
 audio:"../audio/17-raamatud-a1/014.wav",
 answer:"Jah, ma loen bussis või lennukis.",
+answerTranslation: "Yes, I read on the bus or on the plane.",
 answerAudio:"../audio/17-raamatud-a1/014a.wav"
 },
 
 {
 text:"Kas teile meeldivad lasteraamatud? Aga koomiksid?",
+textTranslation: "Do you like children's books? How about comics?",
 audio:"../audio/17-raamatud-a1/015.wav",
 answer:"Jah, mulle meeldivad lasteraamatud. Koomiksid on ka huvitavad.",
+answerTranslation: "Yes, I like children's books. Comics are also interesting.",
 answerAudio:"../audio/17-raamatud-a1/015a.wav"
 },
 
 {
 text:"Kas te teate, mida tähendab järjehoidja? Aga lehekülg? Aga peatükk? Aga sisukord?",
+textTranslation: "Do you know what bookmark means? How about page? How about chapter? How about table of contents?",
 audio:"../audio/17-raamatud-a1/016.wav",
 answer:"Jah, ma tean neid sõnu.",
+answerTranslation: "Yes, I know these words.",
 answerAudio:"../audio/17-raamatud-a1/016a.wav"
 },
 
 {
 text:"Kas teil on lugemisprillid? Kus need praegu on?",
+textTranslation: "Do you have reading glasses? Where are they right now?",
 audio:"../audio/17-raamatud-a1/017.wav",
 answer:"Jah, mul on lugemisprillid. Need on minu laual.",
+answerTranslation: "Yes, I have reading glasses. They are on my desk.",
 answerAudio:"../audio/17-raamatud-a1/017a.wav"
 },
 
 {
 text:"Mis keeles te loete?",
+textTranslation: "What language do you read in?",
 audio:"../audio/17-raamatud-a1/018.wav",
 answer:"Ma loen inglise ja natuke eesti keeles.",
+answerTranslation: "I read in English and a little in Estonian.",
 answerAudio:"../audio/17-raamatud-a1/018a.wav"
 },
 
 {
 text:"Mida te praegu loete?",
+textTranslation: "What are you reading right now?",
 audio:"../audio/17-raamatud-a1/019.wav",
 answer:"Praegu ma loen eesti keele raamatut.",
+answerTranslation: "Right now I am reading an Estonian language book.",
 answerAudio:"../audio/17-raamatud-a1/019a.wav"
 },
 
 {
 text:"Mis raamatut te loete mitu korda?",
+textTranslation: "What book do you read several times?",
 audio:"../audio/17-raamatud-a1/020.wav",
 answer:"Mõnikord loen keeleõpiku mitu korda.",
+answerTranslation: "Sometimes I read the language textbook several times.",
 answerAudio:"../audio/17-raamatud-a1/020a.wav"
 }
 

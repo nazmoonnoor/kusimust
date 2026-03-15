@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,122 +40,162 @@
     const items = [
       {
         text: "Kas teil on käekott või seljakott? Aga arvutikott?",
+        textTranslation: "Do you have a handbag or a backpack? How about a laptop bag?",
         audio: "../audio/19-kott-a1/001.wav",
         answer: "Mul on seljakott ja arvutikott.",
+        answerTranslation: "I have a backpack and a laptop bag.",
         answerAudio: "../audio/19-kott-a1/001a.wav"
       },
       {
         text: "Mitu kotti teil on?",
+        textTranslation: "How many bags do you have?",
         audio: "../audio/19-kott-a1/002.wav",
         answer: "Mul on kolm kotti.",
+        answerTranslation: "I have three bags.",
         answerAudio: "../audio/19-kott-a1/002a.wav"
       },
       {
         text: "Mis värvi on teie kott?",
+        textTranslation: "What color is your bag?",
         audio: "../audio/19-kott-a1/003.wav",
         answer: "Minu kott on must.",
+        answerTranslation: "My bag is black.",
         answerAudio: "../audio/19-kott-a1/003a.wav"
       },
       {
         text: "Kas teie kott on uus või vana?",
+        textTranslation: "Is your bag new or old?",
         audio: "../audio/19-kott-a1/004.wav",
         answer: "Minu kott on üsna uus.",
+        answerTranslation: "My bag is quite new.",
         answerAudio: "../audio/19-kott-a1/004a.wav"
       },
       {
         text: "Kas teie kott on ilus või inetu?",
+        textTranslation: "Is your bag beautiful or ugly?",
         audio: "../audio/19-kott-a1/005.wav",
         answer: "Minu arvates on minu kott ilus.",
+        answerTranslation: "I think my bag is beautiful.",
         answerAudio: "../audio/19-kott-a1/005a.wav"
       },
       {
         text: "Kas teie kott on odav või kallis?",
+        textTranslation: "Is your bag cheap or expensive?",
         audio: "../audio/19-kott-a1/006.wav",
         answer: "See on keskmise hinnaga.",
+        answerTranslation: "It is medium-priced.",
         answerAudio: "../audio/19-kott-a1/006a.wav"
       },
       {
         text: "Kas teie kott on suur või väike?",
+        textTranslation: "Is your bag big or small?",
         audio: "../audio/19-kott-a1/007.wav",
         answer: "Minu kott on üsna suur.",
+        answerTranslation: "My bag is quite big.",
         answerAudio: "../audio/19-kott-a1/007a.wav"
       },
       {
         text: "Kust teie kott pärit on?",
+        textTranslation: "Where is your bag from?",
         audio: "../audio/19-kott-a1/008.wav",
         answer: "Ma ostsin selle poest Eestis.",
+        answerTranslation: "I bought it from a shop in Estonia.",
         answerAudio: "../audio/19-kott-a1/008a.wav"
       },
       {
         text: "Kus teie kott praegu on?",
+        textTranslation: "Where is your bag right now?",
         audio: "../audio/19-kott-a1/009.wav",
         answer: "Minu kott on praegu tooli kõrval.",
+        answerTranslation: "My bag is next to the chair right now.",
         answerAudio: "../audio/19-kott-a1/009a.wav"
       },
       {
         text: "Kui raske on teie kott praegu? Kas see kaalub rohkem kui üks kilo või vähem?",
+        textTranslation: "How heavy is your bag right now? Does it weigh more than one kilo or less?",
         audio: "../audio/19-kott-a1/010.wav",
         answer: "Minu kott kaalub umbes üks kilo.",
+        answerTranslation: "My bag weighs about one kilo.",
         answerAudio: "../audio/19-kott-a1/010a.wav"
       },
       {
         text: "Kas teil on rahakott? Mis värvi on teie rahakott?",
+        textTranslation: "Do you have a wallet? What color is your wallet?",
         audio: "../audio/19-kott-a1/011.wav",
         answer: "Jah, mul on rahakott. See on pruun.",
+        answerTranslation: "Yes, I have a wallet. It is brown.",
         answerAudio: "../audio/19-kott-a1/011a.wav"
       },
       {
         text: "Kas teie rahakotis on sularaha? Kui palju?",
+        textTranslation: "Is there cash in your wallet? How much?",
         audio: "../audio/19-kott-a1/012.wav",
         answer: "Jah, seal on umbes 20 eurot.",
+        answerTranslation: "Yes, there is about 20 euros.",
         answerAudio: "../audio/19-kott-a1/012a.wav"
       },
       {
         text: "Kas teie rahakotis on juhiluba? Aga ID-kaart?",
+        textTranslation: "Is there a driver's license in your wallet? How about an ID card?",
         audio: "../audio/19-kott-a1/013.wav",
         answer: "Jah, minu rahakotis on ID-kaart.",
+        answerTranslation: "Yes, there is an ID card in my wallet.",
         answerAudio: "../audio/19-kott-a1/013a.wav"
       },
       {
         text: "Kas teie rahakotis on foto? Kes on fotol?",
+        textTranslation: "Is there a photo in your wallet? Who is in the photo?",
         audio: "../audio/19-kott-a1/014.wav",
         answer: "Jah, seal on foto minu perest.",
+        answerTranslation: "Yes, there is a photo of my family.",
         answerAudio: "../audio/19-kott-a1/014a.wav"
       },
       {
         text: "Kas teie kotis või rahakotis on ostutšekk? Mis poe tšekk see on?",
+        textTranslation: "Is there a receipt in your bag or wallet? What store is the receipt from?",
         audio: "../audio/19-kott-a1/015.wav",
         answer: "Jah, seal on poe tšekk. See on toidupoest.",
+        answerTranslation: "Yes, there is a store receipt. It is from a grocery store.",
         answerAudio: "../audio/19-kott-a1/015a.wav"
       },
       {
         text: "Mitu võtit on teie kotis? Aga mitu pliatsit?",
+        textTranslation: "How many keys are in your bag? How about pencils?",
         audio: "../audio/19-kott-a1/016.wav",
         answer: "Minu kotis on kolm võtit ja üks pliiats.",
+        answerTranslation: "There are three keys and one pencil in my bag.",
         answerAudio: "../audio/19-kott-a1/016a.wav"
       },
       {
         text: "Kas te teate, mida tähendab võtmehoidja? Aga välgumihkel? Aga helkur? Aga taskurätik?",
+        textTranslation: "Do you know what a keychain means? How about a lighter? How about a reflector? How about a handkerchief?",
         audio: "../audio/19-kott-a1/017.wav",
         answer: "Jah, ma tean neid sõnu.",
+        answerTranslation: "Yes, I know these words.",
         answerAudio: "../audio/19-kott-a1/017a.wav"
       },
       {
         text: "Mis värvi käekotid teile meeldivad? Mis värvi käekotid teile ei meeldi?",
+        textTranslation: "What color handbags do you like? What color handbags do you not like?",
         audio: "../audio/19-kott-a1/018.wav",
         answer: "Mulle meeldivad mustad ja pruunid kotid.",
+        answerTranslation: "I like black and brown bags.",
         answerAudio: "../audio/19-kott-a1/018a.wav"
       },
       {
         text: "Mis värvi on tavaliselt prügikott?",
+        textTranslation: "What color is a garbage bag usually?",
         audio: "../audio/19-kott-a1/019.wav",
         answer: "Prügikott on tavaliselt must.",
+        answerTranslation: "A garbage bag is usually black.",
         answerAudio: "../audio/19-kott-a1/019a.wav"
       },
       {
         text: "Kas teie kotis on šokolaad? Aga näts? Aga nuga? Aga tikud?",
+        textTranslation: "Is there chocolate in your bag? How about gum? How about a knife? How about matches?",
         audio: "../audio/19-kott-a1/020.wav",
         answer: "Minu kotis on mõnikord näts.",
+        answerTranslation: "Sometimes there is gum in my bag.",
         answerAudio: "../audio/19-kott-a1/020a.wav"
       }
     ];

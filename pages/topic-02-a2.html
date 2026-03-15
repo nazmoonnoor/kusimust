@@ -23,99 +23,133 @@
       Audio file paths are currently relative to this page. Put your WAV files in matching folders, or change the paths in the <code>items</code> array inside this file.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
   <script src="../assets/player.js"></script>
 <script>
 const items = [
-{
-text: "Kuidas teie hommik algab? Mida te hommikul teete?",
-audio: "../audio/02-paev-a2/001.wav",
-answer: "Minu hommik algab kell seitse. Ma pesen nägu, joon kohvi ja söön hommikusööki.",
-answerAudio: "../audio/02-paev-a2/001a.wav"
-},
-{
-text: "Kuidas teie päev lõpeb? Mida te õhtul teete?",
-audio: "../audio/02-paev-a2/002.wav",
-answer: "Õhtul ma puhkan kodus. Ma vaatan televiisorit ja õpin natuke eesti keelt.",
-answerAudio: "../audio/02-paev-a2/002a.wav"
-},
-{
-text: "Kas te magate nädalavahetusel kauem kui tööpäevadel?",
-audio: "../audio/02-paev-a2/003.wav",
-answer: "Jah, nädalavahetusel ma magan kauem.",
-answerAudio: "../audio/02-paev-a2/003a.wav"
-},
-{
-text: "Kuidas te täna magasite? Mitu tundi te magasite?",
-audio: "../audio/02-paev-a2/004.wav",
-answer: "Ma magasin hästi. Ma magasin umbes kuus tundi.",
-answerAudio: "../audio/02-paev-a2/004a.wav"
-},
-{
-text: "Kas te jääte mõnikord tööle hiljaks? Millal te viimati tööle hiljaks jäite?",
-audio: "../audio/02-paev-a2/005.wav",
-answer: "Mõnikord ma jään natuke hiljaks. Viimati jäin hiljaks eelmisel kuul.",
-answerAudio: "../audio/02-paev-a2/005a.wav"
-},
-{
-text: "Mitu korda nädalas te koristate? Mis päeval te koristate? Kas teie kodu on praegu korras?",
-audio: "../audio/02-paev-a2/006.wav",
-answer: "Ma koristan kaks korda nädalas. Tavaliselt laupäeval. Jah, minu kodu on praegu korras.",
-answerAudio: "../audio/02-paev-a2/006a.wav"
-},
-{
-text: "Mis kellast mis kellani on teie päeva kõige parem osa?",
-audio: "../audio/02-paev-a2/007.wav",
-answer: "Minu päeva kõige parem osa on õhtul kell kuus kuni kaheksa.",
-answerAudio: "../audio/02-paev-a2/007a.wav"
-},
-{
-text: "Mitu korda päevas te külmkapi lahti teete? Aga öösel?",
-audio: "../audio/02-paev-a2/008.wav",
-answer: "Ma teen külmkapi lahti umbes viis korda päevas. Öösel ma ei tee seda.",
-answerAudio: "../audio/02-paev-a2/008a.wav"
-},
-{
-text: "Kas teete iga päev süüa? Mida te täna sõite?",
-audio: "../audio/02-paev-a2/009.wav",
-answer: "Jah, mõnikord ma teen süüa. Täna ma sõin riisi ja kana.",
-answerAudio: "../audio/02-paev-a2/009a.wav"
-},
-{
-text: "Mis kell te olete tavaliselt kõige produktiivsem?",
-audio: "../audio/02-paev-a2/010.wav",
-answer: "Ma olen kõige produktiivsem hommikul.",
-answerAudio: "../audio/02-paev-a2/010a.wav"
-},
-{
-text: "Mis kell teil on aega helistada? Aga mis kellani tohib teile helistada?",
-audio: "../audio/02-paev-a2/011.wav",
-answer: "Tavaliselt võib mulle helistada õhtul. Näiteks kell kuus kuni üheksani.",
-answerAudio: "../audio/02-paev-a2/011a.wav"
-},
-{
-text: "Kellele te helistate iga nädal? Kellele te helistate ainult nädalavahetusel?",
-audio: "../audio/02-paev-a2/012.wav",
-answer: "Ma helistan iga nädal oma vanematele. Nädalavahetusel helistan mõnikord sõpradele.",
-answerAudio: "../audio/02-paev-a2/012a.wav"
-},
-{
-text: "Kellele te ütlesite täna hommikul „Tere hommikust!”? Kellele te ütlete täna õhtul „Head ööd!”?",
-audio: "../audio/02-paev-a2/013.wav",
-answer: "Täna hommikul ütlesin oma perele 'Tere hommikust'. Õhtul ütlen 'Head ööd' oma lastele.",
-answerAudio: "../audio/02-paev-a2/013a.wav"
-},
-{
-text: "Mitu tundi päevas te tavaliselt värskes õhus olete?",
-audio: "../audio/02-paev-a2/014.wav",
-answer: "Tavaliselt olen värskes õhus umbes üks tund päevas.",
-answerAudio: "../audio/02-paev-a2/014a.wav"
-}
+  {
+    text:              "Kuidas teie hommik algab? Mida te hommikul teete?",
+    textTranslation:   "How does your morning start? What do you do in the morning?",
+    audio:             "../audio/02-paev-a2/001.wav",
+    answer:            "Minu hommik algab kell seitse. Ma pesen nägu, joon kohvi ja söön hommikusööki.",
+    answerTranslation: "My morning starts at seven. I wash my face, drink coffee, and eat breakfast.",
+    answerAudio:       "../audio/02-paev-a2/001a.wav"
+  },
+  {
+    text:              "Kuidas teie päev lõpeb? Mida te õhtul teete?",
+    textTranslation:   "How does your day end? What do you do in the evening?",
+    audio:             "../audio/02-paev-a2/002.wav",
+    answer:            "Õhtul ma puhkan kodus. Ma vaatan televiisorit ja õpin natuke eesti keelt.",
+    answerTranslation: "In the evening I relax at home. I watch TV and study a bit of Estonian.",
+    answerAudio:       "../audio/02-paev-a2/002a.wav"
+  },
+  {
+    text:              "Kas te magate nädalavahetusel kauem kui tööpäevadel?",
+    textTranslation:   "Do you sleep longer on weekends than on workdays?",
+    audio:             "../audio/02-paev-a2/003.wav",
+    answer:            "Jah, nädalavahetusel ma magan kauem.",
+    answerTranslation: "Yes, I sleep longer on weekends.",
+    answerAudio:       "../audio/02-paev-a2/003a.wav"
+  },
+  {
+    text:              "Kuidas te täna magasite? Mitu tundi te magasite?",
+    textTranslation:   "How did you sleep today? How many hours did you sleep?",
+    audio:             "../audio/02-paev-a2/004.wav",
+    answer:            "Ma magasin hästi. Ma magasin umbes kuus tundi.",
+    answerTranslation: "I slept well. I slept about six hours.",
+    answerAudio:       "../audio/02-paev-a2/004a.wav"
+  },
+  {
+    text:              "Kas te jääte mõnikord tööle hiljaks? Millal te viimati tööle hiljaks jäite?",
+    textTranslation:   "Are you sometimes late for work? When was the last time you were late for work?",
+    audio:             "../audio/02-paev-a2/005.wav",
+    answer:            "Mõnikord ma jään natuke hiljaks. Viimati jäin hiljaks eelmisel kuul.",
+    answerTranslation: "Sometimes I am a little late. The last time I was late was last month.",
+    answerAudio:       "../audio/02-paev-a2/005a.wav"
+  },
+  {
+    text:              "Mitu korda nädalas te koristate? Mis päeval te koristate? Kas teie kodu on praegu korras?",
+    textTranslation:   "How many times a week do you clean? On which day do you clean? Is your home tidy right now?",
+    audio:             "../audio/02-paev-a2/006.wav",
+    answer:            "Ma koristan kaks korda nädalas. Tavaliselt laupäeval. Jah, minu kodu on praegu korras.",
+    answerTranslation: "I clean twice a week. Usually on Saturday. Yes, my home is tidy right now.",
+    answerAudio:       "../audio/02-paev-a2/006a.wav"
+  },
+  {
+    text:              "Mis kellast mis kellani on teie päeva kõige parem osa?",
+    textTranslation:   "From what time to what time is the best part of your day?",
+    audio:             "../audio/02-paev-a2/007.wav",
+    answer:            "Minu päeva kõige parem osa on õhtul kell kuus kuni kaheksa.",
+    answerTranslation: "The best part of my day is in the evening from six to eight.",
+    answerAudio:       "../audio/02-paev-a2/007a.wav"
+  },
+  {
+    text:              "Mitu korda päevas te külmkapi lahti teete? Aga öösel?",
+    textTranslation:   "How many times a day do you open the fridge? And at night?",
+    audio:             "../audio/02-paev-a2/008.wav",
+    answer:            "Ma teen külmkapi lahti umbes viis korda päevas. Öösel ma ei tee seda.",
+    answerTranslation: "I open the fridge about five times a day. I don't do it at night.",
+    answerAudio:       "../audio/02-paev-a2/008a.wav"
+  },
+  {
+    text:              "Kas teete iga päev süüa? Mida te täna sõite?",
+    textTranslation:   "Do you cook every day? What did you eat today?",
+    audio:             "../audio/02-paev-a2/009.wav",
+    answer:            "Jah, mõnikord ma teen süüa. Täna ma sõin riisi ja kana.",
+    answerTranslation: "Yes, sometimes I cook. Today I ate rice and chicken.",
+    answerAudio:       "../audio/02-paev-a2/009a.wav"
+  },
+  {
+    text:              "Mis kell te olete tavaliselt kõige produktiivsem?",
+    textTranslation:   "At what time are you usually most productive?",
+    audio:             "../audio/02-paev-a2/010.wav",
+    answer:            "Ma olen kõige produktiivsem hommikul.",
+    answerTranslation: "I am most productive in the morning.",
+    answerAudio:       "../audio/02-paev-a2/010a.wav"
+  },
+  {
+    text:              "Mis kell teil on aega helistada? Aga mis kellani tohib teile helistada?",
+    textTranslation:   "At what time do you have time to call? Until what time is it allowed to call you?",
+    audio:             "../audio/02-paev-a2/011.wav",
+    answer:            "Tavaliselt võib mulle helistada õhtul. Näiteks kell kuus kuni üheksani.",
+    answerTranslation: "Usually you can call me in the evening. For example, from six to nine.",
+    answerAudio:       "../audio/02-paev-a2/011a.wav"
+  },
+  {
+    text:              "Kellele te helistate iga nädal? Kellele te helistate ainult nädalavahetusel?",
+    textTranslation:   "Who do you call every week? Who do you call only on weekends?",
+    audio:             "../audio/02-paev-a2/012.wav",
+    answer:            "Ma helistan iga nädal oma vanematele. Nädalavahetusel helistan mõnikord sõpradele.",
+    answerTranslation: "I call my parents every week. On weekends I sometimes call friends.",
+    answerAudio:       "../audio/02-paev-a2/012a.wav"
+  },
+  {
+    text:              "Kellele te ütlesite täna hommikul „Tere hommikust!”? Kellele te ütlete täna õhtul „Head ööd!”?",
+    textTranslation:   "To whom did you say 'Good morning!' this morning? To whom will you say 'Good night!' this evening?",
+    audio:             "../audio/02-paev-a2/013.wav",
+    answer:            "Täna hommikul ütlesin oma perele 'Tere hommikust'. Õhtul ütlen 'Head ööd' oma lastele.",
+    answerTranslation: "This morning I said 'Good morning' to my family. In the evening I will say 'Good night' to my children.",
+    answerAudio:       "../audio/02-paev-a2/013a.wav"
+  },
+  {
+    text:              "Mitu tundi päevas te tavaliselt värskes õhus olete?",
+    textTranslation:   "How many hours a day are you usually outdoors?",
+    audio:             "../audio/02-paev-a2/014.wav",
+    answer:            "Tavaliselt olen värskes õhus umbes üks tund päevas.",
+    answerTranslation: "Usually I am outdoors about one hour a day.",
+    answerAudio:       "../audio/02-paev-a2/014a.wav"
+  }
 ];
 
 initAudioList(items);

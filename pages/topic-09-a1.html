@@ -23,9 +23,15 @@
       Question audio plays first. If answer audio exists, it can play after that automatically. Answers are shown as text.
     </div>
 
-    <div id="questionList" class="list"></div>
+    <div class="instructions">
+      Question audio plays first. If answer audio exists, it can play automatically after that. Answers are shown as text.
+    </div>
 
-    <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+    <div id="audioControls" class="audio-controls"></div>
+     <div id="questionList" class="list"></div>
+
+     <p class="footer-note">MUSTMILJON KÜSIMUST</p>
+
   </div>
 
   <script src="../assets/theme.js"></script>
@@ -34,122 +40,162 @@
     const items = [
       {
         text: "Kas praegu paistab päike?",
+        textTranslation: "Is the sun shining right now?",
         audio: "../audio/09-ilm-a1/001.wav",
         answer: "Jah, praegu paistab päike.",
+        answerTranslation: "Yes, the sun is shining right now.",
         answerAudio: "../audio/09-ilm-a1/001a.wav"
       },
       {
         text: "Kas praegu on väljas soe või külm? Aga teie toas?",
+        textTranslation: "Is it warm or cold outside right now? How about in your room?",
         audio: "../audio/09-ilm-a1/002.wav",
         answer: "Väljas on natuke külm. Minu toas on soe.",
+        answerTranslation: "It is a bit cold outside. It is warm in my room.",
         answerAudio: "../audio/09-ilm-a1/002a.wav"
       },
       {
         text: "Mis temperatuur on praegu väljas?",
+        textTranslation: "What is the temperature outside right now?",
         audio: "../audio/09-ilm-a1/003.wav",
         answer: "Praegu on väljas umbes viis kraadi.",
+        answerTranslation: "It is about five degrees outside right now.",
         answerAudio: "../audio/09-ilm-a1/003a.wav"
       },
       {
         text: "Kas praegu sajab vihma? Aga lund?",
+        textTranslation: "Is it raining right now? How about snowing?",
         audio: "../audio/09-ilm-a1/004.wav",
         answer: "Ei, praegu ei saja vihma ega lund.",
+        answerTranslation: "No, it is not raining or snowing right now.",
         answerAudio: "../audio/09-ilm-a1/004a.wav"
       },
       {
         text: "Kas praegu on taevas pilves?",
+        textTranslation: "Is the sky cloudy right now?",
         audio: "../audio/09-ilm-a1/005.wav",
         answer: "Jah, taevas on natuke pilves.",
+        answerTranslation: "Yes, the sky is a bit cloudy.",
         answerAudio: "../audio/09-ilm-a1/005a.wav"
       },
       {
         text: "Missugune ilm homme on?",
+        textTranslation: "What will the weather be like tomorrow?",
         audio: "../audio/09-ilm-a1/006.wav",
         answer: "Homme on päikeseline ja soe ilm.",
+        answerTranslation: "Tomorrow the weather will be sunny and warm.",
         answerAudio: "../audio/09-ilm-a1/006a.wav"
       },
       {
         text: "Missugune on ilm suvel? Aga talvel?",
+        textTranslation: "What is the weather like in summer? How about in winter?",
         audio: "../audio/09-ilm-a1/007.wav",
         answer: "Suvel on soe ja päikeseline. Talvel on külm ja mõnikord sajab lund.",
+        answerTranslation: "In summer it is warm and sunny. In winter it is cold and sometimes it snows.",
         answerAudio: "../audio/09-ilm-a1/007a.wav"
       },
       {
         text: "Missugune ilm teile meeldib?",
+        textTranslation: "What kind of weather do you like?",
         audio: "../audio/09-ilm-a1/008.wav",
         answer: "Mulle meeldib soe ja päikeseline ilm.",
+        answerTranslation: "I like warm and sunny weather.",
         answerAudio: "../audio/09-ilm-a1/008a.wav"
       },
       {
         text: "Väljas on miinus viis kraadi. Kas see on külm või soe ilm?",
+        textTranslation: "It is minus five degrees outside. Is it cold or warm weather?",
         audio: "../audio/09-ilm-a1/009.wav",
         answer: "See on külm ilm.",
+        answerTranslation: "It is cold weather.",
         answerAudio: "../audio/09-ilm-a1/009a.wav"
       },
       {
         text: "Väljas on pluss viis kraadi. Kas see on külm või soe ilm?",
+        textTranslation: "It is plus five degrees outside. Is it cold or warm weather?",
         audio: "../audio/09-ilm-a1/010.wav",
         answer: "See on natuke külm ilm.",
+        answerTranslation: "It is a bit cold weather.",
         answerAudio: "../audio/09-ilm-a1/010a.wav"
       },
       {
         text: "Mis värvi on teie vihmavari?",
+        textTranslation: "What color is your umbrella?",
         audio: "../audio/09-ilm-a1/011.wav",
         answer: "Minu vihmavari on must.",
+        answerTranslation: "My umbrella is black.",
         answerAudio: "../audio/09-ilm-a1/011a.wav"
       },
       {
         text: "Mis värvi on teie kummikud?",
+        textTranslation: "What color are your rubber boots?",
         audio: "../audio/09-ilm-a1/012.wav",
         answer: "Minu kummikud on mustad.",
+        answerTranslation: "My rubber boots are black.",
         answerAudio: "../audio/09-ilm-a1/012a.wav"
       },
       {
         text: "Millal algab kevad? Aga suvi?",
+        textTranslation: "When does spring start? How about summer?",
         audio: "../audio/09-ilm-a1/013.wav",
         answer: "Kevad algab märtsis ja suvi algab juunis.",
+        answerTranslation: "Spring starts in March and summer starts in June.",
         answerAudio: "../audio/09-ilm-a1/013a.wav"
       },
       {
         text: "Mis kuud on talv? Mis kuud on kevad? Mis kuud on sügis? Mis kuud on suvi?",
+        textTranslation: "What months are winter? What months are spring? What months are autumn? What months are summer?",
         audio: "../audio/09-ilm-a1/014.wav",
         answer: "Talv on detsember, jaanuar ja veebruar. Kevad on märts, aprill ja mai. Suvi on juuni, juuli ja august. Sügis on september, oktoober ja november.",
+        answerTranslation: "Winter is December, January, and February. Spring is March, April, and May. Summer is June, July, and August. Autumn is September, October, and November.",
         answerAudio: "../audio/09-ilm-a1/014a.wav"
       },
       {
         text: "Mis kuu on kõige külmem?",
+        textTranslation: "Which month is the coldest?",
         audio: "../audio/09-ilm-a1/015.wav",
         answer: "Tavaliselt on kõige külmem jaanuar.",
+        answerTranslation: "Usually the coldest month is January.",
         answerAudio: "../audio/09-ilm-a1/015a.wav"
       },
       {
         text: "Mis kuu on kõige soojem?",
+        textTranslation: "Which month is the warmest?",
         audio: "../audio/09-ilm-a1/016.wav",
         answer: "Tavaliselt on kõige soojem juuli.",
+        answerTranslation: "Usually the warmest month is July.",
         answerAudio: "../audio/09-ilm-a1/016a.wav"
       },
       {
         text: "Kas te teate, mida tähendab virmalised? Aga jääpurikas? Aga rahe? Aga tuisk?",
+        textTranslation: "Do you know what 'northern lights' means? How about 'icicle'? How about 'hail'? How about 'blizzard'?",
         audio: "../audio/09-ilm-a1/017.wav",
         answer: "Jah, ma tean neid sõnu. Need on seotud ilmaga.",
+        answerTranslation: "Yes, I know these words. They are related to weather.",
         answerAudio: "../audio/09-ilm-a1/017a.wav"
       },
       {
         text: "Kas teil on päikeseprillid? Mis värvi on teie päikeseprillid?",
+        textTranslation: "Do you have sunglasses? What color are your sunglasses?",
         audio: "../audio/09-ilm-a1/018.wav",
         answer: "Jah, mul on päikeseprillid. Need on musta värvi.",
+        answerTranslation: "Yes, I have sunglasses. They are black.",
         answerAudio: "../audio/09-ilm-a1/018a.wav"
       },
       {
         text: "Mis teil on seljas, kui on väga külm?",
+        textTranslation: "What do you wear when it is very cold?",
         audio: "../audio/09-ilm-a1/019.wav",
         answer: "Kui on väga külm, mul on seljas paks jope, sall ja müts.",
+        answerTranslation: "When it is very cold, I wear a thick jacket, a scarf, and a hat.",
         answerAudio: "../audio/09-ilm-a1/019a.wav"
       },
       {
         text: "Mis teil on seljas, kui on väga soe?",
+        textTranslation: "What do you wear when it is very warm?",
         audio: "../audio/09-ilm-a1/020.wav",
         answer: "Kui on väga soe, mul on seljas T-särk ja lühikesed püksid.",
+        answerTranslation: "When it is very warm, I wear a T-shirt and shorts.",
         answerAudio: "../audio/09-ilm-a1/020a.wav"
       }
     ];
